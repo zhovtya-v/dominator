@@ -1,19 +1,61 @@
 //fonts mixins
-@mixin proba_pro_semi_bold {
-  font-family: 'proba_pro_semi_bold', Helvetica, Arial, sans-serif;
+@mixin font_myriadPro_black {
+  font-family: 'MyriadPro', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
-@mixin proba_pro_regular {
-  font-family: 'proba_pro_regular', Helvetica, Arial, sans-serif;
+@mixin font_myriadPro_bold {
+  font-family: 'MyriadPro', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
-@mixin proba_pro_bold {
-  font-family: 'proba_pro_bold', Helvetica, Arial, sans-serif;
+@mixin font_myriadPro_regular {
+  font-family: 'MyriadPro', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
+@mixin font_tektur_bold {
+  font-family: 'Tektur', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_tektur_medium {
+  font-family: 'Tektur', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_tektur_regular {
+  font-family: 'Tektur', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_tektur_semiBold {
+  font-family: 'Tektur', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_unbounded_black {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_unbounded_bold {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font_unbounded_regular {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font_robotoMono_regular {
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 //Media queries
 @mixin max-extra-large {

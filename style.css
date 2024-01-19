@@ -4,9 +4,50 @@ FONTS
 /*********************************
 COLORS
 *********************************/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
-@import url("https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=cyrillic");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap");
+@font-face {
+  font-family: "MyriadPro-Black";
+  src: local("MyriadPro-Black"), url("assets/fonts/MyriadPro-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "MyriadPro-Bold";
+  src: local("MyriadPro-Bold"), url("assets/fonts/MyriadPro-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: local("MyriadPro-Regular"), url("assets/fonts/MyriadPro-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Tektur-Bold";
+  src: local("Tektur-Bold"), url("assets/fonts/Tektur-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Tektur-Medium";
+  src: local("Tektur-Medium"), url("assets/fonts/Tektur-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Tektur-Regular";
+  src: local("Tektur-Regular"), url("assets/fonts/Tektur-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Tektur-SemiBold";
+  src: local("Tektur-SemiBold"), url("assets/fonts/Tektur-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded-Black";
+  src: local("Unbounded-Black"), url("assets/fonts/Unbounded-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded-Bold";
+  src: local("Unbounded-Bold"), url("assets/fonts/Unbounded-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded-Regular";
+  src: local("Unbounded-Regular"), url("assets/fonts/Unbounded-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "RobotoMono-Regular";
+  src: local("RobotoMono-Regular"), url("assets/fonts/RobotoMono-Regular.woff2") format("woff2");
+}
 .header-section {
   padding: 15px 0;
   background: #1a1a1a;
@@ -213,7 +254,9 @@ button, button:hover, button:focus, select {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-weight: normal;
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   color: #000000;
