@@ -1,0 +1,38 @@
+.about-section {
+
+    .about-container {
+
+        @include min-medium {
+            @include display-flex;
+            @include flex-direction-row-reverse;
+            @include align-items-center;
+        }
+    }
+
+    .about-info {
+
+        @include min-medium {
+            max-width: 710px;
+        }
+    }
+
+    .about-slider {
+
+        @include min-medium {
+            width: calc(100% - 710px);
+        }
+
+
+        .swiper-slide {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        .swiper-3d .swiper-slide-shadow {
+            display: none;
+        }
+    }
+}

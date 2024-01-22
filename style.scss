@@ -3,6 +3,13 @@
 @import "assets/scss/fonts";
 
 @import "assets/scss/component/header";
+
+@import "assets/scss/component/hero";
+@import "assets/scss/component/about";
+@import "assets/scss/component/video";
+@import "assets/scss/component/dominators";
+@import "assets/scss/component/marketplace";
+
 @import "assets/scss/component/footer";
 
 /*********************************
@@ -50,8 +57,7 @@ body {
   @include font_robotoMono_regular;
   font-weight: 400;
   font-size: 14px;
-  color: #000000;
-  background-color: #ffffff;
+  color: $secondary-text-color;
   margin: 0;
   padding: 0;
 }
@@ -65,7 +71,7 @@ body {
   }
 
   @include min-large {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
   }
 }
@@ -73,3 +79,105 @@ body {
 COMMON STYLE END
 *********************************/
 
+.main-wrap {
+  background: url("./assets/images/site-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center top;
+  margin-top: -125px;
+  padding-top: 125px;
+}
+
+.section-title {
+  @include font_tektur_bold;
+  @include fluid-type(320px, 1920px, 36px, 70px);
+  text-transform: uppercase;
+  color: $primary-text-color;
+  position: relative;
+  margin: 0;
+}
+
+.dominator-image-section {
+  @include display-flex;
+  @include align-items-center;
+
+  img {
+    width: 100%;
+    max-width: 50%;
+    max-height: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.primary-button {
+  //border: 2px solid;
+  //border-image-slice: 1;
+  //border-radius: 2px;
+  //border-image-source: linear-gradient(to left, #3C79D4, #FFA6FA);
+  color: $black-text-color;
+  height: 78px;
+  min-width: 380px;
+  max-width: 380px;
+  @include display-flex;
+  @include align-items-center;
+  @include justify-content-center;
+  position: relative;
+
+  span {
+    z-index: 2;
+    color: $black-text-color;
+    font-size: 24px;
+    @include font_tektur_bold;
+    text-transform: uppercase;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    height: 262px;
+    min-width: 576px;
+    background: url("./assets/images/primary-btn-bg.png") no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+}
+
+.secondary-button {
+  //border: 2px solid;
+  //border-image-slice: 1;
+  //border-radius: 2px;
+  //border-image-source: linear-gradient(to left, #3C79D4, #FFA6FA);
+  color: $black-text-color;
+  height: 64px;
+  width: 272px;
+  @include display-inline-flex;
+  @include align-items-center;
+  @include justify-content-center;
+  position: relative;
+  background: url("./assets/images/secondary-btn-bg.png") no-repeat;
+  background-size: cover;
+
+  //box-shadow: 0 4px 90px rgba(#91E1DC, 0.5);
+
+  span {
+    z-index: 2;
+    color: $black-text-color;
+    font-size: 20px;
+    @include font_tektur_bold;
+    text-transform: uppercase;
+    height: 64px;
+    width: 272px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    box-shadow: 0 4px 90px rgba(#91E1DC, 0.5);
+  }
+}

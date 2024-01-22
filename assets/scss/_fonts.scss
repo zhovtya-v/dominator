@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 @font-face {
     font-family: "MyriadPro-Black";
     src:
@@ -17,60 +21,4 @@
     src:
         local("MyriadPro-Regular"),
         url("assets/fonts/MyriadPro-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Tektur-Bold";
-    src:
-        local("Tektur-Bold"),
-        url("assets/fonts/Tektur-Bold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Tektur-Medium";
-    src:
-        local("Tektur-Medium"),
-        url("assets/fonts/Tektur-Medium.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Tektur-Regular";
-    src:
-        local("Tektur-Regular"),
-        url("assets/fonts/Tektur-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Tektur-SemiBold";
-    src:
-        local("Tektur-SemiBold"),
-        url("assets/fonts/Tektur-SemiBold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Unbounded-Black";
-    src:
-        local("Unbounded-Black"),
-        url("assets/fonts/Unbounded-Black.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Unbounded-Bold";
-    src:
-        local("Unbounded-Bold"),
-        url("assets/fonts/Unbounded-Bold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Unbounded-Regular";
-    src:
-        local("Unbounded-Regular"),
-        url("assets/fonts/Unbounded-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "RobotoMono-Regular";
-    src:
-        local("RobotoMono-Regular"),
-        url("assets/fonts/RobotoMono-Regular.woff2") format("woff2");
 }

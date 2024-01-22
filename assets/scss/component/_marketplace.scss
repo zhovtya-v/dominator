@@ -1,0 +1,11 @@
+.marketplace-section {
+    background: url("./assets/images/marketplace-bg-section.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+
+    .marketplace-section-element {
+        position: absolute;
+    }
+}

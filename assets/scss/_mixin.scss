@@ -1,58 +1,58 @@
 //fonts mixins
 @mixin font_myriadPro_black {
   font-family: 'MyriadPro', sans-serif;
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 @mixin font_myriadPro_bold {
   font-family: 'MyriadPro', sans-serif;
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 @mixin font_myriadPro_regular {
   font-family: 'MyriadPro', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @mixin font_tektur_bold {
   font-family: 'Tektur', sans-serif;
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 @mixin font_tektur_medium {
   font-family: 'Tektur', sans-serif;
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
 @mixin font_tektur_regular {
   font-family: 'Tektur', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @mixin font_tektur_semiBold {
   font-family: 'Tektur', sans-serif;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 @mixin font_unbounded_black {
   font-family: 'Unbounded', sans-serif;
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 @mixin font_unbounded_bold {
   font-family: 'Unbounded', sans-serif;
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 @mixin font_unbounded_regular {
   font-family: 'Unbounded', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @mixin font_robotoMono_regular {
   font-family: 'Roboto Mono', monospace, sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -323,12 +323,12 @@
   transform: translate3d($translateX,$translateY,$translateZ);
 }
 
-@mixin transform-origin($x: center, $y: center) {
-  -webkit-transform-origin: $x $y;
-  -moz-transform-origin: $x $y;
-  -ms-transform-origin: $x $y;
-  -o-transform-origin: $x $y;
-  transform-origin: $x $y;
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
 }
 
 @mixin border-radius($radius) {
