@@ -1,4 +1,6 @@
 .about-section {
+    padding: 128px 0;
+
 
     .about-container {
 
@@ -12,14 +14,56 @@
     .about-info {
 
         @include min-medium {
-            max-width: 710px;
+            max-width: 704px;
+        }
+    }
+
+    .section-title {
+        margin-bottom: 44px;
+
+        span {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 32px;
+                right: -301px;
+                width: 367px;
+                height: 42px;
+                background: url("./assets/images/about-title-line.svg") no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    .text {
+        line-height: 2;
+        margin-bottom: 60px;
+    }
+
+    .secondary-button {
+
+        span {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 20px;
+                left: 105%;
+                width: 183px;
+                height: 25px;
+                background: url("./assets/images/about-btn-line.svg") no-repeat;
+                background-size: cover;
+            }
         }
     }
 
     .about-slider {
 
         @include min-medium {
-            width: calc(100% - 710px);
+            width: calc(100% - 704px);
         }
 
 

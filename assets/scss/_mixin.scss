@@ -344,6 +344,12 @@
   box-shadow: $value;
 }
 
+@mixin text-shadow($value) {
+  -webkit-text-shadow: $value;
+  -moz-text-shadow: $value;
+  text-shadow: $value;
+}
+
 @mixin placeholder {
   &::-webkit-input-placeholder {
     @content;

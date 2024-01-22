@@ -1,8 +1,194 @@
 .dominators-section {
     background: url("./assets/images/dominator-bg-section.png") no-repeat;
-    background-size: 100% auto;
+    background-size: auto;
     background-position: center bottom;
     position: relative;
 
+    padding: 69px 0 238px;
 
+    .section-title {
+        text-align: center;
+        margin-bottom: 145px;
+
+        span {
+            position: relative;
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:before {
+                background-image: url("./assets/images/dominator-title-line-left.svg");
+                width: 361px;
+                height: 32px;
+                top: 13px;
+                right: 94.5%;
+            }
+
+            &:after {
+                background-image: url("./assets/images/dominator-title-line-right.svg");
+                width: 386px;
+                height: 26px;
+                top: 44px;
+                left: 94%;
+            }
+        }
+    }
+
+    .dominators-swiper {
+        margin-bottom: 71px;
+    }
+
+    .primary-button {
+        margin: 0 auto;
+    }
+
+    .dominator-item-wrap {
+        text-align: center;
+    }
+
+    .dominator-info-wrap {
+        background: url("./assets/images/dominator-bg-image.png") no-repeat;
+        background-size: 100% auto;
+        background-position: left top;
+        position: relative;
+        padding: 46px 59px 80px 66px;
+        @include display-flex;
+        @include flex-wrap-wrap;
+        margin-bottom: 94px;
+        text-align: left;
+
+        .title {
+            letter-spacing: 3.6px;
+            margin-bottom: 39px;
+            color: $primary-text-color;
+            flex: 1 0 100%;
+        }
+
+        .name, .rating {
+            span {
+                display: block;
+                color: $primary-text-color;
+                margin-bottom: 13px;
+            }
+        }
+
+        .name {
+            flex: 1 0 40%;
+            margin-bottom: 38px;
+            letter-spacing: 1px;
+        }
+
+        .rating {
+            flex: 1 0 24%;
+
+            span {
+                margin-bottom: 16px;
+            }
+        }
+
+        .description {
+            flex: 1 0 100%;
+            line-height: 1.65;
+            padding-right: 45px;
+
+            span {
+                display: block;
+                color: $primary-text-color;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .dominator-image-wrap {
+        position: absolute;
+        bottom: -150px;
+        left: -72px;
+        right: -87px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+    .dominator-bottom-image-wrap {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include transform(translateY(-25%));
+
+            background: url("./assets/images/dominator-light-image.svg") no-repeat;
+            background-size: 100% auto;
+            background-position: center bottom;
+        }
+
+        .dominator-name {
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+
+            color: $primary-text-color;
+            font-size: 50px;
+            @include font_tektur_medium;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+    }
+
+    .dominator-bottom-image-line {
+        position: absolute;
+        @include transform(translateY(-50%));
+
+        &.left {
+            top: 56%;
+            right: 87%;
+        }
+
+        &.right {
+            top: 47%;
+            left: 86%;
+        }
+    }
+
+    .swiper-3d .swiper-slide-shadow-left,
+    .swiper-3d .swiper-slide-shadow-right {
+        background-image: none;
+    }
+
+    .swiper-slide-prev,
+    .swiper-slide-next {
+
+        .dominator-item-wrap {
+            margin-top: 40px;
+        }
+
+        .dominator-name {
+            font-size: 80px;
+        }
+
+        .dominator-info-wrap {
+            background: none;
+            height: 0;
+            margin-bottom: 150px;
+        }
+
+        .title, .name, .rating, .description {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 }

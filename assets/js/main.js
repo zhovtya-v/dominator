@@ -31,16 +31,23 @@ var swiper = new Swiper(".about-swiper", {
 
 var swiper = new Swiper(".dominators-swiper", {
     loop: true,
-    effect: "coverflow",
-    //centeredSlides: true,
-    slidesPerView: 3,
-    coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        scale: 0.2,
-        slideShadows: true,
+    slidesPerView: 1,
+
+    breakpoints: {
+        992: {
+            effect: "coverflow",
+            centeredSlides: true,
+            slidesPerView: 2.34,
+
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 120,
+                modifier: 1.4,
+                scale: 0.6,
+                slideShadows: true,
+            },
+        },
     },
 
     navigation: {
@@ -50,7 +57,15 @@ var swiper = new Swiper(".dominators-swiper", {
 });
 
 var swiper = new Swiper(".marketplace-swiper", {
-    slidesPerView: 4,
+    slidesPerView: 1.2,
+    breakpoints: {
+        992: {
+            slidesPerView: 2.34,
+        },
+        1440: {
+            slidesPerView: 4,
+        },
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
