@@ -1,0 +1,118 @@
+.accordion {
+    margin-bottom: 166px;
+
+    .accordion-item {
+        padding: 27px 0 70px;
+        background: url("./assets/images/faq-bg-line.svg") no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
+        margin-bottom: 23px;
+
+        &.active {
+            .accordion-question:before {
+                content: '—';
+            }
+        }
+    }
+
+    .accordion-question {
+        cursor: pointer;
+        position: relative;
+        padding-right: 30px;
+
+        span {
+            font-size: 30px;
+            text-transform: uppercase;
+            @include font_tektur_semiBold;
+            color: $primary-text-color;
+            letter-spacing: 3px;
+            @include text-shadow(0 4px 20px rgba(#14AAFF, 0.5));
+        }
+
+        &:before {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-size: 40px;
+            text-transform: uppercase;
+            @include font_tektur_semiBold;
+            color: $primary-text-color;
+            line-height: 1;
+            @include text-shadow(0 4px 20px rgba(#14AAFF, 0.5));
+        }
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        padding: 0;
+
+        span {
+            margin: 0;
+            font-size: 20px;
+            padding: 34px 125px 0 0;
+            line-height: 2;
+            display: inline-block;
+        }
+
+        &.active {
+            max-height: auto;
+        }
+    }
+}
+
+.faq-section {
+    .faq-container {
+        max-width: 1700px;
+    }
+
+    .faq-wrap {
+        background: url("./assets/images/faq-bg-block.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center top;
+        position: relative;
+
+        padding: 126px 162px 126px 185px;
+    }
+
+    .section-title {
+        margin-bottom: 107px;
+    }
+
+    .button-wrap {
+        text-align: center;
+    }
+
+    .primary-button {
+        margin: 0 auto;
+        span {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:before {
+                top: -13px;
+                right: 108%;
+                width: 227px;
+                height: 48px;
+                background-image: url("./assets/images/faq-btn-line-left.svg");
+            }
+
+            &:after {
+                top: -10px;
+                left: 106%;
+                width: 284px;
+                height: 44px;
+                background-image: url("./assets/images/faq-btn-line-right.svg");
+            }
+        }
+    }
+}

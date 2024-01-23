@@ -10,6 +10,7 @@
 @import "assets/scss/component/dominators";
 @import "assets/scss/component/marketplace";
 @import "assets/scss/component/road-map";
+@import "assets/scss/component/faq";
 
 @import "assets/scss/component/footer";
 
@@ -200,7 +201,7 @@ COMMON STYLE END
     @include font_tektur_bold;
     text-transform: uppercase;
     height: 64px;
-    width: 272px;
+    width: 100%;
     @include display-inline-flex;
     @include align-items-center;
     @include justify-content-center;
@@ -256,6 +257,13 @@ COMMON STYLE END
     @include align-items-center;
     @include justify-content-center;
     text-transform: uppercase;
+    letter-spacing: 2px;
+
+    svg {
+      width: 12px;
+      height: auto;
+      margin-left: 9px;
+    }
   }
 
   &:before {

@@ -32,6 +32,16 @@ var swiper = new Swiper(".about-swiper", {
 var swiper = new Swiper(".dominators-swiper", {
     loop: true,
     slidesPerView: 1,
+    effect: "coverflow",
+
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        scale: 0.2,
+        slideShadows: true,
+    },
 
     breakpoints: {
         992: {
@@ -58,6 +68,7 @@ var swiper = new Swiper(".dominators-swiper", {
 
 var swiper = new Swiper(".marketplace-swiper", {
     slidesPerView: 1.2,
+    spaceBetween: 29,
     breakpoints: {
         992: {
             slidesPerView: 2.34,
@@ -70,4 +81,21 @@ var swiper = new Swiper(".marketplace-swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+});
+
+const accordionItem = document.querySelectorAll('.accordion-item .accordion-question');
+
+accordionItem.forEach((accordionToggle) => {
+    accordionToggle.addEventListener('click', () => {
+        const accordionItem = accordionToggle.parentNode;
+        const accordionContent = accordionToggle.nextElementSibling;
+
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
+            accordionItem.classList.remove('active');
+        } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            accordionItem.classList.add('active');
+        }
+    });
 });
