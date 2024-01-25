@@ -1,0 +1,238 @@
+.footer-section {
+    position: relative;
+    background: url("./assets/images/footer-bg.png") no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+    padding-top: 204px;
+
+    .footer-image-element {
+        position: absolute;
+        right: 0;
+        top: -415px;
+        width: 52%;
+        height: 82%;
+        text-align: right;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+    .footer-top-block {
+        position: relative;
+        z-index: 5;
+
+        @include min-medium {
+            @include display-flex;
+            @include align-items-flex-start;
+            @include flex-wrap-wrap;
+        }
+    }
+
+    .logo {
+        @include min-medium {
+            width: 26%;
+        }
+
+        a {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -34px;
+                left: 0;
+                width: 80px;
+                height: 80px;
+                background: $primary-text-color;
+                @include border-radius(50%);
+                filter: blur(55px);
+            }
+        }
+    }
+
+    .footer-menu {
+        @include display-flex;
+        @include flex-direction-column;
+        width: 39%;
+        padding: 6px 0 0 3px;
+
+        a {
+            position: relative;
+            @include font_tektur_semiBold;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: $primary-text-color;
+            padding-bottom: 6px;
+            letter-spacing: 3px;
+            margin-bottom: 51px;
+            @include transition(all 0.2s);
+            @include text-shadow(0 4px 60px rgba(#14AAFF, 0.5));
+
+            &:hover {
+                color: $primary-active-text-color;
+                @include text-shadow(0 0 0 rgba(#14AAFF, 0));
+            }
+        }
+    }
+
+    .footer-info {
+        width: 35%;
+        padding: 7px 0 0 6px;
+    }
+
+    .footer-block {
+        flex: 1 0 100%;
+        @include display-flex;
+        @include align-items-center;
+        @include justify-content-space-between;
+        margin-top: 71px;
+
+        .copyright {
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        .policy-wrap {
+            a {
+                text-transform: capitalize;
+                text-decoration: underline;
+                font-size: 16px;
+                color: $secondary-text-color;
+                @include transition(all 0.2s);
+                margin-left: 56px;
+
+                @include min-medium {
+                    &:hover {
+                        color: $primary-text-color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .subscribe-form {
+        margin-bottom: 87px;
+
+        .title {
+            text-transform: uppercase;
+            @include font_tektur_semiBold;
+            font-size: 30px;
+            letter-spacing: 3px;
+            line-height: 1.4;
+            margin-bottom: 27px;
+        }
+
+        .form-wrap {
+            @include display-flex;
+            @include align-items-center;
+        }
+
+        .field-wrap {
+            flex-grow: 1;
+            margin-right: 20px;
+            height: 50px;
+            padding: 1px;
+            background: #27405E;
+            clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+
+            input {
+                width: 100%;
+                height: 100%;
+                background: #061D2E;
+                border: none;
+                font-size: 16px;
+                padding: 10px 25px;
+                color: #3A4D64;
+                clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+                @include font_robotoMono_regular;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                @include placeholder {
+                    color: #3A4D64;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .social-wrap {
+
+        @include min-medium {
+            @include display-flex;
+            @include justify-content-flex-end;
+        }
+
+        a {
+            &:not(:first-child) {
+                margin-left: 28px;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                vertical-align: bottom;
+            }
+        }
+    }
+
+    .footer-bottom-block {
+        padding: 200px 0 87px;
+
+        .title {
+            text-align: center;
+            position: relative;
+
+            span {
+                @include font_tektur_bold;
+                font-size: 130px;
+                text-transform: uppercase;
+                color: $primary-text-color;
+                letter-spacing: 6px;
+                @include fluid-type(375px, 1920px, 50px, 130px);
+                @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+
+                @include min-large {
+                    letter-spacing: 13px;
+                }
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:before {
+                top: 65px;
+                right: 97%;
+                width: 281px;
+                width: 20%;
+                height: 55px;
+                height: 31%;
+                background-image: url("./assets/images/footer-title-line-left.svg");
+            }
+
+            &:after {
+                top: 53px;
+                left: 96%;
+                width: 284px;
+                height: 44px;
+                width: 20%;
+                height: 31%;
+                background-image: url("./assets/images/footer-title-line-right.svg");
+            }
+        }
+    }
+}

@@ -70,29 +70,21 @@
             position: relative;
             margin-bottom: 16px;
             padding-bottom: 6px;
-            @include transition(color);
-            transition: color 0.2s;
+            @include transition(all 0.2s);
 
             @include min-medium {
                 @include fluid-type(991px, 1920px, 18px, 18px);
                 margin-bottom: 0;
-
-                /*&:not(:first-child) {
-                    margin-left: 20px;
-                }*/
             }
 
             &:hover {
                 color: $primary-active-text-color;
                 
                 &:after {
-                    height: 3px;
+                    height: 5px;
                     opacity: 1;
-                    -webkit-transform: translateY(0px);
-                    -moz-transform: translateY(0px);
-                    transform: translateY(0px);
+                    @include transform(translateY(0));
                 }
-
             }
 
             &:after {
@@ -101,15 +93,13 @@
                 left: 0;
                 width: 100%;
                 height: 1px;
-                background: $primary-active-bg-color;
                 content: '';
                 opacity: 0;
-                -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-                -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-                transition: height 0.3s, opacity 0.3s, transform 0.3s;
-                -webkit-transform: translateY(-10px);
-                -moz-transform: translateY(-10px);
-                transform: translateY(-10px);
+                background: url("./assets/images/menu-bg-line.svg") no-repeat;
+                background-size: cover;
+                background-position: center;
+                @include transition(all 0.2s);
+                @include transform(translateY(-10px));
             }
         }
 
@@ -195,7 +185,7 @@
             left: 50%;
             border-radius: 4px;
             transform: translate(-50%, -50%);
-            background-color: $primary-active-bg-color;
+            background-color: $primary-text-color;
             transition: all 0.3s ease-in-out;
 
             &:nth-of-type(1) {

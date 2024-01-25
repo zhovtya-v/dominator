@@ -23,6 +23,7 @@
 
     .hero-image {
         max-width: 523px;
+        width: 100%;
 
         img {
             max-width: 100%;
@@ -33,6 +34,10 @@
         }
 
         @include min-medium {
+            max-width: 400px;
+        }
+
+        @include min-extra-large {
             max-width: 578px;
             margin-right: -59px;
         }
@@ -53,8 +58,18 @@
         color: $primary-text-color;
         position: relative;
         margin: 0 0 39px;
-        letter-spacing: 13px;
+        letter-spacing: 6px;
         line-height: 1;
+
+        @include fluid-type(375px, 1920px, 50px, 130px);
+
+        @include min-large {
+            letter-spacing: 13px;
+        }
+
+        span {
+            @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+        }
 
         &:before {
             content: '';
@@ -75,7 +90,14 @@
         color: $primary-text-color;
         margin: 0 0 56px 6px;
         line-height: 1;
-        letter-spacing: 7.7px;
+        letter-spacing: 3.7px;
+
+        @include fluid-type(375px, 1920px, 32px, 76px);
+
+        @include min-large {
+            letter-spacing: 7.7px;
+        }
+
     }
 
     .button {
