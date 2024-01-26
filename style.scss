@@ -90,13 +90,35 @@ body {
 COMMON STYLE END
 *********************************/
 
-/*.main-wrap {
-  background: url("./assets/images/site-bg.jpg") no-repeat;
-  background-size: cover;
-  background-position: center top;
-  margin-top: -160px;
-  padding-top: 160px;
-}*/
+.logo {
+  a {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -34px;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      background: $primary-text-color;
+      @include border-radius(50%);
+      filter: blur(55px);
+      @include transition(all 0.2s);
+    }
+
+    @include min-medium {
+      &:hover {
+        &:before {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+
+
+}
 
 .section-title {
   @include font_tektur_bold;
@@ -139,6 +161,9 @@ COMMON STYLE END
   @include align-items-center;
   @include justify-content-center;
   position: relative;
+  @include border-radius(2px);
+  padding: 2px;
+  z-index: 5;
 
   @include min-medium {
     height: 79px;
@@ -152,6 +177,17 @@ COMMON STYLE END
     @include font_tektur_bold;
     text-transform: uppercase;
     letter-spacing: 2.4px;
+    width: 100%;
+    height: 100%;
+    @include display-flex;
+    @include align-items-center;
+    @include justify-content-center;
+    @include border-radius(2px);
+    clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
+    background: url("./assets/images/primary-btn-bg.png") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include transition(background 0.15s);
   }
 
   &:before {
@@ -161,9 +197,10 @@ COMMON STYLE END
     left: 0;
     bottom: 0;
     right: 0;
-    background: url("./assets/images/primary-btn-bg.png") no-repeat;
-    background-size: cover;
-    z-index: 2;
+    clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
+    background: linear-gradient(270deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
+    @include transition(background 0.15s);
+    @include border-radius(2px);
   }
 
   &:after {
@@ -179,12 +216,20 @@ COMMON STYLE END
     z-index: 1;
 
     @include min-medium {
-      height: 79px;
-      width: 352px;
+      height: 60px;
+      width: 360px;
     }
   }
 
   &:hover {
+    &:before {
+      background: linear-gradient(135deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
+    }
+
+    /*span {
+      background: linear-gradient(135deg, rgba(64,106,255,1) 0%,rgba(59,172,226,1) 15%,rgba(59,172,226,1) 15%,rgba(185,54,238,1) 60%,rgba(255,86,246,1) 80%);
+    }*/
+
     &:after {
       @include box-shadow(0 0 0 rgba(#FF56F6, 0.5));
     }
@@ -200,7 +245,6 @@ COMMON STYLE END
   @include display-inline-flex;
   @include border-radius(2px);
   padding: 2px;
-
 
   span {
     z-index: 3;
@@ -220,11 +264,7 @@ COMMON STYLE END
 
   &:before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    @include full-absolute;
     clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
     background: linear-gradient(270deg, rgba(145,203,230,1) 0%,rgba(222,209,152,1) 100%);
     @include transition(background 0.15s);
@@ -265,6 +305,7 @@ COMMON STYLE END
   position: relative;
   @include display-inline-flex;
   @include justify-content-center;
+  padding: 2px;
 
   span {
     z-index: 3;
@@ -276,6 +317,9 @@ COMMON STYLE END
     @include justify-content-center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    width: 100%;
+    clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
+    background: linear-gradient(to right, rgba(18,155,255,1) 20%,rgba(99,189,255,1) 42%,rgba(0,99,171,1) 91%,rgba(0,82,141,1) 100%);
 
     svg {
       width: 12px;
@@ -286,14 +330,10 @@ COMMON STYLE END
 
   &:before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url("./assets/images/buy-button-bg.png") no-repeat;
-    background-size: cover;
-    z-index: 2;
+    @include full-absolute;
+    clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
+    background: linear-gradient(45deg, rgba(10,108,179,1) 0%,rgba(93,184,251,1) 50%);
+    @include transition(background 0.15s);
   }
 
   &:after {
@@ -301,8 +341,8 @@ COMMON STYLE END
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 48px;
-    width: 258px;
+    height: 40px;
+    width: 92%;
     @include transform(translate(-50%, -50%));
     @include box-shadow(0 4px 50px rgba(#129BFF, 0.5));
     @include transition(box-shadow 0.15s);
@@ -310,13 +350,45 @@ COMMON STYLE END
   }
 
   &:hover {
+    span {
+      background: linear-gradient(to left, rgba(18,155,255,1) 20%,rgba(99,189,255,1) 42%,rgba(0,99,171,1) 91%,rgba(0,82,141,1) 100%);
+    }
+
+    &:before {
+      background: linear-gradient(90deg, rgba(10,108,179,1) 0%,rgba(93,184,251,1) 50%);
+    }
+
     &:after {
       box-shadow: 0 0 0 rgba(#91E1DC, 0.5);
     }
   }
 }
 
-.button-send {
+.swiper-button-prev {
+  left: 0;
+
+  svg {
+    width: 15px;
+    height: 22px;
+
+    path {
+      fill: #061D2E;
+    }
+  }
+}
+
+.swiper-button-next {
+  right: 0;
+
+  svg {
+    width: 15px;
+    height: 22px;
+  }
+}
+
+.button-send,
+.swiper-button-next,
+.swiper-button-prev {
   @include reset-button;
   cursor: pointer;
 
@@ -361,5 +433,20 @@ COMMON STYLE END
     @include transform(translate(-50%, -50%));
     clip-path: polygon(28% 0, 100% 0, 100% 74%, 72% 100%, 0 100%, 0 26%);
     background: $primary-text-color;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  &.swiper-button-disabled {
+    opacity: 1;
+
+    &:before {
+      @include box-shadow(none);
+    }
+
+    &:after {
+      background: #27405E;
+    }
   }
 }

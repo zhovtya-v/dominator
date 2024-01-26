@@ -3,6 +3,7 @@
     background: url("./assets/images/road-map-section-bg.png") no-repeat;
     background-size: auto;
     background-position: center center;
+    text-align: center;
 
     .road-map-container {
         @include display-flex;
@@ -10,7 +11,7 @@
 
     .section-title {
         text-align: center;
-        margin-bottom: 63px;
+        margin-bottom: 30px;
 
         span {
             position: relative;
@@ -38,10 +39,6 @@
                 background-image: url("./assets/images/road-map-title-line-right.svg");
             }
         }
-    }
-
-    .button-wrap {
-        text-align: center;
     }
 
     .road-map-line {
@@ -73,23 +70,56 @@
         @include font_tektur_medium;
         font-size: 26px;
         color: #030A1A;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 53px;
+            width: 2px;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
     }
 
     .road-map-item {
         width: 19.17%;
         position: relative;
         z-index: 2;
+        text-align: left;
+
+        @include min-large {
+            width: 16.17%;
+        }
+
+        @include min-extra-large {
+            width: 19.17%;
+        }
 
 
         &:nth-child(odd) {
             .road-map-card {
                 bottom: -331px;
             }
+
+            .number {
+                &:before {
+                    top: 100%;
+                    background: linear-gradient(135deg, rgba(7,30,56,1) 0%,rgba(0,117,255,0) 100%);
+                }
+            }
         }
 
         &:nth-child(even) {
             .road-map-card {
                 top: -326px;
+            }
+
+            .number {
+                &:before {
+                    bottom: 100%;
+                    background: linear-gradient(135deg, rgba(0,117,255,0) 0%,rgba(7,30,56,1) 100%);
+                }
             }
         }
     }
@@ -134,33 +164,50 @@
 
     .road-map-section-element {
         position: absolute;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        &.first {
+            left: 163px;
+            top: -41px;
+        }
+
+        &.second {
+            right: 108px;
+            top: 64px;
+        }
     }
 
-    .secondary-button {
-        span {
-            position: relative;
+    .button-wrap {
+        position: relative;
+        display: inline-block;
 
-            &:before, &:after {
-                content: '';
-                position: absolute;
-                height: 25px;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-            &:before {
-                top: 31px;
-                right: 112%;
-                width: 184px;
-                background-image: url("./assets/images/road-map-btn-line-left.svg");
-            }
+        &:before {
+            top: 31px;
+            right: 112%;
+            width: 184px;
+            background-image: url("./assets/images/road-map-btn-line-left.svg");
+        }
 
-            &:after {
-                top: 10px;
-                left: 111%;
-                width: 220px;
-                background-image: url("./assets/images/road-map-btn-line-right.svg");
-            }
+        &:after {
+            top: 10px;
+            left: 111%;
+            width: 220px;
+            background-image: url("./assets/images/road-map-btn-line-right.svg");
         }
     }
 }

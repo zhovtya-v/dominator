@@ -1,34 +1,118 @@
 .marketplace-section {
-    background: url("./assets/images/marketplace-bg-section.png") no-repeat;
-    background-size: cover;
-    background-position: center top;
     position: relative;
-    padding: 100px 0 272px;
+    padding: 279px 0 132px;
+    margin-bottom: 23px;
 
-    .marketplace-swiper {
-        margin-bottom: 132px;
+    .marketplace-section-bg {
+        @include full-absolute;
+
+        clip-path: polygon(69% 10%, 78% 0%, 100% 0, 100% 89%, 54% 89%, 44% 100%, 0 100%, 0 10%);
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        background: rgb(17,155,255);
+        background: radial-gradient(circle, rgba(17,155,255,1) 0%, rgba(17,155,255,0) 100%);
+
+        &:before {
+            content: '';
+            @include full-absolute;
+
+            background: #030A19 url("./assets/images/marketplace-bg-section.png") no-repeat;
+            background-size: cover;
+            background-position: right center;
+
+            clip-path: polygon(69% 10%, 78% 0%, 100% 0, 100% 89%, 54% 89%, 44% 100%, 0 100%, 0 10%);
+        }
     }
 
     .section-title {
-        margin-bottom: 136px;
+        //margin-bottom: 136px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 34px;
+            right: 98%;
+            width: 370px;
+            height: 39px;
+            background-image: url("./assets/images/road-map-title-line-left.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     }
 
     .marketplace-section-element {
         position: absolute;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        &.first {
+            right: 14.6%;
+            bottom: -16px;
+        }
+
+        &.second {
+            right: 29.8%;
+            bottom: -150px;
+        }
+    }
+
+    .marketplace-swiper {
+        margin-bottom: 132px;
+        margin-top: -61px;
+        padding-top: 197px;
+        padding-right: 15px;
+    }
+
+    .swiper-navigation-wrap {
+        @include display-flex;
+        @include justify-content-flex-end;
+        position: absolute;
+        top: 0;
+        right: 15px;
+
+        .swiper-button-next {
+            margin-left: 13px;
+        }
     }
 
     .swiper-slide-wrap {
-        background: url("./assets/images/marketplace-card-bg.png") no-repeat;
-        background-size: cover;
-        background-position: center top;
-
+        position: relative;
         padding: 24px 21px 53px 24px;
+        @include border-radius(2px);
+    }
 
-        border: 2px solid $primary-text-color;
+    .swiper-slide-wrap-bg {
+        @include full-absolute;
         clip-path: polygon(0 0, 87% 0, 100% 6%, 100% 100%, 18% 100%, 0 93%);
-        border-radius: 2px;
-        border-image-slice: 1;
-        border-image-source: linear-gradient(to left, rgba(#119BFF, 0), #119BFF);
+        z-index: -1;
+        background: rgb(17,155,255);
+        background: linear-gradient(to right, rgba(17,155,255,0.6) 0%,rgba(17,155,255,0.2) 46%,rgba(17,155,255,0.6) 100%);
+        @include border-radius(2px);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            right: 2px;
+            clip-path: polygon(0 0, 87% 0, 100% 6%, 100% 100%, 18% 100%, 0 93%);
+            background: url("./assets/images/marketplace-card-bg.png") no-repeat;
+            background-size: cover;
+            background-position: center top;
+            @include border-radius(2px);
+
+            @include min-extra-large {
+                background-size: 105%;
+            }
+        }
     }
 
     .item-ellipse {
@@ -149,25 +233,39 @@
         }
     }
 
+    .button-wrap {
+        display: inline-block;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 245px;
+            height: 36px;
+            background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
+            background-size: cover;
+            background-position: right center;
+        }
+    }
+
     .secondary-button {
         height: 64px;
         width: 392px;
 
-        span {
-            position: relative;
+        &:before {
+            clip-path: polygon(3% 0, 100% 0, 100% 82%, 97% 100%, 0 100%, 0 18%);
+        }
 
-            &:before {
-                content: '';
-                position: absolute;
-                right: 100%;
-                top: 50%;
-                @include transform(translateY(-50%));
-                width: 245px;
-                height: 31px;
-                background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
-                background-size: cover;
-                background-position: right center;
-            }
+        &:after {
+            height: 52px;
+            width: 374px;
+        }
+
+        span {
+            clip-path: polygon(3% 0, 100% 0, 100% 82%, 97% 100%, 0 100%, 0 18%);
 
             svg {
                 margin-left: 3px;

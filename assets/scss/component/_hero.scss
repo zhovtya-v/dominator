@@ -7,6 +7,8 @@
 
     @include min-medium {
         padding: 202px 0 245px;
+
+        margin-bottom: 57px;
     }
 
     .hero-container {
@@ -98,6 +100,21 @@
             letter-spacing: 7.7px;
         }
 
+    }
+
+    .button-wrap {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 100%;
+            height: 53px;
+            width: 237px;
+            background: url("./assets/images/hero-button-line.svg") no-repeat;
+            background-size: cover;
+        }
     }
 
     .button {

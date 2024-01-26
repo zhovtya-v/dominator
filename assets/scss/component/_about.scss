@@ -1,13 +1,46 @@
 .about-section {
-    padding: 128px 0;
-
+    padding: 128px 0 71px;
 
     .about-container {
+        position: relative;
 
         @include min-medium {
             @include display-flex;
             @include flex-direction-row-reverse;
-            @include align-items-center;
+            @include align-items-flex-end;
+        }
+    }
+
+    .about-element-image {
+        position: absolute;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        &.first {
+            left: 213px;
+            top: -28px;
+            z-index: 3;
+        }
+
+        &.second {
+            right: 309px;
+            top: -156px;
+        }
+
+        &.third {
+            right: -9px;
+            top: -93px;
+        }
+
+        &.fourth {
+            right: -195px;
+            bottom: 29px;
         }
     }
 
@@ -15,6 +48,7 @@
 
         @include min-medium {
             max-width: 704px;
+            padding-bottom: 74px;
         }
     }
 
@@ -42,21 +76,19 @@
         margin-bottom: 60px;
     }
 
-    .secondary-button {
+    .button-wrap {
+        display: inline-block;
+        position: relative;
 
-        span {
-            position: relative;
-
-            &:after {
-                content: '';
-                position: absolute;
-                top: 20px;
-                left: 105%;
-                width: 183px;
-                height: 25px;
-                background: url("./assets/images/about-btn-line.svg") no-repeat;
-                background-size: cover;
-            }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 105%;
+            width: 183px;
+            height: 25px;
+            background: url("./assets/images/about-btn-line.svg") no-repeat;
+            background-size: cover;
         }
     }
 
@@ -64,19 +96,84 @@
 
         @include min-medium {
             width: calc(100% - 704px);
+            padding-right: 60px;
         }
 
+        /*.swiper-slide {
+            &.swiper-slide-active {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }*/
 
-        .swiper-slide {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            vertical-align: bottom;
+        .swiper-slide-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                vertical-align: bottom;
+                //transform: scale(1.1);
+            }
         }
 
         .swiper-3d .swiper-slide-shadow {
             display: none;
+        }
+    }
+
+    .swiper-controls-wrap {
+        @include display-flex;
+        @include justify-content-space-between;
+        @include align-items-flex-end;
+        padding-right: 56px;
+    }
+
+    .swiper-navigation-wrap {
+        @include display-flex;
+
+        .swiper-button-next {
+            margin-left: 14px;
+        }
+    }
+
+    .swiper-pagination {
+        position: relative;
+        bottom: initial;
+        left: initial;
+        right: initial;
+        top: initial;
+        width: auto;
+
+        .swiper-pagination-bullet {
+            background: #27405E;
+            width: 24px;
+            height: 2px;
+            border-radius: 0;
+            opacity: 1;
+            margin: 0 5px;
+            @include transition(width 0.2s);
+
+            @include min-medium {
+                &:hover {
+                    background: $primary-text-color;
+                    @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
+                }
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $primary-text-color;
+            width: 59px;
+            height: 2px;
+            border-radius: 0;
+            @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
         }
     }
 }

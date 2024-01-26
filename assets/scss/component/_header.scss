@@ -14,6 +14,12 @@
         height: 180px;
     }
 
+    /*.header-section-bg {
+        position: absolute;
+
+        clip-path: polygon(100% 0, 100% 72%, 75% 72%, 66% 82%, 41% 83%, 30% 73%, 0 73%, 0 0);
+    }*/
+
     .header-wrap {
         position: relative;
 
@@ -29,7 +35,7 @@
 
     .logo {
         position: absolute;
-        top: -15px;
+        top: 26px;
         left: 50%;
         @include transform(translate(-50%, 0));
     }
@@ -106,15 +112,50 @@
         .account, .globe {
             width: 50px;
             height: 50px;
-            background: url("./assets/images/menu-link-bg.png") no-repeat;
-            background-size: cover;
             @include display-inline-flex;
             @include align-items-center;
             @include justify-content-center;
             padding: 0;
 
+            clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
+            background: linear-gradient(45deg, rgba(17,155,255,0.54) 0%,rgba(17,155,255,0) 100%);
+            @include transition(all 0.2s);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                bottom: 2px;
+                right: 2px;
+
+                clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
+                background: #030919;
+                @include transition(all 0.2s);
+            }
+
             &:after {
                 display: none;
+            }
+
+            svg {
+                z-index: 3;
+            }
+
+            @include min-medium {
+                &:hover {
+                    background: $primary-text-color;
+
+                    &:before {
+                        background: $primary-text-color;
+                    }
+
+                    svg {
+                        path {
+                            fill: #030919;
+                        }
+                    }
+                }
             }
         }
 
