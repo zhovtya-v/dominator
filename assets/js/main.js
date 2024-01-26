@@ -17,8 +17,17 @@ menuItem.forEach(function (menuItem) {
     })
 })
 
-var swiper = new Swiper(".about-swiper", {
+var aboutSwiper = new Swiper(".about-swiper", {
     effect: "cards",
+    loop: true,
+
+    cardsEffect: {
+        perSlideOffset: -8,
+        perSlideRotate: 10,
+        rotate: false,
+        slideShadows: false,
+    },
+
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -29,18 +38,36 @@ var swiper = new Swiper(".about-swiper", {
     },
 });
 
-var swiper = new Swiper(".dominators-swiper", {
-    loop: true,
+
+var dominatorsSwiper = new Swiper(".dominators-swiper", {
+    loop: false,
+    slidesPerView: 1,
     effect: "coverflow",
-    //centeredSlides: true,
-    slidesPerView: 3,
+
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
         depth: 100,
         modifier: 1,
         scale: 0.2,
-        slideShadows: true,
+        slideShadows: false,
+    },
+
+    breakpoints: {
+        992: {
+            effect: "coverflow",
+            centeredSlides: true,
+            slidesPerView: 2.34,
+
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 120,
+                modifier: 1.4,
+                scale: 0.6,
+                slideShadows: true,
+            },
+        },
     },
 
     navigation: {
@@ -49,10 +76,38 @@ var swiper = new Swiper(".dominators-swiper", {
     },
 });
 
-var swiper = new Swiper(".marketplace-swiper", {
-    slidesPerView: 4,
+dominatorsSwiper.slideTo(1, false, false);
+
+var marketplaceSwiper = new Swiper(".marketplace-swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 29,
+    breakpoints: {
+        992: {
+            slidesPerView: 3,
+        },
+        1200: {
+            slidesPerView: 4,
+        },
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+});
+
+const accordionItem = document.querySelectorAll('.accordion-item .accordion-question');
+
+accordionItem.forEach((accordionToggle) => {
+    accordionToggle.addEventListener('click', () => {
+        const accordionItem = accordionToggle.parentNode;
+        const accordionContent = accordionToggle.nextElementSibling;
+
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
+            accordionItem.classList.remove('active');
+        } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            accordionItem.classList.add('active');
+        }
+    });
 });
