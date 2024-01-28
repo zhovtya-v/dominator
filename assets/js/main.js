@@ -22,7 +22,7 @@ var aboutSwiper = new Swiper(".about-swiper", {
     loop: true,
 
     cardsEffect: {
-        perSlideOffset: -8,
+        perSlideOffset: 8,
         perSlideRotate: 10,
         rotate: false,
         slideShadows: false,
