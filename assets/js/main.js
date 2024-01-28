@@ -17,6 +17,7 @@ menuItem.forEach(function (menuItem) {
     })
 })
 
+
 var aboutSwiper = new Swiper(".about-swiper", {
     effect: "cards",
     loop: true,
