@@ -706,6 +706,35 @@ COLORS
 .video-section {
   padding: 196px 0 183px;
 }
+.video-section .video-container {
+  position: relative;
+}
+.video-section .video-container .video-element-first {
+  position: absolute;
+  top: -108px;
+  right: -159px;
+  max-width: 439px;
+  max-height: 355px;
+  width: 32%;
+  z-index: 4;
+}
+.video-section .video-container .video-element-first img {
+  width: 100%;
+  vertical-align: bottom;
+}
+.video-section .video-container .video-element-second {
+  position: absolute;
+  bottom: -17px;
+  left: -101px;
+  max-width: 232px;
+  max-height: 238px;
+  width: 16%;
+  z-index: 4;
+}
+.video-section .video-container .video-element-second img {
+  width: 100%;
+  vertical-align: bottom;
+}
 .video-section .video-wrap {
   position: relative;
   display: -webkit-box;
@@ -717,33 +746,14 @@ COLORS
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-.video-section .video-wrap .video-element-first {
-  position: absolute;
-  top: -108px;
-  right: -188px;
-  max-width: 439px;
-  max-height: 355px;
-  width: 32%;
-}
-.video-section .video-wrap .video-element-first img {
-  width: 100%;
-  vertical-align: bottom;
-}
-.video-section .video-wrap .video-element-second {
-  position: absolute;
-  bottom: -20px;
-  left: -130px;
-  max-width: 232px;
-  max-height: 238px;
-  width: 16%;
-}
-.video-section .video-wrap .video-element-second img {
-  width: 100%;
-  vertical-align: bottom;
+  clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
+  border: 2px solid transparent;
+  background: rgb(17, 155, 255);
+  background: radial-gradient(circle, rgba(17, 155, 255, 0.8) 0%, rgba(0, 117, 255, 0.4) 100%);
 }
 .video-section .video-wrap .video-image {
   width: 100%;
+  clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
 }
 .video-section .video-wrap .video-image img {
   max-width: 100%;
@@ -767,6 +777,7 @@ COLORS
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  z-index: 5;
 }
 
 .dominators-section {
