@@ -7,20 +7,28 @@
 
     .footer-top {
         position: relative;
-        padding-top: 204px;
-        padding-bottom: 122px;
+        padding-top: 153px;
+        padding-bottom: 90px;
 
+        @include min-extra-large {
+            padding-top: 204px;
+            padding-bottom: 122px;
+        }
     }
 
     .footer-section-bg {
         @include full-absolute;
 
         z-index: -3;
-        clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 38% 0, 50% 9%, 100% 9%, 100% 100%, 0 100%);
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
         background: rgb(17,155,255);
         background: radial-gradient(circle, rgba(17,155,255,1) 0%, rgba(17,155,255,0) 100%);
+
+        @include min-extra-large {
+            clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
+        }
 
         &:before {
             content: '';
@@ -30,19 +38,29 @@
             background-size: cover;
             background-position: right center;
             /*background: rgba(#030A19, 1);*/
-            clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 38% 0, 50% 9%, 100% 9%, 100% 100%, 0 100%);
             z-index: -3;
+
+            @include min-extra-large {
+                clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
+            }
         }
     }
 
     .footer-image-element {
         position: absolute;
         right: 0;
-        top: -413px;
-        width: 52%;
-        height: 82%;
+        top: -300px;
+        width: 42%;
+        height: 62%;
         text-align: right;
         z-index: 2;
+
+        @include min-extra-large {
+            top: -413px;
+            width: 52%;
+            height: 82%;
+        }
 
         img {
             max-width: 100%;
@@ -66,8 +84,60 @@
 
     .logo {
         @include min-medium {
+            width: 25%;
+            margin-left: -10px;
+        }
+
+        @include min-extra-large {
             width: 26%;
         }
+
+        a {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+
+            @include min-extra-large {
+                width: 93px;
+                height: 93px;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                vertical-align: bottom;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 30px;
+                left: 0;
+                width: 54px;
+                height: 54px;
+                background: $primary-text-color;
+                @include border-radius(50%);
+                filter: blur(55px);
+                @include transition(all 0.2s);
+
+                @include min-extra-large {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+
+            @include min-medium {
+                &:hover {
+                    &:before {
+                        width: 0;
+                        height: 0;
+                    }
+                }
+            }
+        }
+
     }
 
     .footer-menu {
@@ -79,14 +149,19 @@
         a {
             position: relative;
             @include font_tektur_semiBold;
-            font-size: 30px;
+            font-size: 22px;
             text-transform: uppercase;
             color: $primary-text-color;
             padding-bottom: 6px;
             letter-spacing: 3px;
-            margin-bottom: 51px;
+            margin-bottom: 37px;
             @include transition(all 0.2s);
             @include text-shadow(0 4px 60px rgba(#14AAFF, 0.5));
+
+            @include min-extra-large {
+                font-size: 30px;
+                margin-bottom: 51px;
+            }
 
             &:hover {
                 color: $primary-active-text-color;
@@ -105,27 +180,41 @@
         @include display-flex;
         @include align-items-center;
         @include justify-content-space-between;
-        margin-top: 71px;
+        margin-top: 51px;
+
+        @include min-extra-large {
+            margin-top: 71px;
+        }
 
         .copyright {
-            font-size: 16px;
-            padding-left: 10px;
+            font-size: 13px;
+            padding-left: 0;
+
+            @include min-extra-large {
+                font-size: 13px;
+                padding-left: 10px;
+            }
         }
 
         .policy-wrap {
             a {
                 text-transform: capitalize;
                 text-decoration: underline;
-                font-size: 16px;
+                font-size: 13px;
                 color: $secondary-text-color;
                 @include transition(all 0.2s);
-                margin-left: 56px;
+                margin-left: 40px;
 
                 @include min-medium {
                     &:hover {
                         color: $primary-text-color;
                         text-decoration: none;
                     }
+                }
+
+                @include min-extra-large {
+                    font-size: 16px;
+                    margin-left: 56px;
                 }
             }
         }
@@ -134,13 +223,23 @@
     .subscribe-form {
         margin-bottom: 87px;
 
+        @include min-extra-large {
+            margin-bottom: 62px;
+        }
+
         .title {
             text-transform: uppercase;
             @include font_tektur_semiBold;
-            font-size: 30px;
-            letter-spacing: 3px;
+            font-size: 22px;
+            letter-spacing: 2.5px;
             line-height: 1.4;
-            margin-bottom: 27px;
+            margin-bottom: 22px;
+
+            @include min-extra-large {
+                font-size: 30px;
+                letter-spacing: 3px;
+                margin-bottom: 27px;
+            }
         }
 
         .form-wrap {
@@ -151,10 +250,14 @@
         .field-wrap {
             flex-grow: 1;
             margin-right: 20px;
-            height: 50px;
+            height: 38px;
             padding: 1px;
             background: #27405E;
             clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+
+            @include min-extra-large {
+                height: 50px;
+            }
 
             input {
                 width: 100%;
@@ -186,9 +289,22 @@
             @include justify-content-flex-end;
         }
 
-        a {
+        a.social-link {
+            width: 52px;
+            height: 52px;
+            display: inline-block;
+
+            @include min-extra-large {
+                width: 70px;
+                height: 70px;
+            }
+
             &:not(:first-child) {
-                margin-left: 28px;
+                margin-left: 23px;
+
+                @include min-extra-large {
+                    margin-left: 28px;
+                }
             }
 
             img {
@@ -202,7 +318,11 @@
     }
 
     .footer-bottom-block {
-        padding: 78px 0 87px;
+        padding: 60px 0 70px;
+
+        @include min-extra-large {
+            padding: 78px 0 87px;
+        }
 
         .title {
             text-align: center;
@@ -210,15 +330,21 @@
 
             span {
                 @include font_tektur_bold;
-                font-size: 130px;
+                font-size: 50px;
                 text-transform: uppercase;
                 color: $primary-text-color;
                 letter-spacing: 6px;
-                @include fluid-type(375px, 1920px, 50px, 130px);
+                //@include fluid-type(375px, 1920px, 50px, 130px);
                 @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
 
                 @include min-large {
+                    letter-spacing: 10px;
+                    font-size: 97px;
+                }
+
+                @include min-extra-large {
                     letter-spacing: 13px;
+                    font-size: 130px;
                 }
             }
 
@@ -230,23 +356,31 @@
             }
 
             &:before {
-                top: 65px;
+                top: 47px;
                 right: 97%;
                 width: 281px;
                 width: 20%;
                 height: 55px;
                 height: 31%;
                 background-image: url("./assets/images/footer-title-line-left.svg");
+
+                @include min-extra-large {
+                    top: 65px;
+                }
             }
 
             &:after {
-                top: 53px;
+                top: 39px;
                 left: 96%;
                 width: 284px;
                 height: 44px;
                 width: 20%;
                 height: 31%;
                 background-image: url("./assets/images/footer-title-line-right.svg");
+
+                @include min-extra-large {
+                    top: 53px;
+                }
             }
         }
     }

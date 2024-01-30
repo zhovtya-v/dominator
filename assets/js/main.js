@@ -41,7 +41,7 @@ var aboutSwiper = new Swiper(".about-swiper", {
 
 
 var dominatorsSwiper = new Swiper(".dominators-swiper", {
-    loop: false,
+    loop: true,
     slidesPerView: 1,
     effect: "coverflow",
 
@@ -77,10 +77,10 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
     },
 });
 
-dominatorsSwiper.slideTo(1, false, false);
 
 var marketplaceSwiper = new Swiper(".marketplace-swiper", {
     slidesPerView: 1.2,
+    loop: true,
     spaceBetween: 29,
     breakpoints: {
         992: {
@@ -88,7 +88,12 @@ var marketplaceSwiper = new Swiper(".marketplace-swiper", {
         },
         1200: {
             slidesPerView: 4,
+            spaceBetween: 20,
         },
+        1441: {
+            spaceBetween: 29,
+            slidesPerView: 4,
+        }
     },
     navigation: {
         nextEl: ".swiper-button-next",
