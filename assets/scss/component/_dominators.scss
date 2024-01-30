@@ -296,7 +296,7 @@
             clip-path: polygon(7% 0, 41% 0, 52% 15%, 94% 15%, 100% 24%, 100% 100%, 0 100%, 0 15%);
 
             @include min-large {
-                background-size: 103%;
+                background-size: 125%;
                 background-position: left bottom;
                 clip-path: polygon(6% 0, 42% 0, 53% 13%, 94% 14%, 100% 22%, 100% 100%, 0 100%, 0 11%);
             }
