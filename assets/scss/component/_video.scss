@@ -1,6 +1,14 @@
 .video-section {
     padding: 196px 0 183px;
 
+    @include min-large {
+        padding: 154px 0 120px;
+    }
+
+    @include min-extra-large {
+        padding: 196px 0 183px;
+    }
+
     .video-container {
         position: relative;
 
@@ -12,6 +20,18 @@
             max-height: 355px;
             width: 32%;
             z-index: 4;
+
+            @include min-large {
+                top: -82px;
+                right: -118px;
+                width: 29%;
+            }
+
+            @include min-extra-large {
+                top: -108px;
+                right: -159px;
+                width: 32%;
+            }
 
             img {
                 width: 100%;
@@ -27,6 +47,18 @@
             max-height: 238px;
             width: 16%;
             z-index: 4;
+
+            @include min-large {
+                bottom: -12px;
+                left: -62px;
+                width: 15%;
+            }
+
+            @include min-extra-large {
+                bottom: -17px;
+                left: -101px;
+                width: 16%;;
+            }
 
             img {
                 width: 100%;

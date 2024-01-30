@@ -1,5 +1,13 @@
 .about-section {
-    padding: 128px 0 71px;
+    padding: 60px 0 71px;
+
+    @include min-large {
+        padding: 94px 0 52px;
+    }
+
+    @include min-extra-large {
+        padding: 128px 0 71px;
+    }
 
     .about-container {
         position: relative;
@@ -14,6 +22,16 @@
     .about-element-image {
         position: absolute;
 
+        @include min-large {
+            width: 200px;
+            height: 200px;
+        }
+
+        @include min-extra-large {
+            width: 257px;
+            height: 257px;
+        }
+
         img {
             max-height: 100%;
             max-width: 100%;
@@ -26,34 +44,88 @@
             left: 213px;
             top: -28px;
             z-index: 3;
+
+            @include min-large {
+                left: 164px;
+                top: -24px;
+            }
+
+            @include min-extra-large {
+                left: 213px;
+                top: -28px;
+            }
         }
 
         &.second {
             right: 309px;
             top: -156px;
+
+            @include min-large {
+                right: 236px;
+                top: -120px;
+            }
+
+            @include min-extra-large {
+                right: 309px;
+                top: -156px;
+            }
         }
 
         &.third {
             right: -9px;
             top: -93px;
+
+            @include min-large {
+                right: -2px;
+                top: -73px;
+            }
+
+            @include min-extra-large {
+                right: -9px;
+                top: -93px;
+            }
         }
 
         &.fourth {
-            right: -195px;
-            bottom: 29px;
+
+            right: -141px;
+            bottom: -13px;
+
+            @include min-large {
+                right: -141px;
+                bottom: -13px;
+            }
+
+            @include min-extra-large {
+                right: -195px;
+                bottom: 29px;
+            }
         }
     }
 
     .about-info {
 
-        @include min-medium {
+        @include min-large {
+            max-width: 525px;
+            padding-bottom: 46px;
+        }
+
+        @include min-extra-large {
             max-width: 704px;
             padding-bottom: 74px;
         }
     }
 
     .section-title {
-        margin-bottom: 44px;
+        margin-bottom: 26px;
+
+        @include min-large {
+            margin-bottom: 36px;
+        }
+
+        @include min-extra-large {
+            margin-bottom: 44px;
+        }
 
         span {
             position: relative;
@@ -67,13 +139,37 @@
                 height: 42px;
                 background: url("./assets/images/about-title-line.svg") no-repeat;
                 background-size: cover;
+
+                @include min-large {
+                    top: 29px;
+                    right: -280px;
+                    width: 369px;
+                    height: 41px;
+                }
+
+                @include min-extra-large {
+                    top: 32px;
+                    right: -301px;
+                    width: 367px;
+                    height: 42px;
+                }
             }
         }
     }
 
     .text {
-        line-height: 2;
-        margin-bottom: 60px;
+        line-height: 1.4;
+        margin-bottom: 35px;
+
+        @include min-large {
+            line-height: 1.6;
+            margin-bottom: 47px;
+        }
+
+        @include min-extra-large {
+            line-height: 2;
+            margin-bottom: 60px;
+        }
     }
 
     .button-wrap {
@@ -89,6 +185,20 @@
             height: 25px;
             background: url("./assets/images/about-btn-line.svg") no-repeat;
             background-size: cover;
+
+            @include min-large {
+                top: 16px;
+                left: 102%;
+                width: 148px;
+                height: 21px;
+            }
+
+            @include min-extra-large {
+                top: 20px;
+                left: 105%;
+                width: 183px;
+                height: 25px;
+            }
         }
     }
 
@@ -99,13 +209,14 @@
             padding-right: 60px;
         }
 
-        /*.swiper-slide {
-            &.swiper-slide-active {
-                img {
-                    transform: scale(1);
-                }
-            }
-        }*/
+        @include min-large {
+            width: calc(100% - 525px);
+            padding-right: 60px;
+        }
+
+        @include min-extra-large {
+            width: calc(100% - 704px);
+        }
 
         .swiper-slide-wrap {
             width: 100%;
@@ -132,7 +243,14 @@
         @include display-flex;
         @include justify-content-space-between;
         @include align-items-flex-end;
-        padding-right: 56px;
+
+        @include min-large {
+            padding-right: 29px;
+        }
+
+        @include min-extra-large {
+            padding-right: 56px;
+        }
     }
 
     .swiper-navigation-wrap {

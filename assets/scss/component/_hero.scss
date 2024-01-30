@@ -1,13 +1,17 @@
 .hero-section {
     background: url("./assets/images/hero-bg.png") no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: right bottom;
     position: relative;
     z-index: 1;
 
     @include min-medium {
-        padding: 202px 0 245px;
+        padding: 134px 0 85px;
+        margin-bottom: 45px;
+    }
 
+    @include min-extra-large {
+        padding: 178px 0 125px;
         margin-bottom: 57px;
     }
 
@@ -18,14 +22,45 @@
             @include display-flex;
             @include flex-direction-row-reverse;
             @include justify-content-space-between;
-            //@include align-items-center;
-
         }
     }
 
     .hero-image {
         max-width: 523px;
         width: 100%;
+        position: relative;
+
+        @include min-medium {
+            max-width: 400px;
+        }
+
+        @include min-large {
+            max-width: 575px;
+            margin-right: -137px;
+        }
+
+        @include min-extra-large {
+            max-width: 758px;
+            margin-right: -173px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 86%;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 107px;
+            height: 30px;
+            background: url("./assets/images/hero-image-line.svg") no-repeat;
+            background-size: cover;
+            background-position: right center;
+
+            @include min-extra-large {
+                width: 195px;
+                height: 50px;
+            }
+        }
 
         img {
             max-width: 100%;
@@ -34,22 +69,18 @@
             height: auto;
             vertical-align: bottom;
         }
-
-        @include min-medium {
-            max-width: 400px;
-        }
-
-        @include min-extra-large {
-            max-width: 578px;
-            margin-right: -59px;
-        }
     }
 
     .hero-info {
 
-        @include min-medium {
+        @include min-large {
+            width: calc(100% - 400px);
+            padding-top: 96px;
+        }
+
+        @include min-extra-large {
             width: calc(100% - 540px);
-            padding-top: 104px;
+            padding-top: 128px;
         }
     }
 
@@ -63,10 +94,18 @@
         letter-spacing: 6px;
         line-height: 1;
 
-        @include fluid-type(375px, 1920px, 50px, 130px);
+        //@include fluid-type(375px, 1920px, 50px, 130px);
 
         @include min-large {
+            letter-spacing: 10px;
+            font-size: 97px;
+            margin: 0 0 29px;
+        }
+
+        @include min-extra-large {
             letter-spacing: 13px;
+            font-size: 130px;
+            margin: 0 0 39px;
         }
 
         span {
@@ -82,6 +121,19 @@
             height: 142px;
             background: url("./assets/images/hero-title-line.svg") no-repeat;
             background-size: cover;
+
+            @include min-large {
+                top: 45px;
+                width: 174px;
+                height: 112px;
+            }
+
+            @include min-extra-large {
+                right: 100.5%;
+                top: 63px;
+                width: 231px;
+                height: 142px;
+            }
         }
     }
 
@@ -97,13 +149,32 @@
         @include fluid-type(375px, 1920px, 32px, 76px);
 
         @include min-large {
+            letter-spacing: 5.7px;
+            font-size: 57px;
+            margin: 0 0 44px 4px;
+        }
+
+        @include min-extra-large {
             letter-spacing: 7.7px;
+            font-size: 76px;
+            margin: 0 0 56px 6px;
         }
 
     }
 
     .button-wrap {
         position: relative;
+        margin-bottom: 20px;
+
+        @include min-large {
+            margin-left: 5px;
+            margin-bottom: 40px;
+        }
+
+        @include min-extra-large {
+            margin-left: 9px;
+            margin-bottom: 55px;
+        }
 
         &:before {
             content: '';
@@ -114,12 +185,19 @@
             width: 237px;
             background: url("./assets/images/hero-button-line.svg") no-repeat;
             background-size: cover;
-        }
-    }
 
-    .button {
-        margin-left: 9px;
-        margin-bottom: 55px;
+            @include min-large {
+                top: 14px;
+                height: 40px;
+                width: 179px;
+            }
+
+            @include min-extra-large {
+                top: 20px;
+                height: 53px;
+                width: 237px;
+            }
+        }
     }
 
     .dominator-info {
@@ -136,16 +214,44 @@
             text-transform: uppercase;
             position: relative;
 
+            @include min-large {
+                font-size: 39px;
+                letter-spacing: -1px;
+            }
+
+            @include min-extra-large {
+                font-size: 50px;
+                letter-spacing: 0;
+            }
+
             span {
                 @include font_robotoMono_regular;
                 color: $secondary-text-color;
                 font-size: 18px;
                 text-transform: capitalize;
+
+                @include min-large {
+                    font-size: 16px;
+                }
+
+                @include min-extra-large {
+                    font-size: 18px;
+                }
             }
 
             &:not(:last-child) {
                 padding-right: 51px;
                 margin-right: 47px;
+
+                @include min-large {
+                    padding-right: 37px;
+                    margin-right: 35px;
+                }
+
+                @include min-extra-large {
+                    padding-right: 51px;
+                    margin-right: 47px;
+                }
 
                 &:after {
                     content: '';
@@ -168,20 +274,65 @@
     .dominator-image {
         position: absolute;
 
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+
         &.first {
             left: 9.5%;
             bottom: -80px;
+
+            @include min-large {
+                width: 188px;
+                height: 188px;
+                bottom: -55px;
+            }
+
+            @include min-extra-large {
+                width: 254px;
+                height: 254px;
+                bottom: -78px;
+            }
         }
 
         &.second {
-            left: 53.7%;
+            left: 54%;
             bottom: 44px;
             @include transform(translate(-50%, 0));
+
+            @include min-large {
+                width: 206px;
+                height: 206px;
+                bottom: 37px;
+            }
+
+            @include min-extra-large {
+                width: 275px;
+                height: 275px;
+                bottom: 51px;
+            }
         }
 
         &.third {
             right: 6.6%;
             bottom: 17px;
+
+            @include min-large {
+                width: 180px;
+                height: 180px;
+                bottom: 16px;
+            }
+
+            @include min-extra-large {
+                width: 240px;
+                height: 240px;
+                right: 6.5%;
+                bottom: 20px;
+            }
         }
     }
 }
