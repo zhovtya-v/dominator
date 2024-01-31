@@ -164,7 +164,7 @@ COMMON STYLE END
     width: 380px;
   }
 
-  span {
+  .btn-bg {
     z-index: 2;
     color: $black-text-color;
     font-size: 24px;
@@ -177,11 +177,8 @@ COMMON STYLE END
     @include align-items-center;
     @include justify-content-center;
     @include border-radius(2px);
+    position: relative;
     clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
-    background: url("./assets/images/primary-btn-bg.png") no-repeat;
-    background-size: cover;
-    background-position: center center;
-    @include transition(background 0.15s);
 
     @include min-large {
       font-size: 19px;
@@ -192,6 +189,25 @@ COMMON STYLE END
       font-size: 24px;
       letter-spacing: 2.4px;
       clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
+    }
+
+    &:before {
+      content: '';
+      @include full-absolute;
+      background: linear-gradient(135deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
+      @include transition(opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
+    }
+
+    &:after {
+      content: '';
+      @include full-absolute;
+      background: linear-gradient(270deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
+      @include transition(opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
+      opacity: 0;
+    }
+
+    span {
+      z-index: 3;
     }
   }
 
@@ -204,7 +220,7 @@ COMMON STYLE END
     right: 0;
     clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
     background: linear-gradient(270deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
-    @include transition(background 0.15s);
+    @include transition(background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
     @include border-radius(2px);
 
     @include min-extra-large {
@@ -221,11 +237,23 @@ COMMON STYLE END
     width: 90%;
     @include transform(translate(-50%, -50%));
     @include box-shadow(0 4px 90px rgba(#FF56F6, 0.5));
-    @include transition(box-shadow 0.15s);
+    @include transition(box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
     z-index: 1;
   }
 
   &:hover {
+    span {
+      //background: linear-gradient(270deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
+
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
     &:before {
       background: linear-gradient(135deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
     }
