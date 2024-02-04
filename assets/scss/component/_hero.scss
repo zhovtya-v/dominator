@@ -94,7 +94,21 @@
         letter-spacing: 6px;
         line-height: 1;
 
-        //@include fluid-type(375px, 1920px, 50px, 130px);
+        @include transform(translateX(-100%));
+
+        -webkit-animation-name: rise;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-delay: 1s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+        -webkit-animaiton-fill-mode: forwards;
+        animation-name: transform;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+        animation-fill-mode: forwards;
+
+        //animation-iteration-count: infinite;
 
         @include min-large {
             letter-spacing: 10px;
@@ -109,7 +123,14 @@
         }
 
         span {
-            @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+            //@include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+
+            animation-delay: 3.5s;
+
+            animation-name: shadow;
+            animation-duration: 0.2s;
+            animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+            animation-fill-mode: forwards;
         }
 
         &:before {
@@ -121,6 +142,14 @@
             height: 142px;
             background: url("./assets/images/hero-title-line.svg") no-repeat;
             background-size: cover;
+            opacity: 0;
+
+
+            animation-name: title-line;
+            animation-duration: 0.2s;
+            animation-delay: 3s;
+            animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+            animation-fill-mode: forwards;
 
             @include min-large {
                 top: 45px;

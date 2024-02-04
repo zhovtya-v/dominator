@@ -485,6 +485,22 @@ COLORS
   margin: 0 0 39px;
   letter-spacing: 6px;
   line-height: 1;
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-animation-name: rise;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+  -webkit-animaiton-fill-mode: forwards;
+  animation-name: transform;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+  animation-fill-mode: forwards;
 }
 @media only screen and (min-width: 1201px) {
   .hero-section .title {
@@ -501,9 +517,11 @@ COLORS
   }
 }
 .hero-section .title span {
-  -webkit-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
-  -moz-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
-  text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+  animation-delay: 3.5s;
+  animation-name: shadow;
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+  animation-fill-mode: forwards;
 }
 .hero-section .title:before {
   content: "";
@@ -514,6 +532,12 @@ COLORS
   height: 142px;
   background: url("./assets/images/hero-title-line.svg") no-repeat;
   background-size: cover;
+  opacity: 0;
+  animation-name: title-line;
+  animation-duration: 0.2s;
+  animation-delay: 3s;
+  animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+  animation-fill-mode: forwards;
 }
 @media only screen and (min-width: 1201px) {
   .hero-section .title:before {
@@ -2751,6 +2775,42 @@ COLORS
   width: 100%;
 }
 
+@keyframes transform {
+  0% {
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes shadow {
+  0% {
+    -webkit-text-shadow: 0 4px 60px rgba(17, 155, 255, 0);
+    -moz-text-shadow: 0 4px 60px rgba(17, 155, 255, 0);
+    text-shadow: 0 4px 60px rgba(17, 155, 255, 0);
+  }
+  100% {
+    -webkit-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+    -moz-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+    text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+  }
+}
+@keyframes title-line {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .footer-section {
   position: relative;
   background-size: 100% auto;

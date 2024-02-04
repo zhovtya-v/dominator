@@ -1,0 +1,14 @@
+@keyframes transform {
+    0% {@include transform(translateX(-100%));}
+    100% {@include transform(translateX(0));}
+}
+
+@keyframes shadow {
+    0% {@include text-shadow(0 4px 60px rgba($primary-text-color, 0));}
+    100% {@include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));}
+}
+
+@keyframes title-line {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
