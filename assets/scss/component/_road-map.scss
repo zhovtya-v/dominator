@@ -128,6 +128,10 @@
         &:nth-child(odd) {
             .road-map-card {
                 bottom: -242px;
+
+                @include min-extra-large {
+                    bottom: -326px;
+                }
             }
 
             .number {
@@ -140,7 +144,11 @@
 
         &:nth-child(even) {
             .road-map-card {
-                top: -244px;
+                top: -242px;
+
+                @include min-extra-large {
+                    top: -326px;
+                }
             }
 
             .number {
@@ -162,7 +170,7 @@
 
         @include min-extra-large {
             left: -34px;
-            width: 400px;
+            width: 404px;
             padding: 78px 51px 66px 61px;
         }
 

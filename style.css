@@ -1728,6 +1728,12 @@ COLORS
 .dominators-section .swiper-3d .swiper-slide-shadow-right {
   background-image: none;
 }
+.dominators-section .swiper-slide {
+  opacity: 0.5;
+}
+.dominators-section .swiper-slide-active {
+  opacity: 1;
+}
 .dominators-section .swiper-slide-prev .dominator-item-wrap,
 .dominators-section .swiper-slide-next .dominator-item-wrap {
   margin-top: 40px;
@@ -2374,12 +2380,22 @@ COLORS
 .road-map-section .road-map-item:nth-child(odd) .road-map-card {
   bottom: -242px;
 }
+@media only screen and (min-width: 1441px) {
+  .road-map-section .road-map-item:nth-child(odd) .road-map-card {
+    bottom: -326px;
+  }
+}
 .road-map-section .road-map-item:nth-child(odd) .number:before {
   top: 100%;
   background: linear-gradient(135deg, rgb(7, 30, 56) 0%, rgba(0, 117, 255, 0) 100%);
 }
 .road-map-section .road-map-item:nth-child(even) .road-map-card {
-  top: -244px;
+  top: -242px;
+}
+@media only screen and (min-width: 1441px) {
+  .road-map-section .road-map-item:nth-child(even) .road-map-card {
+    top: -326px;
+  }
 }
 .road-map-section .road-map-item:nth-child(even) .number:before {
   bottom: 100%;
@@ -2396,7 +2412,7 @@ COLORS
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-card {
     left: -34px;
-    width: 400px;
+    width: 404px;
     padding: 78px 51px 66px 61px;
   }
 }
