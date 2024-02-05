@@ -69,6 +69,7 @@ body {
   background: url("./assets/images/site-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center top;
+  background-attachment: fixed;
 
   overflow-x: hidden;
 
@@ -179,6 +180,7 @@ COMMON STYLE END
     @include border-radius(2px);
     position: relative;
     clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
+    background: linear-gradient(92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
 
     @include min-large {
       font-size: 19px;
@@ -191,21 +193,6 @@ COMMON STYLE END
       clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
     }
 
-    &:before {
-      content: '';
-      @include full-absolute;
-      background: linear-gradient(135deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
-      @include transition(opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
-    }
-
-    &:after {
-      content: '';
-      @include full-absolute;
-      background: linear-gradient(270deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
-      @include transition(opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
-      opacity: 0;
-    }
-
     span {
       z-index: 3;
     }
@@ -213,15 +200,11 @@ COMMON STYLE END
 
   &:before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    @include full-absolute;
     clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
     background: linear-gradient(270deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
-    @include transition(background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
-    @include border-radius(2px);
+    @include transition(background 0.15s);
+    //@include border-radius(2px);
 
     @include min-extra-large {
       clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
@@ -237,25 +220,13 @@ COMMON STYLE END
     width: 90%;
     @include transform(translate(-50%, -50%));
     @include box-shadow(0 4px 90px rgba(#FF56F6, 0.5));
-    @include transition(box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14));
+    @include transition(box-shadow 0.15s);
     z-index: 1;
   }
 
   &:hover {
-    span {
-      //background: linear-gradient(270deg, rgba(255,86,246,1) 16%,rgba(185,54,238,1) 50%,rgba(59,172,226,1) 100%);
-
-      &:before {
-        opacity: 0;
-      }
-
-      &:after {
-        opacity: 1;
-      }
-    }
-
-    &:before {
-      background: linear-gradient(135deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
+    .btn-bg {
+      background: linear-gradient(270deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
     }
 
     &:after {
@@ -273,6 +244,7 @@ COMMON STYLE END
   @include display-inline-flex;
   @include border-radius(2px);
   padding: 2px;
+
 
   @include min-large {
     height: 51px;
@@ -296,7 +268,7 @@ COMMON STYLE END
     @include justify-content-center;
     letter-spacing: 1px;
     clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
-    background: linear-gradient(135deg, rgba(141,204,231,1) 0%,rgba(139,234,209,1) 25%,rgba(226,218,136,1) 85%,rgba(228,221,143,1) 100%);
+    background: linear-gradient(92.23deg, #8DCCE7 21.43%, #8BEAD1 50.63%, #E2DA88 100%, #E4DD8F 117.04%);
     @include transition(background 0.15s);
 
     @include min-extra-large {
@@ -332,7 +304,7 @@ COMMON STYLE END
     }
 
     span {
-      background: linear-gradient(270deg, rgba(141,204,231,1) 0%,rgba(139,234,209,1) 25%,rgba(226,218,136,1) 85%,rgba(228,221,143,1) 100%);
+      background: linear-gradient(278deg, #8DCCE7 21.43%, #8BEAD1 50.63%, #E2DA88 100%, #E4DD8F 117.04%);
     }
 
     &:after {
@@ -366,12 +338,13 @@ COMMON STYLE END
     letter-spacing: 2px;
     width: 100%;
     clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
-    background: linear-gradient(to right, rgba(18,155,255,1) 20%,rgba(99,189,255,1) 42%,rgba(0,99,171,1) 91%,rgba(0,82,141,1) 100%);
+    background: linear-gradient(92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%),
+    linear-gradient(272.52deg, #FFA6FA 47.49%, #3C79D5 98.81%);
 
     svg {
-      width: 12px;
+      width: 24px;
       height: auto;
-      margin-left: 9px;
+      margin-left: 4px;
     }
   }
 
@@ -379,7 +352,7 @@ COMMON STYLE END
     content: '';
     @include full-absolute;
     clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
-    background: linear-gradient(45deg, rgba(10,108,179,1) 0%,rgba(93,184,251,1) 50%);
+    background: linear-gradient(272.52deg, #FFA6FA 47.49%, #3C79D5 98.81%);
     @include transition(background 0.15s);
   }
 
@@ -391,22 +364,19 @@ COMMON STYLE END
     height: 80%;
     width: 92%;
     @include transform(translate(-50%, -50%));
-    @include box-shadow(0 4px 50px rgba(#129BFF, 0.5));
+    @include box-shadow(0 4px 44px rgba(#FF56F6, 0.5));
     @include transition(box-shadow 0.15s);
     z-index: 1;
   }
 
   &:hover {
     span {
-      background: linear-gradient(to left, rgba(18,155,255,1) 20%,rgba(99,189,255,1) 42%,rgba(0,99,171,1) 91%,rgba(0,82,141,1) 100%);
-    }
-
-    &:before {
-      background: linear-gradient(90deg, rgba(10,108,179,1) 0%,rgba(93,184,251,1) 50%);
+      background: linear-gradient(272.52deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%),
+      linear-gradient(92.23deg, #FFA6FA 47.49%, #3C79D5 98.81%);
     }
 
     &:after {
-      box-shadow: 0 0 0 rgba(#91E1DC, 0.5);
+      @include box-shadow(0 0 0 rgba(#FF56F6, 0.5));
     }
   }
 }

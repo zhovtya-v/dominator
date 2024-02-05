@@ -1,6 +1,10 @@
 .video-section {
     padding: 196px 0 183px;
 
+    background: url("./assets/images/video-section-bg.png") no-repeat;
+    background-size: cover;
+    background-position: center top;
+
     @include min-large {
         padding: 154px 0 120px;
     }
