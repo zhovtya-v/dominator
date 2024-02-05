@@ -1135,6 +1135,9 @@ COLORS
 
 .video-section {
   padding: 196px 0 183px;
+  background: url("./assets/images/video-section-bg.png") no-repeat;
+  background-size: cover;
+  background-position: center top;
 }
 @media only screen and (min-width: 1201px) {
   .video-section {
@@ -1774,6 +1777,38 @@ COLORS
   position: relative;
   padding: 279px 0 132px;
   margin-bottom: 23px;
+  /*.swiper-wrapper {
+      &:after {
+          content: '';
+          position: absolute;
+          bottom: 130px;
+          right: 210px;
+          background: #F250F4;
+          width: 500px;
+          height: 500px;
+          opacity: 0.15;
+          filter: blur(120px);
+      }
+  }*/
+}
+.marketplace-section .marketplace-container {
+  position: relative;
+}
+.marketplace-section .marketplace-container:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  background: #F250F4;
+  width: 500px;
+  height: 500px;
+  opacity: 0.2;
+  filter: blur(224px);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section {
@@ -1782,7 +1817,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section {
-    padding: 279px 0 132px;
+    padding: 281px 0 116px;
   }
 }
 .marketplace-section .marketplace-section-bg {
@@ -1911,8 +1946,11 @@ COLORS
     bottom: -150px;
   }
 }
+.marketplace-section .swiper-slide {
+  z-index: 2;
+}
 .marketplace-section .marketplace-swiper {
-  margin-bottom: 132px;
+  padding-bottom: 132px;
   margin-top: -61px;
   padding-top: 197px;
   padding-right: 15px;
@@ -1921,14 +1959,14 @@ COLORS
   .marketplace-section .marketplace-swiper {
     margin-top: -46px;
     padding-top: 148px;
-    margin-bottom: 98px;
+    padding-bottom: 98px;
   }
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .marketplace-swiper {
-    margin-bottom: 132px;
+    padding-bottom: 123px;
     margin-top: -61px;
-    padding-top: 197px;
+    padding-top: 174px;
   }
 }
 .marketplace-section .swiper-navigation-wrap {
@@ -1947,21 +1985,54 @@ COLORS
 }
 .marketplace-section .swiper-slide-wrap {
   position: relative;
-  padding: 24px 21px 53px 24px;
+  padding: 27px 23px 33px 24px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .swiper-slide-wrap {
-    padding: 19px 16px 42px 18px;
+    padding: 19px 16px 25px 18px;
   }
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .swiper-slide-wrap {
-    padding: 24px 21px 53px 24px;
+    padding: 27px 23px 33px 24px;
   }
+}
+.marketplace-section .swiper-slide-wrap.water .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #003F7E 0%, #238CE3 100%);
+}
+.marketplace-section .swiper-slide-wrap.water .character {
+  border-color: #005897;
+  color: #005897;
+}
+.marketplace-section .swiper-slide-wrap.neutral .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #464646 0%, #A69167 100%), radial-gradient(108.62% 192.22% at 6.9% 18.81%, #9D8102 0%, #C6C68F 100%);
+}
+.marketplace-section .swiper-slide-wrap.neutral .character {
+  border-color: #595854;
+  color: #595854;
+}
+.marketplace-section .swiper-slide-wrap.epic .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+}
+.marketplace-section .swiper-slide-wrap.epic .character {
+  border-color: #884784;
+  color: #884784;
+}
+.marketplace-section .swiper-slide-wrap.gold .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #9D8102 0%, #C6C68F 100%);
+}
+.marketplace-section .swiper-slide-wrap.gold .character {
+  border-color: #9D8102;
+  color: #9D8102;
 }
 .marketplace-section .swiper-slide-wrap-bg {
   position: absolute;
@@ -1969,7 +2040,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  clip-path: polygon(0 0, 87% 0, 100% 6%, 100% 100%, 18% 100%, 0 93%);
+  clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
   z-index: -1;
   background: rgb(17, 155, 255);
   background: linear-gradient(to right, rgba(17, 155, 255, 0.6) 0%, rgba(17, 155, 255, 0.2) 46%, rgba(17, 155, 255, 0.6) 100%);
@@ -1985,10 +2056,10 @@ COLORS
   left: 2px;
   bottom: 2px;
   right: 2px;
-  clip-path: polygon(0 0, 87% 0, 100% 6%, 100% 100%, 18% 100%, 0 93%);
+  clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
   background: url("./assets/images/marketplace-card-bg.png") no-repeat;
-  background-size: cover;
-  background-position: center top;
+  background-size: auto;
+  background-position: center bottom;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
@@ -1999,28 +2070,9 @@ COLORS
     background-size: 105%;
   }
 }
-.marketplace-section .item-ellipse {
-  position: absolute;
-  width: 197px;
-  height: 197px;
-  border-radius: 50%;
-  display: block;
-  border: 1px solid #fff;
-  background: #45A3FF;
-  filter: blur(124px);
-}
-.marketplace-section .item-ellipse.first {
-  top: 0;
-  right: 0;
-}
-.marketplace-section .item-ellipse.second {
-  bottom: 0;
-  left: 0;
-}
 .marketplace-section .dominator-image {
   width: 100%;
-  height: 100%;
-  max-height: 218px;
+  height: 158px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2031,40 +2083,58 @@ COLORS
   -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 25px;
+  clip-path: polygon(87% 0, 100% 14%, 100% 100%, 0 100%, 0 0);
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+.marketplace-section .dominator-image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url("./assets/images/item-dominator-bg-image.png") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .dominator-image {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .dominator-image {
-    margin-bottom: 25px;
+    height: 218px;
   }
 }
 .marketplace-section .dominator-image img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 130px;
+  max-height: 130px;
   width: auto;
   height: auto;
   vertical-align: bottom;
+  z-index: 2;
+}
+@media only screen and (min-width: 1441px) {
+  .marketplace-section .dominator-image img {
+    max-width: 174px;
+    max-height: 174px;
+  }
 }
 .marketplace-section .dominator-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-bottom: 1px;
-}
-@media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-info {
-    margin-bottom: 12px;
-  }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+  /*@include min-extra-large {
+      margin-bottom: 12px;
+  }*/
 }
 .marketplace-section .dominator-info .name {
   text-transform: uppercase;
@@ -2074,6 +2144,8 @@ COLORS
   font-style: normal;
   color: #119BFF;
   letter-spacing: 1px;
+  flex: 1 0 100%;
+  margin-bottom: 12px;
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .dominator-info .name {
@@ -2081,33 +2153,75 @@ COLORS
     letter-spacing: 1.8px;
   }
 }
-.marketplace-section .dominator-info .id {
-  font-size: 14px;
+.marketplace-section .dominator-info .rating {
+  flex: 1 0 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
-@media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-info .id {
-    font-size: 16px;
-  }
-}
-.marketplace-section .dominator-rating {
-  margin-bottom: 9px;
-  max-width: 76px;
-}
-@media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-rating {
-    max-width: 104px;
-  }
-}
-.marketplace-section .dominator-rating img {
+.marketplace-section .dominator-info .rating img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
   vertical-align: bottom;
 }
+.marketplace-section .dominator-info .level {
+  flex: 1 0 50%;
+  text-align: right;
+  color: #557192;
+  font-size: 16px;
+}
+.marketplace-section .dominator-info .level span {
+  color: #119BFF;
+}
+.marketplace-section .id {
+  font-size: 14px;
+  line-height: 14px;
+  flex: 1 0 50%;
+}
+@media only screen and (min-width: 1441px) {
+  .marketplace-section .id {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+.marketplace-section .dominator-info-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  flex: 1 0 100%;
+  margin-top: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed rgba(85, 113, 146, 0.2392156863);
+}
+.marketplace-section .dominator-info-line span {
+  font-size: 14px;
+}
+@media only screen and (min-width: 1441px) {
+  .marketplace-section .dominator-info-line {
+    margin-top: 12px;
+    padding-bottom: 7px;
+  }
+}
+.marketplace-section .dominator-price {
+  margin-top: 12px;
+}
 .marketplace-section .dominator-price .price-title {
   font-size: 14px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .dominator-price .price-title {
@@ -2121,50 +2235,37 @@ COLORS
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-size: 21px;
+  font-size: 18px;
   font-family: "Tektur", sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #119BFF;
-  letter-spacing: 3px;
-  margin-bottom: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 21px;
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .dominator-price .price {
-    font-size: 30px;
-    margin-bottom: 17px;
+    font-size: 18px;
   }
 }
-.marketplace-section .dominator-price .price img {
+.marketplace-section .dominator-price .icon {
+  margin-left: 10px;
+  display: inline-block;
+}
+.marketplace-section .dominator-price .icon img {
   max-width: 27px;
   max-height: 27px;
   width: auto;
   height: auto;
   vertical-align: bottom;
-  margin-left: 12px;
 }
 @media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-price .price img {
+  .marketplace-section .dominator-price .icon img {
     max-width: 38px;
     max-height: 38px;
-    margin-left: 15px;
   }
 }
-.marketplace-section .dominator-character {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 17px;
-}
-@media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-character {
-    margin-bottom: 27px;
-  }
-}
-.marketplace-section .dominator-character span {
+.marketplace-section .character {
   border: 1px solid;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -2172,26 +2273,13 @@ COLORS
   border-radius: 4px;
   font-size: 12px;
   padding: 4px 9px;
-  margin-right: 6px;
+  display: inline-block;
 }
 @media only screen and (min-width: 1441px) {
-  .marketplace-section .dominator-character span {
+  .marketplace-section .character {
     font-size: 16px;
     padding: 5px 11px;
-    margin-right: 11px;
   }
-}
-.marketplace-section .dominator-character span.epic {
-  border-color: #884784;
-  color: #884784;
-}
-.marketplace-section .dominator-character span.water {
-  border-color: #005897;
-  color: #005897;
-}
-.marketplace-section .dominator-character span.neutral {
-  border-color: #595854;
-  color: #595854;
 }
 .marketplace-section .button-wrap {
   display: inline-block;
@@ -2215,9 +2303,9 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section .button-wrap:before {
-    right: 103%;
-    width: 173px;
-    height: 26px;
+    right: 104%;
+    width: 220px;
+    height: 34px;
   }
 }
 .marketplace-section .secondary-button {
@@ -2249,7 +2337,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section {
-    padding: 210px 0 190px;
+    padding: 221px 0 190px;
   }
 }
 .road-map-section .road-map-container {
@@ -2644,9 +2732,10 @@ COLORS
 
 .faq-section {
   margin-bottom: 21px;
-  background: url("./assets/images/faq-image-elipse.png") no-repeat;
-  background-size: auto 100%;
-  background-position: 22% top;
+  background-image: url("./assets/images/faq-section-bg.png"), url("./assets/images/faq-image-elipse.png");
+  background-repeat: no-repeat;
+  background-size: contain, auto 100%;
+  background-position: left bottom, 22% top;
 }
 .faq-section .faq-container {
   max-width: 1296px;
@@ -2741,7 +2830,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .button-wrap:before {
-    top: -13px;
+    top: 15px;
     width: 227px;
     height: 48px;
   }
@@ -2755,7 +2844,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .button-wrap:after {
-    top: -10px;
+    top: 18px;
     width: 284px;
     height: 44px;
   }
@@ -3261,6 +3350,7 @@ body {
   background: url("./assets/images/site-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center top;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 @media only screen and (min-width: 1201px) {
@@ -3403,6 +3493,7 @@ COMMON STYLE END
   border-radius: 2px;
   position: relative;
   clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
+  background: linear-gradient(92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
 }
 @media only screen and (min-width: 1201px) {
   .primary-button .btn-bg {
@@ -3417,35 +3508,6 @@ COMMON STYLE END
     clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
   }
 }
-.primary-button .btn-bg:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(135deg, rgb(255, 86, 246) 16%, rgb(185, 54, 238) 50%, rgb(59, 172, 226) 100%);
-  -webkit-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -moz-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -ms-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -o-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-}
-.primary-button .btn-bg:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(270deg, rgb(255, 86, 246) 16%, rgb(185, 54, 238) 50%, rgb(59, 172, 226) 100%);
-  -webkit-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -moz-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -ms-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -o-transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  transition: opacity 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  opacity: 0;
-}
 .primary-button .btn-bg span {
   z-index: 3;
 }
@@ -3458,15 +3520,11 @@ COMMON STYLE END
   right: 0;
   clip-path: polygon(5% 0, 100% 0, 100% 80%, 96% 100%, 0 100%, 0 22%);
   background: linear-gradient(270deg, rgb(255, 166, 250) 0%, rgb(255, 166, 250) 50%, rgb(60, 121, 212) 100%);
-  -webkit-transition: background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -moz-transition: background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -ms-transition: background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -o-transition: background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  transition: background 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  -ms-transition: background 0.15s;
+  -o-transition: background 0.15s;
+  transition: background 0.15s;
 }
 @media only screen and (min-width: 1441px) {
   .primary-button:before {
@@ -3488,21 +3546,15 @@ COMMON STYLE END
   -webkit-box-shadow: 0 4px 90px rgba(255, 86, 246, 0.5);
   -moz-box-shadow: 0 4px 90px rgba(255, 86, 246, 0.5);
   box-shadow: 0 4px 90px rgba(255, 86, 246, 0.5);
-  -webkit-transition: box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -moz-transition: box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -ms-transition: box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  -o-transition: box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
-  transition: box-shadow 0.3s cubic-bezier(0.5, -0.15, 0.5, 1.14);
+  -webkit-transition: box-shadow 0.15s;
+  -moz-transition: box-shadow 0.15s;
+  -ms-transition: box-shadow 0.15s;
+  -o-transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s;
   z-index: 1;
 }
-.primary-button:hover span:before {
-  opacity: 0;
-}
-.primary-button:hover span:after {
-  opacity: 1;
-}
-.primary-button:hover:before {
-  background: linear-gradient(135deg, rgb(255, 166, 250) 0%, rgb(255, 166, 250) 50%, rgb(60, 121, 212) 100%);
+.primary-button:hover .btn-bg {
+  background: linear-gradient(270deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
 }
 .primary-button:hover:after {
   -webkit-box-shadow: 0 0 0 rgba(255, 86, 246, 0.5);
@@ -3556,7 +3608,7 @@ COMMON STYLE END
   justify-content: center;
   letter-spacing: 1px;
   clip-path: polygon(6% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 22%);
-  background: linear-gradient(135deg, rgb(141, 204, 231) 0%, rgb(139, 234, 209) 25%, rgb(226, 218, 136) 85%, rgb(228, 221, 143) 100%);
+  background: linear-gradient(92.23deg, #8DCCE7 21.43%, #8BEAD1 50.63%, #E2DA88 100%, #E4DD8F 117.04%);
   -webkit-transition: background 0.15s;
   -moz-transition: background 0.15s;
   -ms-transition: background 0.15s;
@@ -3610,7 +3662,7 @@ COMMON STYLE END
   background: linear-gradient(135deg, rgb(145, 203, 230) 0%, rgb(222, 209, 152) 100%);
 }
 .secondary-button:hover span {
-  background: linear-gradient(270deg, rgb(141, 204, 231) 0%, rgb(139, 234, 209) 25%, rgb(226, 218, 136) 85%, rgb(228, 221, 143) 100%);
+  background: linear-gradient(278deg, #8DCCE7 21.43%, #8BEAD1 50.63%, #E2DA88 100%, #E4DD8F 117.04%);
 }
 .secondary-button:hover:after {
   -webkit-box-shadow: 0 0 0 rgba(145, 225, 220, 0.5);
@@ -3656,12 +3708,12 @@ COMMON STYLE END
   letter-spacing: 2px;
   width: 100%;
   clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
-  background: linear-gradient(to right, rgb(18, 155, 255) 20%, rgb(99, 189, 255) 42%, rgb(0, 99, 171) 91%, rgb(0, 82, 141) 100%);
+  background: linear-gradient(92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%), linear-gradient(272.52deg, #FFA6FA 47.49%, #3C79D5 98.81%);
 }
 .buy-button span svg {
-  width: 12px;
+  width: 24px;
   height: auto;
-  margin-left: 9px;
+  margin-left: 4px;
 }
 .buy-button:before {
   content: "";
@@ -3671,7 +3723,7 @@ COMMON STYLE END
   bottom: 0;
   right: 0;
   clip-path: polygon(94% 0, 100% 26%, 100% 100%, 7% 100%, 0 78%, 0 0);
-  background: linear-gradient(45deg, rgb(10, 108, 179) 0%, rgb(93, 184, 251) 50%);
+  background: linear-gradient(272.52deg, #FFA6FA 47.49%, #3C79D5 98.81%);
   -webkit-transition: background 0.15s;
   -moz-transition: background 0.15s;
   -ms-transition: background 0.15s;
@@ -3690,9 +3742,9 @@ COMMON STYLE END
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0 4px 50px rgba(18, 155, 255, 0.5);
-  -moz-box-shadow: 0 4px 50px rgba(18, 155, 255, 0.5);
-  box-shadow: 0 4px 50px rgba(18, 155, 255, 0.5);
+  -webkit-box-shadow: 0 4px 44px rgba(255, 86, 246, 0.5);
+  -moz-box-shadow: 0 4px 44px rgba(255, 86, 246, 0.5);
+  box-shadow: 0 4px 44px rgba(255, 86, 246, 0.5);
   -webkit-transition: box-shadow 0.15s;
   -moz-transition: box-shadow 0.15s;
   -ms-transition: box-shadow 0.15s;
@@ -3701,13 +3753,12 @@ COMMON STYLE END
   z-index: 1;
 }
 .buy-button:hover span {
-  background: linear-gradient(to left, rgb(18, 155, 255) 20%, rgb(99, 189, 255) 42%, rgb(0, 99, 171) 91%, rgb(0, 82, 141) 100%);
-}
-.buy-button:hover:before {
-  background: linear-gradient(90deg, rgb(10, 108, 179) 0%, rgb(93, 184, 251) 50%);
+  background: linear-gradient(272.52deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%), linear-gradient(92.23deg, #FFA6FA 47.49%, #3C79D5 98.81%);
 }
 .buy-button:hover:after {
-  box-shadow: 0 0 0 rgba(145, 225, 220, 0.5);
+  -webkit-box-shadow: 0 0 0 rgba(255, 86, 246, 0.5);
+  -moz-box-shadow: 0 0 0 rgba(255, 86, 246, 0.5);
+  box-shadow: 0 0 0 rgba(255, 86, 246, 0.5);
 }
 
 .swiper-button-prev {
