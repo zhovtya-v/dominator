@@ -3,8 +3,7 @@
     background-size: auto;
     background-position: center bottom;
     position: relative;
-
-    padding: 69px 0 138px;
+    padding: 32px 0 134px;
 
     @include min-large {
         padding: 69px 0 105px;
@@ -14,10 +13,13 @@
         padding: 69px 0 138px;
     }
 
-
     .section-title {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 39px;
+
+        @include min-small {
+            margin-bottom: 80px;
+        }
 
         @include min-large {
             margin-bottom: 109px;
@@ -29,6 +31,10 @@
 
         span {
             position: relative;
+
+            @include max-small {
+                line-height: 1.4;
+            }
 
             &:before, &:after {
                 content: '';
@@ -84,7 +90,12 @@
     }
 
     .dominators-swiper {
-        margin-bottom: 40px;
+        margin-bottom: 48px;
+        padding: 0 20px;
+
+        @include min-small {
+            padding: 0 20px;
+        }
 
         @include min-large {
             margin-bottom: 57px;
@@ -97,7 +108,7 @@
 
     .swiper-navigation-wrap {
         position: absolute;
-        top: 240px;
+        top: 200px;
         left: 50%;
         max-width: 994px;
         width: 100%;
@@ -105,6 +116,12 @@
         @include justify-content-space-between;
         @include transform(translate(-50%,0));
         z-index: 10;
+        padding: 0 5px;
+
+        @include min-medium {
+            top: 240px;
+            padding: 0;
+        }
 
         @include min-large {
             top: 180px;
@@ -123,13 +140,17 @@
         &:before {
             content: '';
             position: absolute;
-            bottom: 100%;
-            left: 50%;
-            width: 25px;
-            height: 88px;
-            @include transform(translateX(-50%));
-            background: url("./assets/images/dominator-btn-line.svg") no-repeat;
-            background-size: cover;
+
+
+            @include min-medium {
+                bottom: 100%;
+                left: 50%;
+                width: 25px;
+                height: 88px;
+                @include transform(translateX(-50%));
+                background: url("./assets/images/dominator-btn-line.svg") no-repeat;
+                background-size: cover;
+            }
 
             @include min-large {
                 width: 20px;
@@ -149,14 +170,18 @@
 
     .dominator-item-wrap {
         text-align: center;
+
+        @include max-small {
+            padding-bottom: 17px;
+        }
     }
 
     .dominator-info-wrap {
         position: relative;
-        padding: 46px 59px 100px 66px;
+        padding: 37px 26px 44px 26px;
         @include display-flex;
         @include flex-wrap-wrap;
-        margin-bottom: 74px;
+        margin-bottom: 47px;
         text-align: left;
 
         @include min-large {
@@ -170,10 +195,15 @@
         }
 
         .title {
-            letter-spacing: 3.6px;
-            margin-bottom: 39px;
+            letter-spacing: 3.2px;
+            margin-bottom: 12px;
             color: $primary-text-color;
             flex: 1 0 100%;
+
+            @include max-small {
+                font-size: 16px;
+                order: 1;
+            }
 
             @include min-large {
                 margin-bottom: 26px;
@@ -204,8 +234,14 @@
 
         .name {
             flex: 1 0 40%;
-            margin-bottom: 38px;
+            margin-bottom: 0;
             letter-spacing: 1px;
+
+            @include max-small {
+                font-size: 16px;
+                flex: 1 0 100%;
+                order: 3;
+            }
 
             @include min-large {
                 margin-bottom: 28px;
@@ -214,13 +250,26 @@
             @include min-extra-large {
                 margin-bottom: 38px;
             }
+
+            span {
+                @include max-small {
+                    display: inline-block;
+                }
+            }
         }
 
         .rating {
             flex: 1 0 24%;
 
+            @include max-small {
+                font-size: 16px;
+                flex: 1 0 100%;
+                order: 2;
+                margin-bottom: 15px;
+            }
+
             span {
-                margin-bottom: 16px;
+                margin-bottom: 2px;
 
                 @include min-large {
                     margin-bottom: 5px;
@@ -251,13 +300,19 @@
                 line-height: 1.45;
             }
 
+            @include max-small {
+                order: 4;
+                font-size: 14px;
+                padding-right: 0;
+            }
+
             span {
                 display: block;
                 color: $primary-text-color;
-                margin-bottom: 8px;
+                margin-bottom: 2px;
 
-                @include min-large {
-                    margin-bottom: 2px;
+                @include max-small {
+                    font-size: 16px;
                 }
 
                 @include min-extra-large {
@@ -269,7 +324,7 @@
 
     .dominator-item-bg {
         @include full-absolute;
-        clip-path: polygon(7% 0, 41% 0, 52% 15%, 94% 15%, 100% 24%, 100% 100%, 0 100%, 0 15%);
+        clip-path: polygon(7% 0, 60% 0, 70% 5%, 94% 5%, 100% 8%, 100% 100%, 0 100%, 0 4%);
         z-index: -1;
         border: 2px solid transparent;
         border-left-width: 1px;
@@ -293,7 +348,7 @@
             background-size: cover;
             background-position: left top;
 
-            clip-path: polygon(7% 0, 41% 0, 52% 15%, 94% 15%, 100% 24%, 100% 100%, 0 100%, 0 15%);
+            clip-path: polygon(7% 0, 60% 0, 70% 5%, 94% 5%, 100% 8%, 100% 100%, 0 100%, 0 4%);
 
             @include min-large {
                 background-size: 125%;
@@ -311,9 +366,9 @@
 
     .dominator-image-wrap {
         position: absolute;
-        bottom: -125px;
-        left: -72px;
-        right: -87px;
+        bottom: -54px;
+        left: -25px;
+        right: -25px;
 
         @include min-large {
             left: -57px;
@@ -337,22 +392,6 @@
     .dominator-bottom-image-wrap {
         position: relative;
 
-        >img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            vertical-align: bottom;
-
-            @include min-large {
-                max-width: 88%;
-            }
-
-            @include min-extra-large {
-                max-width: 100%;
-            }
-        }
-
         &:after {
             content: '';
             position: absolute;
@@ -374,10 +413,10 @@
             @include transform(translate(-50%, -50%));
 
             color: $primary-text-color;
-            font-size: 50px;
+            font-size: 30px;
             @include font_tektur_medium;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
 
             @include min-large {
                 font-size: 38px;
@@ -388,6 +427,27 @@
                 font-size: 50px;
                 letter-spacing: 5px;
             }
+        }
+    }
+
+    .image-wrap {
+        max-width: 93%;
+        margin: 0 auto;
+
+        @include min-large {
+            max-width: 88%;
+        }
+
+        @include min-extra-large {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
         }
     }
 
@@ -477,6 +537,14 @@
         .title, .name, .rating, .description, .dominator-item-bg {
             opacity: 0;
             visibility: hidden;
+        }
+    }
+
+    .swiper-pagination {
+        margin-top: 10px;
+
+        @include min-medium {
+            display: none;
         }
     }
 }

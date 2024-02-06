@@ -33,6 +33,7 @@ var aboutSwiper = new Swiper(".about-swiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
+
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -44,6 +45,7 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
     loop: true,
     slidesPerView: 1,
     effect: "coverflow",
+    centeredSlides: true,
 
     coverflowEffect: {
         rotate: 0,
@@ -75,16 +77,23 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
 });
 
 
 var marketplaceSwiper = new Swiper(".marketplace-swiper", {
-    slidesPerView: 1.2,
+    //slidesPerView: 1.2,
     loop: true,
-    spaceBetween: 29,
+    spaceBetween: 21,
+    slidesPerView: 'auto',
     breakpoints: {
         992: {
             slidesPerView: 3,
+            spaceBetween: 29,
         },
         1200: {
             slidesPerView: 4,
