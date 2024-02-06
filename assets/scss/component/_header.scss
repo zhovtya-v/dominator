@@ -234,10 +234,13 @@
 
     .menu-left {
         @include min-medium {
+            @include display-flex;
+
             a {
                 margin-right: 67px;
             }
         }
+
         @include min-extra-large {
             a {
                 margin-right: 67px;

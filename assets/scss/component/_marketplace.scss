@@ -5,12 +5,25 @@
 
     .marketplace-container {
         position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: calc(100% - 320px);
+            left: 0;
+            background: $primary-bg-color;
+            width: 493px;
+            height: 585px;
+            opacity: 0.2;
+            filter: blur(224px);
+        }
+
         &:after {
             content: '';
             position: absolute;
             top: 50%;
             right: 100px;
-            background: #F250F4;
+            background: $secondary-bg-color;
             width: 500px;
             height: 500px;
             opacity: 0.2;
@@ -35,6 +48,7 @@
         border-bottom: 2px solid transparent;
         background: rgb(17,155,255);
         background: radial-gradient(circle, rgba(17,155,255,1) 0%, rgba(17,155,255,0) 100%);
+        z-index: 1;
 
         @include min-large {
             clip-path: polygon(70% 9%, 78% 0%, 100% 0, 100% 89%, 55% 89%, 40% 105%, 0 100%, 0 9%);
@@ -62,11 +76,24 @@
                 clip-path: polygon(69% 10%, 78% 0%, 100% 0, 100% 89%, 54% 89%, 44% 100%, 0 100%, 0 10%);
             }
         }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 0;
+            background: $primary-bg-color;
+            width: 493px;
+            height: 585px;
+            opacity: 0.15;
+            filter: blur(224px);
+        }
     }
 
     .section-title {
         //margin-bottom: 136px;
         position: relative;
+        z-index: 2;
 
         &:before {
             content: '';
@@ -93,6 +120,8 @@
                 height: 39px;
             }
         }
+
+
     }
 
     .marketplace-section-element {
