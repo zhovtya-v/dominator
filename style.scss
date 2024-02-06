@@ -58,6 +58,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+ul {
+  @include list;
+}
 
 body {
   @include font_robotoMono_regular;
@@ -125,7 +128,7 @@ COMMON STYLE END
   }
 
   span {
-    @include text-shadow(0 4px 60px rgba(#14AAFF, 0.5));
+    @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
   }
 
 }

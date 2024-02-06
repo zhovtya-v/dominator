@@ -4,7 +4,6 @@
     background-size: 100% auto;
     background-position: center top;
 
-
     .footer-top {
         position: relative;
         padding-top: 153px;
@@ -14,12 +13,42 @@
             padding-top: 204px;
             padding-bottom: 122px;
         }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background: $primary-bg-color;
+            width: 493px;
+            height: 585px;
+            opacity: 0.15;
+            filter: blur(224px);
+            @include transform(translateY(-50%));
+            z-index: 2;
+        }
+
+        .footer-container {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: calc(100% + 40px);
+                left: 13%;
+                background: $secondary-bg-color;
+                width: 315px;
+                height: 374px;
+                opacity: 0.2;
+                filter: blur(224px);
+            }
+        }
     }
 
     .footer-section-bg {
         @include full-absolute;
 
-        z-index: -3;
+        z-index: 1;
         clip-path: polygon(0 0, 38% 0, 50% 9%, 100% 9%, 100% 100%, 0 100%);
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
@@ -44,6 +73,18 @@
             @include min-extra-large {
                 clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
             }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 15%;
+            background: $secondary-bg-color;
+            width: 315px;
+            height: 374px;
+            opacity: 0.15;
+            filter: blur(224px);
         }
     }
 
@@ -155,17 +196,34 @@
             padding-bottom: 6px;
             letter-spacing: 3px;
             margin-bottom: 37px;
+            display: inline-block;
             @include transition(all 0.2s);
-            @include text-shadow(0 4px 60px rgba(#14AAFF, 0.5));
+            @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
 
             @include min-extra-large {
                 font-size: 30px;
                 margin-bottom: 51px;
             }
 
+            &:after {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                content: '';
+                background: linear-gradient(to right, rgba(17,155,255,0) 0%,rgba(17,155,255,1) 50%,rgba(17,155,255,0) 100%);
+                @include transition(all 0.2s);
+                @include transform(translateX(-50%));
+            }
+
             &:hover {
                 color: $primary-active-text-color;
-                @include text-shadow(0 0 0 rgba(#14AAFF, 0));
+                @include text-shadow(0 0 0 rgba($shadow-text-color, 0));
+
+                &:after {
+                    width: 100%;
+                }
             }
         }
     }
