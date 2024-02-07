@@ -1,5 +1,5 @@
 .road-map-section {
-    padding: 153px 0 136px;
+    padding: 65px 0 136px;
     background: url("./assets/images/road-map-section-bg.png") no-repeat;
     background-size: auto;
     background-position: center center;
@@ -10,12 +10,19 @@
     }
 
     .road-map-container {
-        @include display-flex;
+
+        @include min-medium {
+            @include display-flex;
+        }
     }
 
     .section-title {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 84px;
+
+        @include min-medium {
+            margin-bottom: 30px;
+        }
 
         span {
             position: relative;
@@ -39,7 +46,6 @@
                     width: 361px;
                     height: 33px;
                 }
-
             }
 
             &:after {
@@ -60,8 +66,12 @@
 
     .road-map-line {
         position: relative;
-        padding: 290px 0;
+
         margin-bottom: 25px;
+
+        @include min-medium {
+            padding: 290px 0;
+        }
 
         @include min-extra-large {
             padding: 400px 0;
@@ -77,12 +87,17 @@
             left: 0;
             @include transform(translateY(-50%));
             z-index: 1;
+            display: none;
+
+            @include min-medium {
+                display: block;
+            }
         }
     }
 
     .number {
-        width: 41px;
-        height: 48px;
+        width: 49px;
+        height: 61px;
         background: url("./assets/images/road-map-number-bg.png") no-repeat;
         background-size: cover;
         @include display-flex;
@@ -94,10 +109,21 @@
         color: #030A1A;
         position: relative;
 
+        @include min-medium {
+            width: 41px;
+            height: 48px;
+        }
+
         @include min-extra-large {
             width: 54px;
             height: 65px;
             font-size: 26px;
+        }
+
+        @include max-medium {
+            position: absolute;
+            top: -30зч;
+            left: 0;
         }
 
         &:before {
@@ -107,30 +133,40 @@
             width: 2px;
             left: 50%;
             @include transform(translateX(-50%));
+            display: none;
+
+            @include min-medium {
+                display: block;
+            }
         }
     }
 
     .road-map-item {
-        width: 19.17%;
+        width: 100%;
         position: relative;
         z-index: 2;
         text-align: left;
+        padding: 0 0 0 24px;
+        margin-bottom: 66px;
 
-        /*@include min-large {
-            width: 16.17%;
-        }*/
+        @include min-medium {
+            width: 19.17%;
+            padding: 0;
+            margin-bottom: 0;
+        }
 
         @include min-extra-large {
             width: 19.17%;
         }
 
-
         &:nth-child(odd) {
             .road-map-card {
-                bottom: -242px;
+                @include min-medium {
+                    bottom: -242px;
+                }
 
                 @include min-extra-large {
-                    bottom: -326px;
+                    bottom: -306px;
                 }
             }
 
@@ -144,7 +180,9 @@
 
         &:nth-child(even) {
             .road-map-card {
-                top: -242px;
+                @include min-medium {
+                    top: -242px;
+                }
 
                 @include min-extra-large {
                     top: -326px;
@@ -161,17 +199,33 @@
     }
 
     .road-map-card {
-        position: absolute;
-        left: -25px;
-        background: url('./assets/images/road-map-card-bg.png') no-repeat;
-        background-size: cover;
         width: 303px;
         padding: 59px 32px 40px 43px;
+        position: relative;
+        @include border-radius(4px);
+
+        @include min-medium {
+            position: absolute;
+            left: 0;
+            width: 303px;
+            padding: 40px 32px 40px 30px;
+        }
 
         @include min-extra-large {
-            left: -34px;
-            width: 404px;
-            padding: 78px 51px 66px 61px;
+            width: 340px;
+            padding: 40px 21px 40px 30px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 2px;
+            right: 2px;
+            height: 87%;
+            @include box-shadow(0 4px 30px rgba($primary-bg-color, 0.7));
+            @include transition(box-shadow 0.15s);
+            z-index: -2;
         }
 
         .label {
@@ -182,8 +236,8 @@
             height: 78px;
 
             @include min-extra-large {
-                top: 14px;
-                right: -14px;
+                top: -13px;
+                right: -39px;
                 width: 105px;
                 height: 105px;
             }
@@ -203,6 +257,7 @@
             color: $primary-text-color;
             letter-spacing: 1.6px;
             margin-bottom: 8px;
+            margin-top: 11px;
 
             @include min-extra-large {
                 font-size: 20px;
@@ -218,6 +273,32 @@
             @include min-extra-large {
                 font-size: 16px;
                 line-height: 1.5;
+            }
+        }
+    }
+
+    .road-map-card-bg {
+        @include full-absolute;
+        clip-path: polygon(0 0, 35% 0, 46% 11%, 100% 11%, 100% 100%, 0 100%);
+        background: rgb(17, 155, 255);
+        border: 2px solid transparent;
+        background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+        z-index: -1;
+        @include border-radius(4px);
+
+        @include min-large {
+            clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
+        }
+
+        &:before {
+            content: '';
+            @include full-absolute;
+            clip-path: polygon(0 0, 35% 0, 46% 11%, 100% 11%, 100% 100%, 0 100%);
+            background: rgba(3,10,25, 1);
+            @include border-radius(4px);
+
+            @include min-large {
+                clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
             }
         }
     }

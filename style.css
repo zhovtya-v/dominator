@@ -2011,21 +2011,8 @@ COLORS
 
 .marketplace-section {
   position: relative;
-  padding: 84px 0 132px;
+  padding: 84px 0 117px;
   margin-bottom: 23px;
-  /*.swiper-wrapper {
-      &:after {
-          content: '';
-          position: absolute;
-          bottom: 130px;
-          right: 210px;
-          background: #F250F4;
-          width: 500px;
-          height: 500px;
-          opacity: 0.15;
-          filter: blur(120px);
-      }
-  }*/
 }
 @media only screen and (min-width: 1441px) {
   .marketplace-section {
@@ -2078,7 +2065,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 89%, 54% 88%, 44% 100%, 0 100%, 0 3%);
+  clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   background: rgb(17, 155, 255);
@@ -2105,7 +2092,7 @@ COLORS
   background: #030A19 url("./assets/images/marketplace-bg-section.png") no-repeat;
   background-size: cover;
   background-position: right center;
-  clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 89%, 54% 88%, 44% 100%, 0 100%, 0 3%);
+  clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .marketplace-section-bg:before {
@@ -2189,11 +2176,12 @@ COLORS
   vertical-align: bottom;
 }
 .marketplace-section .marketplace-section-element.first {
-  right: 14.6%;
-  bottom: -16px;
+  right: 3px;
+  bottom: -224px;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .marketplace-section-element.first {
+    right: 14.6%;
     bottom: -13px;
   }
 }
@@ -2203,12 +2191,15 @@ COLORS
   }
 }
 .marketplace-section .marketplace-section-element.second {
-  right: 29.8%;
-  bottom: -150px;
+  left: -11px;
+  bottom: -192px;
+  z-index: 1;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .marketplace-section-element.second {
     bottom: -112px;
+    right: 29.8%;
+    left: initial;
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -2221,12 +2212,13 @@ COLORS
   width: 252px;
 }
 .marketplace-section .marketplace-swiper {
-  padding-bottom: 72px;
+  padding-bottom: 26px;
   overflow: visible;
 }
 @media only screen and (min-width: 768px) {
   .marketplace-section .marketplace-swiper {
     overflow: hidden;
+    padding-bottom: 72px;
   }
 }
 @media only screen and (min-width: 1201px) {
@@ -2612,8 +2604,13 @@ COLORS
   }
 }
 .marketplace-section .button-wrap {
-  display: inline-block;
+  text-align: center;
   position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .marketplace-section .button-wrap {
+    display: inline-block;
+  }
 }
 .marketplace-section .button-wrap:before {
   content: "";
@@ -2657,9 +2654,18 @@ COLORS
 .marketplace-section .secondary-button span svg {
   margin-left: 3px;
 }
+.marketplace-section .swiper-pagination {
+  margin-top: 38px;
+}
+@media only screen and (min-width: 992px) {
+  .marketplace-section .swiper-pagination {
+    display: none;
+    margin-top: 0;
+  }
+}
 
 .road-map-section {
-  padding: 153px 0 136px;
+  padding: 65px 0 136px;
   background: url("./assets/images/road-map-section-bg.png") no-repeat;
   background-size: auto;
   background-position: center center;
@@ -2670,14 +2676,21 @@ COLORS
     padding: 221px 0 190px;
   }
 }
-.road-map-section .road-map-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .road-map-section .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 84px;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .section-title {
+    margin-bottom: 30px;
+  }
 }
 .road-map-section .section-title span {
   position: relative;
@@ -2718,8 +2731,12 @@ COLORS
 }
 .road-map-section .road-map-line {
   position: relative;
-  padding: 290px 0;
   margin-bottom: 25px;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-line {
+    padding: 290px 0;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-line {
@@ -2740,10 +2757,16 @@ COLORS
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 1;
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-line > img {
+    display: block;
+  }
 }
 .road-map-section .number {
-  width: 41px;
-  height: 48px;
+  width: 49px;
+  height: 61px;
   background: url("./assets/images/road-map-number-bg.png") no-repeat;
   background-size: cover;
   display: -webkit-box;
@@ -2762,11 +2785,24 @@ COLORS
   color: #030A1A;
   position: relative;
 }
+@media only screen and (min-width: 992px) {
+  .road-map-section .number {
+    width: 41px;
+    height: 48px;
+  }
+}
 @media only screen and (min-width: 1441px) {
   .road-map-section .number {
     width: 54px;
     height: 65px;
     font-size: 26px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .road-map-section .number {
+    position: absolute;
+    top: -30зч;
+    left: 0;
   }
 }
 .road-map-section .number:before {
@@ -2780,35 +2816,51 @@ COLORS
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .number:before {
+    display: block;
+  }
 }
 .road-map-section .road-map-item {
-  width: 19.17%;
+  width: 100%;
   position: relative;
   z-index: 2;
   text-align: left;
-  /*@include min-large {
-      width: 16.17%;
-  }*/
+  padding: 0 0 0 24px;
+  margin-bottom: 66px;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-item {
+    width: 19.17%;
+    padding: 0;
+    margin-bottom: 0;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-item {
     width: 19.17%;
   }
 }
-.road-map-section .road-map-item:nth-child(odd) .road-map-card {
-  bottom: -242px;
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-item:nth-child(odd) .road-map-card {
+    bottom: -242px;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-item:nth-child(odd) .road-map-card {
-    bottom: -326px;
+    bottom: -306px;
   }
 }
 .road-map-section .road-map-item:nth-child(odd) .number:before {
   top: 100%;
   background: linear-gradient(135deg, rgb(7, 30, 56) 0%, rgba(0, 117, 255, 0) 100%);
 }
-.road-map-section .road-map-item:nth-child(even) .road-map-card {
-  top: -242px;
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-item:nth-child(even) .road-map-card {
+    top: -242px;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-item:nth-child(even) .road-map-card {
@@ -2820,19 +2872,44 @@ COLORS
   background: linear-gradient(135deg, rgba(0, 117, 255, 0) 0%, rgb(7, 30, 56) 100%);
 }
 .road-map-section .road-map-card {
-  position: absolute;
-  left: -25px;
-  background: url("./assets/images/road-map-card-bg.png") no-repeat;
-  background-size: cover;
   width: 303px;
   padding: 59px 32px 40px 43px;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 992px) {
+  .road-map-section .road-map-card {
+    position: absolute;
+    left: 0;
+    width: 303px;
+    padding: 40px 32px 40px 30px;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-card {
-    left: -34px;
-    width: 404px;
-    padding: 78px 51px 66px 61px;
+    width: 340px;
+    padding: 40px 21px 40px 30px;
   }
+}
+.road-map-section .road-map-card:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  right: 2px;
+  height: 87%;
+  -webkit-box-shadow: 0 4px 30px rgba(17, 155, 255, 0.7);
+  -moz-box-shadow: 0 4px 30px rgba(17, 155, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(17, 155, 255, 0.7);
+  -webkit-transition: box-shadow 0.15s;
+  -moz-transition: box-shadow 0.15s;
+  -ms-transition: box-shadow 0.15s;
+  -o-transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s;
+  z-index: -2;
 }
 .road-map-section .road-map-card .label {
   position: absolute;
@@ -2843,8 +2920,8 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-card .label {
-    top: 14px;
-    right: -14px;
+    top: -13px;
+    right: -39px;
     width: 105px;
     height: 105px;
   }
@@ -2864,6 +2941,7 @@ COLORS
   color: #119BFF;
   letter-spacing: 1.6px;
   margin-bottom: 8px;
+  margin-top: 11px;
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-card .title {
@@ -2880,6 +2958,46 @@ COLORS
   .road-map-section .road-map-card .text {
     font-size: 16px;
     line-height: 1.5;
+  }
+}
+.road-map-section .road-map-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(0 0, 35% 0, 46% 11%, 100% 11%, 100% 100%, 0 100%);
+  background: rgb(17, 155, 255);
+  border: 2px solid transparent;
+  background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+  z-index: -1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 1201px) {
+  .road-map-section .road-map-card-bg {
+    clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
+  }
+}
+.road-map-section .road-map-card-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(0 0, 35% 0, 46% 11%, 100% 11%, 100% 100%, 0 100%);
+  background: rgb(3, 10, 25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 1201px) {
+  .road-map-section .road-map-card-bg:before {
+    clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
   }
 }
 .road-map-section .road-map-section-element {
@@ -2968,13 +3086,9 @@ COLORS
 }
 
 .accordion {
-  margin-bottom: 118px;
   text-align: left;
-}
-@media only screen and (min-width: 1441px) {
-  .accordion {
-    margin-bottom: 166px;
-  }
+  z-index: 3;
+  position: relative;
 }
 .accordion .accordion-item {
   padding: 27px 0 55px;
@@ -2998,7 +3112,7 @@ COLORS
   padding-right: 30px;
 }
 .accordion .accordion-question span {
-  font-size: 24px;
+  font-size: 18px;
   text-transform: uppercase;
   font-family: "Tektur", sans-serif;
   font-weight: 600;
@@ -3008,6 +3122,11 @@ COLORS
   -webkit-text-shadow: 0 4px 20px rgba(20, 170, 255, 0.5);
   -moz-text-shadow: 0 4px 20px rgba(20, 170, 255, 0.5);
   text-shadow: 0 4px 20px rgba(20, 170, 255, 0.5);
+}
+@media only screen and (min-width: 992px) {
+  .accordion .accordion-question span {
+    font-size: 24px;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .accordion .accordion-question span {
@@ -3043,10 +3162,15 @@ COLORS
 }
 .accordion .accordion-content span {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   padding: 28px 100px 0 0;
   line-height: 1.7;
   display: inline-block;
+}
+@media only screen and (min-width: 992px) {
+  .accordion .accordion-content span {
+    font-size: 16px;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .accordion .accordion-content span {
@@ -3062,18 +3186,21 @@ COLORS
 
 .faq-section {
   margin-bottom: 21px;
-  /*background-image: url("./assets/images/faq-section-bg.png"), url("./assets/images/faq-image-elipse.png") ;
-  background-repeat: no-repeat;
-  background-size: contain, auto 100%;
-  background-position: left bottom, 22% top;*/
   background-image: url("./assets/images/faq-image-elipse.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: 22% top;
 }
+@media only screen and (min-width: 1201px) {
+  .faq-section {
+    padding-top: 67px;
+    margin-bottom: 67px;
+  }
+}
 .faq-section .faq-container {
   max-width: 1296px;
   position: relative;
+  text-align: center;
 }
 @media only screen and (min-width: 1201px) {
   .faq-section .faq-container {
@@ -3082,7 +3209,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .faq-container {
-    max-width: 1700px;
+    max-width: 1500px;
   }
 }
 .faq-section .faq-container:before {
@@ -3119,24 +3246,63 @@ COLORS
   transform: translateY(-50%);
 }
 .faq-section .faq-wrap {
-  background: url("./assets/images/faq-bg-block.png") no-repeat;
-  background-size: 100% auto;
-  background-position: center top;
   position: relative;
   text-align: center;
   padding: 94px 121px 84px 139px;
+  margin-bottom: 118px;
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .faq-wrap {
-    padding: 126px 162px 126px 185px;
+    padding: 60px 62px 0 84px;
+    margin-bottom: 166px;
+  }
+}
+.faq-section .faq-wrap-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(0 0, 47% 0, 65% 11%, 100% 11%, 100% 100%, 0 100%);
+  background: rgb(17, 155, 255);
+  border: 2px solid transparent;
+  background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+}
+@media only screen and (min-width: 1201px) {
+  .faq-section .faq-wrap-bg {
+    clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
+  }
+}
+.faq-section .faq-wrap-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  bottom: -2px;
+  clip-path: polygon(0 0, 47% 0, 65% 10%, 100% 10%, 100% 100%, 0 100%);
+  background: rgba(3, 10, 25, 0.9);
+}
+@media only screen and (min-width: 1201px) {
+  .faq-section .faq-wrap-bg:before {
+    clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
   }
 }
 .faq-section .faq-element-image {
   position: absolute;
-  top: -46px;
-  right: -85px;
-  max-width: 378px;
-  width: 24%;
+  top: -113px;
+  right: -182px;
+  max-width: 468px;
+  width: 26%;
+}
+@media only screen and (min-width: 1441px) {
+  .faq-section .faq-element-image {
+    top: -113px;
+    right: -182px;
+    max-width: 468px;
+    width: 26%;
+  }
 }
 .faq-section .faq-element-image img {
   max-height: 100%;

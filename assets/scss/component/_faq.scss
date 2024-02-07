@@ -1,10 +1,7 @@
 .accordion {
-    margin-bottom: 118px;
     text-align: left;
-
-    @include min-extra-large {
-        margin-bottom: 166px;
-    }
+    z-index: 3;
+    position: relative;
 
     .accordion-item {
         padding: 27px 0 55px;
@@ -31,12 +28,16 @@
         padding-right: 30px;
 
         span {
-            font-size: 24px;
+            font-size: 18px;
             text-transform: uppercase;
             @include font_tektur_semiBold;
             color: $primary-text-color;
             letter-spacing: 2px;
             @include text-shadow(0 4px 20px rgba($shadow-text-color, 0.5));
+
+            @include min-medium {
+                font-size: 24px;
+            }
 
             @include min-extra-large {
                 font-size: 30px;
@@ -70,10 +71,14 @@
 
         span {
             margin: 0;
-            font-size: 16px;
+            font-size: 14px;
             padding: 28px 100px 0 0;
             line-height: 1.7;
             display: inline-block;
+
+            @include min-medium {
+                font-size: 16px;
+            }
 
             @include min-extra-large {
                 margin: 0;
@@ -91,26 +96,27 @@
 
 .faq-section {
     margin-bottom: 21px;
-    /*background-image: url("./assets/images/faq-section-bg.png"), url("./assets/images/faq-image-elipse.png") ;
-    background-repeat: no-repeat;
-    background-size: contain, auto 100%;
-    background-position: left bottom, 22% top;*/
-
     background-image: url("./assets/images/faq-image-elipse.png") ;
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 22% top;
 
+    @include min-large {
+        padding-top: 67px;
+        margin-bottom: 67px;
+    }
+
     .faq-container {
         max-width: 1296px;
         position: relative;
+        text-align: center;
 
         @include min-large {
             max-width: 1296px;
         }
 
         @include min-extra-large {
-            max-width: 1700px;
+            max-width: 1500px;
         }
 
         &:before {
@@ -142,25 +148,59 @@
     }
 
     .faq-wrap {
-        background: url("./assets/images/faq-bg-block.png") no-repeat;
-        background-size: 100% auto;
-        background-position: center top;
+        //background: url("./assets/images/faq-bg-block.png") no-repeat;
+        //background-size: 100% auto;
+        //background-position: center top;
         position: relative;
         text-align: center;
 
         padding: 94px 121px 84px 139px;
 
+        margin-bottom: 118px;
+
         @include min-extra-large {
-            padding: 126px 162px 126px 185px;
+            padding: 60px 62px 0 84px;
+            margin-bottom: 166px;
+        }
+    }
+
+    .faq-wrap-bg {
+        @include full-absolute;
+        clip-path: polygon(0 0, 47% 0, 65% 11%, 100% 11%, 100% 100%, 0 100%);
+        background: rgb(17, 155, 255);
+        border: 2px solid transparent;
+        background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+
+        @include min-large {
+            clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        &:before {
+            content: '';
+            @include full-absolute;
+            bottom: -2px;
+            clip-path: polygon(0 0, 47% 0, 65% 10%, 100% 10%, 100% 100%, 0 100%);
+            background: rgba(3,10,25, 0.9);
+
+            @include min-large {
+                clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
+            }
         }
     }
 
     .faq-element-image {
         position: absolute;
-        top: -46px;
-        right: -85px;
-        max-width: 378px;
-        width: 24%;
+        top: -113px;
+        right: -182px;
+        max-width: 468px;
+        width: 26%;
+
+        @include min-extra-large {
+            top: -113px;
+            right: -182px;
+            max-width: 468px;
+            width: 26%;
+        }
 
         img {
             max-height: 100%;

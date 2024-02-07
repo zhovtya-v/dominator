@@ -108,6 +108,10 @@ var marketplaceSwiper = new Swiper(".marketplace-swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
 });
 
 const accordionItem = document.querySelectorAll('.accordion-item .accordion-question');

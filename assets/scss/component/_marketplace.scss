@@ -1,6 +1,6 @@
 .marketplace-section {
     position: relative;
-    padding: 84px 0 132px;
+    padding: 84px 0 117px;
     margin-bottom: 23px;
 
     @include min-extra-large {
@@ -47,7 +47,7 @@
     .marketplace-section-bg {
         @include full-absolute;
 
-        clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 89%, 54% 88%, 44% 100%, 0 100%, 0 3%);
+        clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
         background: rgb(17,155,255);
@@ -70,7 +70,7 @@
             background-size: cover;
             background-position: right center;
 
-            clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 89%, 54% 88%, 44% 100%, 0 100%, 0 3%);
+            clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
 
             @include min-large {
                 clip-path: polygon(70% 9%, 78% 0%, 100% 0, 100% 89%, 55% 89%, 40% 105%, 0 100%, 0 9%);
@@ -127,8 +127,6 @@
                 height: 39px;
             }
         }
-
-
     }
 
     .marketplace-section-element {
@@ -156,10 +154,11 @@
         }
 
         &.first {
-            right: 14.6%;
-            bottom: -16px;
+            right: 3px;
+            bottom: -224px;
 
             @include min-large {
+                right: 14.6%;
                 bottom: -13px;
             }
 
@@ -169,11 +168,14 @@
         }
 
         &.second {
-            right: 29.8%;
-            bottom: -150px;
+            left: -11px;
+            bottom: -192px;
+            z-index: 1;
 
             @include min-large {
                 bottom: -112px;
+                right: 29.8%;
+                left: initial;
             }
 
             @include min-extra-large {
@@ -182,20 +184,6 @@
         }
     }
 
-    /*.swiper-wrapper {
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 130px;
-            right: 210px;
-            background: #F250F4;
-            width: 500px;
-            height: 500px;
-            opacity: 0.15;
-            filter: blur(120px);
-        }
-    }*/
-
     .swiper-slide {
         z-index: 2;
 
@@ -203,11 +191,12 @@
     }
 
     .marketplace-swiper {
-        padding-bottom: 72px;
+        padding-bottom: 26px;
         overflow: visible;
 
         @include min-small {
             overflow: hidden;
+            padding-bottom: 72px;
         }
 
         @include min-large {
@@ -548,8 +537,12 @@
     }
 
     .button-wrap {
-        display: inline-block;
+        text-align: center;
         position: relative;
+
+        @include min-small {
+            display: inline-block;
+        }
 
         &:before {
             content: '';
@@ -590,6 +583,15 @@
             svg {
                 margin-left: 3px;
             }
+        }
+    }
+
+    .swiper-pagination {
+        margin-top: 38px;
+
+        @include min-medium {
+            display: none;
+            margin-top: 0;
         }
     }
 }
