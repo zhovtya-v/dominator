@@ -12,7 +12,7 @@
     .about-container {
         position: relative;
 
-        @include min-medium {
+        @include min-small {
             @include display-flex;
             @include flex-direction-row-reverse;
             @include align-items-flex-end;
@@ -112,10 +112,15 @@
     .about-info {
         margin-bottom: 110px;
 
-        @include min-large {
+        @include min-small {
+            max-width: 300px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        @include min-medium {
             max-width: 525px;
             padding-bottom: 46px;
-            margin-bottom: 0;
         }
 
         @include min-extra-large {
@@ -126,6 +131,10 @@
 
     .section-title {
         margin-bottom: 26px;
+
+        @include min-small {
+            text-align: left;
+        }
 
         @include min-large {
             margin-bottom: 36px;
@@ -171,11 +180,14 @@
         text-align: center;
         padding: 0 5px;
 
-        @include min-large {
-            line-height: 1.6;
-            margin-bottom: 47px;
+        @include min-small {
             text-align: left;
+            line-height: 1.6;
             padding: 0;
+        }
+
+        @include min-large {
+            margin-bottom: 47px;
         }
 
         @include min-extra-large {
@@ -230,6 +242,11 @@
 
     .about-slider {
         position: relative;
+
+        @include min-small {
+            width: calc(100% - 300px);
+            padding-right: 30px;
+        }
 
         @include min-medium {
             width: calc(100% - 704px);

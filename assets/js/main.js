@@ -57,10 +57,10 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
     },
 
     breakpoints: {
-        992: {
+        768: {
             effect: "coverflow",
             centeredSlides: true,
-            slidesPerView: 2.34,
+            slidesPerView: 2.1,
 
             coverflowEffect: {
                 rotate: 0,

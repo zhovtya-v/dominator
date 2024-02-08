@@ -199,7 +199,7 @@
             padding-bottom: 72px;
         }
 
-        @include min-large {
+        @include min-medium {
             margin-top: -46px;
             padding-top: 148px;
             padding-bottom: 98px;
@@ -224,6 +224,11 @@
 
         .swiper-button-next {
             margin-left: 13px;
+        }
+
+        @include min-small {
+            right: 0;
+            left: 0;
         }
 
         @include min-medium {
@@ -304,16 +309,13 @@
         background: rgb(17,155,255);
         background: linear-gradient(to right, rgba(17,155,255,0.6) 0%,rgba(17,155,255,0.2) 46%,rgba(17,155,255,0.6) 100%);
         @include border-radius(2px);
+        border: 2px solid transparent;
 
         &:before {
             content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            bottom: 2px;
-            right: 2px;
+            @include full-absolute;
             clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
-            background: url("./assets/images/marketplace-card-bg.png") no-repeat;
+            background: #030919 url("./assets/images/marketplace-card-ellipse-bg.png") no-repeat;
             background-size: auto;
             background-position: center bottom;
             @include border-radius(2px);
@@ -321,6 +323,14 @@
             @include min-extra-large {
                 background-size: 105%;
             }
+        }
+
+        &:after {
+            content: '';
+            @include full-absolute;
+            background: url("./assets/images/marketplace-card-lines-bg.png") no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     }
 

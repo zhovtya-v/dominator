@@ -24,6 +24,10 @@
             margin-bottom: 30px;
         }
 
+        @include min-large {
+            margin-bottom: 96px;
+        }
+
         span {
             position: relative;
 
@@ -66,11 +70,11 @@
 
     .road-map-line {
         position: relative;
-
-        margin-bottom: 25px;
+        margin-bottom: 53px;
 
         @include min-medium {
             padding: 290px 0;
+            margin-bottom: 86px;
         }
 
         @include min-extra-large {
@@ -122,7 +126,7 @@
 
         @include max-medium {
             position: absolute;
-            top: -30зч;
+            top: -30px;
             left: 0;
         }
 
@@ -147,7 +151,7 @@
         z-index: 2;
         text-align: left;
         padding: 0 0 0 24px;
-        margin-bottom: 66px;
+        margin-bottom: 37px;
 
         @include min-medium {
             width: 19.17%;
@@ -162,7 +166,7 @@
         &:nth-child(odd) {
             .road-map-card {
                 @include min-medium {
-                    bottom: -242px;
+                    bottom: -288px;
                 }
 
                 @include min-extra-large {
@@ -181,7 +185,7 @@
         &:nth-child(even) {
             .road-map-card {
                 @include min-medium {
-                    top: -242px;
+                    top: -288px;
                 }
 
                 @include min-extra-large {
@@ -199,15 +203,15 @@
     }
 
     .road-map-card {
-        width: 303px;
-        padding: 59px 32px 40px 43px;
+        width: 100%;
+        padding: 42px 32px 33px 25px;
         position: relative;
         @include border-radius(4px);
 
         @include min-medium {
             position: absolute;
             left: 0;
-            width: 303px;
+            width: 315px;
             padding: 40px 32px 40px 30px;
         }
 
@@ -230,7 +234,7 @@
 
         .label {
             position: absolute;
-            top: 8px;
+            top: -13px;
             right: -7px;
             width: 78px;
             height: 78px;
@@ -252,11 +256,11 @@
 
         .title {
             @include font_tektur_semiBold;
-            font-size: 15px;
+            font-size: 18px;
             text-transform: uppercase;
             color: $primary-text-color;
             letter-spacing: 1.6px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             margin-top: 11px;
 
             @include min-extra-large {
@@ -267,8 +271,8 @@
         }
 
         .text {
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 14px;
+            line-height: 1.7;
 
             @include min-extra-large {
                 font-size: 16px;
@@ -301,6 +305,14 @@
                 clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
             }
         }
+
+        &:after {
+            content: '';
+            @include full-absolute;
+            background: url("./assets/images/road-map-card-bg.png") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     .road-map-section-element {
@@ -328,8 +340,13 @@
         }
 
         &.first {
-            left: 115px;
-            top: -44px;
+            left: 0;
+            top: 107%;
+
+            @include min-medium {
+                left: 115px;
+                top: -44px;
+            }
 
             @include min-extra-large {
                 left: 163px;
@@ -338,8 +355,15 @@
         }
 
         &.second {
-            right: 76px;
-            top: 34px;
+            right: -10px;
+            top: 106%;
+            @include transform(rotate(77deg));
+
+            @include min-large {
+                right: 75px;
+                top: 37px;
+                @include transform(rotate(0));
+            }
 
             @include min-extra-large {
                 right: 108px;
