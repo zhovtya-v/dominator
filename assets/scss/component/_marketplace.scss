@@ -1,7 +1,11 @@
 .marketplace-section {
     position: relative;
-    padding: 279px 0 132px;
+    padding: 84px 0 117px;
     margin-bottom: 23px;
+
+    @include min-extra-large {
+        padding: 279px 0 132px;
+    }
 
     .marketplace-container {
         position: relative;
@@ -43,7 +47,7 @@
     .marketplace-section-bg {
         @include full-absolute;
 
-        clip-path: polygon(69% 10%, 78% 0%, 100% 0, 100% 89%, 54% 89%, 44% 100%, 0 100%, 0 10%);
+        clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
         background: rgb(17,155,255);
@@ -66,7 +70,7 @@
             background-size: cover;
             background-position: right center;
 
-            clip-path: polygon(69% 10%, 78% 0%, 100% 0, 100% 89%, 54% 89%, 44% 100%, 0 100%, 0 10%);
+            clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
 
             @include min-large {
                 clip-path: polygon(70% 9%, 78% 0%, 100% 0, 100% 89%, 55% 89%, 40% 105%, 0 100%, 0 9%);
@@ -91,9 +95,12 @@
     }
 
     .section-title {
-        //margin-bottom: 136px;
         position: relative;
         z-index: 2;
+
+        @include max-medium {
+            margin-bottom: 43px;
+        }
 
         &:before {
             content: '';
@@ -120,8 +127,6 @@
                 height: 39px;
             }
         }
-
-
     }
 
     .marketplace-section-element {
@@ -149,10 +154,11 @@
         }
 
         &.first {
-            right: 14.6%;
-            bottom: -16px;
+            right: 3px;
+            bottom: -224px;
 
             @include min-large {
+                right: 14.6%;
                 bottom: -13px;
             }
 
@@ -162,11 +168,14 @@
         }
 
         &.second {
-            right: 29.8%;
-            bottom: -150px;
+            left: -11px;
+            bottom: -192px;
+            z-index: 1;
 
             @include min-large {
                 bottom: -112px;
+                right: 29.8%;
+                left: initial;
             }
 
             @include min-extra-large {
@@ -175,31 +184,22 @@
         }
     }
 
-    /*.swiper-wrapper {
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 130px;
-            right: 210px;
-            background: #F250F4;
-            width: 500px;
-            height: 500px;
-            opacity: 0.15;
-            filter: blur(120px);
-        }
-    }*/
-
     .swiper-slide {
         z-index: 2;
+
+        width: 252px;
     }
 
     .marketplace-swiper {
-        padding-bottom: 132px;
-        margin-top: -61px;
-        padding-top: 197px;
-        padding-right: 15px;
+        padding-bottom: 26px;
+        overflow: visible;
 
-        @include min-large {
+        @include min-small {
+            overflow: hidden;
+            padding-bottom: 72px;
+        }
+
+        @include min-medium {
             margin-top: -46px;
             padding-top: 148px;
             padding-bottom: 98px;
@@ -214,19 +214,35 @@
 
     .swiper-navigation-wrap {
         @include display-flex;
-        @include justify-content-flex-end;
+        @include justify-content-space-between;
         position: absolute;
-        top: 0;
-        right: 15px;
+        top: 50%;
+        right: -16px;
+        left: -16px;
+        @include transform(translateY(-50%));
+        z-index: 3;
 
         .swiper-button-next {
             margin-left: 13px;
+        }
+
+        @include min-small {
+            right: 0;
+            left: 0;
+        }
+
+        @include min-medium {
+            top: 0;
+            left: initial;
+            right: 15px;
+            @include justify-content-flex-end;
+            @include transform(translateY(0));
         }
     }
 
     .swiper-slide-wrap {
         position: relative;
-        padding: 27px 23px 33px 24px;
+        padding: 17px 21px 20px 21px;
         @include border-radius(2px);
         @include display-flex;
         @include flex-wrap-wrap;
@@ -293,16 +309,13 @@
         background: rgb(17,155,255);
         background: linear-gradient(to right, rgba(17,155,255,0.6) 0%,rgba(17,155,255,0.2) 46%,rgba(17,155,255,0.6) 100%);
         @include border-radius(2px);
+        border: 2px solid transparent;
 
         &:before {
             content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            bottom: 2px;
-            right: 2px;
+            @include full-absolute;
             clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
-            background: url("./assets/images/marketplace-card-bg.png") no-repeat;
+            background: #030919 url("./assets/images/marketplace-card-ellipse-bg.png") no-repeat;
             background-size: auto;
             background-position: center bottom;
             @include border-radius(2px);
@@ -310,6 +323,14 @@
             @include min-extra-large {
                 background-size: 105%;
             }
+        }
+
+        &:after {
+            content: '';
+            @include full-absolute;
+            background: url("./assets/images/marketplace-card-lines-bg.png") no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     }
 
@@ -319,7 +340,7 @@
         @include display-flex;
         @include align-items-center;
         @include justify-content-center;
-        margin-bottom: 25px;
+        margin-bottom: 9px;
         clip-path: polygon(87% 0, 100% 14%, 100% 100%, 0 100%, 0 0);
         position: relative;
         @include border-radius(4px);
@@ -370,9 +391,14 @@
             font-size: 16px;
             @include font_tektur_bold;
             color: $primary-text-color;
-            letter-spacing: 1px;
+            letter-spacing: 1.6px;
             flex: 1 0 100%;
-            margin-bottom: 12px;
+            margin-bottom: 5px;
+
+            @include min-medium {
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+            }
 
             @include min-extra-large {
                 font-size: 18px;
@@ -381,10 +407,14 @@
         }
 
         .rating {
-            flex: 1 0 50%;
+            flex: 1 0 34%;
             @include display-flex;
             @include align-items-center;
             @include justify-content-flex-start;
+
+            @include min-medium {
+                flex: 1 0 50%;
+            }
 
             img {
                 max-width: 100%;
@@ -399,7 +429,11 @@
             flex: 1 0 50%;
             text-align: right;
             color: $secondary-text-color;
-            font-size: 16px;
+            font-size: 14px;
+
+            @include min-medium {
+                font-size: 16px;
+            }
 
             span {
                 color: $primary-text-color;
@@ -409,12 +443,11 @@
 
     .id {
         font-size: 14px;
-        line-height: 14px;
+        line-height: 2;
         flex: 1 0 50%;
 
         @include min-extra-large {
             font-size: 16px;
-            line-height: 2;
         }
     }
 
@@ -428,21 +461,34 @@
         border-bottom: 1px dashed #5571923D;
 
         span {
-            font-size: 14px;
+            font-size: 12px;
         }
 
         @include min-extra-large {
             margin-top: 12px;
             padding-bottom: 7px;
+
+            span {
+                font-size: 14px;
+            }
         }
     }
 
     .dominator-price {
         margin-top: 12px;
+        margin-bottom: 9px;
+
+        @include min-medium {
+            margin-bottom: 21px;
+        }
 
         .price-title {
             font-size: 14px;
-            margin-bottom: 4px;
+            margin-bottom: 1px;
+
+            @include min-medium {
+                margin-bottom: 4px;
+            }
 
             @include min-extra-large {
                 font-size: 16px;
@@ -452,11 +498,10 @@
         .price {
             @include display-flex;
             @include align-items-center;
-            font-size: 18px;
+            font-size: 16px;
             @include font_tektur_bold;
             color: $primary-text-color;
             letter-spacing: 2px;
-            margin-bottom: 21px;
 
             @include min-extra-large {
                 font-size: 18px;
@@ -466,6 +511,7 @@
         .icon {
             margin-left: 10px;
             display: inline-block;
+            flex-shrink: 0;
 
             img {
                 max-width: 27px;
@@ -486,9 +532,12 @@
         border: 1px solid;
         @include border-radius(4px);
         font-size: 12px;
-        padding: 4px 9px;
-        //margin-right: 6px;
+        padding: 6px 15px;
         display: inline-block;
+
+        @include min-medium {
+            padding: 4px 9px;
+        }
 
         @include min-extra-large {
             font-size: 16px;
@@ -498,8 +547,12 @@
     }
 
     .button-wrap {
-        display: inline-block;
+        text-align: center;
         position: relative;
+
+        @include min-small {
+            display: inline-block;
+        }
 
         &:before {
             content: '';
@@ -540,6 +593,15 @@
             svg {
                 margin-left: 3px;
             }
+        }
+    }
+
+    .swiper-pagination {
+        margin-top: 38px;
+
+        @include min-medium {
+            display: none;
+            margin-top: 0;
         }
     }
 }

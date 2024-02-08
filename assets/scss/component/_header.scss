@@ -36,14 +36,21 @@
     }
 
     .logo {
-        position: absolute;
-        top: 26px;
-        left: 50%;
-        @include transform(translate(-50%, 0));
+        margin-left: -10px;
+
+        @include min-medium {
+            margin-left: 0;
+            position: absolute;
+            top: 26px;
+            left: 50%;
+            @include transform(translate(-50%, 0));
+        }
 
         a {
             position: relative;
             display: inline-block;
+            width: 60px;
+            height: 60px;
 
             @include min-medium {
                 width: 70px;

@@ -86,7 +86,7 @@ body {
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0 20px;
   width: 100%;
 
   @include min-medium {
@@ -109,7 +109,7 @@ COMMON STYLE END
 .section-title {
   @include font_tektur_bold;
   //@include fluid-type(320px, 1920px, 36px, 70px);
-  font-size: 36px;
+  font-size: 32px;
   text-transform: uppercase;
   color: $primary-text-color;
   position: relative;
@@ -125,6 +125,10 @@ COMMON STYLE END
   @include min-extra-large {
     letter-spacing: 7px;
     font-size: 70px;
+  }
+
+  @include max-medium {
+    text-align: center;
   }
 
   span {
@@ -148,7 +152,7 @@ COMMON STYLE END
 
 .primary-button {
   color: $black-text-color;
-  height: 58px;
+  height: 52px;
   width: 277px;
   @include display-flex;
   @include align-items-center;
@@ -171,7 +175,7 @@ COMMON STYLE END
   .btn-bg {
     z-index: 2;
     color: $black-text-color;
-    font-size: 24px;
+    font-size: 16px;
     @include font_tektur_bold;
     text-transform: uppercase;
     letter-spacing: 2.4px;
@@ -241,18 +245,12 @@ COMMON STYLE END
 
 .secondary-button {
   color: $black-text-color;
-  height: 66px;
-  width: 274px;
+  height: 52px;
+  width: 277px;
   position: relative;
   @include display-inline-flex;
   @include border-radius(2px);
   padding: 2px;
-
-
-  @include min-large {
-    height: 51px;
-    width: 207px;
-  }
 
   @include min-extra-large {
     height: 66px;
@@ -317,7 +315,7 @@ COMMON STYLE END
 }
 
 .buy-button {
-  height: 40px;
+  height: 44px;
   width: 100%;
   max-width: 287px;
   position: relative;
@@ -404,15 +402,28 @@ COMMON STYLE END
   @include reset-button;
   cursor: pointer;
 
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   @include display-flex;
   @include align-items-center;
   @include justify-content-center;
   position: relative;
 
+  @include min-large {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include min-extra-large {
+    width: 50px;
+    height: 50px;
+  }
+
   svg {
     z-index: 2;
+    width: 9px;
+    height: 13px;
+
 
     @include min-large {
       width: 12px;
@@ -433,16 +444,6 @@ COMMON STYLE END
     }
   }
 
-  @include min-large {
-    width: 40px;
-    height: 40px;
-  }
-
-  @include min-extra-large {
-    width: 50px;
-    height: 50px;
-  }
-
   &:before {
     content: '';
     position: absolute;
@@ -460,8 +461,8 @@ COMMON STYLE END
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     @include transform(translate(-50%, -50%));
     clip-path: polygon(28% 0, 100% 0, 100% 74%, 72% 100%, 0 100%, 0 26%);
     background: $primary-text-color;
@@ -490,5 +491,39 @@ COMMON STYLE END
     &:after {
       background: #27405E;
     }
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: initial;
+  left: initial;
+  right: initial;
+  top: initial;
+  width: auto;
+
+  .swiper-pagination-bullet {
+    background: #27405E;
+    width: 24px;
+    height: 2px;
+    border-radius: 0;
+    opacity: 1;
+    margin: 0 5px;
+    @include transition(width 0.2s);
+
+    @include min-medium {
+      &:hover {
+        background: $primary-text-color;
+        @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
+      }
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $primary-text-color;
+    width: 59px;
+    height: 2px;
+    border-radius: 0;
+    @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
   }
 }

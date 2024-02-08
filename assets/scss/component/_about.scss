@@ -1,5 +1,5 @@
 .about-section {
-    padding: 60px 0 71px;
+    padding: 60px 0 58px;
 
     @include min-large {
         padding: 94px 0 52px;
@@ -12,7 +12,7 @@
     .about-container {
         position: relative;
 
-        @include min-medium {
+        @include min-small {
             @include display-flex;
             @include flex-direction-row-reverse;
             @include align-items-flex-end;
@@ -21,6 +21,8 @@
 
     .about-element-image {
         position: absolute;
+        width: 157px;
+        height: 157px;
 
         @include min-large {
             width: 200px;
@@ -43,11 +45,13 @@
         &.first {
             left: 213px;
             top: -28px;
-            z-index: 6;
+            display: none;
 
             @include min-large {
                 left: 164px;
                 top: -24px;
+                z-index: 6;
+                display: block;
             }
 
             @include min-extra-large {
@@ -57,10 +61,12 @@
         }
 
         &.second {
-            right: 309px;
-            top: -156px;
+            right: initial;
+            top: -140px;
+            left: 34px;
 
             @include min-large {
+                left: initial;
                 right: 236px;
                 top: -120px;
             }
@@ -72,8 +78,8 @@
         }
 
         &.third {
-            right: -9px;
-            top: -93px;
+            right: 46px;
+            top: -133px;
 
             @include min-large {
                 right: -2px;
@@ -104,8 +110,15 @@
     }
 
     .about-info {
+        margin-bottom: 110px;
 
-        @include min-large {
+        @include min-small {
+            max-width: 300px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        @include min-medium {
             max-width: 525px;
             padding-bottom: 46px;
         }
@@ -118,6 +131,10 @@
 
     .section-title {
         margin-bottom: 26px;
+
+        @include min-small {
+            text-align: left;
+        }
 
         @include min-large {
             margin-bottom: 36px;
@@ -158,11 +175,18 @@
     }
 
     .text {
-        line-height: 1.4;
+        line-height: 1.7;
         margin-bottom: 35px;
+        text-align: center;
+        padding: 0 5px;
+
+        @include min-small {
+            text-align: left;
+            line-height: 1.6;
+            padding: 0;
+        }
 
         @include min-large {
-            line-height: 1.6;
             margin-bottom: 47px;
         }
 
@@ -173,18 +197,32 @@
     }
 
     .button-wrap {
-        display: inline-block;
+        text-align: center;
         position: relative;
+
+        @include min-medium {
+            display: inline-block;
+            text-align: left;
+        }
 
         &:after {
             content: '';
             position: absolute;
-            top: 20px;
-            left: 105%;
-            width: 183px;
-            height: 25px;
-            background: url("./assets/images/about-btn-line.svg") no-repeat;
+            top: 106%;
+            left: 150px;
+            width: 175px;
+            height: 32px;
+            background: url("./assets/images/about-btn-line-mob.svg") no-repeat;
             background-size: cover;
+            @include transform(translateX(-50%));
+
+            @include min-medium {
+                top: 20px;
+                left: 105%;
+                width: 183px;
+                height: 25px;
+                background: url("./assets/images/about-btn-line.svg") no-repeat;
+            }
 
             @include min-large {
                 top: 16px;
@@ -204,6 +242,11 @@
 
     .about-slider {
         position: relative;
+
+        @include min-small {
+            width: calc(100% - 300px);
+            padding-right: 30px;
+        }
 
         @include min-medium {
             width: calc(100% - 704px);
@@ -283,8 +326,12 @@
 
     .swiper-controls-wrap {
         @include display-flex;
-        @include justify-content-space-between;
+        @include justify-content-center;
         @include align-items-flex-end;
+
+        @include min-small {
+            @include justify-content-space-between;
+        }
 
         @include min-large {
             padding-right: 29px;
@@ -301,39 +348,17 @@
         .swiper-button-next {
             margin-left: 14px;
         }
-    }
 
-    .swiper-pagination {
-        position: relative;
-        bottom: initial;
-        left: initial;
-        right: initial;
-        top: initial;
-        width: auto;
-
-        .swiper-pagination-bullet {
-            background: #27405E;
-            width: 24px;
-            height: 2px;
-            border-radius: 0;
-            opacity: 1;
-            margin: 0 5px;
-            @include transition(width 0.2s);
-
-            @include min-medium {
-                &:hover {
-                    background: $primary-text-color;
-                    @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
-                }
-            }
-        }
-
-        .swiper-pagination-bullet-active {
-            background: $primary-text-color;
-            width: 59px;
-            height: 2px;
-            border-radius: 0;
-            @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
+        @include max-small {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            @include transform(translateY(-50%));
+            @include justify-content-space-between;
+            z-index: 2;
         }
     }
+
+
 }

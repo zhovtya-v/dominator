@@ -1,5 +1,5 @@
 .video-section {
-    padding: 196px 0 183px;
+    padding: 98px 0 50px;
 
     background: url("./assets/images/video-section-bg.png") no-repeat;
     background-size: cover;
@@ -45,17 +45,19 @@
 
         .video-element-first {
             position: absolute;
-            top: -108px;
-            right: -159px;
-            max-width: 439px;
-            max-height: 355px;
-            width: 32%;
+            top: -60px;
+            right: -52px;
+            max-width: 180px;
+            max-height: 155px;
+            width: 50%;
             z-index: 4;
 
             @include min-large {
                 top: -82px;
                 right: -118px;
                 width: 29%;
+                max-width: 439px;
+                max-height: 355px;
             }
 
             @include min-extra-large {
@@ -72,11 +74,11 @@
 
         .video-element-second {
             position: absolute;
-            bottom: -17px;
-            left: -101px;
+            bottom: -52px;
+            left: -45px;
             max-width: 232px;
             max-height: 238px;
-            width: 16%;
+            width: 37%;
             z-index: 4;
 
             @include min-large {
@@ -101,27 +103,42 @@
 
     .video-wrap {
         position: relative;
-
         @include display-flex;
         @include align-items-center;
         @include justify-content-center;
-
-        clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
+        clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
         border: 2px solid transparent;
         background: rgb(17,155,255);
         background: radial-gradient(circle, rgba(17,155,255, 0.8) 0%, rgba(0,117,255, 0.4) 100%);
+        @include aspect-ratio(320, 416);
 
+        @include min-small {
+            @include aspect-ratio(1440, 770);
+            clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
+        }
 
         .video-image {
             width: 100%;
-            clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
+            clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
+
+            @include full-absolute;
+            @include display-flex;
+            @include justify-content-center;
+
+            overflow: hidden;
+
+            @include min-small {
+                clip-path: polygon(6% 0, 50% 0, 56% 10%, 100% 10%, 100% 87%, 94% 100%, 0 100%, 0 12%);
+            }
 
             img {
-                max-width: 100%;
+                //max-width: 100%;
                 max-height: 100%;
                 width: auto;
                 height: auto;
                 vertical-align: bottom;
+                object-fit: cover;
+                object-position: center bottom;
             }
         }
 

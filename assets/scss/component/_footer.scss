@@ -6,8 +6,13 @@
 
     .footer-top {
         position: relative;
-        padding-top: 153px;
-        padding-bottom: 90px;
+        padding-top: 46px;
+        padding-bottom: 55px;
+
+        @include min-medium {
+            padding-top: 153px;
+            padding-bottom: 90px;
+        }
 
         @include min-extra-large {
             padding-top: 204px;
@@ -49,7 +54,7 @@
         @include full-absolute;
 
         z-index: 1;
-        clip-path: polygon(0 0, 38% 0, 50% 9%, 100% 9%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 38% 0, 50% 4%, 100% 4%, 100% 100%, 0 100%);
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
         background: rgb(17,155,255);
@@ -67,7 +72,7 @@
             background-size: cover;
             background-position: right center;
             /*background: rgba(#030A19, 1);*/
-            clip-path: polygon(0 0, 38% 0, 50% 9%, 100% 9%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 38% 0, 50% 4%, 100% 4%, 100% 100%, 0 100%);
             z-index: -3;
 
             @include min-extra-large {
@@ -124,9 +129,13 @@
     }
 
     .logo {
+        margin-left: -7px;
+        margin-bottom: 43px;
+
         @include min-medium {
             width: 25%;
             margin-left: -10px;
+            margin-bottom: 0;
         }
 
         @include min-extra-large {
@@ -135,8 +144,13 @@
 
         a {
             display: inline-block;
-            width: 70px;
-            height: 70px;
+            width: 58px;
+            height: 58px;
+
+            @include min-medium {
+                width: 70px;
+                height: 70px;
+            }
 
             @include min-extra-large {
                 width: 93px;
@@ -184,21 +198,32 @@
     .footer-menu {
         @include display-flex;
         @include flex-direction-column;
-        width: 39%;
-        padding: 6px 0 0 3px;
+        width: 100%;
+
+
+        @include min-medium {
+            width: 39%;
+            padding: 6px 0 0 3px;
+        }
 
         a {
             position: relative;
             @include font_tektur_semiBold;
-            font-size: 22px;
+            font-size: 18px;
             text-transform: uppercase;
             color: $primary-text-color;
             padding-bottom: 6px;
-            letter-spacing: 3px;
-            margin-bottom: 37px;
+            letter-spacing: 1.8px;
+            margin-bottom: 31px;
             display: inline-block;
             @include transition(all 0.2s);
             @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+
+            @include min-medium {
+                font-size: 22px;
+                letter-spacing: 3px;
+                margin-bottom: 37px;
+            }
 
             @include min-extra-large {
                 font-size: 30px;
@@ -229,28 +254,38 @@
     }
 
     .footer-info {
-        width: 35%;
-        padding: 7px 0 0 6px;
+        width: 100%;
+
+
+        @include min-medium {
+            width: 35%;
+            padding: 7px 0 0 6px;
+        }
     }
 
     .footer-block {
         flex: 1 0 100%;
-        @include display-flex;
-        @include align-items-center;
-        @include justify-content-space-between;
-        margin-top: 51px;
+        margin-top: 38px;
+
+        @include min-medium {
+            margin-top: 51px;
+            @include display-flex;
+            @include align-items-center;
+            @include justify-content-space-between;
+        }
 
         @include min-extra-large {
             margin-top: 71px;
         }
 
         .copyright {
-            font-size: 13px;
-            padding-left: 0;
+            font-size: 14px;
+            margin-bottom: 37px;
 
             @include min-extra-large {
                 font-size: 13px;
                 padding-left: 10px;
+                margin-bottom: 0;
             }
         }
 
@@ -258,10 +293,13 @@
             a {
                 text-transform: capitalize;
                 text-decoration: underline;
-                font-size: 13px;
+                font-size: 14px;
                 color: $secondary-text-color;
                 @include transition(all 0.2s);
-                margin-left: 40px;
+
+                &:first-child {
+                    margin-right: 49px;
+                }
 
                 @include min-medium {
                     &:hover {
@@ -272,14 +310,17 @@
 
                 @include min-extra-large {
                     font-size: 16px;
-                    margin-left: 56px;
+
+                    &:first-child {
+                        margin-left: 56px;
+                    }
                 }
             }
         }
     }
 
     .subscribe-form {
-        margin-bottom: 87px;
+        margin-bottom: 45px;
 
         @include min-extra-large {
             margin-bottom: 62px;
@@ -288,10 +329,25 @@
         .title {
             text-transform: uppercase;
             @include font_tektur_semiBold;
-            font-size: 22px;
-            letter-spacing: 2.5px;
-            line-height: 1.4;
-            margin-bottom: 22px;
+            font-size: 19px;
+            letter-spacing: 1.8px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+
+            br {
+                display: none;
+            }
+
+            @include min-medium {
+                font-size: 22px;
+                margin-bottom: 22px;
+                line-height: 1.4;
+                letter-spacing: 2.5px;
+
+                br {
+                    display: block;
+                }
+            }
 
             @include min-extra-large {
                 font-size: 30px;
@@ -308,14 +364,10 @@
         .field-wrap {
             flex-grow: 1;
             margin-right: 20px;
-            height: 38px;
+            height: 50px;
             padding: 1px;
             background: #27405E;
             clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
-
-            @include min-extra-large {
-                height: 50px;
-            }
 
             input {
                 width: 100%;
@@ -325,8 +377,13 @@
                 font-size: 16px;
                 padding: 10px 25px;
                 color: #3A4D64;
+                letter-spacing: -1px;
                 clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
                 @include font_robotoMono_regular;
+
+                @include min-medium {
+                    letter-spacing: 0;
+                }
 
                 &:focus-visible {
                     outline: none;
@@ -340,8 +397,24 @@
         }
     }
 
-    .social-wrap {
+    .button-send {
+        @include max-medium {
+            width: 50px;
+            height: 50px;
 
+            &:after {
+                width: 50px;
+                height: 50px;
+            }
+
+            svg {
+                width: 15px;
+                height: 22px;
+            }
+        }
+    }
+
+    .social-wrap {
         @include min-medium {
             @include display-flex;
             @include justify-content-flex-end;
@@ -376,7 +449,11 @@
     }
 
     .footer-bottom-block {
-        padding: 60px 0 70px;
+        padding: 37px 0 70px;
+
+        @include min-medium {
+            padding: 60px 0 70px;
+        }
 
         @include min-extra-large {
             padding: 78px 0 87px;
@@ -388,12 +465,16 @@
 
             span {
                 @include font_tektur_bold;
-                font-size: 50px;
+                font-size: 32px;
                 text-transform: uppercase;
                 color: $primary-text-color;
                 letter-spacing: 6px;
                 //@include fluid-type(375px, 1920px, 50px, 130px);
                 @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+
+                @include min-medium {
+                    font-size: 50px;
+                }
 
                 @include min-large {
                     letter-spacing: 10px;

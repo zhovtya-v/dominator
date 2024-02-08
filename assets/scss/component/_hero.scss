@@ -1,13 +1,22 @@
 .hero-section {
-    background: url("./assets/images/hero-bg.png") no-repeat;
+    background: url("./assets/images/hero-bg-mob.png") no-repeat;
     background-size: cover;
-    background-position: right bottom;
+    background-position: center bottom;
     position: relative;
     z-index: 1;
+    padding: 153px 0 7px;
+    margin-bottom: 160px;
+
+    @include min-small {
+        padding: 150px 0 ;
+        background: url("./assets/images/hero-bg.png") no-repeat;
+        background-position: center bottom;
+    }
 
     @include min-medium {
         padding: 134px 0 85px;
         margin-bottom: 45px;
+        background-position: right bottom;
     }
 
     @include min-extra-large {
@@ -18,9 +27,9 @@
     .hero-container {
         position: relative;
 
-        @include min-medium {
+        @include min-small {
             @include display-flex;
-            @include flex-direction-row-reverse;
+            @include flex-direction-row;
             @include justify-content-space-between;
         }
     }
@@ -29,6 +38,10 @@
         max-width: 523px;
         width: 100%;
         position: relative;
+
+        @include min-small {
+            max-width: 300px;
+        }
 
         @include min-medium {
             max-width: 400px;
@@ -73,6 +86,11 @@
 
     .hero-info {
 
+        @include min-small {
+            width: calc(100% - 300px);
+            padding-top: 0;
+        }
+
         @include min-large {
             width: calc(100% - 400px);
             padding-top: 96px;
@@ -82,19 +100,24 @@
             width: calc(100% - 540px);
             padding-top: 128px;
         }
+
+        @include max-medium {
+            @include display-flex;
+            @include flex-direction-column;
+        }
     }
 
     .title {
         @include font_tektur_bold;
-        font-size: 130px;
+        font-size: 48px;
         text-transform: uppercase;
         color: $primary-text-color;
         position: relative;
-        margin: 0 0 39px;
-        letter-spacing: 6px;
+        margin: 0 0 18px;
+        letter-spacing: 5px;
         line-height: 1;
 
-        //@include fluid-type(375px, 1920px, 50px, 130px);
+        @include fluid-type(320px, 360px, 40px, 48px);
 
         @include min-large {
             letter-spacing: 10px;
@@ -106,6 +129,11 @@
             letter-spacing: 13px;
             font-size: 130px;
             margin: 0 0 39px;
+        }
+
+        @include max-small {
+            order: 1;
+            text-align: center;
         }
 
         span {
@@ -139,14 +167,14 @@
 
     .subtitle {
         @include font_tektur_bold;
-        font-size: 76px;
+        font-size: 32px;
         text-transform: uppercase;
         color: $primary-text-color;
-        margin: 0 0 56px 6px;
+        margin: 0 0 27px 2px;
         line-height: 1;
-        letter-spacing: 3.7px;
+        letter-spacing: 3.2px;
 
-        @include fluid-type(375px, 1920px, 32px, 76px);
+        @include fluid-type(320px, 360px, 24px, 32px);
 
         @include min-large {
             letter-spacing: 5.7px;
@@ -158,6 +186,11 @@
             letter-spacing: 7.7px;
             font-size: 76px;
             margin: 0 0 56px 6px;
+        }
+
+        @include max-small {
+            order: 2;
+            text-align: center;
         }
 
     }
@@ -174,6 +207,12 @@
         @include min-extra-large {
             margin-left: 9px;
             margin-bottom: 55px;
+        }
+
+        @include max-small {
+            order: 4;
+            @include display-flex;
+            @include justify-content-center;
         }
 
         &:before {
@@ -203,20 +242,33 @@
     .dominator-info {
         @include display-flex;
         @include align-items-center;
-        margin-left: 6px;
+
+        @include min-medium {
+            margin-left: 6px;
+        }
+
+        @include max-small {
+            order: 3;
+            margin-bottom: 34px;
+            @include justify-content-center;
+        }
 
         .dominators {
             @include display-flex;
             @include flex-direction-column;
             @include font_tektur_medium;
             color: $primary-text-color;
-            font-size: 50px;
+            font-size: 28px;
             text-transform: uppercase;
             position: relative;
+            text-align: center;
+
+            @include fluid-type(320px, 360px, 20px, 28px);
 
             @include min-large {
                 font-size: 39px;
                 letter-spacing: -1px;
+                text-align: left;
             }
 
             @include min-extra-large {
@@ -227,12 +279,10 @@
             span {
                 @include font_robotoMono_regular;
                 color: $secondary-text-color;
-                font-size: 18px;
+                font-size: 16px;
                 text-transform: capitalize;
 
-                @include min-large {
-                    font-size: 16px;
-                }
+                @include fluid-type(320px, 360px, 14px, 16px);
 
                 @include min-extra-large {
                     font-size: 18px;
@@ -240,8 +290,8 @@
             }
 
             &:not(:last-child) {
-                padding-right: 51px;
-                margin-right: 47px;
+                padding-right: 23px;
+                margin-right: 22px;
 
                 @include min-large {
                     padding-right: 37px;
@@ -260,12 +310,16 @@
                     right: 0;
 
                     width: 2px;
-                    height: 100px;
+                    height: 60px;
                     background-color: $primary-text-color;
                     background: linear-gradient(to bottom, rgba(0,117,255,0) 0%,rgba(17,155,255,0.9) 50%,rgba(0,117,255,0) 100%);
 
                     @include transform(translateY(-50%));
                     @include box-shadow(0 4px 20px rgba($primary-text-color, 1));
+
+                    @include min-medium {
+                        height: 100px;
+                    }
                 }
             }
         }
@@ -283,13 +337,18 @@
         }
 
         &.first {
-            left: 9.5%;
-            bottom: -80px;
+            left: 50%;
+            bottom: -100px;
+            width: 153px;
+            height: 156px;
+            transform: translateX(-39%);
 
             @include min-large {
                 width: 188px;
                 height: 188px;
                 bottom: -55px;
+                left: 9.5%;
+                transform: translateX(0);
             }
 
             @include min-extra-large {
@@ -300,14 +359,17 @@
         }
 
         &.second {
-            left: 54%;
-            bottom: 44px;
-            @include transform(translate(-50%, 0));
+            left: -7px;
+            bottom: -66px;
+            width: 158px;
+            height: 161px;
 
             @include min-large {
                 width: 206px;
                 height: 206px;
                 bottom: 37px;
+                left: 54%;
+                @include transform(translate(-50%, 0));
             }
 
             @include min-extra-large {
@@ -318,10 +380,13 @@
         }
 
         &.third {
-            right: 6.6%;
-            bottom: 17px;
+            right: -7px;
+            bottom: -28px;
+            width: 141px;
+            height: 144px;
 
             @include min-large {
+                right: 6.6%;
                 width: 180px;
                 height: 180px;
                 bottom: 16px;
