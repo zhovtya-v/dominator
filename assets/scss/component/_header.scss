@@ -1,5 +1,5 @@
 .header-section {
-    padding: 15px 0;
+    padding: 8px 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -7,16 +7,45 @@
     z-index: 2;
     background: linear-gradient(to bottom, rgba(0,7,24,1) 0%,rgba(0,7,24,0.3) 100%);
 
+    @include min-small {
+        padding: 15px 0;
+    }
+
     &:before {
         content: '';
         position: absolute;
-        top: 100%;
+        bottom: -27px;
         left: 0;
         right: 0;
-        height: 60px;
-        background: url("./assets/images/header-bottom-line.png") no-repeat;
+        height: 40px;
+        background-image: url("./assets/images/header-bottom-line-mob.png");
         background-size: 100% auto;
         background-position: center top;
+        background-repeat: no-repeat;
+
+        @include min-small {
+            top: 100%;
+            bottom: initial;
+            height: 60px;
+        }
+
+        @include min-medium {
+            background-image: url("./assets/images/header-bottom-line.png");
+        }
+    }
+
+    &.active {
+        .logo {
+            a {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .menu {
+            transform: translateX(0);
+        }
     }
 
     .header-wrap {
@@ -37,13 +66,19 @@
 
     .logo {
         margin-left: -10px;
+        z-index: 3;
 
         @include min-medium {
             margin-left: 0;
             position: absolute;
-            top: 26px;
+            top: 50%;
             left: 50%;
-            @include transform(translate(-50%, 0));
+            @include transform(translate(-50%, -50%));
+
+            @include min-large {
+                top: 26px;
+                @include transform(translate(-50%, 0));
+            }
         }
 
         a {
@@ -81,6 +116,11 @@
                 @include border-radius(50%);
                 filter: blur(55px);
                 @include transition(all 0.2s);
+                opacity: 0;
+
+                @include min-medium {
+                    opacity: 1;
+                }
 
                 @include min-extra-large {
                     width: 80px;
@@ -103,11 +143,11 @@
     .menu {
         @include max-medium {
             position: fixed;
-            top: 77px;
+            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            padding: 15px;
+            padding: 100px 15px 15px;
             transform: translateX(100%);
             transition: transform 0.5s;
             z-index: 2;
@@ -115,9 +155,28 @@
             @include display-flex;
             @include flex-direction-column;
             @include align-items-center;
-            
-            &.active {
-                transform: translateX(0);
+            //@include justify-content-center;
+
+            background-image: url("./assets/images/mobile-menu-bg.png");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+
+            text-align: center;
+
+            li {
+                margin-bottom: 45px;
+            }
+
+            .menu-block {
+                margin-top: 22px;
+
+                a {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 15px;
+                    padding-bottom: 0;
+                }
             }
         }
 
@@ -139,15 +198,25 @@
             @include transition(all 0.2s);
 
             @include min-medium {
-                //@include fluid-type(991px, 1920px, 18px, 18px);
                 font-size: 14px;
                 margin-bottom: 0;
             }
 
             @include min-extra-large {
-                //@include fluid-type(991px, 1920px, 18px, 18px);
                 font-size: 18px;
                 margin-bottom: 0;
+            }
+
+            @include max-medium {
+                @include font_tektur_semiBold;
+                font-size: 24px;
+                color: $primary-text-color;
+                letter-spacing: 2.5px;
+                @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.8));
+
+                &:after {
+                    display: none;
+                }
             }
 
             &:hover {
@@ -170,73 +239,6 @@
                 @include transform(translateX(-50%));
             }
         }
-
-        .account, .globe {
-            width: 40px;
-            height: 40px;
-            @include display-inline-flex;
-            @include align-items-center;
-            @include justify-content-center;
-            padding: 0;
-
-            clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
-            background: linear-gradient(45deg, rgba(17,155,255,0.54) 0%,rgba(17,155,255,0) 100%);
-            @include transition(all 0.2s);
-
-            @include min-extra-large {
-                width: 50px;
-                height: 50px;
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                top: 2px;
-                left: 2px;
-                bottom: 2px;
-                right: 2px;
-
-                clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
-                background: #030919;
-                @include transition(all 0.2s);
-            }
-
-            &:after {
-                display: none;
-            }
-
-            svg {
-                z-index: 3;
-
-                @include min-medium {
-                    width: 19px;
-                    height: 19px;
-                }
-
-                @include min-extra-large {
-                    width: 26px;
-                    height: 26px;
-                }
-            }
-
-            @include min-medium {
-                &:hover {
-                    background: $primary-text-color;
-
-                    &:before {
-                        background: $primary-text-color;
-                    }
-
-                    svg {
-                        path {
-                            fill: #030919;
-                        }
-                    }
-                }
-            }
-        }
-
-
     }
 
     .menu-left {
@@ -288,14 +290,79 @@
         }
     }
 
+    .account, .globe {
+        width: 40px;
+        height: 40px;
+        @include display-inline-flex;
+        @include align-items-center;
+        @include justify-content-center;
+        padding: 0;
+
+        clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
+        background: linear-gradient(45deg, rgba(17,155,255,0.54) 0%,rgba(17,155,255,0) 100%);
+        @include transition(all 0.2s);
+
+        @include min-extra-large {
+            width: 50px;
+            height: 50px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            right: 2px;
+
+            clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
+            background: #030919;
+            @include transition(all 0.2s);
+        }
+
+        &:after {
+            display: none;
+        }
+
+        svg {
+            z-index: 3;
+
+            @include min-medium {
+                width: 19px;
+                height: 19px;
+            }
+
+            @include min-extra-large {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        @include min-medium {
+            &:hover {
+                background: $primary-text-color;
+
+                &:before {
+                    background: $primary-text-color;
+                }
+
+                svg {
+                    path {
+                        fill: #030919;
+                    }
+                }
+            }
+        }
+    }
+
     .nav-btn {
         @include reset-button;
 
-        width: 40px;
-        height: 40px;
+        width: 31px;
+        height: 31px;
         position: relative;
         z-index: 2;
-        overflow: hidden;
+        display: block;
 
         @include min-medium {
             display: none;
@@ -304,34 +371,117 @@
         &.active {
             .nav-bar {
                 &:nth-of-type(1) {
-                    top: 50%;
-                    transform: translate(-50%, -50%) rotate(-45deg);
+                    @include transform(translate(-1px, -1px));
                 }
 
                 &:nth-of-type(2) {
-                    top: 50%;
-                    transform: translate(-50%, -50%) rotate(45deg);
+                    @include transform(translate(9px, 9px));
+                }
+
+                &:nth-of-type(3) {
+                    @include transform(translate(4px, 4px));
+                }
+
+                &:nth-of-type(4) {
+                    @include transform(translate(27px, -1px));
+                }
+
+                &:nth-of-type(5) {
+                    @include transform(translate(18px, 9px));
+                }
+
+                &:nth-of-type(6) {
+                    @include transform(translate(4px, 22px));
+                }
+
+                &:nth-of-type(7) {
+                    @include transform(translate(13px, 13px));
+                }
+
+                &:nth-of-type(8) {
+                    @include transform(translate(22px, 4px));
+                }
+
+                &:nth-of-type(9) {
+                    @include transform(translate(8px, 18px));
+                }
+
+                &:nth-of-type(10) {
+                    @include transform(translate(-1px, 27px));
+                }
+
+                &:nth-of-type(11) {
+                    @include transform(translate(22px, 22px));
+                }
+
+                &:nth-of-type(12) {
+                    @include transform(translate(18px, 18px));
+                }
+
+                &:nth-of-type(13) {
+                    @include transform(translate(27px, 27px));
                 }
             }
         }
 
         .nav-bar {
-            width: 30px;
-            height: 3px;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 4px;
-            transform: translate(-50%, -50%);
             background-color: $primary-text-color;
             transition: all 0.3s ease-in-out;
 
+            width: 5px;
+            height: 5px;
+
             &:nth-of-type(1) {
-                top: calc(50% - 5px);
+                @include transform(translate(0, 0));
             }
 
             &:nth-of-type(2) {
-                top: calc(50% + 5px);
+                @include transform(translate(0, 0));
+            }
+
+            &:nth-of-type(3) {
+                @include transform(translate(13px, 0));
+            }
+
+            &:nth-of-type(4) {
+                @include transform(translate(26px, 0));
+            }
+
+            &:nth-of-type(5) {
+                @include transform(translate(26px, 0));
+            }
+
+            &:nth-of-type(6) {
+                @include transform(translate(0, 13px));
+            }
+
+            &:nth-of-type(7) {
+                @include transform(translate(13px, 13px));
+            }
+
+            &:nth-of-type(8) {
+                @include transform(translate(26px, 13px));
+            }
+
+            &:nth-of-type(9) {
+                @include transform(translate(0, 26px));
+            }
+
+            &:nth-of-type(10) {
+                @include transform(translate(0, 26px));
+            }
+
+            &:nth-of-type(11) {
+                @include transform(translate(13px, 26px));
+            }
+
+            &:nth-of-type(12) {
+                @include transform(translate(26px, 26px));
+            }
+
+            &:nth-of-type(13) {
+                @include transform(translate(26px, 26px));
             }
         }
     }
