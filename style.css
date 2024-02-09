@@ -211,6 +211,9 @@ COLORS
     transform: translateY(-50%);
   }
 }
+.header-section .menu .menu-block a {
+  padding-bottom: 0;
+}
 @media only screen and (max-width: 991px) {
   .header-section .menu {
     position: fixed;
