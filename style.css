@@ -3027,9 +3027,6 @@ COLORS
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 17px;
-  /*@include min-extra-large {
-      margin-bottom: 12px;
-  }*/
 }
 .marketplace-section .dominator-info .name {
   text-transform: uppercase;
@@ -4130,8 +4127,6 @@ COLORS
 
 .footer-section {
   position: relative;
-  background-size: 100% auto;
-  background-position: center top;
 }
 .footer-section .footer-top {
   position: relative;
@@ -4210,7 +4205,6 @@ COLORS
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
-  /*background: rgba(#030A19, 1);*/
   clip-path: polygon(0 0, 38% 0, 50% 4%, 100% 4%, 100% 100%, 0 100%);
   z-index: -3;
 }
@@ -4786,13 +4780,6 @@ body {
   background-position: center top;
   background-attachment: fixed;
   overflow-x: hidden;
-  /*&.menu-opened {
-    overflow: hidden;
-
-    .header-section {
-      padding-right: 17px;
-    }
-  }*/
 }
 @media only screen and (min-width: 1201px) {
   body {
@@ -4803,6 +4790,9 @@ body {
   body {
     font-size: 18px;
   }
+}
+body.menu-opened {
+  overflow: hidden;
 }
 
 .container {
