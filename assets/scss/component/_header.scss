@@ -168,6 +168,10 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+
+            a {
+                padding-bottom: 0;
+            }
         }
 
         @include max-medium {
