@@ -254,11 +254,15 @@ COMMON STYLE END
 .secondary-button {
   color: $black-text-color;
   height: 52px;
-  width: 277px;
+  width: 276px;
   position: relative;
   @include display-inline-flex;
   @include border-radius(2px);
   padding: 2px;
+
+  @include min-small {
+
+  }
 
   @include min-extra-large {
     height: 66px;

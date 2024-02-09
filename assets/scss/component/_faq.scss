@@ -123,12 +123,12 @@
     }
 
     .faq-container {
-        max-width: 1296px;
+        max-width: 1142px;
         position: relative;
         text-align: center;
 
         @include min-large {
-            max-width: 1296px;
+            max-width: 1142px;
         }
 
         @include min-extra-large {
@@ -170,12 +170,23 @@
         margin-bottom: 55px;
 
         @include min-large {
-            padding: 94px 121px 84px 139px;
+            padding: 46px 42px 0 64px;
+            margin-bottom: 124px;
         }
 
         @include min-extra-large {
             padding: 60px 62px 0 84px;
             margin-bottom: 166px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(3,10,25,0.65) 0%,rgba(3,10,25,0) 100%);
         }
     }
 
@@ -195,7 +206,7 @@
             @include full-absolute;
             bottom: -2px;
             clip-path: polygon(0 0, 51% 0, 57% 3%, 100% 3%, 100% 100%, 0 100%);
-            background: rgba(3,10,25, 0.9);
+            background: rgba(3, 10, 25, 0.9);
 
             @include min-large {
                 clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);

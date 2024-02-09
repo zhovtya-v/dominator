@@ -95,12 +95,19 @@
 
     .footer-image-element {
         position: absolute;
-        right: 0;
-        top: -300px;
-        width: 42%;
-        height: 62%;
+        right: -120px;
+        top: -195px;
+        width: 500px;
+        height: 370px;
         text-align: right;
         z-index: 2;
+
+        @include min-medium {
+            right: 0;
+            top: -300px;
+            width: 42%;
+            height: 62%;
+        }
 
         @include min-extra-large {
             top: -413px;

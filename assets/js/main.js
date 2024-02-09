@@ -11,28 +11,6 @@ menuBtn.addEventListener('click', function () {
     body.classList.toggle('menu-opened');
 })
 
-var aboutSwiper = new Swiper(".about-swiper", {
-    effect: "cards",
-    loop: true,
-
-    cardsEffect: {
-        perSlideOffset: 10,
-        perSlideRotate: 10,
-        rotate: false,
-        slideShadows: false,
-    },
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
 
 var dominatorsSwiper = new Swiper(".dominators-swiper", {
     loop: true,
@@ -123,3 +101,59 @@ accordionItem.forEach((accordionToggle) => {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', reinit_slider);
+window.addEventListener('resize', reinit_slider);
+
+let mql = window.matchMedia('(max-width: 991px)');
+let swiper = null;
+
+function reinit_slider() {
+    if (mql.matches) {
+        swiper = new Swiper('.about-swiper', {
+            grabCursor: true,
+            spaceBetween: 12,
+            slidesPerView: 1,
+            centeredSlides: true,
+            roundLengths: true,
+            loop: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+    else {
+        var swiper = new Swiper(".about-swiper", {
+            effect: "cards",
+            loop: true,
+
+            cardsEffect: {
+                perSlideOffset: 10,
+                perSlideRotate: 10,
+                rotate: false,
+                slideShadows: false,
+                stretch: 50,
+                depth: 20,
+                modifier: 1,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+}

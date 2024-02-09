@@ -39,11 +39,18 @@
             }
 
             &:before {
-                top: 32px;
+                top: 18px;
                 right: 93%;
-                width: 268px;
-                height: 24px;
+                width: 185px;
+                height: 19px;
                 background-image: url("./assets/images/road-map-title-line-left.svg");
+
+                @include min-medium {
+                    top: 32px;
+                    right: 93%;
+                    width: 268px;
+                    height: 24px;
+                }
 
                 @include min-extra-large {
                     top: 44px;
@@ -53,11 +60,18 @@
             }
 
             &:after {
-                top: 14px;
-                left: 90%;
-                width: 236px;
-                height: 20px;
+                top: 4px;
+                left: 66%;
+                width: 170px;
+                height: 19px;
                 background-image: url("./assets/images/road-map-title-line-right.svg");
+
+                @include min-medium {
+                    top: 14px;
+                    left: 90%;
+                    width: 236px;
+                    height: 20px;
+                }
 
                 @include min-extra-large {
                     top: 21px;
@@ -390,7 +404,7 @@
 
         &:before {
             top: 23px;
-            right: 112%;
+            right: 100%;
             width: 136px;
             background-image: url("./assets/images/road-map-btn-line-left.svg");
 
@@ -402,7 +416,7 @@
 
         &:after {
             top: 7px;
-            left: 111%;
+            left: 100%;
             width: 172px;
             background-image: url("./assets/images/road-map-btn-line-right.svg");
 

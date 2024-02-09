@@ -1,5 +1,5 @@
 .about-section {
-    padding: 60px 0 58px;
+    padding: 63px 0 58px;
 
     @include min-large {
         padding: 94px 0 52px;
@@ -93,11 +93,11 @@
         }
 
         &.fourth {
-
-            right: -141px;
-            bottom: -13px;
+            left: 32px;
+            bottom: 240px;
 
             @include min-large {
+                left: initial;
                 right: -141px;
                 bottom: -13px;
             }
@@ -110,7 +110,7 @@
     }
 
     .about-info {
-        margin-bottom: 110px;
+        margin-bottom: 145px;
 
         @include min-small {
             max-width: 300px;
@@ -209,7 +209,7 @@
             content: '';
             position: absolute;
             top: 106%;
-            left: 150px;
+            left: 232px;
             width: 175px;
             height: 32px;
             background: url("./assets/images/about-btn-line-mob.svg") no-repeat;
@@ -222,13 +222,14 @@
                 width: 183px;
                 height: 25px;
                 background: url("./assets/images/about-btn-line.svg") no-repeat;
+                @include transform(translateX(0));
             }
 
             @include min-large {
                 top: 16px;
                 left: 102%;
-                width: 148px;
-                height: 21px;
+                width: 184px;
+                height: 27px;
             }
 
             @include min-extra-large {
@@ -265,15 +266,25 @@
         &:before {
             content: '';
             position: absolute;
-            top: 50%;
-            right: 90%;
-            width: 219px;
-            height: 127px;
-            background: url("./assets/images/about-slider-line.svg") no-repeat;
+            bottom: 102%;
+            right: -8px;
+            width: 211px;
+            height: 39px;
+            background: url("./assets/images/about-line-top-mob.svg") no-repeat;
             background-size: cover;
-            background-position: right center;
-            @include transform(translateY(-50%));
+            background-position: center bottom;
             z-index: 2;
+
+            @include min-medium {
+                top: 50%;
+                bottom: initial;
+                right: 90%;
+                width: 219px;
+                height: 127px;
+                background: url("./assets/images/about-slider-line.svg") no-repeat;
+                background-position: right center;
+                @include transform(translateY(-50%));
+            }
 
             @include min-extra-large {
                 width: 321px;
@@ -304,14 +315,35 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
+
+
+            @include min-medium {
+                perspective: 800px;
+                @include aspect-ratio(539, 408);
+            }
 
             img {
                 max-width: 100%;
                 max-height: 100%;
-                width: auto;
+                width: 100%;
                 height: auto;
                 vertical-align: bottom;
-                //transform: scale(1.1);
+
+                @include min-medium {
+                    max-width: 495px;
+                    width: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotateY(27deg);
+                    transform-style: preserve-3d;
+                    clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
+                }
+
+                @include min-extra-large {
+                    max-width: 575px;
+                }
             }
         }
 
@@ -321,6 +353,18 @@
 
         .about-swiper {
             z-index: 5;
+            @include max-medium {
+                overflow: visible;
+            }
+        }
+
+        .swiper-pagination {
+            text-align: left;
+
+            @include max-medium {
+                margin-top: 34px;
+                text-align: center;
+            }
         }
     }
 
@@ -359,6 +403,4 @@
             z-index: 2;
         }
     }
-
-
 }
