@@ -105,13 +105,22 @@
         &:before {
             content: '';
             position: absolute;
-            top: 34px;
-            right: 98%;
-            width: 370px;
-            height: 39px;
+            top: -6px;
+            right: 87%;
+            width: 160px;
+            height: 19px;
             background-image: url("./assets/images/road-map-title-line-left.svg");
             background-repeat: no-repeat;
             background-size: cover;
+            @include transform(scale(1, -1));
+
+            @include min-medium {
+                top: 34px;
+                right: 98%;
+                width: 370px;
+                height: 39px;
+                @include transform(scale(1, 1));
+            }
 
             @include min-large {
                 top: 25px;
@@ -127,11 +136,28 @@
                 height: 39px;
             }
         }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 86%;
+            width: 160px;
+            height: 19px;
+            background-image: url("./assets/images/road-map-title-line-left.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include transform(scale(-1, 1));
+
+            @include min-medium {
+                display: none;
+            }
+        }
     }
 
     .marketplace-section-element {
         position: absolute;
-
+        z-index: 2;
         width: 170px;
         height: 170px;
 
@@ -549,6 +575,7 @@
     .button-wrap {
         text-align: center;
         position: relative;
+        z-index: 2;
 
         @include min-small {
             display: inline-block;
@@ -557,14 +584,24 @@
         &:before {
             content: '';
             position: absolute;
-            right: 100%;
-            top: 50%;
-            @include transform(translateY(-50%));
-            width: 245px;
-            height: 36px;
-            background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
+            left: -31px;
+            top: 112%;
+            width: 194px;
+            height: 32px;
+            background: url("./assets/images/marketplace-btn-line-mob.svg") no-repeat;
             background-size: cover;
             background-position: right center;
+
+            @include min-medium {
+                left: initial;
+                right: 100%;
+                top: 50%;
+                @include transform(translateY(-50%));
+                width: 245px;
+                height: 36px;
+                background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
+                background-size: cover;
+            }
 
             @include min-extra-large {
                 right: 104%;
@@ -576,7 +613,11 @@
 
     .secondary-button {
         height: 51px;
-        width: 295px;
+        width: 100%;
+
+        @include min-small {
+            width: 295px;
+        }
 
         @include min-extra-large {
             height: 64px;
