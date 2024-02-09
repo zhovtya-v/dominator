@@ -469,7 +469,6 @@
                 text-transform: uppercase;
                 color: $primary-text-color;
                 letter-spacing: 6px;
-                //@include fluid-type(375px, 1920px, 50px, 130px);
                 @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
 
                 @include min-medium {

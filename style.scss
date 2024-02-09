@@ -83,6 +83,14 @@ body {
   @include min-extra-large {
     font-size: 18px;
   }
+
+  /*&.menu-opened {
+    overflow: hidden;
+
+    .header-section {
+      padding-right: 17px;
+    }
+  }*/
 }
 
 .container {
