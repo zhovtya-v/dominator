@@ -34,6 +34,16 @@ COLORS
     padding: 15px 0;
   }
 }
+@media only screen and (min-width: 992px) {
+  .header-section {
+    padding: 25px 0;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .header-section {
+    padding: 27px 0;
+  }
+}
 .header-section:before {
   content: "";
   position: absolute;
@@ -105,7 +115,17 @@ COLORS
 }
 @media only screen and (min-width: 992px) and (min-width: 1201px) {
   .header-section .logo {
-    top: 26px;
+    top: 7px;
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+@media only screen and (min-width: 992px) and (min-width: 1441px) {
+  .header-section .logo {
+    top: 16px;
     -moz-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
@@ -175,6 +195,22 @@ COLORS
     height: 0;
   }
 }
+@media only screen and (min-width: 992px) {
+  .header-section .menu-block {
+    display: none;
+  }
+}
+.header-section .menu .menu-block {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .header-section .menu .menu-block {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 @media only screen and (max-width: 991px) {
   .header-section .menu {
     position: fixed;
@@ -196,6 +232,9 @@ COLORS
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     background-image: url("./assets/images/mobile-menu-bg.png");
     background-size: cover;
     background-position: center top;
@@ -227,6 +266,17 @@ COLORS
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    padding-right: 110px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .header-section .menu {
+    padding-right: 149px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .header-section .menu {
+    padding-right: 194px;
   }
 }
 .header-section .menu a {
@@ -353,6 +403,7 @@ COLORS
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0;
+  position: relative;
   clip-path: polygon(25% 0%, 100% 0, 100% 76%, 75% 100%, 0 100%, 0 20%);
   background: linear-gradient(45deg, rgba(17, 155, 255, 0.54) 0%, rgba(17, 155, 255, 0) 100%);
   -webkit-transition: all 0.2s;
