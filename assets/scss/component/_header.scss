@@ -99,6 +99,7 @@
             display: inline-block;
             width: 60px;
             height: 60px;
+            -webkit-appearance: none;
 
             @include min-medium {
                 width: 70px;
@@ -127,8 +128,9 @@
                 height: 54px;
                 background: $primary-text-color;
                 @include border-radius(50%);
-                filter: blur(55px);
+                @include filter(blur(55px));
                 @include transition(all 0.2s);
+                -webkit-appearance: none;
                 opacity: 0;
 
                 @include min-medium {
