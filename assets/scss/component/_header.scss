@@ -98,6 +98,7 @@
             width: 60px;
             height: 60px;
             -webkit-appearance: none;
+            outline: none;
 
             @include min-medium {
                 width: 70px;
@@ -129,6 +130,7 @@
                 @include filter(blur(55px));
                 @include transition(all 0.2s);
                 -webkit-appearance: none;
+                outline: none;
                 opacity: 0;
 
                 @include min-medium {

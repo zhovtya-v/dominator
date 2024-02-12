@@ -139,6 +139,7 @@ COLORS
   width: 60px;
   height: 60px;
   -webkit-appearance: none;
+  outline: none;
 }
 @media only screen and (min-width: 992px) {
   .header-section .logo a {
@@ -179,6 +180,7 @@ COLORS
   -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-appearance: none;
+  outline: none;
   opacity: 0;
 }
 @media only screen and (min-width: 992px) {
@@ -4292,7 +4294,7 @@ COLORS
 }
 .footer-section .footer-image-element {
   position: absolute;
-  right: -120px;
+  right: 0;
   top: -195px;
   width: 500px;
   height: 370px;
@@ -4301,7 +4303,6 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-image-element {
-    right: 0;
     top: -300px;
     width: 42%;
     height: 62%;
@@ -4706,6 +4707,7 @@ COLORS
 }
 .footer-section .footer-bottom-block {
   padding: 37px 0 70px;
+  overflow: hidden;
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block {
