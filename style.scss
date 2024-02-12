@@ -23,6 +23,11 @@ COMMON STYLE
   box-sizing: border-box
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 a,
 :before, :after {
   -webkit-box-sizing: border-box;
