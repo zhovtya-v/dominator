@@ -295,14 +295,22 @@
         &:after {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
+            top: 60%;
+            left: 50%;
             width: 303px;
             height: 303px;
             background: rgba($primary-bg-color, 0.2);
-            filter: blur(224px);
+            filter: blur(114px);
+            @include transform(translate(-50%,-50%));
             z-index: 1;
+
+            @include min-medium {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                filter: blur(224px);
+                @include transform(translateX(0));
+            }
 
             @include min-extra-large {
                 width: 493px;
@@ -315,8 +323,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
-
+            //clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
+            position: relative;
 
             @include min-medium {
                 perspective: 800px;
@@ -329,6 +337,7 @@
                 width: 100%;
                 height: auto;
                 vertical-align: bottom;
+                clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
 
                 @include min-medium {
                     max-width: 495px;
@@ -338,7 +347,7 @@
                     left: 50%;
                     transform: translate(-50%, -50%) rotateY(27deg);
                     transform-style: preserve-3d;
-                    clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
+
                 }
 
                 @include min-extra-large {

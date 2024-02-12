@@ -43,11 +43,9 @@
     }
 
     &.active {
-        .logo {
-            a {
-                &:before {
-                    opacity: 1;
-                }
+        .nav-btn {
+            &:before {
+                opacity: 0;
             }
         }
 
@@ -129,11 +127,6 @@
                 @include border-radius(50%);
                 filter: blur(55px);
                 @include transition(all 0.2s);
-                opacity: 0;
-
-                @include min-medium {
-                    opacity: 1;
-                }
 
                 @include min-extra-large {
                     width: 80px;
@@ -406,6 +399,19 @@
         position: relative;
         z-index: 2;
         display: block;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 54px;
+            height: 54px;
+            background: $primary-text-color;
+            @include border-radius(50%);
+            filter: blur(55px);
+            @include transition(all 0.2s);
+        }
 
         @include min-medium {
             display: none;
