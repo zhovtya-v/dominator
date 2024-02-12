@@ -350,6 +350,11 @@
   text-shadow: $value;
 }
 
+@mixin filter($value) {
+  -webkit-filter: $value;
+  filter: $value;
+}
+
 @mixin placeholder {
   &::-webkit-input-placeholder {
     @content;

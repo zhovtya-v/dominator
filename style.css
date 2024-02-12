@@ -138,6 +138,7 @@ COLORS
   display: inline-block;
   width: 60px;
   height: 60px;
+  -webkit-appearance: none;
 }
 @media only screen and (min-width: 992px) {
   .header-section .logo a {
@@ -170,12 +171,20 @@ COLORS
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  -webkit-filter: blur(55px);
   filter: blur(55px);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+  -webkit-appearance: none;
+  opacity: 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-section .logo a:before {
+    opacity: 1;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .header-section .logo a:before {
@@ -2854,6 +2863,7 @@ COLORS
 .marketplace-section .marketplace-swiper {
   padding-bottom: 26px;
   overflow: visible;
+  z-index: 2;
 }
 @media only screen and (min-width: 768px) {
   .marketplace-section .marketplace-swiper {
