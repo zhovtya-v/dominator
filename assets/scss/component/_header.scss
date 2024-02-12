@@ -132,6 +132,7 @@
                 -webkit-appearance: none;
                 outline: none;
                 opacity: 0;
+                transform: translate3d(0, 0, 0);
 
                 @include min-medium {
                     opacity: 1;
