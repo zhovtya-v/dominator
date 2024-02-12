@@ -69,10 +69,11 @@ body {
   margin: 0;
   padding: 0;
 
-  background: url("./assets/images/site-bg.jpg") no-repeat;
+  background: $black-bg-color url("./assets/images/site-bg-new.png");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 
   overflow-x: hidden;
 
