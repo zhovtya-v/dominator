@@ -4770,6 +4770,7 @@ COLORS
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block .title:before {
     top: 47px;
+    right: 96%;
     width: 281px;
     width: 20%;
     height: 55px;
