@@ -497,13 +497,22 @@
             }
 
             &:before {
-                top: 47px;
-                right: 97%;
-                width: 281px;
-                width: 20%;
-                height: 55px;
-                height: 31%;
-                background-image: url("./assets/images/footer-title-line-left.svg");
+                top: 100%;
+                right: 56%;
+                width: 215px;
+                height: 30px;
+                background-image: url("./assets/images/footer-title-line-left-mob.svg");
+                //@include transform(translateX(-50%));
+
+                @include min-medium {
+                    top: 47px;
+                    width: 281px;
+                    width: 20%;
+                    height: 55px;
+                    height: 31%;
+                    @include transform(translateX(0));
+                    background-image: url("./assets/images/footer-title-line-left.svg");
+                }
 
                 @include min-extra-large {
                     top: 65px;
@@ -511,13 +520,22 @@
             }
 
             &:after {
-                top: 39px;
-                left: 96%;
-                width: 284px;
-                height: 44px;
-                width: 20%;
-                height: 31%;
-                background-image: url("./assets/images/footer-title-line-right.svg");
+                top: 100%;
+                left: 56%;
+                width: 215px;
+                height: 32px;
+                background-image: url("./assets/images/footer-title-line-right-mob.svg");
+
+                @include min-medium {
+                    top: 39px;
+                    left: 96%;
+                    width: 284px;
+                    height: 44px;
+                    width: 20%;
+                    height: 31%;
+                    @include transform(translateX(0));
+                    background-image: url("./assets/images/footer-title-line-right.svg");
+                }
 
                 @include min-extra-large {
                     top: 53px;

@@ -147,12 +147,13 @@
             filter: blur(224px);
             @include transform(translateY(-50%));
             z-index: 0;
+
         }
 
         &:after {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 72%;
             left: -10px;
             background: $secondary-bg-color;
             width: 315px;
@@ -160,6 +161,10 @@
             opacity: 0.2;
             filter: blur(224px);
             @include transform(translateY(-50%));
+
+            @include min-medium {
+                top: 50%;
+            }
         }
     }
 
