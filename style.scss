@@ -80,8 +80,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 
-  overflow-x: hidden;
-
   @include min-large {
     font-size: 16px;
   }
