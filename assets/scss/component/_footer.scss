@@ -91,7 +91,7 @@
 
     .footer-image-element {
         position: absolute;
-        right: -120px;
+        right: 0;
         top: -195px;
         width: 500px;
         height: 370px;
@@ -99,7 +99,7 @@
         z-index: 2;
 
         @include min-medium {
-            right: 0;
+            //right: 0;
             top: -300px;
             width: 42%;
             height: 62%;
@@ -453,6 +453,7 @@
 
     .footer-bottom-block {
         padding: 37px 0 70px;
+        overflow: hidden;
 
         @include min-medium {
             padding: 60px 0 70px;
@@ -506,6 +507,7 @@
 
                 @include min-medium {
                     top: 47px;
+                    right: 96%;
                     width: 281px;
                     width: 20%;
                     height: 55px;

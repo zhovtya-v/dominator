@@ -139,6 +139,7 @@ COLORS
   width: 60px;
   height: 60px;
   -webkit-appearance: none;
+  outline: none;
 }
 @media only screen and (min-width: 992px) {
   .header-section .logo a {
@@ -179,7 +180,10 @@ COLORS
   -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-appearance: none;
+  outline: none;
   opacity: 0;
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
 }
 @media only screen and (min-width: 992px) {
   .header-section .logo a:before {
@@ -4292,7 +4296,7 @@ COLORS
 }
 .footer-section .footer-image-element {
   position: absolute;
-  right: -120px;
+  right: 0;
   top: -195px;
   width: 500px;
   height: 370px;
@@ -4301,7 +4305,6 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-image-element {
-    right: 0;
     top: -300px;
     width: 42%;
     height: 62%;
@@ -4706,6 +4709,7 @@ COLORS
 }
 .footer-section .footer-bottom-block {
   padding: 37px 0 70px;
+  overflow: hidden;
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block {
@@ -4766,6 +4770,7 @@ COLORS
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block .title:before {
     top: 47px;
+    right: 96%;
     width: 281px;
     width: 20%;
     height: 55px;
@@ -4821,6 +4826,11 @@ COMMON STYLE
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 a,
 :before, :after {
   -webkit-box-sizing: border-box;
@@ -4874,6 +4884,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 @media only screen and (min-width: 1201px) {
   body {

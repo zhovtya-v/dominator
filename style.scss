@@ -23,6 +23,11 @@ COMMON STYLE
   box-sizing: border-box
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 a,
 :before, :after {
   -webkit-box-sizing: border-box;
@@ -76,6 +81,7 @@ body {
   background-repeat: no-repeat;
 
   overflow-x: hidden;
+  overflow-y: auto;
 
   @include min-large {
     font-size: 16px;
