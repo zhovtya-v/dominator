@@ -64,12 +64,18 @@
         &:before {
             content: '';
             @include full-absolute;
-            background: rgba(#030A19, 1) url("./assets/images/footer-layout-bg.png");
+            background-color: rgba(#030A19, 1);
+            background-image:  url("./assets/images/footer-layout-bg-mob.png");
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: auto 100%;
             background-position: right center;
             clip-path: polygon(0 0, 38% 0, 50% 4%, 100% 4%, 100% 100%, 0 100%);
             z-index: -3;
+
+            @include min-medium {
+                background-image:  url("./assets/images/footer-layout-bg.png");
+                background-size: cover;
+            }
 
             @include min-extra-large {
                 clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
