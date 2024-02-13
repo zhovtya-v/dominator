@@ -4271,12 +4271,19 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: #030a19 url("./assets/images/footer-layout-bg.png");
+  background-color: #030a19;
+  background-image: url("./assets/images/footer-layout-bg-mob.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: right center;
   clip-path: polygon(0 0, 38% 0, 50% 4%, 100% 4%, 100% 100%, 0 100%);
   z-index: -3;
+}
+@media only screen and (min-width: 992px) {
+  .footer-section .footer-section-bg:before {
+    background-image: url("./assets/images/footer-layout-bg.png");
+    background-size: cover;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .footer-section .footer-section-bg:before {
