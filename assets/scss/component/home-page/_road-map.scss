@@ -1,6 +1,6 @@
 .road-map-section {
     padding: 65px 0 136px;
-    background: url("./assets/images/road-map-section-bg.png") no-repeat;
+    background: url("./assets/images/home-page/road-map-section-bg.png") no-repeat;
     background-size: auto;
     background-position: center center;
     text-align: center;
@@ -43,7 +43,7 @@
                 right: 93%;
                 width: 185px;
                 height: 19px;
-                background-image: url("./assets/images/road-map-title-line-left.svg");
+                background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
 
                 @include min-medium {
                     top: 32px;
@@ -64,7 +64,7 @@
                 left: 66%;
                 width: 170px;
                 height: 19px;
-                background-image: url("./assets/images/road-map-title-line-right.svg");
+                background-image: url("./assets/images/home-page/road-map-title-line-right.svg");
 
                 @include min-medium {
                     top: 14px;
@@ -116,8 +116,8 @@
     .number {
         width: 49px;
         height: 61px;
-        background: url("./assets/images/road-map-number-bg.png") no-repeat;
         background-size: cover;
+        background-repeat: no-repeat;
         @include display-flex;
         @include align-items-center;
         @include justify-content-center;
@@ -189,6 +189,8 @@
             }
 
             .number {
+                background-image: url("./assets/images/general/road-map-number-bg.png");
+
                 &:before {
                     top: 100%;
                     background: linear-gradient(135deg, rgba(7,30,56,1) 0%,rgba(0,117,255,0) 100%);
@@ -208,6 +210,8 @@
             }
 
             .number {
+                background-image: url("./assets/images/general/road-map-number-bg-2.png");
+
                 &:before {
                     bottom: 100%;
                     background: linear-gradient(135deg, rgba(0,117,255,0) 0%,rgba(7,30,56,1) 100%);
@@ -323,7 +327,7 @@
         &:after {
             content: '';
             @include full-absolute;
-            background: url("./assets/images/road-map-card-bg.png") no-repeat;
+            background: url("./assets/images/home-page/road-map-card-bg.png") no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -406,7 +410,7 @@
             top: 23px;
             right: 100%;
             width: 136px;
-            background-image: url("./assets/images/road-map-btn-line-left.svg");
+            background-image: url("./assets/images/home-page/road-map-btn-line-left.svg");
 
             @include min-extra-large {
                 top: 31px;
@@ -418,7 +422,7 @@
             top: 7px;
             left: 100%;
             width: 172px;
-            background-image: url("./assets/images/road-map-btn-line-right.svg");
+            background-image: url("./assets/images/home-page/road-map-btn-line-right.svg");
 
             @include min-extra-large {
                 top: 10px;

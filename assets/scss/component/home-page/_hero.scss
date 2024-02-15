@@ -93,7 +93,7 @@
             @include transform(translateY(-50%));
             width: 107px;
             height: 30px;
-            background: url("./assets/images/hero-image-line.svg") no-repeat;
+            background: url("./assets/images/home-page/hero-image-line.svg") no-repeat;
             background-size: cover;
             background-position: right center;
 
@@ -175,7 +175,7 @@
             top: 13px;
             width: 106px;
             height: 20px;
-            background: url("./assets/images/hero-title-line-mob-left.svg") no-repeat;
+            background: url("./assets/images/home-page/hero-title-line-mob-left.svg") no-repeat;
             background-size: cover;
 
             @include min-medium {
@@ -183,7 +183,7 @@
                 top: 63px;
                 width: 231px;
                 height: 142px;
-                background: url("./assets/images/hero-title-line.svg") no-repeat;
+                background: url("./assets/images/home-page/hero-title-line.svg") no-repeat;
                 background-size: cover;
             }
 
@@ -208,7 +208,7 @@
             top: 77px;
             width: 97px;
             height: 16px;
-            background: url("./assets/images/hero-title-line-mob-right.svg") no-repeat;
+            background: url("./assets/images/home-page/hero-title-line-mob-right.svg") no-repeat;
             background-size: cover;
 
             @include min-medium {
@@ -274,7 +274,7 @@
             right: 86%;
             height: 31px;
             width: 147px;
-            background: url("./assets/images/hero-button-line.svg") no-repeat;
+            background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
             background-size: cover;
 
             @include min-medium {
@@ -303,7 +303,7 @@
             left: 87%;
             width: 181px;
             height: 33px;
-            background-image: url("./assets/images/faq-btn-line-right.svg");
+            background-image: url("./assets/images/general/primary-btn-line-right.svg");
             background-repeat: no-repeat;
             background-size: cover;
 

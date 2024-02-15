@@ -1,0 +1,129 @@
+.video-container {
+    position: relative;
+    z-index: 3;
+    /*&:before {
+        content: '';
+        position: absolute;
+        top: 70px;
+        left: -70px;
+        background: $primary-bg-color;
+        width: 303px;
+        height: 303px;
+        opacity: 0.2;
+        filter: blur(114px);
+        @include transform(translateY(-50%));
+        z-index: 0;
+
+        @include min-medium {
+            left: initial;
+            right: 0;
+            width: 493px;
+            height: 585px;
+            opacity: 0.15;
+            filter: blur(224px);
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        right: 20px;
+        background: $secondary-bg-color;
+        width: 167px;
+        height: 199px;
+        opacity: 0.2;
+        filter: blur(154px);
+        z-index: -1;
+
+        @include min-medium {
+            bottom: -80px;
+            left: -10px;
+            right: initial;
+            width: 315px;
+            height: 374px;
+            opacity: 0.15;
+            filter: blur(224px);
+        }
+    }*/
+
+    .video-element-first {
+        position: absolute;
+        bottom: -70px;
+        right: -24px;
+        max-width: 201px;
+        max-height: 208px;
+        width: 100%;
+        z-index: 4;
+
+        img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+    }
+
+    .video-element-second {
+        position: absolute;
+        bottom: -52px;
+        left: -45px;
+        max-width: 201px;
+        max-height: 208px;
+        width: 100%;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+    }
+
+    .video-wrap {
+        position: relative;
+        @include display-flex;
+        @include align-items-center;
+        @include justify-content-center;
+        clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
+        border: 2px solid transparent;
+        background: rgb(17,155,255);
+        background: radial-gradient(circle, rgba(17,155,255, 0.8) 0%, rgba(0,117,255, 0.4) 100%);
+        @include aspect-ratio(320, 416);
+
+        @include min-small {
+            @include aspect-ratio(1440, 770);
+            clip-path: polygon(0% 10%, 6% 0%, 24% 0%, 27% 5%, 82% 5%, 86% 0%, 95% 0%, 100% 10%, 100% 92%, 96% 100%, 88% 100%, 82% 94%, 48% 94%, 46% 90%, 39% 90%, 37% 94%, 26% 94%, 23% 100%, 7% 100%, 0% 94%);
+        }
+
+        .video-image {
+            width: 100%;
+            clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
+
+            @include full-absolute;
+            @include display-flex;
+            @include justify-content-center;
+
+            overflow: hidden;
+
+            @include min-small {
+                clip-path: polygon(0% 10%, 6% 0%, 24% 0%, 27% 5%, 82% 5%, 86% 0%, 95% 0%, 100% 10%, 100% 92%, 96% 100%, 88% 100%, 82% 94%, 48% 94%, 46% 90%, 39% 90%, 37% 94%, 26% 94%, 23% 100%, 7% 100%, 0% 94%);
+            }
+
+            img {
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                vertical-align: bottom;
+                object-fit: cover;
+                object-position: center bottom;
+            }
+        }
+
+        .video-play {
+            @include full-absolute;
+            @include display-flex;
+            @include align-items-center;
+            @include justify-content-center;
+            z-index: 5;
+            cursor: pointer;
+        }
+    }
+}

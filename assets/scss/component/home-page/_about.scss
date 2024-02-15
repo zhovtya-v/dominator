@@ -154,7 +154,7 @@
                 right: -301px;
                 width: 367px;
                 height: 42px;
-                background: url("./assets/images/about-title-line.svg") no-repeat;
+                background: url("./assets/images/home-page/about-title-line.svg") no-repeat;
                 background-size: cover;
 
                 @include min-large {
@@ -212,7 +212,7 @@
             left: 232px;
             width: 175px;
             height: 32px;
-            background: url("./assets/images/about-btn-line-mob.svg") no-repeat;
+            background: url("./assets/images/home-page/about-btn-line-mob.svg") no-repeat;
             background-size: cover;
             @include transform(translateX(-50%));
 
@@ -221,7 +221,7 @@
                 left: 105%;
                 width: 183px;
                 height: 25px;
-                background: url("./assets/images/about-btn-line.svg") no-repeat;
+                background: url("./assets/images/home-page/about-btn-line.svg") no-repeat;
                 @include transform(translateX(0));
             }
 
@@ -270,7 +270,7 @@
             right: -8px;
             width: 211px;
             height: 39px;
-            background: url("./assets/images/about-line-top-mob.svg") no-repeat;
+            background: url("./assets/images/home-page/about-line-top-mob.svg") no-repeat;
             background-size: cover;
             background-position: center bottom;
             z-index: 2;
@@ -281,7 +281,7 @@
                 right: 90%;
                 width: 219px;
                 height: 127px;
-                background: url("./assets/images/about-slider-line.svg") no-repeat;
+                background: url("./assets/images/home-page/about-slider-line.svg") no-repeat;
                 background-position: right center;
                 @include transform(translateY(-50%));
             }

@@ -1,5 +1,5 @@
 .dominators-section {
-    background-image: url("./assets/images/dominator-bg-section-mob.png");
+    background-image: url("./assets/images/home-page/dominator-bg-section-mob.png");
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -7,7 +7,7 @@
     padding: 32px 0 134px;
 
     @include min-medium {
-        background-image: url("./assets/images/dominator-bg-section.png");
+        background-image: url("./assets/images/home-page/dominator-bg-section.png");
     }
 
     @include min-large {
@@ -49,7 +49,7 @@
             }
 
             &:before {
-                background-image: url("./assets/images/dominator-title-line-left.svg");
+                background-image: url("./assets/images/home-page/dominator-title-line-left.svg");
                 width: 361px;
                 height: 32px;
                 top: 13px;
@@ -71,7 +71,7 @@
             }
 
             &:after {
-                background-image: url("./assets/images/dominator-title-line-right.svg");
+                background-image: url("./assets/images/home-page/dominator-title-line-right.svg");
                 width: 386px;
                 height: 26px;
                 top: 44px;
@@ -150,7 +150,7 @@
             right: 86%;
             height: 14px;
             width: 117px;
-            background: url("./assets/images/hero-button-line.svg") no-repeat;
+            background: url("./assets/images/home-page/hero-button-line.svg") no-repeat;
             background-size: cover;
 
 
@@ -162,7 +162,7 @@
                 width: 25px;
                 height: 88px;
                 @include transform(translateX(-50%));
-                background: url("./assets/images/dominator-btn-line.svg") no-repeat;
+                background: url("./assets/images/home-page/dominator-btn-line.svg") no-repeat;
                 background-size: cover;
             }
 
@@ -184,7 +184,7 @@
             left: 87%;
             width: 131px;
             height: 13px;
-            background-image: url("./assets/images/faq-btn-line-right.svg");
+            background-image: url("./assets/images/home-page/faq-btn-line-right.svg");
             background-repeat: no-repeat;
             background-size: cover;
 
@@ -374,7 +374,7 @@
             content: '';
             @include full-absolute;
 
-            background: rgb(8 14 28) url("./assets/images/dominator-bg-lines.png");
+            background: rgb(8 14 28) url("./assets/images/home-page/dominator-bg-lines.png");
             background-repeat: no-repeat;
             background-size: 100% auto;
             background-position: left bottom;
@@ -437,7 +437,7 @@
             bottom: 0;
             @include transform(translateY(-25%));
 
-            background: url("./assets/images/dominator-light-image.svg") no-repeat;
+            background: url("./assets/images/home-page/dominator-light-image.svg") no-repeat;
             background-size: 100% auto;
             background-position: center bottom;
         }

@@ -5,7 +5,7 @@
 
     .accordion-item {
         padding: 27px 0 29px;
-        background: url("./assets/images/faq-bg-line.svg") no-repeat;
+        background: url("./assets/images/home-page/faq-bg-line.svg") no-repeat;
         background-size: 100% auto;
         background-position: center bottom;
         margin-bottom: 2px;
@@ -111,7 +111,7 @@
 
 .faq-section {
     padding-bottom: 100px;
-    background-image: url("./assets/images/faq-section-bg.png"), url("./assets/images/faq-image-elipse.png") ;
+    background-image: url("./assets/images/home-page/faq-section-bg.png"), url("./assets/images/home-page/faq-image-elipse.png") ;
     background-repeat: no-repeat;
     background-size: 100% auto, auto 100%;
     background-position: left top, 22% top;
@@ -267,7 +267,7 @@
                 left: 100%;
                 width: 180px;
                 height: 22px;
-                background-image: url("./assets/images/faq-title-line.svg");
+                background-image: url("./assets/images/home-page/faq-title-line.svg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 @include transform(scale(-1, 1));
@@ -308,7 +308,7 @@
             right: 108%;
             width: 176px;
             height: 39px;
-            background-image: url("./assets/images/faq-btn-line-left.svg");
+            background-image: url("./assets/images/general/primary-btn-line-left.svg");
 
             @include min-extra-large {
                 top: 15px;
@@ -322,7 +322,7 @@
             left: 106%;
             width: 181px;
             height: 33px;
-            background-image: url("./assets/images/faq-btn-line-right.svg");
+            background-image: url("./assets/images/general/primary-btn-line-right.svg");
 
             @include min-extra-large {
                 top: 18px;

@@ -26,7 +26,7 @@
         left: 0;
         right: 0;
         height: 40px;
-        background-image: url("./assets/images/header-bottom-line-mob.png");
+        background-image: url("./assets/images/general/header-bottom-line-mob.png");
         background-size: 100% auto;
         background-position: center top;
         background-repeat: no-repeat;
@@ -38,7 +38,7 @@
         }
 
         @include min-medium {
-            background-image: url("./assets/images/header-bottom-line.png");
+            background-image: url("./assets/images/general/header-bottom-line.png");
         }
     }
 
@@ -194,7 +194,7 @@
             @include align-items-center;
             @include justify-content-center;
 
-            background-image: url("./assets/images/mobile-menu-bg.png");
+            background-image: url("./assets/images/general/mobile-menu-bg.png");
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
