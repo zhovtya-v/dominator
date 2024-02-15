@@ -66,7 +66,7 @@
             content: '';
             @include full-absolute;
 
-            background: #030A19 url("./assets/images/marketplace-bg-section.png") no-repeat;
+            background: #030A19 url("./assets/images/home-page/marketplace-bg-section.png") no-repeat;
             background-size: cover;
             background-position: right center;
 
@@ -109,7 +109,7 @@
             right: 87%;
             width: 160px;
             height: 19px;
-            background-image: url("./assets/images/road-map-title-line-left.svg");
+            background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
             background-repeat: no-repeat;
             background-size: cover;
             @include transform(scale(1, -1));
@@ -144,7 +144,7 @@
             left: 86%;
             width: 160px;
             height: 19px;
-            background-image: url("./assets/images/road-map-title-line-left.svg");
+            background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
             background-repeat: no-repeat;
             background-size: cover;
             @include transform(scale(-1, 1));
@@ -342,7 +342,7 @@
             content: '';
             @include full-absolute;
             clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
-            background: #030919 url("./assets/images/marketplace-card-ellipse-bg.png") no-repeat;
+            background: #030919 url("./assets/images/home-page/marketplace-card-ellipse-bg.png") no-repeat;
             background-size: auto;
             background-position: center bottom;
             @include border-radius(2px);
@@ -355,7 +355,7 @@
         &:after {
             content: '';
             @include full-absolute;
-            background: url("./assets/images/marketplace-card-lines-bg.png") no-repeat;
+            background: url("./assets/images/home-page/marketplace-card-lines-bg.png") no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -375,7 +375,7 @@
         &:before {
             content: '';
             @include full-absolute;
-            background: url("./assets/images/item-dominator-bg-image.png") no-repeat;
+            background: url("./assets/images/home-page/item-dominator-bg-image.png") no-repeat;
             background-position: center;
             background-size: cover;
         }
@@ -585,7 +585,7 @@
             top: 112%;
             width: 194px;
             height: 32px;
-            background: url("./assets/images/marketplace-btn-line-mob.svg") no-repeat;
+            background: url("./assets/images/home-page/marketplace-btn-line-mob.svg") no-repeat;
             background-size: cover;
             background-position: right center;
 
@@ -596,7 +596,7 @@
                 @include transform(translateY(-50%));
                 width: 245px;
                 height: 36px;
-                background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
+                background: url("./assets/images/home-page/marketplace-btn-line.svg") no-repeat;
                 background-size: cover;
             }
 

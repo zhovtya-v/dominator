@@ -157,3 +157,18 @@ function reinit_slider() {
         });
     }
 }
+
+
+var thumbsSliderRoadMap = new Swiper(".top-road-map-slider", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 6.5,
+});
+var sliderRoadMap = new Swiper(".bottom-road-map-slider", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    thumbs: {
+        swiper: thumbsSliderRoadMap,
+    },
+});

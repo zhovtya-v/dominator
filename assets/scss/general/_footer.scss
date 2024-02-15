@@ -65,7 +65,7 @@
             content: '';
             @include full-absolute;
             background-color: rgba(#030A19, 1);
-            background-image:  url("./assets/images/footer-layout-bg-mob.png");
+            background-image:  url("./assets/images/general/footer-layout-bg-mob.png");
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: right center;
@@ -73,7 +73,7 @@
             z-index: -3;
 
             @include min-medium {
-                background-image:  url("./assets/images/footer-layout-bg.png");
+                background-image:  url("./assets/images/general/footer-layout-bg.png");
                 background-size: cover;
             }
 
@@ -514,7 +514,7 @@
                 right: 56%;
                 width: 215px;
                 height: 30px;
-                background-image: url("./assets/images/footer-title-line-left-mob.svg");
+                background-image: url("./assets/images/general/footer-title-line-left-mob.svg");
                 //@include transform(translateX(-50%));
 
                 @include min-medium {
@@ -525,7 +525,7 @@
                     height: 55px;
                     height: 31%;
                     @include transform(translateX(0));
-                    background-image: url("./assets/images/footer-title-line-left.svg");
+                    background-image: url("./assets/images/general/footer-title-line-left.svg");
                 }
 
                 @include min-extra-large {
@@ -538,7 +538,7 @@
                 left: 56%;
                 width: 215px;
                 height: 32px;
-                background-image: url("./assets/images/footer-title-line-right-mob.svg");
+                background-image: url("./assets/images/general/footer-title-line-right-mob.svg");
 
                 @include min-medium {
                     top: 39px;
@@ -548,7 +548,7 @@
                     width: 20%;
                     height: 31%;
                     @include transform(translateX(0));
-                    background-image: url("./assets/images/footer-title-line-right.svg");
+                    background-image: url("./assets/images/general/footer-title-line-right.svg");
                 }
 
                 @include min-extra-large {

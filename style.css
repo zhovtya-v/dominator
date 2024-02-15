@@ -51,7 +51,7 @@ COLORS
   left: 0;
   right: 0;
   height: 40px;
-  background-image: url("./assets/images/header-bottom-line-mob.png");
+  background-image: url("./assets/images/general/header-bottom-line-mob.png");
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .header-section:before {
-    background-image: url("./assets/images/header-bottom-line.png");
+    background-image: url("./assets/images/general/header-bottom-line.png");
   }
 }
 .header-section.active .nav-btn:before {
@@ -245,7 +245,7 @@ COLORS
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-image: url("./assets/images/mobile-menu-bg.png");
+    background-image: url("./assets/images/general/mobile-menu-bg.png");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -826,7 +826,7 @@ COLORS
   transform: translateY(-50%);
   width: 107px;
   height: 30px;
-  background: url("./assets/images/hero-image-line.svg") no-repeat;
+  background: url("./assets/images/home-page/hero-image-line.svg") no-repeat;
   background-size: cover;
   background-position: right center;
 }
@@ -929,7 +929,7 @@ COLORS
   top: 13px;
   width: 106px;
   height: 20px;
-  background: url("./assets/images/hero-title-line-mob-left.svg") no-repeat;
+  background: url("./assets/images/home-page/hero-title-line-mob-left.svg") no-repeat;
   background-size: cover;
 }
 @media only screen and (min-width: 992px) {
@@ -938,7 +938,7 @@ COLORS
     top: 63px;
     width: 231px;
     height: 142px;
-    background: url("./assets/images/hero-title-line.svg") no-repeat;
+    background: url("./assets/images/home-page/hero-title-line.svg") no-repeat;
     background-size: cover;
   }
 }
@@ -964,7 +964,7 @@ COLORS
   top: 77px;
   width: 97px;
   height: 16px;
-  background: url("./assets/images/hero-title-line-mob-right.svg") no-repeat;
+  background: url("./assets/images/home-page/hero-title-line-mob-right.svg") no-repeat;
   background-size: cover;
 }
 @media only screen and (min-width: 992px) {
@@ -1050,7 +1050,7 @@ COLORS
   right: 86%;
   height: 31px;
   width: 147px;
-  background: url("./assets/images/hero-button-line.svg") no-repeat;
+  background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
   background-size: cover;
 }
 @media only screen and (min-width: 992px) {
@@ -1081,7 +1081,7 @@ COLORS
   left: 87%;
   width: 181px;
   height: 33px;
-  background-image: url("./assets/images/faq-btn-line-right.svg");
+  background-image: url("./assets/images/general/primary-btn-line-right.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1476,7 +1476,7 @@ COLORS
   right: -301px;
   width: 367px;
   height: 42px;
-  background: url("./assets/images/about-title-line.svg") no-repeat;
+  background: url("./assets/images/home-page/about-title-line.svg") no-repeat;
   background-size: cover;
 }
 @media only screen and (min-width: 1201px) {
@@ -1536,7 +1536,7 @@ COLORS
   left: 232px;
   width: 175px;
   height: 32px;
-  background: url("./assets/images/about-btn-line-mob.svg") no-repeat;
+  background: url("./assets/images/home-page/about-btn-line-mob.svg") no-repeat;
   background-size: cover;
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
@@ -1550,7 +1550,7 @@ COLORS
     left: 105%;
     width: 183px;
     height: 25px;
-    background: url("./assets/images/about-btn-line.svg") no-repeat;
+    background: url("./assets/images/home-page/about-btn-line.svg") no-repeat;
     -moz-transform: translateX(0);
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -1607,7 +1607,7 @@ COLORS
   right: -8px;
   width: 211px;
   height: 39px;
-  background: url("./assets/images/about-line-top-mob.svg") no-repeat;
+  background: url("./assets/images/home-page/about-line-top-mob.svg") no-repeat;
   background-size: cover;
   background-position: center bottom;
   z-index: 2;
@@ -1619,7 +1619,7 @@ COLORS
     right: 90%;
     width: 219px;
     height: 127px;
-    background: url("./assets/images/about-slider-line.svg") no-repeat;
+    background: url("./assets/images/home-page/about-slider-line.svg") no-repeat;
     background-position: right center;
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
@@ -1785,7 +1785,7 @@ COLORS
 
 .video-section {
   padding: 86px 0 43px;
-  background: url("./assets/images/video-section-bg.png") no-repeat;
+  background: url("./assets/images/home-page/video-section-bg.png") no-repeat;
   background-size: cover;
   background-position: center top;
 }
@@ -1985,7 +1985,7 @@ COLORS
 }
 
 .dominators-section {
-  background-image: url("./assets/images/dominator-bg-section-mob.png");
+  background-image: url("./assets/images/home-page/dominator-bg-section-mob.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -1994,7 +1994,7 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .dominators-section {
-    background-image: url("./assets/images/dominator-bg-section.png");
+    background-image: url("./assets/images/home-page/dominator-bg-section.png");
   }
 }
 @media only screen and (min-width: 1201px) {
@@ -2041,7 +2041,7 @@ COLORS
   background-size: cover;
 }
 .dominators-section .section-title span:before {
-  background-image: url("./assets/images/dominator-title-line-left.svg");
+  background-image: url("./assets/images/home-page/dominator-title-line-left.svg");
   width: 361px;
   height: 32px;
   top: 13px;
@@ -2064,7 +2064,7 @@ COLORS
   }
 }
 .dominators-section .section-title span:after {
-  background-image: url("./assets/images/dominator-title-line-right.svg");
+  background-image: url("./assets/images/home-page/dominator-title-line-right.svg");
   width: 386px;
   height: 26px;
   top: 44px;
@@ -2153,7 +2153,7 @@ COLORS
   right: 86%;
   height: 14px;
   width: 117px;
-  background: url("./assets/images/hero-button-line.svg") no-repeat;
+  background: url("./assets/images/home-page/hero-button-line.svg") no-repeat;
   background-size: cover;
 }
 @media only screen and (min-width: 992px) {
@@ -2169,7 +2169,7 @@ COLORS
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    background: url("./assets/images/dominator-btn-line.svg") no-repeat;
+    background: url("./assets/images/home-page/dominator-btn-line.svg") no-repeat;
     background-size: cover;
   }
 }
@@ -2192,7 +2192,7 @@ COLORS
   left: 87%;
   width: 131px;
   height: 13px;
-  background-image: url("./assets/images/faq-btn-line-right.svg");
+  background-image: url("./assets/images/home-page/faq-btn-line-right.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -2397,7 +2397,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgb(8, 14, 28) url("./assets/images/dominator-bg-lines.png");
+  background: rgb(8, 14, 28) url("./assets/images/home-page/dominator-bg-lines.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: left bottom;
@@ -2465,7 +2465,7 @@ COLORS
   -ms-transform: translateY(-25%);
   -webkit-transform: translateY(-25%);
   transform: translateY(-25%);
-  background: url("./assets/images/dominator-light-image.svg") no-repeat;
+  background: url("./assets/images/home-page/dominator-light-image.svg") no-repeat;
   background-size: 100% auto;
   background-position: center bottom;
 }
@@ -2702,7 +2702,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: #030A19 url("./assets/images/marketplace-bg-section.png") no-repeat;
+  background: #030A19 url("./assets/images/home-page/marketplace-bg-section.png") no-repeat;
   background-size: cover;
   background-position: right center;
   clip-path: polygon(70% 3%, 79% 0%, 100% 0, 100% 94%, 54% 94%, 41% 100%, 0 100%, 0 3%);
@@ -2744,7 +2744,7 @@ COLORS
   right: 87%;
   width: 160px;
   height: 19px;
-  background-image: url("./assets/images/road-map-title-line-left.svg");
+  background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-transform: scale(1, -1);
@@ -2789,7 +2789,7 @@ COLORS
   left: 86%;
   width: 160px;
   height: 19px;
-  background-image: url("./assets/images/road-map-title-line-left.svg");
+  background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-transform: scale(-1, 1);
@@ -3006,7 +3006,7 @@ COLORS
   bottom: 0;
   right: 0;
   clip-path: polygon(0 0, 87% 0, 100% 5%, 100% 100%, 11% 100%, 0 96%);
-  background: #030919 url("./assets/images/marketplace-card-ellipse-bg.png") no-repeat;
+  background: #030919 url("./assets/images/home-page/marketplace-card-ellipse-bg.png") no-repeat;
   background-size: auto;
   background-position: center bottom;
   -webkit-border-radius: 2px;
@@ -3026,7 +3026,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: url("./assets/images/marketplace-card-lines-bg.png") no-repeat;
+  background: url("./assets/images/home-page/marketplace-card-lines-bg.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3057,7 +3057,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: url("./assets/images/item-dominator-bg-image.png") no-repeat;
+  background: url("./assets/images/home-page/item-dominator-bg-image.png") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -3289,7 +3289,7 @@ COLORS
   top: 112%;
   width: 194px;
   height: 32px;
-  background: url("./assets/images/marketplace-btn-line-mob.svg") no-repeat;
+  background: url("./assets/images/home-page/marketplace-btn-line-mob.svg") no-repeat;
   background-size: cover;
   background-position: right center;
 }
@@ -3305,7 +3305,7 @@ COLORS
     transform: translateY(-50%);
     width: 245px;
     height: 36px;
-    background: url("./assets/images/marketplace-btn-line.svg") no-repeat;
+    background: url("./assets/images/home-page/marketplace-btn-line.svg") no-repeat;
     background-size: cover;
   }
 }
@@ -3352,7 +3352,7 @@ COLORS
 
 .road-map-section {
   padding: 65px 0 136px;
-  background: url("./assets/images/road-map-section-bg.png") no-repeat;
+  background: url("./assets/images/home-page/road-map-section-bg.png") no-repeat;
   background-size: auto;
   background-position: center center;
   text-align: center;
@@ -3397,7 +3397,7 @@ COLORS
   right: 93%;
   width: 185px;
   height: 19px;
-  background-image: url("./assets/images/road-map-title-line-left.svg");
+  background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .section-title span:before {
@@ -3419,7 +3419,7 @@ COLORS
   left: 66%;
   width: 170px;
   height: 19px;
-  background-image: url("./assets/images/road-map-title-line-right.svg");
+  background-image: url("./assets/images/home-page/road-map-title-line-right.svg");
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .section-title span:after {
@@ -3475,8 +3475,8 @@ COLORS
 .road-map-section .number {
   width: 49px;
   height: 61px;
-  background: url("./assets/images/road-map-number-bg.png") no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3561,6 +3561,9 @@ COLORS
     bottom: -306px;
   }
 }
+.road-map-section .road-map-item:nth-child(odd) .number {
+  background-image: url("./assets/images/general/road-map-number-bg.png");
+}
 .road-map-section .road-map-item:nth-child(odd) .number:before {
   top: 100%;
   background: linear-gradient(135deg, rgb(7, 30, 56) 0%, rgba(0, 117, 255, 0) 100%);
@@ -3574,6 +3577,9 @@ COLORS
   .road-map-section .road-map-item:nth-child(even) .road-map-card {
     top: -326px;
   }
+}
+.road-map-section .road-map-item:nth-child(even) .number {
+  background-image: url("./assets/images/general/road-map-number-bg-2.png");
 }
 .road-map-section .road-map-item:nth-child(even) .number:before {
   bottom: 100%;
@@ -3715,7 +3721,7 @@ COLORS
   left: 0;
   bottom: 0;
   right: 0;
-  background: url("./assets/images/road-map-card-bg.png") no-repeat;
+  background: url("./assets/images/home-page/road-map-card-bg.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3805,7 +3811,7 @@ COLORS
   top: 23px;
   right: 100%;
   width: 136px;
-  background-image: url("./assets/images/road-map-btn-line-left.svg");
+  background-image: url("./assets/images/home-page/road-map-btn-line-left.svg");
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .button-wrap:before {
@@ -3817,7 +3823,7 @@ COLORS
   top: 7px;
   left: 100%;
   width: 172px;
-  background-image: url("./assets/images/road-map-btn-line-right.svg");
+  background-image: url("./assets/images/home-page/road-map-btn-line-right.svg");
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .button-wrap:after {
@@ -3833,7 +3839,7 @@ COLORS
 }
 .accordion .accordion-item {
   padding: 27px 0 29px;
-  background: url("./assets/images/faq-bg-line.svg") no-repeat;
+  background: url("./assets/images/home-page/faq-bg-line.svg") no-repeat;
   background-size: 100% auto;
   background-position: center bottom;
   margin-bottom: 2px;
@@ -3945,7 +3951,7 @@ COLORS
 
 .faq-section {
   padding-bottom: 100px;
-  background-image: url("./assets/images/faq-section-bg.png"), url("./assets/images/faq-image-elipse.png");
+  background-image: url("./assets/images/home-page/faq-section-bg.png"), url("./assets/images/home-page/faq-image-elipse.png");
   background-repeat: no-repeat;
   background-size: 100% auto, auto 100%;
   background-position: left top, 22% top;
@@ -4118,7 +4124,7 @@ COLORS
   left: 100%;
   width: 180px;
   height: 22px;
-  background-image: url("./assets/images/faq-title-line.svg");
+  background-image: url("./assets/images/home-page/faq-title-line.svg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-transform: scale(-1, 1);
@@ -4165,7 +4171,7 @@ COLORS
   right: 108%;
   width: 176px;
   height: 39px;
-  background-image: url("./assets/images/faq-btn-line-left.svg");
+  background-image: url("./assets/images/general/primary-btn-line-left.svg");
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .button-wrap:before {
@@ -4179,7 +4185,7 @@ COLORS
   left: 106%;
   width: 181px;
   height: 33px;
-  background-image: url("./assets/images/faq-btn-line-right.svg");
+  background-image: url("./assets/images/general/primary-btn-line-right.svg");
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .button-wrap:after {
@@ -4272,7 +4278,7 @@ COLORS
   bottom: 0;
   right: 0;
   background-color: #030a19;
-  background-image: url("./assets/images/footer-layout-bg-mob.png");
+  background-image: url("./assets/images/general/footer-layout-bg-mob.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right center;
@@ -4281,7 +4287,7 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-section-bg:before {
-    background-image: url("./assets/images/footer-layout-bg.png");
+    background-image: url("./assets/images/general/footer-layout-bg.png");
     background-size: cover;
   }
 }
@@ -4779,7 +4785,7 @@ COLORS
   right: 56%;
   width: 215px;
   height: 30px;
-  background-image: url("./assets/images/footer-title-line-left-mob.svg");
+  background-image: url("./assets/images/general/footer-title-line-left-mob.svg");
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block .title:before {
@@ -4794,7 +4800,7 @@ COLORS
     -ms-transform: translateX(0);
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    background-image: url("./assets/images/footer-title-line-left.svg");
+    background-image: url("./assets/images/general/footer-title-line-left.svg");
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -4807,7 +4813,7 @@ COLORS
   left: 56%;
   width: 215px;
   height: 32px;
-  background-image: url("./assets/images/footer-title-line-right-mob.svg");
+  background-image: url("./assets/images/general/footer-title-line-right-mob.svg");
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block .title:after {
@@ -4822,7 +4828,7 @@ COLORS
     -ms-transform: translateX(0);
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    background-image: url("./assets/images/footer-title-line-right.svg");
+    background-image: url("./assets/images/general/footer-title-line-right.svg");
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -4892,7 +4898,7 @@ body {
   color: #557192;
   margin: 0;
   padding: 0;
-  background: #020919 url("./assets/images/site-bg-new.png");
+  background: #020919 url("assets/images/general/site-bg-new.png");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
