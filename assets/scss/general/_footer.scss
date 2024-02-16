@@ -155,7 +155,7 @@
             display: inline-block;
             width: 58px;
             height: 58px;
-            -webkit-appearance: none;
+            @include appearance(none);
             outline: none;
 
             @include min-medium {
@@ -187,7 +187,7 @@
                 @include border-radius(50%);
                 @include filter(blur(55px));
                 @include transition(all 0.2s);
-                -webkit-appearance: none;
+                @include appearance(none);
                 outline: none;
                 transform: translate3d(0, 0, 0);
                 pointer-events: none;

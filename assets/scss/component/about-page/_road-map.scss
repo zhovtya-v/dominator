@@ -1,4 +1,18 @@
 .road-map-section {
+    /*margin-bottom: 80px;
+
+    @include min-extra-large {
+        margin-bottom: 103px;
+    }*/
+    position: relative;
+
+    .road-map-image-wrap {
+        position: absolute;
+        bottom: 16px;
+        right: 0;
+        width: 44.2%;
+    }
+
     .section-title {
         text-align: center;
         margin-bottom: 84px;
@@ -89,7 +103,7 @@
             bottom: 0;
             left: 2px;
             right: 2px;
-            height: 87%;
+            height: 90%;
             @include box-shadow(0 4px 30px rgba($primary-bg-color, 0.7));
             @include transition(box-shadow 0.15s);
             z-index: -2;
@@ -147,7 +161,7 @@
         @include border-radius(4px);
 
         @include min-large {
-            clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 36% 0, 47% 10%, 100% 10%, 100% 100%, 0 100%);
         }
 
         &:before {
@@ -160,7 +174,7 @@
             background-position: center;
 
             @include min-large {
-                clip-path: polygon(0 0, 36% 0, 48% 13%, 100% 13%, 100% 100%, 0 100%);
+                clip-path: polygon(0 0, 36% 0, 47% 10%, 100% 10%, 100% 100%, 0 100%);
             }
         }
     }
@@ -213,6 +227,7 @@
     .swiper-slide-thumb-active {
         .number-wrap {
             @include transform(scale(1.55));
+            margin-left: 15px;
 
             .number {
                 font-size: 22px;
@@ -261,6 +276,10 @@
             @include transform(translate(-50%, -50%));
             @include box-shadow(0 4px 44px $primary-bg-color);
             opacity: 0;
+        }
+
+        &:after {
+
         }
 
         .number {
