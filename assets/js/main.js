@@ -103,13 +103,13 @@ accordionItem.forEach((accordionToggle) => {
 });
 
 
-document.addEventListener('DOMContentLoaded', reinit_slider);
-window.addEventListener('resize', reinit_slider);
+document.addEventListener('DOMContentLoaded', about_reinit_slider);
+window.addEventListener('resize', about_reinit_slider);
 
 let mql = window.matchMedia('(max-width: 991px)');
 let swiper = null;
 
-function reinit_slider() {
+function about_reinit_slider() {
     if (mql.matches) {
         swiper = new Swiper('.about-swiper', {
             grabCursor: true,
@@ -201,7 +201,10 @@ var mySwiper = new Swiper('.bottom-road-map-slider', {
     }
 })
 
-function reinit_slider() {
+document.addEventListener('DOMContentLoaded', road_map_reinit_slider);
+window.addEventListener('resize', road_map_reinit_slider);
+
+function road_map_reinit_slider() {
     if (mql.matches) {
         myNavSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
