@@ -139,6 +139,9 @@ COLORS
   width: 60px;
   height: 60px;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   outline: none;
 }
 @media only screen and (min-width: 992px) {
@@ -180,6 +183,9 @@ COLORS
   -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   outline: none;
   opacity: 0;
   transform: translate3d(0, 0, 0);
@@ -4374,6 +4380,9 @@ COLORS
   width: 58px;
   height: 58px;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   outline: none;
 }
 @media only screen and (min-width: 992px) {
@@ -4415,6 +4424,9 @@ COLORS
   -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   outline: none;
   transform: translate3d(0, 0, 0);
   pointer-events: none;

@@ -2,27 +2,38 @@
     position: relative;
     z-index: 1;
     padding: 153px 0 7px;
-    margin-bottom: 160px;
+    margin-bottom: 95px;
 
     @include min-medium {
-        padding: 134px 0 85px;
-        margin-bottom: 45px;
+        padding: 256px 0 85px;
+        margin-bottom: 57px;
     }
 
     @include min-extra-large {
         padding: 340px 0 131px;
-        margin-bottom: 57px;
     }
 
     .hero-section-bg {
-        @include aspect-ratio(1920, 1525);
+        @include aspect-ratio(360, 890);
         @include full-absolute;
         bottom: initial;
+
+        @include min-small {
+            @include aspect-ratio(768, 890);
+            @include full-absolute;
+            bottom: initial;
+        }
+
+        @include min-medium {
+            @include aspect-ratio(1920, 1525);
+            @include full-absolute;
+            bottom: initial;
+        }
 
         .hero-video-wrap {
             width: 100%;
             background-image: url("./assets/images/about-page/hero-bg-about-new.png");
-            background-position: left bottom;
+            background-position: center bottom;
             background-repeat: no-repeat;
             background-size: cover;
             @include full-absolute;
@@ -31,27 +42,28 @@
 
             overflow: hidden;
 
-            img {
+            @include min-medium {
+                background-position: left bottom;
+            }
+
+            /*img {
                 max-height: 100%;
                 width: auto;
                 height: auto;
                 vertical-align: bottom;
                 object-fit: cover;
                 object-position: center bottom;
-            }
+            }*/
         }
     }
 
     .hero-container {
         position: relative;
-
-
     }
 
     .hero-info {
         width: 100%;
         text-align: center;
-
     }
 
     .title {
@@ -60,15 +72,19 @@
         text-transform: uppercase;
         color: $primary-text-color;
         position: relative;
-        margin: 0 0 18px;
+        margin: 0 0 13px;
         letter-spacing: 5px;
         line-height: 1;
 
         @include fluid-type(320px, 360px, 40px, 48px);
 
+        @include min-medium {
+            margin: 0 0 18px;
+        }
+
         @include min-large {
-            letter-spacing: 7px;
-            font-size: 67px;
+            letter-spacing: 9px;
+            font-size: 73px;
             margin: 0 0 29px;
         }
 
@@ -137,21 +153,55 @@
     }
 
     .text {
-        max-width: 900px;
-        margin: 0 auto 59px;
+        max-width: 670px;
+        margin: 0 auto 44px;
         line-height: 2;
+
+        @include max-extra-large {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        @include min-extra-large {
+            max-width: 900px;
+            margin: 0 auto 59px;
+            line-height: 2;
+        }
     }
 
     .hero-dominator-container {
         position: relative;
-        margin-top: 36px;
-        margin-bottom: 32px;
+        margin-top: 59px;
+        margin-bottom: 77px;
         z-index: 2;
+
+        @include min-large {
+            margin-top: 24px;
+            margin-bottom: 15px;
+        }
+
+        @include min-extra-large {
+            margin-top: 36px;
+            margin-bottom: 32px;
+        }
 
         .ellipse-wrap {
             position: relative;
-            width: 340px;
+            width: 160px;
             margin: 0 auto;
+
+            @include min-medium {
+
+            }
+
+            @include min-large {
+                width: 266px;
+            }
+
+            @include min-extra-large {
+                width: 340px;
+            }
 
             img {
                 max-width: 100%;
@@ -166,10 +216,17 @@
             position: absolute;
 
             &.first {
-                right: 57%;
-                top: -137px;
-                width: 1172px;
-                @include transform(rotate(3deg));
+                right: 85%;
+                top: -42px;
+                width: 346px;
+                @include transform(rotate(5deg));
+
+                @include min-large {
+                    right: 100%;
+                    top: -45px;
+                    width: 650px;
+                    @include transform(rotate(3deg));
+                }
 
                 @include min-extra-large {
                     right: 100%;
@@ -179,23 +236,37 @@
             }
 
             &.second {
-                right: 57%;
-                top: -137px;
-                width: 1172px;
-                @include transform(rotate(-32deg));
+                right: 59%;
+                top: 146px;
+                width: 432px;
+                @include transform(rotate(-35deg));
+
+                @include min-large {
+                    right: 72%;
+                    top: 97%;
+                    width: 668px;
+                }
 
                 @include min-extra-large {
                     right: 76%;
                     top: 96%;
                     width: 889px;
+                    @include transform(rotate(-32deg));
                 }
             }
 
             &.third {
-                left: 100%;
-                top: -63px;
-                width: 1172px;
-                @include transform(rotate(-5deg));
+                left: 70%;
+                top: -71px;
+                width: 357px;
+                @include transform(rotate(-10deg));
+
+                @include min-large {
+                    left: 85%;
+                    top: -72px;
+                    width: 653px;
+                    @include transform(rotate(-5deg));
+                }
 
                 @include min-extra-large {
                     left: 86%;
@@ -205,13 +276,19 @@
             }
 
             &.fourth {
-                left: 100%;
-                top: -63px;
-                width: 1172px;
-                @include transform(rotate(25deg));
+                left: 56%;
+                top: 95px;
+                width: 377px;
+                @include transform(rotate(22deg));
+
+                @include min-large {
+                    left: 70%;
+                    top: 80%;
+                    width: 654px;
+                    @include transform(rotate(26deg));
+                }
 
                 @include min-extra-large {
-                    left: 70%;
                     top: 81%;
                     width: 873px;
                 }
@@ -308,26 +385,41 @@
         }
 
         &.first {
-            top: 0;
-            left: 0;
-            width: 240px;
-            height: 240px;
+            top: 83%;
+            left: 55px;
+            width: 150px;
+            height: 150px;
             @include transform(rotate(85deg));
+
+            @include min-large {
+                top: -21px;
+                left: 35px;
+                width: 178px;
+                height: 178px;
+                @include transform(rotate(85deg));
+            }
 
             @include min-extra-large {
                 top: -29px;
-                left: 35px;
                 width: 240px;
                 height: 240px;
             }
         }
 
         &.second {
-            top: 0;
-            right: 0;
-            width: 254px;
-            height: 254px;
-            @include transform(rotate(200deg));
+            top: 84%;
+            right: 71px;
+            width: 150px;
+            height: 150px;
+            @include transform(rotate(183deg));
+
+            @include min-large {
+                top: 0px;
+                right: 22px;
+                width: 174px;
+                height: 174px;
+                @include transform(rotate(200deg));
+            }
 
             @include min-extra-large {
                 top: 6px;
@@ -338,11 +430,18 @@
         }
 
         &.third {
-            top: 0;
-            left: 0;
-            width: 254px;
-            height: 254px;
+            top: 104px;
+            left: -43px;
+            width: 146px;
+            height: 146px;
             @include transform(rotate(62deg));
+
+            @include min-large {
+                top: 166px;
+                left: -47px;
+                width: 194px;
+                height: 194px;
+            }
 
             @include min-extra-large {
                 top: 217px;
@@ -353,11 +452,18 @@
         }
 
         &.fourth {
-            top: 0;
-            right: 0;
-            width: 254px;
-            height: 254px;
+            top: 88px;
+            right: -18px;
+            width: 146px;
+            height: 146px;
             @include transform(rotate(119deg));
+
+            @include min-large {
+                top: 148px;
+                right: -3px;
+                width: 184px;
+                height: 184px;
+            }
 
             @include min-extra-large {
                 top: 196px;

@@ -159,10 +159,21 @@ function reinit_slider() {
 }
 
 
-var thumbsSliderRoadMap = new Swiper(".top-road-map-slider", {
+/*var thumbsSliderRoadMap = new Swiper(".top-road-map-slider", {
     loop: true,
     spaceBetween: 10,
-    slidesPerView: 6.5,
+    slidesPerView: 3.7,
+
+    breakpoints: {
+        992: {
+            slidesPerView: 5,
+            spaceBetween: 29,
+        },
+        1200: {
+            slidesPerView: 6.5,
+            spaceBetween: 20,
+        }
+    },
 });
 var sliderRoadMap = new Swiper(".bottom-road-map-slider", {
     loop: true,
@@ -171,4 +182,58 @@ var sliderRoadMap = new Swiper(".bottom-road-map-slider", {
     thumbs: {
         swiper: thumbsSliderRoadMap,
     },
-});
+});*/
+
+
+var mySwiper = new Swiper('.bottom-road-map-slider', {
+    queueStartCallbacks: true,
+    loop: true,
+    onSlideChangeStart: function (swiper) {
+        myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+    },
+    onSlideChangeEnd: function (swiper) {
+
+        if (swiper != null && swiper != undefined &&
+            myNavSwiper != null && myNavSwiper != undefined) {
+            if (swiper.activeLoopIndex != myNavSwiper.activeLoopIndex) {
+                myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+            }
+        }
+    }
+})
+var myNavSwiper = new Swiper('.top-road-map-slider', {
+    createPagination: false,
+    loop: true,
+    moveStartThreshold: 10,
+    queueStartCallbacks: true,
+    simulateTouch: true,
+    initialSlide: 0,
+    spaceBetween: 10,
+    slidesPerView: 3,
+    breakpoints: {
+        992: {
+            slidesPerView: 5,
+            spaceBetween: 29,
+        },
+        1200: {
+            slidesPerView: 7,
+            spaceBetween: 20,
+        }
+    },
+    onSlideChangeStart: function (swiper) {
+        mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
+    },
+    onSlideClick: function (swiper) {
+        var ls = swiper.loopedSlides;
+        var slideIndex = swiper.clickedSlideIndex - ls;
+
+        if (slideIndex >= swiper.slides.length - ls*2) {
+            slideIndex = swiper.slides.length - ls*2 - slideIndex;
+        }
+        if (slideIndex<0) {
+            slideIndex = -slideIndex;
+        }
+
+        myNavSwiper.swipeTo(slideIndex, 100, true);
+    },
+})

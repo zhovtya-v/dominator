@@ -97,7 +97,7 @@
             display: inline-block;
             width: 60px;
             height: 60px;
-            -webkit-appearance: none;
+            @include appearance(none);
             outline: none;
 
             @include min-medium {
@@ -129,7 +129,7 @@
                 @include border-radius(50%);
                 @include filter(blur(55px));
                 @include transition(all 0.2s);
-                -webkit-appearance: none;
+                @include appearance(none);
                 outline: none;
                 opacity: 0;
                 transform: translate3d(0, 0, 0);
