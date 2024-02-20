@@ -1,60 +1,29 @@
 .video-container {
     position: relative;
     z-index: 3;
-    /*&:before {
-        content: '';
-        position: absolute;
-        top: 70px;
-        left: -70px;
-        background: $primary-bg-color;
-        width: 303px;
-        height: 303px;
-        opacity: 0.2;
-        filter: blur(114px);
-        @include transform(translateY(-50%));
-        z-index: 0;
-
-        @include min-medium {
-            left: initial;
-            right: 0;
-            width: 493px;
-            height: 585px;
-            opacity: 0.15;
-            filter: blur(224px);
-        }
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: -150px;
-        right: 20px;
-        background: $secondary-bg-color;
-        width: 167px;
-        height: 199px;
-        opacity: 0.2;
-        filter: blur(154px);
-        z-index: -1;
-
-        @include min-medium {
-            bottom: -80px;
-            left: -10px;
-            right: initial;
-            width: 315px;
-            height: 374px;
-            opacity: 0.15;
-            filter: blur(224px);
-        }
-    }*/
 
     .video-element-first {
         position: absolute;
-        bottom: -70px;
-        right: -24px;
-        max-width: 201px;
-        max-height: 208px;
+        bottom: -50px;
+        right: -2px;
+        max-width: 108px;
+        max-height: 108px;
         width: 100%;
         z-index: 4;
+
+        @include min-large {
+            bottom: -53px;
+            right: -11px;
+            max-width: 153px;
+            max-height: 158px;
+        }
+
+        @include min-extra-large {
+            bottom: -70px;
+            right: -24px;
+            max-width: 201px;
+            max-height: 208px;
+        }
 
         img {
             width: 100%;
@@ -64,12 +33,26 @@
 
     .video-element-second {
         position: absolute;
-        bottom: -52px;
-        left: -45px;
-        max-width: 201px;
-        max-height: 208px;
+        bottom: -86px;
+        left: -32px;
+        max-width: 180px;
+        max-height: 138px;
         width: 100%;
         z-index: -1;
+
+        @include min-large {
+            bottom: -142px;
+            left: -60px;
+            max-width: 296px;
+            max-height: 225px;
+        }
+
+        @include min-extra-large {
+            bottom: -52px;
+            left: -45px;
+            max-width: 201px;
+            max-height: 208px;
+        }
 
         img {
             width: 100%;
@@ -82,11 +65,11 @@
         @include display-flex;
         @include align-items-center;
         @include justify-content-center;
-        clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
+        clip-path: polygon(0% 7%, 9% 0%, 23% 0%, 31% 4%, 76% 4%, 81% 2%, 93% 2%, 100% 8%, 100% 100%, 100% 100%, 59% 100%, 53% 97%, 37% 97%, 31% 100%, 8% 100%, 0% 94%);
         border: 2px solid transparent;
         background: rgb(17,155,255);
         background: radial-gradient(circle, rgba(17,155,255, 0.8) 0%, rgba(0,117,255, 0.4) 100%);
-        @include aspect-ratio(320, 416);
+        @include aspect-ratio(321, 414);
 
         @include min-small {
             @include aspect-ratio(1440, 770);
@@ -95,7 +78,7 @@
 
         .video-image {
             width: 100%;
-            clip-path: polygon(9% 0, 47% 0, 56% 5%, 100% 5%, 100% 95%, 93% 100%, 0 100%, 0 4%);
+            clip-path: polygon(0% 7%, 9% 0%, 23% 0%, 31% 4%, 76% 4%, 81% 2%, 93% 2%, 100% 8%, 100% 100%, 100% 100%, 59% 100%, 53% 97%, 37% 97%, 31% 100%, 8% 100%, 0% 94%);
 
             @include full-absolute;
             @include display-flex;

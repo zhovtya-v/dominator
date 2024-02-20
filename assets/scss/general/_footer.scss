@@ -57,6 +57,10 @@
         background: rgb(17,155,255);
         background: radial-gradient(circle, rgba(17,155,255,1) 0%, rgba(17,155,255,0) 100%);
 
+        @include min-medium {
+            clip-path: polygon(0 0, 38% 0, 51% 11%, 100% 11%, 100% 100%, 0 100%);
+        }
+
         @include min-extra-large {
             clip-path: polygon(0 0, 38% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%);
         }
@@ -75,6 +79,7 @@
             @include min-medium {
                 background-image:  url("./assets/images/general/footer-layout-bg.png");
                 background-size: cover;
+                clip-path: polygon(0 0, 38% 0, 51% 11%, 100% 11%, 100% 100%, 0 100%);
             }
 
             @include min-extra-large {

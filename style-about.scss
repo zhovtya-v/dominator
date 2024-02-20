@@ -121,6 +121,32 @@ body {
 
 .footer-section {
   margin-top: -95px;
+
+  .footer-image-element  {
+    top: -150px;
+    left: -69px;
+    right: initial;
+    max-width: 266px;
+    max-height: 101px;
+    width: 100%;
+    height: 100%;
+
+    @include min-large {
+      top: -127px;
+      left: -52px;
+      max-width: 436px;
+      max-height: 166px;
+    }
+
+    @include min-extra-large {
+      max-width: 576px;
+      max-height: 219px;
+    }
+
+    img {
+      @include transform(rotate(24deg));
+    }
+  }
 }
 
 /*********************************
