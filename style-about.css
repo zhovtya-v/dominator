@@ -1780,9 +1780,11 @@ COLORS
     max-height: 65px;
   }
 }
-.road-map-section .bottom-road-map-slider {
-  padding: 0 0 40px 40px;
-  margin-left: -40px;
+@media only screen and (min-width: 992px) {
+  .road-map-section .bottom-road-map-slider {
+    padding: 0 0 40px 40px;
+    margin-left: -40px;
+  }
 }
 .road-map-section .swiper-slide:nth-child(odd) .number-bg:before {
   background: linear-gradient(to bottom, rgb(8, 22, 41) 0%, rgb(17, 155, 255) 100%);
@@ -1966,6 +1968,7 @@ COLORS
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  min-width: 110px;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .number-wrap .title {

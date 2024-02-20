@@ -162,7 +162,7 @@ function reinit_slider() {
 /*var thumbsSliderRoadMap = new Swiper(".top-road-map-slider", {
     loop: true,
     spaceBetween: 10,
-    slidesPerView: 3.7,
+    slidesPerView: 3.6,
 
     breakpoints: {
         992: {
@@ -184,7 +184,6 @@ var sliderRoadMap = new Swiper(".bottom-road-map-slider", {
     },
 });*/
 
-
 var mySwiper = new Swiper('.bottom-road-map-slider', {
     queueStartCallbacks: true,
     loop: true,
@@ -201,39 +200,62 @@ var mySwiper = new Swiper('.bottom-road-map-slider', {
         }
     }
 })
-var myNavSwiper = new Swiper('.top-road-map-slider', {
-    createPagination: false,
-    loop: true,
-    moveStartThreshold: 10,
-    queueStartCallbacks: true,
-    simulateTouch: true,
-    initialSlide: 0,
-    spaceBetween: 10,
-    slidesPerView: 3,
-    breakpoints: {
-        992: {
+
+function reinit_slider() {
+    if (mql.matches) {
+        myNavSwiper = new Swiper('.top-road-map-slider', {
+            createPagination: false,
+            loop: true,
+            moveStartThreshold: 10,
+            queueStartCallbacks: true,
+            simulateTouch: true,
+            initialSlide: 0,
+            spaceBetween: 10,
+            slidesPerView: 3,
+            onSlideChangeStart: function (swiper) {
+                mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
+            },
+            onSlideClick: function (swiper) {
+                var ls = swiper.loopedSlides;
+                var slideIndex = swiper.clickedSlideIndex - ls;
+
+                if (slideIndex >= swiper.slides.length - ls*2) {
+                    slideIndex = swiper.slides.length - ls*2 - slideIndex;
+                }
+                if (slideIndex<0) {
+                    slideIndex = -slideIndex;
+                }
+
+                myNavSwiper.swipeTo(slideIndex, 100, true);
+            },
+        })
+    }
+    else {
+        myNavSwiper = new Swiper('.top-road-map-slider', {
+            createPagination: false,
+            loop: true,
+            moveStartThreshold: 10,
+            queueStartCallbacks: true,
+            simulateTouch: true,
+            initialSlide: 0,
+            spaceBetween: 10,
             slidesPerView: 5,
-            spaceBetween: 29,
-        },
-        1200: {
-            slidesPerView: 7,
-            spaceBetween: 20,
-        }
-    },
-    onSlideChangeStart: function (swiper) {
-        mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
-    },
-    onSlideClick: function (swiper) {
-        var ls = swiper.loopedSlides;
-        var slideIndex = swiper.clickedSlideIndex - ls;
+            onSlideChangeStart: function (swiper) {
+                mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
+            },
+            onSlideClick: function (swiper) {
+                var ls = swiper.loopedSlides;
+                var slideIndex = swiper.clickedSlideIndex - ls;
 
-        if (slideIndex >= swiper.slides.length - ls*2) {
-            slideIndex = swiper.slides.length - ls*2 - slideIndex;
-        }
-        if (slideIndex<0) {
-            slideIndex = -slideIndex;
-        }
+                if (slideIndex >= swiper.slides.length - ls*2) {
+                    slideIndex = swiper.slides.length - ls*2 - slideIndex;
+                }
+                if (slideIndex<0) {
+                    slideIndex = -slideIndex;
+                }
 
-        myNavSwiper.swipeTo(slideIndex, 100, true);
-    },
-})
+                myNavSwiper.swipeTo(slideIndex, 100, true);
+            },
+        })
+    }
+}
