@@ -90,7 +90,7 @@
                 }
 
                 @include min-extra-large {
-                    top: 21px;
+                    top: 42px;
                     width: 386px;
                     height: 26px;
                 }
@@ -160,7 +160,6 @@
 
                 span {
                     &:after {
-
                         @include min-small {
                             display: none;
                         }
@@ -428,16 +427,6 @@
                 @include min-extra-large {
                     max-width: 885px;
                     margin: 0 0 47px auto;
-                }
-            }
-
-            .section-title {
-                span {
-                    /*&:after {
-                        top: 10px;
-                        left: 85%;
-                        @include transform(scale(1, 1));
-                    }*/
                 }
             }
 
