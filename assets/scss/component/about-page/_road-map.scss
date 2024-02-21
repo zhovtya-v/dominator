@@ -439,6 +439,10 @@
             @include transform(translateX(-50%));
 
             @include min-medium {
+                height: 34px;
+            }
+
+            @include min-extra-large {
                 height: 46px;
             }
         }

@@ -1164,7 +1164,7 @@ COLORS
 @media only screen and (min-width: 1201px) {
   .hero-section .button-wrap:after {
     top: 14px;
-    height: 40px;
+    height: 32px;
     width: 179px;
   }
 }
@@ -1441,6 +1441,12 @@ COLORS
   justify-content: center;
   z-index: 5;
   cursor: pointer;
+}
+@media only screen and (max-width: 991px) {
+  .video-container .video-wrap .video-play img {
+    max-width: 122px;
+    max-height: 122px;
+  }
 }
 
 .road-map-section {
@@ -1927,6 +1933,11 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .number-wrap:after {
+    height: 34px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .road-map-section .number-wrap:after {
     height: 46px;
   }
 }
@@ -2096,6 +2107,12 @@ COLORS
     padding-top: 102px;
   }
 }
+@media only screen and (max-width: 1200px) {
+  .history-section .container {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+}
 .history-section .section-title {
   line-height: 1.38;
   margin-bottom: 20px;
@@ -2143,9 +2160,9 @@ COLORS
   }
 }
 .history-section .section-title span:after {
-  top: 4px;
-  left: 66%;
-  width: 170px;
+  bottom: 2px;
+  left: 73%;
+  width: 210px;
   height: 19px;
   background-image: url("./assets/images/home-page/road-map-title-line-right.svg");
   -moz-transform: scale(1, -1);
@@ -2154,12 +2171,19 @@ COLORS
   -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .history-section .section-title span:after {
-    top: 36px;
+    bottom: initial;
+    top: 22px;
     left: 88%;
     width: 277px;
     height: 26px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .history-section .section-title span:after {
+    left: 88%;
+    top: 36px;
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -2231,8 +2255,10 @@ COLORS
     text-align: left;
   }
 }
-.history-section .info-block:nth-of-type(even) .section-title span:after {
-  display: none;
+@media only screen and (min-width: 768px) {
+  .history-section .info-block:nth-of-type(even) .section-title span:after {
+    display: none;
+  }
 }
 @media only screen and (min-width: 768px) {
   .history-section .info-block:nth-of-type(odd) {
@@ -2248,8 +2274,10 @@ COLORS
     text-align: right;
   }
 }
-.history-section .info-block:nth-of-type(odd) .section-title span:before {
-  display: none;
+@media only screen and (min-width: 768px) {
+  .history-section .info-block:nth-of-type(odd) .section-title span:before {
+    display: none;
+  }
 }
 .history-section .info-block.first {
   padding-top: 69px;
@@ -2300,15 +2328,23 @@ COLORS
 }
 .history-section .info-block.first .section-title span:after {
   display: block;
-  top: 36px;
-  left: 131%;
-  width: 277px;
-  height: 23px;
+  top: 88%;
+  left: 70%;
+  width: 220px;
+  height: 20px;
   -moz-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
+}
+@media only screen and (min-width: 992px) {
+  .history-section .info-block.first .section-title span:after {
+    top: 36px;
+    left: 131%;
+    width: 277px;
+    height: 23px;
+  }
 }
 .history-section .info-block.first .counter {
   text-align: center;
@@ -2496,14 +2532,12 @@ COLORS
     margin: 0 0 47px auto;
   }
 }
-.history-section .info-block.fifth .section-title span:after {
-  top: 10px;
-  left: 85%;
-  -moz-transform: scale(1, 1);
-  -o-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
+.history-section .info-block.fifth .section-title span {
+  /*&:after {
+      top: 10px;
+      left: 85%;
+      @include transform(scale(1, 1));
+  }*/
 }
 .history-section .info-block.fifth .text {
   max-width: 580px;
@@ -2719,7 +2753,7 @@ COLORS
   content: "";
   position: absolute;
   top: 20px;
-  right: 86%;
+  right: 100%;
   height: 31px;
   width: 147px;
   background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
@@ -2727,7 +2761,6 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .history-section .button-wrap:before {
-    right: 100%;
     height: 53px;
     width: 237px;
   }
@@ -2751,7 +2784,7 @@ COLORS
   content: "";
   position: absolute;
   top: 11px;
-  left: 87%;
+  left: 100%;
   width: 181px;
   height: 33px;
   background-image: url("./assets/images/general/primary-btn-line-right.svg");
@@ -2760,7 +2793,6 @@ COLORS
 }
 @media only screen and (min-width: 992px) {
   .history-section .button-wrap:after {
-    left: 100%;
     height: 53px;
     width: 237px;
   }
@@ -3604,6 +3636,7 @@ COMMON STYLE END
 @media only screen and (max-width: 991px) {
   .section-title {
     text-align: center;
+    margin: 0 auto;
   }
 }
 .section-title span {
