@@ -783,14 +783,6 @@ COLORS
   -ms-flex-pack: center;
   justify-content: center;
   overflow: hidden;
-  /*img {
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      vertical-align: bottom;
-      object-fit: cover;
-      object-position: center bottom;
-  }*/
 }
 @media only screen and (min-width: 992px) {
   .hero-section .hero-section-bg .hero-video-wrap {
@@ -2188,7 +2180,7 @@ COLORS
 }
 @media only screen and (min-width: 1441px) {
   .history-section .section-title span:after {
-    top: 21px;
+    top: 42px;
     width: 386px;
     height: 26px;
   }
@@ -2531,13 +2523,6 @@ COLORS
     max-width: 885px;
     margin: 0 0 47px auto;
   }
-}
-.history-section .info-block.fifth .section-title span {
-  /*&:after {
-      top: 10px;
-      left: 85%;
-      @include transform(scale(1, 1));
-  }*/
 }
 .history-section .info-block.fifth .text {
   max-width: 580px;
