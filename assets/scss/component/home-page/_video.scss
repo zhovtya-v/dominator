@@ -166,6 +166,14 @@
             @include align-items-center;
             @include justify-content-center;
             z-index: 5;
+            cursor: pointer;
+
+            img {
+                @include max-medium {
+                    max-width: 122px;
+                    max-height: 122px;
+                }
+            }
         }
     }
 }

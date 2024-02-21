@@ -17,6 +17,13 @@
         padding-top: 102px;
     }
 
+    .container {
+        @include max-large {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+    }
+
     .section-title {
         line-height: 1.38;
         margin-bottom: 20px;
@@ -62,18 +69,24 @@
             }
 
             &:after {
-                top: 4px;
-                left: 66%;
-                width: 170px;
+                bottom: 2px;
+                left: 73%;
+                width: 210px;
                 height: 19px;
                 background-image: url("./assets/images/home-page/road-map-title-line-right.svg");
                 @include transform(scale(1, -1));
 
-                @include min-medium {
-                    top: 36px;
+                @include min-small {
+                    bottom: initial;
+                    top: 22px;
                     left: 88%;
                     width: 277px;
                     height: 26px;
+                }
+
+                @include min-large {
+                    left: 88%;
+                    top: 36px;
                 }
 
                 @include min-extra-large {
@@ -147,7 +160,10 @@
 
                 span {
                     &:after {
-                        display: none;
+
+                        @include min-small {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -170,7 +186,11 @@
 
                 span {
                     &:before {
-                        display: none;
+
+
+                        @include min-small {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -219,11 +239,18 @@
 
                     &:after {
                         display: block;
-                        top: 36px;
-                        left: 131%;
-                        width: 277px;
-                        height: 23px;
+                        top: 88%;
+                        left: 70%;
+                        width: 220px;
+                        height: 20px;
                         @include transform(scale(1, -1));
+
+                        @include min-medium {
+                            top: 36px;
+                            left: 131%;
+                            width: 277px;
+                            height: 23px;
+                        }
                     }
                 }
             }
@@ -406,11 +433,11 @@
 
             .section-title {
                 span {
-                    &:after {
+                    /*&:after {
                         top: 10px;
                         left: 85%;
                         @include transform(scale(1, 1));
-                    }
+                    }*/
                 }
             }
 
@@ -621,14 +648,13 @@
             content: '';
             position: absolute;
             top: 20px;
-            right: 86%;
+            right: 100%;
             height: 31px;
             width: 147px;
             background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
             background-size: cover;
 
             @include min-medium {
-                right: 100%;
                 height: 53px;
                 width: 237px;
             }
@@ -651,7 +677,7 @@
             content: '';
             position: absolute;
             top: 11px;
-            left: 87%;
+            left: 100%;
             width: 181px;
             height: 33px;
             background-image: url("./assets/images/general/primary-btn-line-right.svg");
@@ -659,7 +685,6 @@
             background-size: cover;
 
             @include min-medium {
-                left: 100%;
                 height: 53px;
                 width: 237px;
             }
