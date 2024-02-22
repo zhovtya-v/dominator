@@ -1,0 +1,560 @@
+.road-map-section {
+    padding-bottom: 401px;
+    position: relative;
+
+    @include min-medium {
+        padding-bottom: 0;
+        margin-bottom: 152px;
+    }
+
+    @include min-large {
+        margin-bottom: 88px;
+    }
+
+    .road-map-image-wrap {
+        position: absolute;
+        top: 0;
+        bottom: 16px;
+        right: 0;
+        width: 100%;
+
+        background-image: url("./assets/images/about-page/road-map-item-image-about-mob.png");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+
+        @include min-small {
+            background-image: url("./assets/images/about-page/road-map-item-image-about.png");
+            background-size: 60% auto;
+        }
+
+        @include min-medium {
+            bottom: 16px;
+            width: 44.2%;
+            background-size: 100% auto;
+        }
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 55px;
+
+        @include min-medium {
+            margin-bottom: 30px;
+        }
+
+        @include min-large {
+            margin-bottom: 90px;
+        }
+
+        @include min-extra-large {
+            margin-bottom: 129px;
+        }
+
+        span {
+            position: relative;
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &:before {
+                top: 18px;
+                right: 93%;
+                width: 185px;
+                height: 19px;
+                background-image: url("./assets/images/home-page/road-map-title-line-left.svg");
+
+                @include min-medium {
+                    top: 32px;
+                    right: 93%;
+                    width: 268px;
+                    height: 24px;
+                }
+
+                @include min-extra-large {
+                    top: 44px;
+                    width: 361px;
+                    height: 33px;
+                }
+            }
+
+            &:after {
+                top: 4px;
+                left: 66%;
+                width: 170px;
+                height: 19px;
+                background-image: url("./assets/images/home-page/road-map-title-line-right.svg");
+
+                @include min-medium {
+                    top: 14px;
+                    left: 90%;
+                    width: 236px;
+                    height: 20px;
+                }
+
+                @include min-extra-large {
+                    top: 21px;
+                    width: 386px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+
+    .road-map-card {
+        width: 100%;
+        padding: 69px 25px 63px;
+        position: relative;
+        @include border-radius(4px);
+        opacity: 0;
+        visibility: hidden;
+
+        @include min-medium {
+            max-width: 645px;
+            padding: 93px 39px 53px 46px;
+        }
+
+        @include min-large {
+            max-width: 624px;
+            padding: 93px 39px 54px 46px;
+        }
+
+        @include min-extra-large {
+            max-width: 830px;
+            padding: 123px 40px 70px 61px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 2px;
+            right: 2px;
+            height: 90%;
+            @include box-shadow(0 4px 30px rgba($primary-bg-color, 0.7));
+            @include transition(box-shadow 0.15s);
+            z-index: -2;
+        }
+
+        .title {
+            @include font_tektur_semiBold;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: $primary-text-color;
+            letter-spacing: 2.3px;
+            margin-bottom: 25px;
+
+            @include min-large {
+                font-size: 29px;
+                letter-spacing: 3.5px;
+                margin-bottom: 21px;
+            }
+
+            @include min-extra-large {
+                font-size: 40px;
+                letter-spacing: 4px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .text {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 36px;
+
+            @include min-medium {
+                font-size: 12px;
+                line-height: 1.5;
+                margin-bottom: 30px;
+            }
+
+            @include min-extra-large {
+                font-size: 16px;
+                margin-bottom: 44px;
+            }
+
+            p {
+                margin: 0;
+
+                &:not(:last-child) {
+                    margin: 0 0 24px;
+
+                    @include min-medium {
+                        margin: 0 0 19px;
+                    }
+
+                    @include min-extra-large {
+                        margin: 0 0 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .road-map-card-bg {
+        @include full-absolute;
+        clip-path: polygon(0 0, 35% 0, 46% 5%, 100% 5%, 100% 100%, 0 100%);
+        background: rgb(17, 155, 255);
+        border: 2px solid transparent;
+        background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+        z-index: -1;
+        @include border-radius(4px);
+
+        @include min-large {
+            clip-path: polygon(0 0, 35% 0, 46% 10%, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        @include min-extra-large {
+            clip-path: polygon(0 0, 36% 0, 47% 10%, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        &:before {
+            content: '';
+            @include full-absolute;
+            clip-path: polygon(0 0, 35% 0, 46% 5%, 100% 5%, 100% 100%, 0 100%);
+            background: url("./assets/images/about-page/road-map-item-bg-about.jpg") no-repeat;
+            @include border-radius(4px);
+            background-size: cover;
+            background-position: center;
+
+            @include min-large {
+                clip-path: polygon(0 0, 35% 0, 46% 10%, 100% 10%, 100% 100%, 0 100%);
+            }
+
+            @include min-extra-large {
+                clip-path: polygon(0 0, 36% 0, 47% 10%, 100% 10%, 100% 100%, 0 100%);
+            }
+        }
+    }
+
+    .swiper-slide-active {
+        .road-map-card {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .top-road-map-slider {
+        padding: 20px 0;
+        overflow: visible;
+        margin-bottom: 32px;
+        position: relative;
+
+        @include min-medium {
+            margin-bottom: 72px;
+        }
+
+        @include min-large {
+            margin-bottom: 48px;
+        }
+
+        @include min-extra-large {
+            margin-bottom: 72px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: -20px;
+            right: -20px;
+            height: 100%;
+            background-image: url("./assets/images/about-page/road-map-line.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            @include min-medium {
+                top: 6px;
+                left: -100px;
+                right: 0;
+                background-position: right center;
+            }
+
+            @include min-large {
+                left: -220px;
+                right: -170px;
+            }
+
+            @include min-extra-large {
+                left: -320px;
+                right: -230px;
+            }
+        }
+
+        .swiper-wrapper {
+            max-height: 46px;
+
+            @include min-large {
+                max-height: 51px;
+            }
+
+            @include min-extra-large {
+                max-height: 65px;
+            }
+        }
+    }
+
+    .bottom-road-map-slider {
+
+        @include min-medium {
+            padding: 0 0 40px 40px;
+            margin-left: -40px;
+        }
+    }
+
+    .swiper-slide {
+        &:nth-child(odd) {
+            .number-bg {
+                &:before {
+                    background: linear-gradient(to bottom, rgba(8, 22, 41, 1) 0%, rgba(17, 155, 255, 1) 100%);
+                }
+            }
+
+            .title {
+                top: -38px;
+
+                @include min-extra-large {
+                    top: -50px;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            .number-bg {
+                &:before {
+                    background: linear-gradient(to top, rgba(8, 22, 41, 1) 0%, rgba(17, 155, 255, 1) 100%);
+                }
+            }
+
+            .title {
+                bottom: -38px;
+
+                @include min-extra-large {
+                    bottom: -50px;
+                }
+            }
+        }
+    }
+
+    .swiper-slide-active {
+        .number-wrap {
+            @include transform(scale(1.3));
+            margin-left: 6px;
+
+            @include min-medium {
+                @include transform(scale(1.55));
+                margin-left: 15px;
+            }
+
+            @include min-large {
+                margin-left: 10px;
+            }
+
+            @include min-extra-large {
+                margin-left: 15px;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+
+            .number {
+                font-size: 18px;
+
+                @include min-large {
+                    font-size: 16px;
+                }
+
+                @include min-extra-large {
+                    font-size: 22px;
+                }
+            }
+
+            .title {
+                display: none;
+                opacity: 0;
+            }
+
+            &:before {
+                opacity: 1;
+            }
+
+            .number-bg {
+                background: linear-gradient(135deg, rgba(23,158,255,1) 0%,rgba(80,181,255,1) 100%);
+
+                &:before {
+                    background: linear-gradient(to bottom, rgba(85,184,255,1) 0%,rgba(17,155,255,1) 100%);
+                }
+            }
+        }
+    }
+
+    .number-wrap {
+        width: 38px;
+        height: 46px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include display-flex;
+        @include justify-content-center;
+        @include align-items-center;
+
+        @include min-large {
+            width: 42px;
+            height: 51px;
+        }
+
+        @include min-extra-large {
+            width: 56px;
+            height: 65px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 52%;
+            height: 71%;
+            @include transform(translate(-50%, -50%));
+            @include box-shadow(0 4px 44px $primary-bg-color);
+            opacity: 0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            opacity: 0;
+            width: 2px;
+            height: 34px;
+            background: linear-gradient(to bottom, rgba(16,145,242,0) 0%,rgba(16,145,242,1) 50%,rgba(16,145,242,0) 100%);
+            @include transform(translateX(-50%));
+
+            @include min-medium {
+                height: 34px;
+            }
+
+            @include min-extra-large {
+                height: 46px;
+            }
+        }
+
+        .number {
+            @include font_tektur_medium;
+            font-size: 16px;
+            color: #030A1A;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 3;
+
+            @include min-large {
+                font-size: 20px;
+            }
+
+            @include min-extra-large {
+                font-size: 26px;
+            }
+        }
+
+        .title {
+            position: absolute;
+            left: 50%;
+            @include font_tektur_semiBold;
+            font-size: 12px;
+            color: $primary-text-color;
+            text-align: center;
+            text-transform: uppercase;
+            @include text-shadow(0 4px 20px rgba($primary-text-color, 0.5));
+            @include transform(translateX(-50%));
+            min-width: 110px;
+
+            @include min-medium {
+                font-size: 16px;
+                min-width: 350px;
+                letter-spacing: 1px;
+            }
+
+            @include min-large {
+                min-width: 290px;
+                text-align: center;
+            }
+
+            @include min-extra-large {
+                font-size: 20px;
+                min-width: 350px;
+            }
+        }
+    }
+
+    .number-bg {
+        @include full-absolute;
+        @include border-radius(4px);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        border: 2px solid transparent;
+        background: linear-gradient(135deg, rgba(17,155,255,0.75) 0%,rgba(17,155,255,0.15) 100%);
+
+        &:before {
+            content: '';
+            @include full-absolute;
+            @include border-radius(4px);
+            clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        }
+    }
+
+    .button-wrap {
+        position: relative;
+        display: inline-block;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 112%;
+            width: 194px;
+            height: 32px;
+            background: url("./assets/images/home-page/marketplace-btn-line-mob.svg") no-repeat;
+            background-size: cover;
+            background-position: right center;
+
+            @include min-medium {
+                left: 103%;
+                top: 14px;
+                width: 170px;
+                height: 25px;
+                background: url("./assets/images/home-page/marketplace-btn-line.svg") no-repeat;
+                background-size: cover;
+                @include transform(scale(-1, 1));
+            }
+
+            @include min-extra-large {
+                left: 105%;
+                top: 17px;
+                width: 222px;
+                height: 33px;
+            }
+        }
+
+        .secondary-button {
+            width: 267px;
+
+            @include min-large {
+                width: 294px;
+            }
+
+            @include min-extra-large {
+                width: 394px;
+            }
+
+            @media only screen and (max-width: 358px) {
+                width: 226px;
+            }
+        }
+    }
+}

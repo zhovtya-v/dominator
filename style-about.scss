@@ -4,17 +4,13 @@
 
 @import "assets/scss/general/header";
 
-@import "assets/scss/component/home-page/hero";
-@import "assets/scss/component/home-page/about";
-@import "assets/scss/component/home-page/video";
-@import "assets/scss/component/home-page/dominators";
-@import "assets/scss/component/home-page/marketplace";
-@import "assets/scss/component/home-page/road-map";
-@import "assets/scss/component/home-page/faq";
-
-@import "assets/scss/component/animation";
+@import "assets/scss/component/about-page/hero";
+@import "assets/scss/component/about-page/video";
+@import "assets/scss/component/about-page/road-map";
+@import "assets/scss/component/about-page/history";
 
 @import "assets/scss/general/footer";
+
 /*********************************
 COMMON STYLE
 *********************************/
@@ -95,6 +91,14 @@ body {
   &.menu-opened {
     overflow: hidden;
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: bottom;
+  }
 }
 
 .container {
@@ -114,6 +118,37 @@ body {
     max-width: 1500px;
   }
 }
+
+.footer-section {
+  margin-top: -95px;
+
+  .footer-image-element  {
+    top: -150px;
+    left: -69px;
+    right: initial;
+    max-width: 266px;
+    max-height: 101px;
+    width: 100%;
+    height: 100%;
+
+    @include min-large {
+      top: -127px;
+      left: -52px;
+      max-width: 436px;
+      max-height: 166px;
+    }
+
+    @include min-extra-large {
+      max-width: 576px;
+      max-height: 219px;
+    }
+
+    img {
+      @include transform(rotate(24deg));
+    }
+  }
+}
+
 /*********************************
 COMMON STYLE END
 *********************************/
@@ -141,12 +176,13 @@ COMMON STYLE END
 
   @include max-medium {
     text-align: center;
+    margin: 0 auto;
   }
 
   span {
+    @include appearance(none);
     @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
   }
-
 }
 
 .dominator-image-section {

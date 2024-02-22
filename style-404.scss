@@ -1,0 +1,264 @@
+@import "assets/scss/mixin";
+@import "assets/scss/variable";
+@import "assets/scss/fonts";
+
+/*********************************
+COMMON STYLE
+*********************************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+a,
+:before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.clearfix {
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+a, a:hover, a:focus,
+input, input:hover, input:focus,
+textarea, textarea:hover, textarea:focus,
+button, button:hover, button:focus, select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul {
+  @include list;
+}
+
+body {
+  @include font_robotoMono_regular;
+  margin: 0;
+  padding: 0;
+
+  background: $black-bg-color url("assets/images/general/site-bg-new.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include display-flex;
+  @include align-items-center;
+  @include justify-content-center;
+
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &:before, &:after {
+    content: '';
+    @include full-absolute;
+    background-repeat: no-repeat;
+  }
+
+  &:before {
+    background-image: url("assets/images/error-page/page-error-bg-ellips.png");
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &:after {
+    background-image: url("assets/images/error-page/planet-bg.png");
+    background-size: 100%;
+    background-position: right bottom;
+
+    @include min-medium {
+      background-size: auto;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.section-title {
+  @include font_tektur_semiBold;
+  @include fluid-type(360px, 1920px, 28px, 54px);
+  text-transform: uppercase;
+  color: $primary-text-color;
+  position: relative;
+  margin: 0;
+  letter-spacing: 4.2px;
+  line-height: 1.5;
+  text-align: center;
+
+  span {
+    display: block;
+    @include appearance(none);
+    @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+  }
+}
+
+.error-title {
+  text-align: center;
+  margin: 30px 0;
+
+  @include min-extra-large {
+    margin: -28px 0 0;
+  }
+
+  .image-wrap {
+    display: inline-block;
+    position: relative;
+    max-width: 268px;
+
+    @include min-small {
+      max-width: 450px;
+    }
+
+    @include min-large {
+      max-width: 1000px;
+    }
+
+    @include min-extra-large {
+      max-width: 100%;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      top: 50%;
+      width: 140px;
+      height: 37px;
+      @include transform(translateY(-50%));
+
+      @include min-large {
+        width: 190px;
+        height: 40px;
+      }
+
+      @include min-extra-large {
+        width: 310px;
+        height: 52px;
+      }
+    }
+
+    &:before {
+      left: 100%;
+      margin-top: -18px;
+      background-image: url("assets/images/error-page/error-line-right.svg");
+    }
+
+    &:after {
+      right: 100%;
+      background-image: url("assets/images/error-page/error-line-left.svg");
+    }
+  }
+}
+
+.button-wrap {
+  @include min-extra-large {
+    margin-top: -33px;
+  }
+}
+
+.primary-button {
+  color: $black-text-color;
+  height: 46px;
+  width: 290px;
+  @include display-flex;
+  @include align-items-center;
+  @include justify-content-center;
+  position: relative;
+  @include border-radius(2px);
+  padding: 2px;
+  z-index: 5;
+  margin: 0 auto;
+
+  @include min-medium {
+    height: 51px;
+    width: 325px;
+  }
+
+  .btn-bg {
+    z-index: 2;
+    color: $black-text-color;
+    font-size: 16px;
+    @include font_tektur_bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    height: 100%;
+    @include display-flex;
+    @include align-items-center;
+    @include justify-content-center;
+    @include border-radius(2px);
+    position: relative;
+    @include fluid-type(320px, 1920px, 14px, 18px);
+    clip-path: polygon(0% 0, 96% 0, 100% 26%, 100% 100%, 4% 100%, 0% 72%);
+    background: linear-gradient(92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
+
+    span {
+      z-index: 3;
+    }
+  }
+
+  &:before {
+    content: '';
+    @include full-absolute;
+    clip-path: polygon(0% 0, 96% 0, 100% 26%, 100% 100%, 4% 100%, 0% 72%);
+    background: linear-gradient(270deg, rgba(255,166,250,1) 0%,rgba(255,166,250,1) 50%,rgba(60,121,212,1) 100%);
+    @include transition(background 0.15s);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 90%;
+    @include transform(translate(-50%, -50%));
+    @include box-shadow(0 4px 90px rgba(#FF56F6, 0.5));
+    @include transition(box-shadow 0.15s);
+    z-index: 1;
+  }
+
+  &:hover {
+    .btn-bg {
+      background: linear-gradient(270deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
+    }
+
+    &:after {
+      @include box-shadow(0 0 0 rgba(#FF56F6, 0.5));
+    }
+  }
+}

@@ -1,0 +1,343 @@
+.accordion {
+    text-align: left;
+    z-index: 3;
+    position: relative;
+
+    .accordion-item {
+        padding: 27px 0 29px;
+        background: url("./assets/images/home-page/faq-bg-line.svg") no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
+        margin-bottom: 2px;
+
+        @include min-medium {
+            padding: 27px 0 55px;
+            margin-bottom: 9px;
+        }
+
+        @include min-extra-large {
+            padding: 27px 0 70px;
+            margin-bottom: 23px;
+        }
+
+        &.active {
+            .accordion-question:before {
+                content: '—';
+            }
+        }
+    }
+
+    .accordion-question {
+        cursor: pointer;
+        position: relative;
+        padding-right: 22px;
+
+        @include min-medium {
+            padding-right: 30px;
+        }
+
+        span {
+            font-size: 18px;
+            text-transform: uppercase;
+            @include font_tektur_semiBold;
+            color: $primary-text-color;
+            letter-spacing: 2px;
+            line-height: 1.6;
+            @include text-shadow(0 4px 20px rgba($shadow-text-color, 0.5));
+
+            @include min-medium {
+                font-size: 24px;
+            }
+
+            @include min-extra-large {
+                font-size: 30px;
+                letter-spacing: 3px;
+            }
+        }
+
+        &:before {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-size: 24px;
+            text-transform: uppercase;
+            @include font_tektur_semiBold;
+            color: $primary-text-color;
+            line-height: 1;
+            @include text-shadow(0 4px 20px rgba($shadow-text-color, 0.5));
+
+            @include min-medium {
+                font-size: 32px;
+            }
+
+            @include min-extra-large {
+                font-size: 40px;
+            }
+
+        }
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        padding: 0;
+
+        span {
+            margin: 0;
+            font-size: 14px;
+            padding: 12px 17px 0 0;
+            line-height: 1.7;
+            display: inline-block;
+
+            @include min-medium {
+                font-size: 16px;
+                padding: 28px 100px 0 0;
+            }
+
+            @include min-extra-large {
+                margin: 0;
+                font-size: 20px;
+                padding: 34px 125px 0 0;
+                line-height: 2;
+            }
+        }
+
+        &.active {
+            max-height: auto;
+        }
+    }
+}
+
+.faq-section {
+    padding-bottom: 100px;
+    background-image: url("./assets/images/home-page/faq-section-bg.png"), url("./assets/images/home-page/faq-image-elipse.png") ;
+    background-repeat: no-repeat;
+    background-size: 100% auto, auto 100%;
+    background-position: left top, 22% top;
+    padding-top: 41px;
+
+    @include min-large {
+        padding-top: 67px;
+        padding-bottom: 67px;
+    }
+
+    .faq-container {
+        max-width: 1142px;
+        position: relative;
+        text-align: center;
+
+        @include min-large {
+            max-width: 1142px;
+        }
+
+        @include min-extra-large {
+            max-width: 1500px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            right: 0;
+            background: $primary-bg-color;
+            width: 493px;
+            height: 585px;
+            opacity: 0.15;
+            filter: blur(224px);
+            @include transform(translateY(-50%));
+            z-index: 0;
+
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 72%;
+            left: -10px;
+            background: $secondary-bg-color;
+            width: 315px;
+            height: 374px;
+            opacity: 0.2;
+            filter: blur(224px);
+            @include transform(translateY(-50%));
+
+            @include min-medium {
+                top: 50%;
+            }
+        }
+    }
+
+    .faq-wrap {
+        position: relative;
+        text-align: center;
+        padding: 54px 8px 0px 30px;
+        margin-bottom: 55px;
+
+        @include min-large {
+            padding: 46px 42px 0 64px;
+            margin-bottom: 124px;
+        }
+
+        @include min-extra-large {
+            padding: 60px 62px 0 84px;
+            margin-bottom: 166px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(3,10,25,0.65) 0%,rgba(3,10,25,0) 100%);
+        }
+    }
+
+    .faq-wrap-bg {
+        @include full-absolute;
+        clip-path: polygon(0 0, 51% 0, 57% 3%, 100% 3%, 100% 100%, 0 100%);
+        background: rgb(17, 155, 255);
+        border: 2px solid transparent;
+        background: linear-gradient(to right, rgba(17, 155, 255, 0.15) 0%, rgba(17, 155, 255, 0.15) 46%, rgba(17, 155, 255, 0.3) 100%);
+
+        @include min-large {
+            clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        &:before {
+            content: '';
+            @include full-absolute;
+            bottom: -2px;
+            clip-path: polygon(0 0, 51% 0, 57% 3%, 100% 3%, 100% 100%, 0 100%);
+            background: rgba(3, 10, 25, 0.9);
+
+            @include min-large {
+                clip-path: polygon(0 0, 50% 0, 57% 10%, 100% 10%, 100% 100%, 0 100%);
+            }
+        }
+    }
+
+    .faq-element-image {
+        position: absolute;
+        top: -113px;
+        right: -182px;
+        max-width: 468px;
+        width: 26%;
+
+        @include min-extra-large {
+            top: -113px;
+            right: -182px;
+            max-width: 468px;
+            width: 26%;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+    .section-title {
+        text-align: left;
+        margin-bottom: 2px;
+
+        @include min-medium {
+            padding-left: 179px;
+            margin-bottom: 72px;
+        }
+
+        @include min-extra-large {
+            margin-bottom: 107px;
+            padding-left: 238px;
+        }
+
+        span {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 13px;
+                right: initial;
+                left: 100%;
+                width: 180px;
+                height: 22px;
+                background-image: url("./assets/images/home-page/faq-title-line.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                @include transform(scale(-1, 1));
+
+                @include min-medium {
+                    left: initial;
+                    top: 31px;
+                    right: 61%;
+                    width: 251px;
+                    height: 25px;
+                    @include transform(scale(1, 1));
+                }
+
+                @include min-extra-large {
+                    top: 39px;
+                    right: 67%;
+                    width: 312px;
+                    height: 31px;
+                }
+            }
+        }
+    }
+
+    .button-wrap {
+        text-align: center;
+        display: inline-block;
+        position: relative;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &:before {
+            top: 7px;
+            right: 108%;
+            width: 176px;
+            height: 39px;
+            background-image: url("./assets/images/general/primary-btn-line-left.svg");
+
+            @include min-extra-large {
+                top: 15px;
+                width: 227px;
+                height: 48px;
+            }
+        }
+
+        &:after {
+            top: 11px;
+            left: 106%;
+            width: 181px;
+            height: 33px;
+            background-image: url("./assets/images/general/primary-btn-line-right.svg");
+
+            @include min-extra-large {
+                top: 18px;
+                width: 284px;
+                height: 44px;
+            }
+        }
+    }
+
+    .primary-button {
+        margin: 0 auto;
+
+        span {
+            width: 100%;
+
+        }
+    }
+}
