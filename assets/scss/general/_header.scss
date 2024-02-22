@@ -271,6 +271,14 @@
                 
                 &:after {
                     width: 100%;
+
+                    @include min-medium {
+                        width: 105px;
+                    }
+
+                    @include min-extra-large {
+                        width: 196px;
+                    }
                 }
             }
 
@@ -279,11 +287,23 @@
                 top: 100%;
                 left: 50%;
                 width: 0;
-                height: 2px;
+                height: 11px;
                 content: '';
-                background: linear-gradient(to right, rgba(17,155,255,0) 0%,rgba(17,155,255,1) 50%,rgba(17,155,255,0) 100%);
+                background-image: url("./assets/images/general/active-menu-link.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                //background: linear-gradient(to right, rgba(17,155,255,0) 0%,rgba(17,155,255,1) 50%,rgba(17,155,255,0) 100%);
                 @include transition(all 0.2s);
                 @include transform(translateX(-50%));
+
+                @include min-medium {
+                    height: 11px;
+                }
+
+                @include min-extra-large {
+                    height: 14px;
+                }
             }
         }
     }

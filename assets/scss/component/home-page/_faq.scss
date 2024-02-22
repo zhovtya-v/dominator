@@ -246,6 +246,8 @@
         text-align: left;
         margin-bottom: 2px;
 
+        @include animation(transform-left 1s linear both);
+
         @include min-medium {
             padding-left: 179px;
             margin-bottom: 72px;

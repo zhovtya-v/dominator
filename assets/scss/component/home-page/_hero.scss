@@ -147,23 +147,7 @@
 
         @include fluid-type(320px, 360px, 40px, 48px);
 
-        @include transform(translateX(-100%));
-
-        -webkit-animation-name: rise;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-delay: 1s;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
-        -webkit-animaiton-fill-mode: forwards;
-        animation-name: transform;
-        animation-duration: 2s;
-        animation-delay: 1s;
-        animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
-        animation-fill-mode: forwards;
-
-        //animation-iteration-count: infinite;
-
-
+        @include animation(transform-left 1s linear both);
 
         @include min-large {
             letter-spacing: 10px;
@@ -183,14 +167,7 @@
         }
 
         span {
-            //@include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
-
-            animation-delay: 3.5s;
-
-            animation-name: shadow;
-            animation-duration: 0.2s;
-            animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
-            animation-fill-mode: forwards;
+            @include animation(4s linear 1s 1 normal forwards running text-flicker);
         }
 
         &:before {
@@ -204,11 +181,13 @@
             background-size: cover;
             opacity: 0;
 
-            animation-name: title-line;
-            animation-duration: 0.2s;
-            animation-delay: 3s;
+            animation-name: decorative-line;
+            animation-duration: 2s;
+            animation-delay: 4s;
             animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
             animation-fill-mode: forwards;
+
+            @include animation(4s decorative-line 2s linear forwards);
 
             @include min-medium {
                 right: 100.5%;
@@ -260,6 +239,12 @@
 
         @include fluid-type(320px, 360px, 24px, 32px);
 
+        @include animation(transform-left 1s linear both);
+
+        span {
+            @include animation(4s linear 1.2s 1 normal forwards running text-flicker);
+        }
+
         @include min-large {
             letter-spacing: 5.7px;
             font-size: 57px;
@@ -282,6 +267,8 @@
     .button-wrap {
         position: relative;
         margin-bottom: 20px;
+
+        @include animation(transform-left 1s linear both);
 
         @include min-large {
             margin-left: 5px;
@@ -308,6 +295,8 @@
             width: 147px;
             background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
             background-size: cover;
+
+            @include animation(3s decorative-line 1s linear forwards);
 
             @include min-medium {
                 right: 100%;

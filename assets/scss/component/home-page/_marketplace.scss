@@ -98,6 +98,8 @@
         position: relative;
         z-index: 2;
 
+        @include animation(transform-left 1s linear both);
+
         @include max-medium {
             margin-bottom: 43px;
         }

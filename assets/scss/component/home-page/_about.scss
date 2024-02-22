@@ -132,6 +132,8 @@
     .section-title {
         margin-bottom: 26px;
 
+        @include animation(transform-right 1s linear both);
+
         @include min-small {
             text-align: left;
         }
