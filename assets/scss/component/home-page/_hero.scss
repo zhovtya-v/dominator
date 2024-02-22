@@ -328,6 +328,8 @@
             background-repeat: no-repeat;
             background-size: cover;
 
+            @include animation(3s decorative-line 1.1s linear forwards);
+
             @include min-medium {
                 display: none;
             }
