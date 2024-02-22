@@ -1480,6 +1480,8 @@ COLORS
 }
 .about-section .about-info {
   margin-bottom: 145px;
+  -webkit-animation: transform-right 1s linear both;
+  animation: transform-right 1s linear both;
 }
 @media only screen and (min-width: 768px) {
   .about-section .about-info {
@@ -1502,8 +1504,6 @@ COLORS
 }
 .about-section .section-title {
   margin-bottom: 26px;
-  -webkit-animation: transform-right 1s linear both;
-  animation: transform-right 1s linear both;
 }
 @media only screen and (min-width: 768px) {
   .about-section .section-title {
@@ -1522,6 +1522,8 @@ COLORS
 }
 .about-section .section-title span {
   position: relative;
+  -webkit-animation: 3s linear 1 normal forwards running text-flicker;
+  animation: 3s linear 1 normal forwards running text-flicker;
 }
 .about-section .section-title span:after {
   content: "";
@@ -5410,8 +5412,6 @@ COMMON STYLE END
   margin: 0;
   letter-spacing: 3px;
   line-height: 1;
-  -webkit-animation: 4s linear 1.2s 1 normal forwards running text-flicker;
-  animation: 4s linear 1.2s 1 normal forwards running text-flicker;
 }
 @media only screen and (min-width: 1201px) {
   .section-title {

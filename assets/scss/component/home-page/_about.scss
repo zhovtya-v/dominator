@@ -112,6 +112,8 @@
     .about-info {
         margin-bottom: 145px;
 
+        @include animation(transform-right 1s linear both);
+
         @include min-small {
             max-width: 300px;
             padding-bottom: 0;
@@ -132,7 +134,7 @@
     .section-title {
         margin-bottom: 26px;
 
-        @include animation(transform-right 1s linear both);
+        //@include animation(transform-right 1s linear both);
 
         @include min-small {
             text-align: left;
@@ -148,6 +150,8 @@
 
         span {
             position: relative;
+
+            @include animation(3s linear 1 normal forwards running text-flicker);
 
             &:after {
                 content: '';

@@ -129,7 +129,7 @@ COMMON STYLE END
   letter-spacing: 3px;
   line-height: 1;
 
-  @include animation(4s linear 1.2s 1 normal forwards running text-flicker);
+  //@include animation(4s linear 1.2s 1 normal forwards running text-flicker);
 
   @include min-large {
     font-size: 53px;
