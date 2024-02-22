@@ -181,13 +181,13 @@
             background-size: cover;
             opacity: 0;
 
-            animation-name: decorative-line;
+            /*animation-name: decorative-line;
             animation-duration: 2s;
             animation-delay: 4s;
             animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
-            animation-fill-mode: forwards;
+            animation-fill-mode: forwards;*/
 
-            @include animation(4s decorative-line 2s linear forwards);
+            @include animation(4s decorative-line 1.5s linear forwards);
 
             @include min-medium {
                 right: 100.5%;
@@ -221,6 +221,8 @@
             height: 16px;
             background: url("./assets/images/home-page/hero-title-line-mob-right.svg") no-repeat;
             background-size: cover;
+
+            @include animation(3.4s decorative-line 1.5s linear forwards);
 
             @include min-medium {
                display: none;
