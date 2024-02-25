@@ -111,8 +111,8 @@
 
     .about-info {
         margin-bottom: 145px;
-
-        //@include animation(transform-right 1s linear both);
+        @include transform(translate3d(100%, 0, 0));
+        opacity: 0;
 
         @include min-small {
             max-width: 300px;
@@ -421,6 +421,7 @@
     &.element-show {
         .about-info {
             @include animation(transform-right 1s linear both);
+            opacity: 1;
         }
     }
 }

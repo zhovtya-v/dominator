@@ -97,6 +97,7 @@
     .section-title {
         position: relative;
         z-index: 2;
+        @include transform(translate3d(-100%, 0, 0));
 
         @include max-medium {
             margin-bottom: 43px;

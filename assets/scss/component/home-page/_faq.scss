@@ -249,8 +249,7 @@
     .section-title {
         text-align: left;
         margin-bottom: 2px;
-
-        @include animation(transform-left 1s linear both);
+        @include transform(translate3d(-100%, 0, 0));
 
         @include min-medium {
             padding-left: 179px;
@@ -344,6 +343,12 @@
         span {
             width: 100%;
 
+        }
+    }
+
+    &.element-show {
+        .section-title {
+            @include animation(transform-left 1s linear both);
         }
     }
 }

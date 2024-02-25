@@ -2212,6 +2212,12 @@ COMMON STYLE END
 }
 .about-section .about-info {
   margin-bottom: 145px;
+  -moz-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
 }
 @media only screen and (min-width: 768px) {
   .about-section .about-info {
@@ -2569,6 +2575,7 @@ COMMON STYLE END
 .about-section.element-show .about-info {
   -webkit-animation: transform-right 1s linear both;
   animation: transform-right 1s linear both;
+  opacity: 1;
 }
 
 .video-section {
@@ -2805,6 +2812,7 @@ COMMON STYLE END
 .dominators-section .section-title {
   text-align: center;
   margin-bottom: 39px;
+  opacity: 0;
 }
 @media only screen and (min-width: 768px) {
   .dominators-section .section-title {
@@ -3416,6 +3424,9 @@ COMMON STYLE END
     display: none;
   }
 }
+.dominators-section.element-show .section-title {
+  opacity: 1;
+}
 
 .marketplace-section {
   position: relative;
@@ -3526,6 +3537,11 @@ COMMON STYLE END
 .marketplace-section .section-title {
   position: relative;
   z-index: 2;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media only screen and (max-width: 991px) {
   .marketplace-section .section-title {
@@ -4171,6 +4187,7 @@ COMMON STYLE END
 .road-map-section .section-title {
   text-align: center;
   margin-bottom: 84px;
+  opacity: 0;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .section-title {
@@ -4630,6 +4647,9 @@ COMMON STYLE END
     width: 220px;
   }
 }
+.road-map-section.element-show .section-title {
+  opacity: 1;
+}
 
 .accordion {
   text-align: left;
@@ -4904,8 +4924,11 @@ COMMON STYLE END
 .faq-section .section-title {
   text-align: left;
   margin-bottom: 2px;
-  -webkit-animation: transform-left 1s linear both;
-  animation: transform-left 1s linear both;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media only screen and (min-width: 992px) {
   .faq-section .section-title {
@@ -5005,6 +5028,10 @@ COMMON STYLE END
 }
 .faq-section .primary-button span {
   width: 100%;
+}
+.faq-section.element-show .section-title {
+  -webkit-animation: transform-left 1s linear both;
+  animation: transform-left 1s linear both;
 }
 
 @keyframes shadow {
@@ -6037,8 +6064,8 @@ COMMON STYLE END
   animation: 3s decorative-line 1s linear forwards;
 }
 .footer-section.element-show .title span {
-  -webkit-animation: 4s linear 1.2s 1 normal forwards running text-flicker;
-  animation: 4s linear 1.2s 1 normal forwards running text-flicker;
+  -webkit-animation: 4s linear 1 normal forwards running text-flicker;
+  animation: 4s linear 1 normal forwards running text-flicker;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,6 +19,7 @@
     .section-title {
         text-align: center;
         margin-bottom: 84px;
+        opacity: 0;
 
         @include min-medium {
             margin-bottom: 30px;
@@ -428,6 +429,12 @@
                 top: 10px;
                 width: 220px;
             }
+        }
+    }
+
+    &.element-show {
+        .section-title {
+            opacity: 1;
         }
     }
 }
