@@ -71,6 +71,9 @@
             width: 50%;
             z-index: 4;
 
+            opacity: 0;
+            @include transform(translate3d(100%, 0, 0));
+
             @include min-large {
                 top: -82px;
                 right: -118px;
@@ -99,6 +102,9 @@
             max-height: 238px;
             width: 37%;
             z-index: 4;
+
+            opacity: 0;
+            @include transform(translate3d(-100%, 0, 0));
 
             @include min-large {
                 bottom: -12px;
@@ -174,6 +180,18 @@
                     max-height: 122px;
                 }
             }
+        }
+    }
+
+    &.element-show {
+        .video-element-first {
+            opacity: 1;
+            @include animation(transform-right 0.7s linear both);
+        }
+
+        .video-element-second {
+            opacity: 1;
+            @include animation(transform-left 0.7s linear both);
         }
     }
 }

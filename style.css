@@ -2655,6 +2655,12 @@ COMMON STYLE END
   max-height: 155px;
   width: 50%;
   z-index: 4;
+  opacity: 0;
+  -moz-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
 }
 @media only screen and (min-width: 1201px) {
   .video-section .video-container .video-element-first {
@@ -2684,6 +2690,12 @@ COMMON STYLE END
   max-height: 238px;
   width: 37%;
   z-index: 4;
+  opacity: 0;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media only screen and (min-width: 1201px) {
   .video-section .video-container .video-element-second {
@@ -2784,6 +2796,16 @@ COMMON STYLE END
     max-width: 122px;
     max-height: 122px;
   }
+}
+.video-section.element-show .video-element-first {
+  opacity: 1;
+  -webkit-animation: transform-right 0.7s linear both;
+  animation: transform-right 0.7s linear both;
+}
+.video-section.element-show .video-element-second {
+  opacity: 1;
+  -webkit-animation: transform-left 0.7s linear both;
+  animation: transform-left 0.7s linear both;
 }
 
 .dominators-section {
@@ -4367,6 +4389,14 @@ COMMON STYLE END
     width: 19.17%;
   }
 }
+.road-map-section .road-map-item:nth-child(odd) .road-map-card {
+  opacity: 0;
+  -moz-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
 @media only screen and (min-width: 992px) {
   .road-map-section .road-map-item:nth-child(odd) .road-map-card {
     bottom: -288px;
@@ -4383,6 +4413,14 @@ COMMON STYLE END
 .road-map-section .road-map-item:nth-child(odd) .number:before {
   top: 100%;
   background: linear-gradient(135deg, rgb(7, 30, 56) 0%, rgba(0, 117, 255, 0) 100%);
+}
+.road-map-section .road-map-item:nth-child(even) .road-map-card {
+  opacity: 0;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .road-map-item:nth-child(even) .road-map-card {
@@ -4409,6 +4447,7 @@ COMMON STYLE END
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  cursor: pointer;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .road-map-card {
@@ -4416,6 +4455,13 @@ COMMON STYLE END
     left: 0;
     width: 315px;
     padding: 40px 32px 40px 30px;
+  }
+  .road-map-section .road-map-card:hover .label {
+    -moz-transform: rotate(25deg) scale(1.2);
+    -o-transform: rotate(25deg) scale(1.2);
+    -ms-transform: rotate(25deg) scale(1.2);
+    -webkit-transform: rotate(25deg) scale(1.2);
+    transform: rotate(25deg) scale(1.2);
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -4447,6 +4493,16 @@ COMMON STYLE END
   right: -7px;
   width: 78px;
   height: 78px;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 @media only screen and (min-width: 1441px) {
   .road-map-section .road-map-card .label {
@@ -4649,6 +4705,16 @@ COMMON STYLE END
 }
 .road-map-section.element-show .section-title {
   opacity: 1;
+}
+.road-map-section.element-show .road-map-item:nth-child(odd) .road-map-card {
+  opacity: 1;
+  -webkit-animation: transform-left 1s linear both;
+  animation: transform-left 1s linear both;
+}
+.road-map-section.element-show .road-map-item:nth-child(even) .road-map-card {
+  opacity: 1;
+  -webkit-animation: transform-right 1s linear both;
+  animation: transform-right 1s linear both;
 }
 
 .accordion {

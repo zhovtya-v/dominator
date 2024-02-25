@@ -180,6 +180,9 @@
 
         &:nth-child(odd) {
             .road-map-card {
+                opacity: 0;
+                @include transform(translate3d(100%, 0, 0));
+
                 @include min-medium {
                     bottom: -288px;
                 }
@@ -201,6 +204,9 @@
 
         &:nth-child(even) {
             .road-map-card {
+                opacity: 0;
+                @include transform(translate3d(-100%, 0, 0));
+
                 @include min-medium {
                     top: -288px;
                 }
@@ -226,12 +232,19 @@
         padding: 42px 32px 33px 25px;
         position: relative;
         @include border-radius(4px);
+        cursor: pointer;
 
         @include min-medium {
             position: absolute;
             left: 0;
             width: 315px;
             padding: 40px 32px 40px 30px;
+
+            &:hover {
+                .label {
+                    @include transform(rotate(25deg) scale(1.2));
+                }
+            }
         }
 
         @include min-extra-large {
@@ -257,6 +270,8 @@
             right: -7px;
             width: 78px;
             height: 78px;
+            @include transition(transform 0.3s);
+            @include transform(scale(1));
 
             @include min-extra-large {
                 top: -13px;
@@ -435,6 +450,22 @@
     &.element-show {
         .section-title {
             opacity: 1;
+        }
+
+        .road-map-item {
+            &:nth-child(odd) {
+                .road-map-card {
+                    opacity: 1;
+                    @include animation(transform-left 1s linear both);
+                }
+            }
+
+            &:nth-child(even) {
+                .road-map-card {
+                    opacity: 1;
+                    @include animation(transform-right 1s linear both);
+                }
+            }
         }
     }
 }
