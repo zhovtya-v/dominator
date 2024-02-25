@@ -1,4 +1,3 @@
-const body = document.querySelector("body");
 let menuBtn = document.querySelector('.nav-btn-js');
 let menu = document.querySelector('.header-section');
 
@@ -8,9 +7,22 @@ menuBtn.addEventListener('click', function () {
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
 
-    body.classList.toggle('menu-opened');
+    document.body.classList.toggle('menu-opened');
 })
 
+function onEntry(entry) {
+    entry.forEach(change => {
+        if (change.isIntersecting) {
+            change.target.classList.add('element-show');
+        }
+    });
+}
+let options = { threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.animation-section');
+for (let elm of elements) {
+    observer.observe(elm);
+}
 
 var dominatorsSwiper = new Swiper(".dominators-swiper", {
     loop: true,
@@ -159,31 +171,6 @@ function about_reinit_slider() {
 }
 
 
-/*var thumbsSliderRoadMap = new Swiper(".top-road-map-slider", {
-    loop: true,
-    spaceBetween: 10,
-    slidesPerView: 3.6,
-
-    breakpoints: {
-        992: {
-            slidesPerView: 5,
-            spaceBetween: 29,
-        },
-        1200: {
-            slidesPerView: 6.5,
-            spaceBetween: 20,
-        }
-    },
-});
-var sliderRoadMap = new Swiper(".bottom-road-map-slider", {
-    loop: true,
-    spaceBetween: 10,
-    slidesPerView: 1,
-    thumbs: {
-        swiper: thumbsSliderRoadMap,
-    },
-});*/
-
 var mySwiper = new Swiper('.bottom-road-map-slider', {
     queueStartCallbacks: true,
     loop: true,
@@ -262,30 +249,6 @@ function road_map_reinit_slider() {
         })
     }
 }
-
-/*
-function ShimmerElement(q){
-    this.anime=false;
-    this.el=document.querySelector(q);
-    if(this.el==null)return false;
-    this.start=function(){
-        if(this.anime)this.anime.cancel();
-        //створюємо анімацію
-        this.anime=this.el.animate([{opacity:0.2},{opacity:1},{opacity:0},{opacity:0.5},{opacity:0},{opacity:0},{opacity:0},{opacity:1}],{duration:1600, iterations:'Infinity'});
-    };
-    this.stop=function(){
-        this.anime.cancel();
-    }
-    this.startTime=function(ms){
-        this.start();
-        setTimeout(this.stop.bind(this), ms);
-    }
-
-}
-
-var f3=new ShimmerElement('.title');
-f3.startTime(4000);*/
-
 
 
 

@@ -98,8 +98,6 @@
         position: relative;
         z-index: 2;
 
-        @include animation(transform-left 1s linear both);
-
         @include max-medium {
             margin-bottom: 43px;
         }
@@ -642,6 +640,12 @@
         @include min-medium {
             display: none;
             margin-top: 0;
+        }
+    }
+
+    &.element-show {
+        .section-title {
+            @include animation(transform-left 1s linear both);
         }
     }
 }

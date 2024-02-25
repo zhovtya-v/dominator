@@ -112,7 +112,7 @@
     .about-info {
         margin-bottom: 145px;
 
-        @include animation(transform-right 1s linear both);
+        //@include animation(transform-right 1s linear both);
 
         @include min-small {
             max-width: 300px;
@@ -134,8 +134,6 @@
     .section-title {
         margin-bottom: 26px;
 
-        //@include animation(transform-right 1s linear both);
-
         @include min-small {
             text-align: left;
         }
@@ -151,7 +149,7 @@
         span {
             position: relative;
 
-            @include animation(3s linear 1 normal forwards running text-flicker);
+            //@include animation(3s linear 1 normal forwards running text-flicker);
 
             &:after {
                 content: '';
@@ -368,7 +366,8 @@
 
         .about-swiper {
             z-index: 5;
-            @include max-medium {
+
+            @include max-small {
                 overflow: visible;
             }
         }
@@ -416,6 +415,12 @@
             @include transform(translateY(-50%));
             @include justify-content-space-between;
             z-index: 2;
+        }
+    }
+
+    &.element-show {
+        .about-info {
+            @include animation(transform-right 1s linear both);
         }
     }
 }

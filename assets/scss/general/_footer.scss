@@ -562,4 +562,16 @@
             }
         }
     }
+
+    &.element-show {
+        .title {
+            &:before, &:after {
+                @include animation(3s decorative-line 1s linear forwards);
+            }
+
+            span {
+                @include animation(4s linear 1.2s 1 normal forwards running text-flicker);
+            }
+        }
+    }
 }

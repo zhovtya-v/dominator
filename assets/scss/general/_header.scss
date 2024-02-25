@@ -273,11 +273,11 @@
                     width: 100%;
 
                     @include min-medium {
-                        width: 105px;
+                        width: 150px;
                     }
 
                     @include min-extra-large {
-                        width: 196px;
+                        width: 194px;
                     }
                 }
             }
@@ -289,20 +289,18 @@
                 width: 0;
                 height: 11px;
                 content: '';
-                background-image: url("./assets/images/general/active-menu-link.svg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
-                //background: linear-gradient(to right, rgba(17,155,255,0) 0%,rgba(17,155,255,1) 50%,rgba(17,155,255,0) 100%);
                 @include transition(all 0.2s);
                 @include transform(translateX(-50%));
 
                 @include min-medium {
-                    height: 11px;
+                    height: 14px;
                 }
 
                 @include min-extra-large {
-                    height: 14px;
+                    height: 17px;
                 }
             }
         }
@@ -315,6 +313,25 @@
             a {
                 margin-right: 67px;
             }
+
+            li {
+                &:nth-of-type(1) {
+                    a {
+                        &:after {
+                            background-image: url("./assets/images/general/menu-hover-1.svg");
+                        }
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    a {
+                        &:after {
+                            background-image: url("./assets/images/general/menu-hover-2.svg");
+                        }
+                    }
+                }
+            }
+
         }
 
         @include min-extra-large {
@@ -332,6 +349,24 @@
             a {
                 margin-left: 59px;
                 margin-top: 6px;
+            }
+
+            li {
+                &:nth-of-type(1) {
+                    a {
+                        &:after {
+                            background-image: url("./assets/images/general/menu-hover-3.svg");
+                        }
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    a {
+                        &:after {
+                            background-image: url("./assets/images/general/menu-hover-4.svg");
+                        }
+                    }
+                }
             }
 
             .account {
