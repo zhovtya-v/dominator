@@ -148,7 +148,9 @@
             width: 493px;
             height: 585px;
             opacity: 0.15;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
             @include transform(translateY(-50%));
             z-index: 0;
 
@@ -163,7 +165,9 @@
             width: 315px;
             height: 374px;
             opacity: 0.2;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
             @include transform(translateY(-50%));
 
             @include min-medium {

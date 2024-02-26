@@ -2614,6 +2614,7 @@ COMMON STYLE END
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: pointer;
 }
 @media only screen and (min-width: 1201px) {
   .road-map-section .number-wrap {
@@ -4186,8 +4187,8 @@ COMMON STYLE END
   animation: 3s decorative-line 1s linear forwards;
 }
 .footer-section.element-show .title span {
-  -webkit-animation: 4s linear 1.2s 1 normal forwards running text-flicker;
-  animation: 4s linear 1.2s 1 normal forwards running text-flicker;
+  -webkit-animation: 4s linear 1 normal forwards running text-flicker;
+  animation: 4s linear 1 normal forwards running text-flicker;
 }
 
 .footer-section {

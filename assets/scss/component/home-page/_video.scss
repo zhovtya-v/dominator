@@ -25,7 +25,9 @@
             width: 303px;
             height: 303px;
             opacity: 0.2;
-            filter: blur(114px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
             @include transform(translateY(-50%));
             z-index: 0;
 
@@ -35,7 +37,9 @@
                 width: 493px;
                 height: 585px;
                 opacity: 0.15;
-                filter: blur(224px);
+                @include filter(blur(224px));
+                @include appearance(none);
+                outline: none;
             }
         }
 
@@ -48,7 +52,9 @@
             width: 167px;
             height: 199px;
             opacity: 0.2;
-            filter: blur(154px);
+            @include filter(blur(154px));
+            @include appearance(none);
+            outline: none;
             z-index: -1;
 
             @include min-medium {
@@ -58,7 +64,9 @@
                 width: 315px;
                 height: 374px;
                 opacity: 0.15;
-                filter: blur(224px);
+                @include filter(blur(224px));
+                @include appearance(none);
+                outline: none;
             }
         }
 

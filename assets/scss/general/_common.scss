@@ -131,6 +131,8 @@ COMMON STYLE END
 
     span {
         @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+        @include appearance(none);
+        outline: none;
     }
 }
 

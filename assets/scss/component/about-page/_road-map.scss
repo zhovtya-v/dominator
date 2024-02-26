@@ -403,6 +403,7 @@
         @include display-flex;
         @include justify-content-center;
         @include align-items-center;
+        cursor: pointer;
 
         @include min-large {
             width: 42px;

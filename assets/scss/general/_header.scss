@@ -475,7 +475,9 @@
             height: 54px;
             background: $primary-text-color;
             @include border-radius(50%);
-            filter: blur(55px);
+            @include filter(blur(55px));
+            @include appearance(none);
+            outline: none;
             @include transition(all 0.2s);
         }
 

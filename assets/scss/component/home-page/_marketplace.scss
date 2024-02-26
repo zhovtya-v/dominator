@@ -19,7 +19,9 @@
             width: 493px;
             height: 585px;
             opacity: 0.2;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
         }
 
         &:after {
@@ -31,7 +33,9 @@
             width: 500px;
             height: 500px;
             opacity: 0.2;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
             @include transform(translateY(-50%));
         }
     }
@@ -90,7 +94,9 @@
             width: 493px;
             height: 585px;
             opacity: 0.15;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
         }
     }
 
