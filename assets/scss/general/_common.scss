@@ -143,7 +143,7 @@ COMMON STYLE END
         }
 
         span {
-            @include animation(4s linear 1.2s 1 normal forwards running text-flicker);
+            @include animation(3s linear 0.5s 1 normal forwards running text-flicker);
         }
     }
 }

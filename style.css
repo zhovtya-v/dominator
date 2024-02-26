@@ -172,8 +172,8 @@ COMMON STYLE END
   animation: 3s decorative-line 1s linear forwards;
 }
 .element-show .section-title span {
-  -webkit-animation: 4s linear 1.2s 1 normal forwards running text-flicker;
-  animation: 4s linear 1.2s 1 normal forwards running text-flicker;
+  -webkit-animation: 3s linear 0.5s 1 normal forwards running text-flicker;
+  animation: 3s linear 0.5s 1 normal forwards running text-flicker;
 }
 
 .dominator-image-section {
@@ -3018,15 +3018,29 @@ COMMON STYLE END
 .dominators-section .button-wrap {
   position: relative;
 }
-.dominators-section .button-wrap:before {
+.dominators-section .button-wrap:before, .dominators-section .button-wrap:after {
   content: "";
   position: absolute;
-  top: 20px;
-  right: 86%;
-  height: 14px;
-  width: 117px;
-  background: url("./assets/images/home-page/hero-button-line.svg") no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.dominators-section .button-wrap:before {
+  top: 20px;
+  height: 24px;
+  width: 117px;
+  margin-left: -200px;
+  background-image: url("./assets/images/general/primary-btn-line-left.svg");
+  -moz-transform: translateX(-50%) scale(1, -1);
+  -o-transform: translateX(-50%) scale(1, -1);
+  -ms-transform: translateX(-50%) scale(1, -1);
+  -webkit-transform: translateX(-50%) scale(1, -1);
+  transform: translateX(-50%) scale(1, -1);
 }
 @media only screen and (min-width: 992px) {
   .dominators-section .button-wrap:before {
@@ -3036,13 +3050,12 @@ COMMON STYLE END
     right: initial;
     width: 25px;
     height: 88px;
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background: url("./assets/images/home-page/dominator-btn-line.svg") no-repeat;
-    background-size: cover;
+    -moz-transform: translateX(-50%) scale(1, 1);
+    -o-transform: translateX(-50%) scale(1, 1);
+    -ms-transform: translateX(-50%) scale(1, 1);
+    -webkit-transform: translateX(-50%) scale(1, 1);
+    transform: translateX(-50%) scale(1, 1);
+    background-image: url("./assets/images/home-page/dominator-btn-line.svg");
   }
 }
 @media only screen and (min-width: 1201px) {
@@ -3058,15 +3071,11 @@ COMMON STYLE END
   }
 }
 .dominators-section .button-wrap:after {
-  content: "";
-  position: absolute;
   top: 11px;
-  left: 87%;
   width: 131px;
-  height: 13px;
-  background-image: url("./assets/images/home-page/faq-btn-line-right.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 24px;
+  margin-left: 200px;
+  background-image: url("./assets/images/general/primary-btn-line-right.svg");
 }
 @media only screen and (min-width: 992px) {
   .dominators-section .button-wrap:after {
@@ -4395,6 +4404,7 @@ COMMON STYLE END
   font-size: 22px;
   color: #030A1A;
   position: relative;
+  z-index: 2;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .number {
@@ -4768,15 +4778,19 @@ COMMON STYLE END
     width: 220px;
   }
 }
-.road-map-section.element-show .section-title {
+.road-map-section .element-show.section-title {
   opacity: 1;
 }
-.road-map-section.element-show .road-map-item:nth-child(odd) .road-map-card {
+.road-map-section .element-show.section-title span {
+  -webkit-animation: 2s linear 1 normal forwards running text-flicker;
+  animation: 2s linear 1 normal forwards running text-flicker;
+}
+.road-map-section .element-show.road-map-item:nth-child(odd) .road-map-card {
   opacity: 1;
   -webkit-animation: transform-left 1s linear both;
   animation: transform-left 1s linear both;
 }
-.road-map-section.element-show .road-map-item:nth-child(even) .road-map-card {
+.road-map-section .element-show.road-map-item:nth-child(even) .road-map-card {
   opacity: 1;
   -webkit-animation: transform-right 1s linear both;
   animation: transform-right 1s linear both;

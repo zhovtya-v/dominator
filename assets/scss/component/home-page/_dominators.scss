@@ -143,17 +143,23 @@
     .button-wrap {
         position: relative;
 
-        &:before {
+        &:before, &:after {
             content: '';
             position: absolute;
-
-            top: 20px;
-            right: 86%;
-            height: 14px;
-            width: 117px;
-            background: url("./assets/images/home-page/hero-button-line.svg") no-repeat;
             background-size: cover;
+            background-repeat: no-repeat;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
 
+        &:before {
+            top: 20px;
+            //right: 86%;
+            height: 24px;
+            width: 117px;
+            margin-left: -200px;
+            background-image: url("./assets/images/general/primary-btn-line-left.svg");
+            @include transform(translateX(-50%) scale(1,-1));
 
             @include min-medium {
                 top: initial;
@@ -162,9 +168,8 @@
                 right: initial;
                 width: 25px;
                 height: 88px;
-                @include transform(translateX(-50%));
-                background: url("./assets/images/home-page/dominator-btn-line.svg") no-repeat;
-                background-size: cover;
+                @include transform(translateX(-50%) scale(1,1));
+                background-image: url("./assets/images/home-page/dominator-btn-line.svg");
             }
 
             @include min-large {
@@ -179,15 +184,11 @@
         }
 
         &:after {
-            content: '';
-            position: absolute;
             top: 11px;
-            left: 87%;
             width: 131px;
-            height: 13px;
-            background-image: url("./assets/images/home-page/faq-btn-line-right.svg");
-            background-repeat: no-repeat;
-            background-size: cover;
+            height: 24px;
+            margin-left: 200px;
+            background-image: url("./assets/images/general/primary-btn-line-right.svg");
 
             @include min-medium {
                 display: none;

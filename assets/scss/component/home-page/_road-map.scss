@@ -127,6 +127,7 @@
         font-size: 22px;
         color: #030A1A;
         position: relative;
+        z-index: 2;
 
         @include min-medium {
             width: 41px;
@@ -447,12 +448,18 @@
         }
     }
 
-    &.element-show {
-        .section-title {
+    .element-show {
+        &.section-title {
             opacity: 1;
-        }
 
-        .road-map-item {
+            span {
+                @include animation(2s linear 1 normal forwards running text-flicker);
+            }
+        }
+    }
+
+    .element-show {
+        &.road-map-item {
             &:nth-child(odd) {
                 .road-map-card {
                     opacity: 1;
