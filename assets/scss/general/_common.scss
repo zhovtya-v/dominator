@@ -139,7 +139,7 @@ COMMON STYLE END
 .element-show {
     .section-title {
         &:before, &:after {
-            @include animation(3s decorative-line 1s linear forwards);
+            @include animation(2s decorative-line 1s linear forwards);
         }
 
         span {

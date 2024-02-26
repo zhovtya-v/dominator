@@ -168,8 +168,8 @@ COMMON STYLE END
 }
 
 .element-show .section-title:before, .element-show .section-title:after {
-  -webkit-animation: 3s decorative-line 1s linear forwards;
-  animation: 3s decorative-line 1s linear forwards;
+  -webkit-animation: 2s decorative-line 1s linear forwards;
+  animation: 2s decorative-line 1s linear forwards;
 }
 .element-show .section-title span {
   -webkit-animation: 3s linear 0.5s 1 normal forwards running text-flicker;
