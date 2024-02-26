@@ -168,6 +168,7 @@
                 right: initial;
                 width: 25px;
                 height: 88px;
+                margin-left: 0;
                 @include transform(translateX(-50%) scale(1,1));
                 background-image: url("./assets/images/home-page/dominator-btn-line.svg");
             }

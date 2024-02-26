@@ -3103,6 +3103,7 @@ COMMON STYLE END
     right: initial;
     width: 25px;
     height: 88px;
+    margin-left: 0;
     -moz-transform: translateX(-50%) scale(1, 1);
     -o-transform: translateX(-50%) scale(1, 1);
     -ms-transform: translateX(-50%) scale(1, 1);
