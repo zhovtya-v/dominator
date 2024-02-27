@@ -52,6 +52,8 @@
                 top: -24px;
                 z-index: 6;
                 display: block;
+
+                @include animation(6s linear infinite normal both running element-animation-2);
             }
 
             @include min-extra-large {
@@ -64,6 +66,8 @@
             right: initial;
             top: -140px;
             left: 34px;
+
+            @include animation(4s linear infinite normal both running element-animation-1);
 
             @include min-large {
                 left: initial;
@@ -80,6 +84,9 @@
         &.third {
             right: 46px;
             top: -133px;
+            z-index: 1;
+
+            @include animation(5s linear infinite normal both running element-animation-3);
 
             @include min-large {
                 right: -2px;
@@ -95,6 +102,8 @@
         &.fourth {
             left: 32px;
             bottom: 240px;
+
+            @include animation(10s linear infinite normal both running element-animation-4);
 
             @include min-large {
                 left: initial;
@@ -148,8 +157,6 @@
 
         span {
             position: relative;
-
-            //@include animation(3s linear 1 normal forwards running text-flicker);
 
             &:after {
                 content: '';
@@ -331,7 +338,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            //clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 7% 100%, 0 92%);
             position: relative;
 
             @include min-medium {

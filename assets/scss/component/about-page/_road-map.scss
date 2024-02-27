@@ -472,7 +472,7 @@
             color: $primary-text-color;
             text-align: center;
             text-transform: uppercase;
-            @include text-shadow(0 4px 20px rgba($primary-text-color, 0.5));
+            text-shadow: 0 4px 20px rgba($shadow-text-color, 0.5);
             @include transform(translateX(-50%));
             min-width: 110px;
 

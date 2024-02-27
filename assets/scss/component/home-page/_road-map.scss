@@ -378,6 +378,8 @@
             left: 0;
             top: 107%;
 
+            @include animation(13s linear infinite normal both running element-animation-7);
+
             @include min-medium {
                 left: 115px;
                 top: -44px;
@@ -393,6 +395,8 @@
             right: -10px;
             top: 106%;
             @include transform(rotate(77deg));
+
+            @include animation(13s linear infinite normal both running element-animation-8);
 
             @include min-large {
                 right: 75px;
@@ -463,14 +467,14 @@
             &:nth-child(odd) {
                 .road-map-card {
                     opacity: 1;
-                    @include animation(transform-left 1s linear both);
+                    @include animation(1s linear 1 normal both transform-left);
                 }
             }
 
             &:nth-child(even) {
                 .road-map-card {
                     opacity: 1;
-                    @include animation(transform-right 1s linear both);
+                    @include animation(1s linear 1 normal both transform-right);
                 }
             }
         }

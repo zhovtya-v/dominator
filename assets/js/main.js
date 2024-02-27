@@ -1,3 +1,13 @@
+window.addEventListener('load', (event) => {
+    console.log('page load')
+    let loaderWrap = document.querySelector('.loader');
+
+    loaderWrap.style.display = "none";
+    loaderWrap.style.zIndex = "-1000";
+
+    new SmoothScroll(document,100,20);
+})
+
 let menuBtn = document.querySelector('.nav-btn-js');
 let menu = document.querySelector('.header-section');
 
@@ -250,12 +260,6 @@ function road_map_reinit_slider() {
     }
 }
 
-
-
-function init(){
-    new SmoothScroll(document,100,20)
-}
-
 function SmoothScroll(target, speed, smooth) {
     if (target === document)
         target = (document.scrollingElement
@@ -320,9 +324,3 @@ function SmoothScroll(target, speed, smooth) {
         );
     }()
 }
-
-
-$(window).on("load", function() {
-    $(".loader_inner").fadeOut();
-    $(".loader").delay(400).fadeOut("slow");
-});

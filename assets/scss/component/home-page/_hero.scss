@@ -155,8 +155,7 @@
         line-height: 1;
 
         @include fluid-type(320px, 360px, 40px, 48px);
-
-        @include animation(transform-left 1s linear both);
+        @include animation(1s linear 1 normal both transform-left);
 
         @include min-large {
             letter-spacing: 10px;
@@ -190,7 +189,7 @@
             background-size: cover;
             opacity: 0;
 
-            @include animation(4s decorative-line 1.5s linear forwards);
+            @include animation(4s linear 1.5s 1 normal forwards running decorative-line);
 
             @include min-medium {
                 right: 100.5%;
@@ -225,7 +224,7 @@
             background: url("./assets/images/home-page/hero-title-line-mob-right.svg") no-repeat;
             background-size: cover;
 
-            @include animation(3.4s decorative-line 1.5s linear forwards);
+            @include animation(3.4s linear 1.5s 1 normal forwards running decorative-line);
 
             @include min-small {
                display: none;
@@ -244,7 +243,7 @@
 
         @include fluid-type(320px, 360px, 24px, 32px);
 
-        @include animation(transform-left 1s linear both);
+        @include animation(1s linear 1 normal both transform-left);
 
         span {
             @include animation(4s linear 1.2s 1 normal forwards running text-flicker);
@@ -272,7 +271,7 @@
         position: relative;
         margin-bottom: 24px;
 
-        @include animation(transform-left 1s linear both);
+        @include animation(1s linear 1 normal both running transform-left);
 
         @include min-large {
             margin-left: 5px;
@@ -300,7 +299,7 @@
             background: url("./assets/images/general/primary-btn-line-left.svg") no-repeat;
             background-size: cover;
 
-            @include animation(3s decorative-line 1s linear forwards);
+            @include animation(3s linear 1s 1 normal forwards running decorative-line);
 
             @include min-medium {
                 right: 100%;
@@ -332,7 +331,7 @@
             background-repeat: no-repeat;
             background-size: cover;
 
-            @include animation(3s decorative-line 1.1s linear forwards);
+            @include animation(3s linear 1.1s 1 normal forwards decorative-line);
 
             @include min-small {
                 display: none;

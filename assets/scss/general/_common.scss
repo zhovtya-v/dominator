@@ -48,6 +48,34 @@ ul {
     @include list;
 }
 
+.loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+
+    @include display-flex;
+    @include justify-content-center;
+    @include align-items-center;
+
+    background: $black-bg-color url("assets/images/general/site-bg-new.png");
+    background-size: cover;
+    background-position: center top;
+
+
+
+    .loader-inner {
+        img {
+            @include animation(loader infinite linear forwards);
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
 body {
     @include font_robotoMono_regular;
     font-size: 14px;
@@ -100,7 +128,6 @@ COMMON STYLE END
 
 .section-title {
     @include font_tektur_bold;
-    //@include fluid-type(320px, 1920px, 36px, 70px);
     font-size: 32px;
     text-transform: uppercase;
     color: $primary-text-color;
@@ -108,8 +135,6 @@ COMMON STYLE END
     margin: 0;
     letter-spacing: 3px;
     line-height: 1;
-
-    //@include animation(4s linear 1.2s 1 normal forwards running text-flicker);
 
     @include min-large {
         font-size: 53px;
@@ -125,12 +150,8 @@ COMMON STYLE END
         text-align: center;
     }
 
-    /*&:before, &:after {
-        @include animation(3s decorative-line 1s linear forwards);
-    }*/
-
     span {
-        @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+        text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
         @include appearance(none);
         outline: none;
     }
@@ -558,56 +579,3 @@ COMMON STYLE END
 ::-webkit-scrollbar-corner {
     background: transparent;
 }*/
-
-
-
-.loader {
-    background: none repeat scroll 0 0 #fff;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 9999;
-}
-.loader .loader_inner {
-    animation: animate 1.5s linear infinite;
-    clip: rect(0, 80px, 80px, 40px);
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    left: calc(50% - 40px);
-    top: calc(50% - 40px);
-}
-@keyframes animate {
-    0% {
-        transform: rotate(0deg)
-    }
-    100% {
-        transform: rotate(220deg)
-    }
-}
-.loader .loader_inner:after {
-    animation: animate2 1.5s ease-in-out infinite;
-    clip: rect(0, 80px, 80px, 40px);
-    content:'';
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    position: absolute;
-}
-@keyframes animate2 {
-    0% {
-        box-shadow: inset #b3dfd8 0 0 0 17px;
-        transform: rotate(-140deg);
-    }
-    50% {
-        box-shadow: inset #b3dfd8 0 0 0 2px;
-    }
-    100% {
-        box-shadow: inset #b3dfd8 0 0 0 17px;
-        transform: rotate(140deg);
-    }
-}

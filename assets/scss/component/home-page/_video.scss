@@ -194,12 +194,12 @@
     &.element-show {
         .video-element-first {
             opacity: 1;
-            @include animation(transform-right 0.7s linear both);
+            @include animation(0.7s linear 1 normal both transform-right);
         }
 
         .video-element-second {
             opacity: 1;
-            @include animation(transform-left 0.7s linear both);
+            @include animation(0.7s linear 1 normal both transform-left);
         }
     }
 }

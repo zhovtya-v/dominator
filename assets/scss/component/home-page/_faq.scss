@@ -43,7 +43,7 @@
             color: $primary-text-color;
             letter-spacing: 2px;
             line-height: 1.6;
-            @include text-shadow(0 4px 20px rgba($shadow-text-color, 0.5));
+            text-shadow: 0 4px 20px rgba($shadow-text-color, 0.5);
 
             @include min-medium {
                 font-size: 24px;
@@ -64,7 +64,7 @@
             @include font_tektur_semiBold;
             color: $primary-text-color;
             line-height: 1;
-            @include text-shadow(0 4px 20px rgba($shadow-text-color, 0.5));
+            text-shadow: 0 4px 20px rgba($shadow-text-color, 0.5);
 
             @include min-medium {
                 font-size: 32px;
@@ -234,6 +234,9 @@
         max-width: 468px;
         width: 26%;
 
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+
         @include min-extra-large {
             top: -113px;
             right: -182px;
@@ -304,6 +307,8 @@
         text-align: center;
         display: inline-block;
         position: relative;
+        transform: translate3d(0,100%,0);
+        opacity: 0;
 
         &:before, &:after {
             content: '';
@@ -339,6 +344,10 @@
                 height: 44px;
             }
         }
+
+        &.element-show {
+            @include animation(1s linear 1 normal both running transform-bottom);
+        }
     }
 
     .primary-button {
@@ -352,7 +361,12 @@
 
     &.element-show {
         .section-title {
-            @include animation(transform-left 1s linear both);
+            @include animation(1s linear 1 normal both running transform-left);
+        }
+
+        .faq-element-image {
+            opacity: 1;
+            @include animation(linear 0.7s 1 normal both transform-right);
         }
     }
 }

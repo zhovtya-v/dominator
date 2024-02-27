@@ -91,7 +91,7 @@
         }
 
         span {
-            @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+            text-shadow: 0 4px 60px rgba($primary-text-color, 0.5);
             @include appearance(none);
             outline: none;
         }

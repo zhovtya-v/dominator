@@ -115,6 +115,9 @@
         text-align: right;
         z-index: 2;
 
+        transform: translate3d(0,100%,0);
+        opacity: 0;
+
         @include min-medium {
             //right: 0;
             top: -300px;
@@ -243,7 +246,7 @@
             margin-bottom: 31px;
             display: inline-block;
             @include transition(all 0.2s);
-            @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+            text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
 
             @include min-medium {
                 font-size: 22px;
@@ -270,7 +273,7 @@
 
             &:hover {
                 color: $primary-active-text-color;
-                @include text-shadow(0 0 0 rgba($shadow-text-color, 0));
+                text-shadow: 0 0 0 rgba($shadow-text-color, 0);
 
                 &:after {
                     width: 100%;
@@ -496,7 +499,7 @@
                 text-transform: uppercase;
                 color: $primary-text-color;
                 letter-spacing: 6px;
-                @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+                text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
 
                 @include min-medium {
                     font-size: 50px;
@@ -569,15 +572,19 @@
         }
     }
 
-    &.element-show {
+    .element-show {
         .title {
             &:before, &:after {
-                @include animation(3s decorative-line 1s linear forwards);
+                @include animation(3s linear 1s 1 normal forwards decorative-line);
             }
 
             span {
                 @include animation(4s linear 1 normal forwards running text-flicker);
             }
+        }
+
+        &.footer-image-element {
+            @include animation(3s linear 1 normal both transform-right);
         }
     }
 }

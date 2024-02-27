@@ -317,12 +317,6 @@
   transition: $args;
 }
 
-@mixin translate3d($translateX,$translateY,$translateZ){
-  -webkit-transform: translate3d($translateX,$translateY,$translateZ);
-  -moz-transform: translate3d($translateX,$translateY,$translateZ);
-  transform: translate3d($translateX,$translateY,$translateZ);
-}
-
 @mixin transform($transforms) {
   -moz-transform: $transforms;
   -o-transform: $transforms;
@@ -342,12 +336,6 @@
   -webkit-box-shadow: $value;
   -moz-box-shadow: $value;
   box-shadow: $value;
-}
-
-@mixin text-shadow($value) {
-  -webkit-text-shadow: $value;
-  -moz-text-shadow: $value;
-  text-shadow: $value;
 }
 
 @mixin filter($value) {

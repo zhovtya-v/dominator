@@ -69,6 +69,34 @@ ul {
   margin: 0;
 }
 
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #020919 url("assets/images/general/site-bg-new.png");
+  background-size: cover;
+  background-position: center top;
+}
+.loader .loader-inner img {
+  -webkit-animation: loader infinite linear forwards;
+  animation: loader infinite linear forwards;
+  animation-iteration-count: infinite;
+}
+
 body {
   font-family: "Roboto Mono", monospace, sans-serif;
   font-weight: 400;
@@ -134,9 +162,6 @@ COMMON STYLE END
   margin: 0;
   letter-spacing: 3px;
   line-height: 1;
-  /*&:before, &:after {
-      @include animation(3s decorative-line 1s linear forwards);
-  }*/
 }
 @media only screen and (min-width: 1201px) {
   .section-title {
@@ -156,18 +181,21 @@ COMMON STYLE END
   }
 }
 .section-title span {
-  -webkit-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
-  -moz-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
   text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
 }
 
 .element-show .section-title:before, .element-show .section-title:after {
-  -webkit-animation: 3s decorative-line 1s linear forwards;
-  animation: 3s decorative-line 1s linear forwards;
+  -webkit-animation: 2s decorative-line 1s linear forwards;
+  animation: 2s decorative-line 1s linear forwards;
 }
 .element-show .section-title span {
-  -webkit-animation: 4s linear 1.2s 1 normal forwards running text-flicker;
-  animation: 4s linear 1.2s 1 normal forwards running text-flicker;
+  -webkit-animation: 3s linear 0.5s 1 normal forwards running text-flicker;
+  animation: 3s linear 0.5s 1 normal forwards running text-flicker;
 }
 
 .dominator-image-section {
@@ -1030,8 +1058,6 @@ COMMON STYLE END
     font-size: 24px;
     color: #119BFF;
     letter-spacing: 2.5px;
-    -webkit-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.8);
-    -moz-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.8);
     text-shadow: 0 4px 60px rgba(20, 170, 255, 0.8);
   }
   .header-section .menu a:after {
@@ -1242,7 +1268,13 @@ COMMON STYLE END
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  -webkit-filter: blur(55px);
   filter: blur(55px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -1583,9 +1615,12 @@ COMMON STYLE END
   }
 }
 .hero-section .title span {
-  -webkit-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
-  -moz-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
   text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
 }
 .hero-section .title:before {
   content: "";
@@ -2700,9 +2735,7 @@ COMMON STYLE END
   color: #119BFF;
   text-align: center;
   text-transform: uppercase;
-  -webkit-text-shadow: 0 4px 20px rgba(17, 155, 255, 0.5);
-  -moz-text-shadow: 0 4px 20px rgba(17, 155, 255, 0.5);
-  text-shadow: 0 4px 20px rgba(17, 155, 255, 0.5);
+  text-shadow: 0 4px 20px rgba(20, 170, 255, 0.5);
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -3564,12 +3597,18 @@ COMMON STYLE END
   width: 493px;
   height: 585px;
   opacity: 0.15;
-  filter: blur(224px);
   -moz-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
+  -webkit-filter: blur(224px);
+  filter: blur(224px);
   z-index: 2;
 }
 .footer-section .footer-top .footer-container {
@@ -3584,6 +3623,12 @@ COMMON STYLE END
   width: 315px;
   height: 374px;
   opacity: 0.2;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
+  -webkit-filter: blur(224px);
   filter: blur(224px);
 }
 .footer-section .footer-section-bg {
@@ -3645,7 +3690,13 @@ COMMON STYLE END
   width: 315px;
   height: 374px;
   opacity: 0.15;
+  -webkit-filter: blur(224px);
   filter: blur(224px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
 }
 .footer-section .footer-image-element {
   position: absolute;
@@ -3810,8 +3861,6 @@ COMMON STYLE END
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
-  -webkit-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
-  -moz-text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
   text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
 }
 @media only screen and (min-width: 992px) {
@@ -3848,8 +3897,6 @@ COMMON STYLE END
 }
 .footer-section .footer-menu a:hover {
   color: #119BFF;
-  -webkit-text-shadow: 0 0 0 rgba(20, 170, 255, 0);
-  -moz-text-shadow: 0 0 0 rgba(20, 170, 255, 0);
   text-shadow: 0 0 0 rgba(20, 170, 255, 0);
 }
 .footer-section .footer-menu a:hover:after {
@@ -4099,9 +4146,7 @@ COMMON STYLE END
   text-transform: uppercase;
   color: #119BFF;
   letter-spacing: 6px;
-  -webkit-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
-  -moz-text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
-  text-shadow: 0 4px 60px rgba(17, 155, 255, 0.5);
+  text-shadow: 0 4px 60px rgba(20, 170, 255, 0.5);
 }
 @media only screen and (min-width: 992px) {
   .footer-section .footer-bottom-block .title span {
