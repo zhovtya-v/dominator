@@ -1,5 +1,5 @@
 window.addEventListener('load', (event) => {
-    new SmoothScroll(document,100,20);
+    //new SmoothScroll(document,100,20);
 
     let menuBtn = document.querySelector('.nav-btn-js');
     let menu = document.querySelector('.header-section');
@@ -14,9 +14,15 @@ window.addEventListener('load', (event) => {
         entry.forEach(change => {
             if (change.isIntersecting) {
                 change.target.classList.add('element-show');
+                document.dispatchEvent(new CustomEvent('element-show', {
+                    detail: {
+                        target: change.target
+                    }
+                }));
             }
         });
     }
+
     let options = { threshold: [0.5] };
     let observer = new IntersectionObserver(onEntry, options);
     let elements = document.querySelectorAll('.animation-section');
@@ -32,19 +38,32 @@ window.addEventListener('load', (event) => {
     openModalBtn.addEventListener("click", () => modal.style.display='block');
     modalCloseBtn.addEventListener("click", () => modal.style.display='none');
     modalBg.addEventListener("click", () => modal.style.display='none');
-
-    counter('.element-show #dominators-first .out-num', 0, 1347, 5)
-    counter('.element-show #dominators-second .out-num', 0, 347, 20)
-    counter('.element-show #dominators-third .out-num', 0, 150, 35)
 })
 
-function counter(number, start, end, time) {
+document.addEventListener('element-show', function(e) {
+    if (e.detail.target.classList.contains('hero-section')) {
+        counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
+        counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
+        counter(document.querySelector('.element-show #dominators-third .out-num'), 0, 150)
+    }
+});
+
+function counter(object, start, end) {
+    if (object === null) return;
+
     var interval = setInterval(function() {
-        document.querySelector(number).innerHTML = ++start + 'K';
-        if( start == end ) {
+        var magic_num = 15;
+        var diff = end - start;
+        var step = Math.ceil(diff / magic_num);
+
+        start += step;
+
+        object.innerHTML = start + 'K';
+
+        if( start === end ) {
             clearInterval(interval);
         }
-    }, time);
+    }, 30);
 }
 
 var dominatorsSwiper = new Swiper(".dominators-swiper", {
@@ -269,6 +288,7 @@ function road_map_reinit_slider() {
         })
     }
 }
+/*
 
 function SmoothScroll(target, speed, smooth) {
     if (target === document)
@@ -334,6 +354,7 @@ function SmoothScroll(target, speed, smooth) {
         );
     }()
 }
+*/
 
 function buttonHoverAnimation() {
     const buttonSelector = document.querySelectorAll(".video-play");
