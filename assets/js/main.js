@@ -1,37 +1,50 @@
 window.addEventListener('load', (event) => {
-    console.log('page load')
-    let loaderWrap = document.querySelector('.loader');
-
-    loaderWrap.style.display = "none";
-    loaderWrap.style.zIndex = "-1000";
-
     new SmoothScroll(document,100,20);
+
+    let menuBtn = document.querySelector('.nav-btn-js');
+    let menu = document.querySelector('.header-section');
+
+    menuBtn.addEventListener('click', function () {
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+        document.body.classList.toggle('menu-opened');
+    })
+
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('element-show');
+            }
+        });
+    }
+    let options = { threshold: [0.5] };
+    let observer = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.animation-section');
+    for (let elm of elements) {
+        observer.observe(elm);
+    }
+
+    var modal = document.querySelector('.modal');
+    var modalBg = document.querySelector('.modal-bg');
+    var modalCloseBtn = document.querySelector('.modal-close');
+    var openModalBtn = document.querySelector('.video-btn-play');
+
+    openModalBtn.addEventListener("click", () => modal.style.display='block');
+    modalCloseBtn.addEventListener("click", () => modal.style.display='none');
+    modalBg.addEventListener("click", () => modal.style.display='none');
+
+    counter('.element-show #dominators-first .out-num', 0, 1347, 5)
+    counter('.element-show #dominators-second .out-num', 0, 347, 20)
+    counter('.element-show #dominators-third .out-num', 0, 150, 35)
 })
 
-let menuBtn = document.querySelector('.nav-btn-js');
-let menu = document.querySelector('.header-section');
-
-menuBtn.addEventListener('click', function () {
-    console.log('menuBtn', menuBtn)
-
-    menuBtn.classList.toggle('active');
-    menu.classList.toggle('active');
-
-    document.body.classList.toggle('menu-opened');
-})
-
-function onEntry(entry) {
-    entry.forEach(change => {
-        if (change.isIntersecting) {
-            change.target.classList.add('element-show');
+function counter(number, start, end, time) {
+    var interval = setInterval(function() {
+        document.querySelector(number).innerHTML = ++start + 'K';
+        if( start == end ) {
+            clearInterval(interval);
         }
-    });
-}
-let options = { threshold: [0.5] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.animation-section');
-for (let elm of elements) {
-    observer.observe(elm);
+    }, time);
 }
 
 var dominatorsSwiper = new Swiper(".dominators-swiper", {
@@ -76,7 +89,6 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
         clickable: true,
     }
 });
-
 
 var marketplaceSwiper = new Swiper(".marketplace-swiper", {
     //slidesPerView: 1.2,
@@ -123,7 +135,6 @@ accordionItem.forEach((accordionToggle) => {
         }
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', about_reinit_slider);
 window.addEventListener('resize', about_reinit_slider);
@@ -179,7 +190,6 @@ function about_reinit_slider() {
         });
     }
 }
-
 
 var mySwiper = new Swiper('.bottom-road-map-slider', {
     queueStartCallbacks: true,
@@ -311,7 +321,7 @@ function SmoothScroll(target, speed, smooth) {
             moving = false
     }
 
-    var requestFrame = function() { // requestAnimationFrame cross browser
+    var requestFrame = function() {
         return (
             window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
@@ -324,3 +334,49 @@ function SmoothScroll(target, speed, smooth) {
         );
     }()
 }
+
+function buttonHoverAnimation() {
+    const buttonSelector = document.querySelectorAll(".video-play");
+
+    for (let i = 0; i < buttonSelector.length; i++) {
+        const button = buttonSelector[i].querySelector(".video-btn-play");
+
+        function mousemoveFn(event) {
+            const buttonPosX = event.currentTarget.getBoundingClientRect().left;
+            const buttonPosY = event.currentTarget.getBoundingClientRect().top;
+
+            const xPosOfMouse = event.clientX - buttonPosX;
+            const yPosOfMouse = event.clientY - buttonPosY;
+
+            const xPosOfMouseInsideButton =
+                xPosOfMouse - buttonSelector[i].offsetWidth / 2;
+
+            const yPosOfMouseInsideButton =
+                yPosOfMouse - buttonSelector[i].offsetWidth / 4;
+
+            const animationDivider = 2;
+
+            console.log(xPosOfMouseInsideButton);
+            console.log(yPosOfMouseInsideButton);
+
+            TweenMax.to(button, 1, {
+                x: xPosOfMouseInsideButton / animationDivider,
+                y: yPosOfMouseInsideButton / animationDivider,
+                ease: Power3.easeOut
+            });
+        }
+
+        function mouseleaveFn() {
+            TweenMax.to(button, 1, {
+                x: 0,
+                y: 0,
+                ease: Power3.easeOut
+            });
+        }
+
+        buttonSelector[i].addEventListener("mousemove", mousemoveFn);
+        buttonSelector[i].addEventListener("mouseleave", mouseleaveFn);
+    }
+}
+
+buttonHoverAnimation();

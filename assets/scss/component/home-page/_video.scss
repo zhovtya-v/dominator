@@ -78,6 +78,7 @@
             max-height: 155px;
             width: 50%;
             z-index: 4;
+            pointer-events: none;
 
             opacity: 0;
             @include transform(translate3d(100%, 0, 0));
@@ -110,6 +111,7 @@
             max-height: 238px;
             width: 37%;
             z-index: 4;
+            pointer-events: none;
 
             opacity: 0;
             @include transform(translate3d(-100%, 0, 0));
@@ -180,7 +182,10 @@
             @include align-items-center;
             @include justify-content-center;
             z-index: 5;
-            cursor: pointer;
+
+            .video-btn-play {
+                cursor: pointer;
+            }
 
             img {
                 @include max-medium {
@@ -204,3 +209,36 @@
     }
 }
 
+.modal {
+    .button {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .video-wrap {
+        width: 100%;
+    }
+
+    .video-image {
+        @include aspect-ratio(375, 667);
+
+        @include min-medium {
+            @include aspect-ratio(1920, 945);
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+            object-fit: cover;
+            object-position: center bottom;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}

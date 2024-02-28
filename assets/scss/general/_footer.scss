@@ -115,11 +115,9 @@
         text-align: right;
         z-index: 2;
 
-        transform: translate3d(0,100%,0);
         opacity: 0;
 
         @include min-medium {
-            //right: 0;
             top: -300px;
             width: 42%;
             height: 62%;

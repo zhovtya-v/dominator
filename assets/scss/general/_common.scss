@@ -48,32 +48,8 @@ ul {
     @include list;
 }
 
-.loader {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 9999;
-
-    @include display-flex;
-    @include justify-content-center;
-    @include align-items-center;
-
-    background: $black-bg-color url("assets/images/general/site-bg-new.png");
-    background-size: cover;
-    background-position: center top;
-
-
-
-    .loader-inner {
-        img {
-            @include animation(loader infinite linear forwards);
-            animation-iteration-count: infinite;
-        }
-    }
+button {
+    @include reset-button;
 }
 
 body {
@@ -563,19 +539,3 @@ COMMON STYLE END
         @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
     }
 }
-
-/*::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background: rgba($black-bg-color, 0.01);
-}
-
-::-webkit-scrollbar-thumb {
-    background: $primary-text-color;
-    -webkit-border-radius: 4px;
-    -webkit-box-shadow: 0 0 0 rgba($primary-text-color, 0);
-}
-
-::-webkit-scrollbar-corner {
-    background: transparent;
-}*/
