@@ -2040,6 +2040,11 @@ COMMON STYLE END
     min-width: 150px;
   }
 }
+@media only screen and (min-width: 1201px) {
+  .hero-section .dominator-info .dominators {
+    min-width: 202px;
+  }
+}
 .hero-section .dominator-info .dominators .out-num {
   font-family: "Tektur", sans-serif;
   font-weight: 500;

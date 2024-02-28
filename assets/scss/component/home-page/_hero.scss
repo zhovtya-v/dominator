@@ -342,6 +342,10 @@
                 min-width: 150px;
             }
 
+            @include min-large {
+                min-width: 202px;
+            }
+
             .out-num {
                 @include font_tektur_medium;
                 color: $primary-text-color;
