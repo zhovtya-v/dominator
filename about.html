@@ -8,9 +8,41 @@
 
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./style-about.css">
+    <style>
+        .loader {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 9999;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            background: #020919 url("assets/images/general/site-bg-new.png");
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .loader-inner img {
+            -webkit-animation: loader infinite linear forwards;
+            animation: loader infinite linear forwards;
+        }
+    </style>
 </head>
 <body>
-
+<div class="loader">
+    <div class="loader-inner"><img src="assets/images/home-page/dominator-video.gif" alt="Hero image"/></div>
+</div>
 <header class="header-section">
     <div class="container">
         <div class="header-wrap">
@@ -451,7 +483,13 @@
         </div>
     </div>
 </div>
-<script src="./assets/js/swiper-bundle.min.js"></script>
+<script>
+    window.addEventListener('load', (event) => {
+        let loaderWrap = document.querySelector('.loader');
+        loaderWrap.style.display = "none";
+        loaderWrap.style.zIndex = "-1000";
+    })
+</script>
 <script src="./assets/js/idangerous.swiper-2.1.min.js"></script>
 <script src="./assets/js/main.js"></script>
 </body>
