@@ -539,3 +539,19 @@ COMMON STYLE END
         @include box-shadow(0 1px 10px rgba($primary-text-color, 0.7));
     }
 }
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: rgba($black-bg-color, 0.01);
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-text-color;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0 0 0 rgba($primary-text-color, 0);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
