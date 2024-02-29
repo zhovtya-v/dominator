@@ -23,7 +23,7 @@ window.addEventListener('load', (event) => {
         });
     }
 
-    let options = { threshold: [0.5] };
+    let options = { threshold: [0.2] };
     let observer = new IntersectionObserver(onEntry, options);
     let elements = document.querySelectorAll('.animation-section');
     for (let elm of elements) {
@@ -41,6 +41,11 @@ window.addEventListener('load', (event) => {
 })
 
 document.addEventListener('element-show', function(e) {
+    if (e.detail.target.classList.contains('hero-section')) {
+        counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
+        counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
+        counter(document.querySelector('.element-show #dominators-third .out-num'), 0, 150)
+    }
     if (e.detail.target.classList.contains('hero-section')) {
         counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
         counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
@@ -164,11 +169,9 @@ let swiper = null;
 function about_reinit_slider() {
     if (mql.matches) {
         swiper = new Swiper('.about-swiper', {
-            //grabCursor: true,
             spaceBetween: 12,
             slidesPerView: 1,
             centeredSlides: true,
-            //roundLengths: true,
             loop: true,
 
             pagination: {
@@ -288,73 +291,6 @@ function road_map_reinit_slider() {
         })
     }
 }
-/*
-
-function SmoothScroll(target, speed, smooth) {
-    if (target === document)
-        target = (document.scrollingElement
-            || document.documentElement
-            || document.body.parentNode
-            || document.body) // cross browser support for document scrolling
-
-    var moving = false
-    var pos = target.scrollTop
-    var frame = target === document.body
-    && document.documentElement
-        ? document.documentElement
-        : target // safari is the new IE
-
-    target.addEventListener('mousewheel', scrolled, { passive: false })
-    target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
-
-    function scrolled(e) {
-        e.preventDefault(); // disable default scrolling
-
-        var delta = normalizeWheelDelta(e)
-
-        pos += -delta * speed
-        pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
-
-        if (!moving) update()
-    }
-
-    function normalizeWheelDelta(e){
-        if(e.detail){
-            if(e.wheelDelta)
-                return e.wheelDelta/e.detail/40 * (e.detail>0 ? 1 : -1) // Opera
-            else
-                return -e.detail/3 // Firefox
-        }else
-            return e.wheelDelta/120 // IE,Safari,Chrome
-    }
-
-    function update() {
-        moving = true
-
-        var delta = (pos - target.scrollTop) / smooth
-
-        target.scrollTop += delta
-
-        if (Math.abs(delta) > 0.5)
-            requestFrame(update)
-        else
-            moving = false
-    }
-
-    var requestFrame = function() {
-        return (
-            window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            function(func) {
-                window.setTimeout(func, 1000 / 50);
-            }
-        );
-    }()
-}
-*/
 
 function buttonHoverAnimation() {
     const buttonSelector = document.querySelectorAll(".video-play");
@@ -402,33 +338,6 @@ function buttonHoverAnimation() {
 
 buttonHoverAnimation();
 
-/*var browser=new mbrowser();*/
-
-mbrowser=function(){
-    this.spec_string=   navigator.userAgent;
-    this.name=          this.get_name();
-};
-
-mbrowser.prototype.get_name=function(){
-    var spec_string = this.spec_string;
-
-    var matches = spec_string.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-
-    if ( navigator.appName === 'safari') {
-        console.log('safari')
-
-
-
-
-    } else {
-        console.log('another site')
-
-
-
-    }
-};
-
-//var browser = new mbrowser();
 
 var html = document.documentElement;
 var body = document.body;
@@ -453,11 +362,6 @@ TweenLite.set(scroller.target, {
 window.addEventListener("load", onLoad);
 
 function onLoad() {
-    /*var userAgent = navigator.userAgent.toLowerCase();
-    var name = userAgent.get_name();
-
-    console.log('name', name);*/
-
     var ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf('safari') != -1) {
         if (ua.indexOf('chrome') > -1) {
