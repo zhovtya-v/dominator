@@ -146,12 +146,13 @@ body.menu-opened {
 }
 
 .viewport {
-  /*height: 100%;
+  position: fixed;
+  height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;*/
+  bottom: 0;
 }
 .viewport .scroll-container {
   position: absolute;
