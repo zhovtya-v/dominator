@@ -357,10 +357,9 @@ TweenLite.set(scroller.target, {
 window.addEventListener("load", onLoad);
 
 function onLoad() {
-    /*var ua = navigator.userAgent.toLowerCase();
+    var ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf('safari') != -1) {
         if (ua.indexOf('chrome') > -1) {
-            console.log('chrome');
             updateScroller();
             window.focus();
             window.addEventListener("resize", onResize);
@@ -372,19 +371,13 @@ function onLoad() {
             window.addEventListener("resize", onResize);
             document.addEventListener("scroll", onScroll);
         } else {
-            console.log('safari');
             document.querySelector('.viewport').style.overflow = 'visible';
             document.querySelector('.viewport').style.position = 'relative';
             document.querySelector('.scroll-container').style.overflow = 'visible';
             document.querySelector('.scroll-container').style.position = 'relative';
             document.querySelector('.scroll-container').style.transform = 'none';
         }
-    }*/
-
-    updateScroller();
-    window.focus();
-    window.addEventListener("resize", onResize);
-    document.addEventListener("scroll", onScroll);
+    }
 }
 
 function updateScroller() {
