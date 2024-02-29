@@ -1,5 +1,5 @@
 window.addEventListener('load', (event) => {
-    //new SmoothScroll(document,100,20);
+    document.getElementById('hero-video').play();
 
     let menuBtn = document.querySelector('.nav-btn-js');
     let menu = document.querySelector('.header-section');
@@ -41,11 +41,6 @@ window.addEventListener('load', (event) => {
 })
 
 document.addEventListener('element-show', function(e) {
-    if (e.detail.target.classList.contains('hero-section')) {
-        counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
-        counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
-        counter(document.querySelector('.element-show #dominators-third .out-num'), 0, 150)
-    }
     if (e.detail.target.classList.contains('hero-section')) {
         counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
         counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
