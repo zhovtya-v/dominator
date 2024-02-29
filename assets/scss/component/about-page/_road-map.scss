@@ -147,6 +147,7 @@
             color: $primary-text-color;
             letter-spacing: 2.3px;
             margin-bottom: 25px;
+            line-height: 1.2;
 
             @include min-large {
                 font-size: 29px;
@@ -316,11 +317,7 @@
             }
 
             .title {
-                top: -38px;
-
-                @include min-extra-large {
-                    top: -50px;
-                }
+                bottom: calc(100% + 10px);
             }
         }
 
@@ -332,11 +329,7 @@
             }
 
             .title {
-                bottom: -38px;
-
-                @include min-extra-large {
-                    bottom: -50px;
-                }
+                top: calc(100% + 10px);
             }
         }
     }
@@ -403,6 +396,7 @@
         @include display-flex;
         @include justify-content-center;
         @include align-items-center;
+        cursor: pointer;
 
         @include min-large {
             width: 42px;
@@ -471,9 +465,10 @@
             color: $primary-text-color;
             text-align: center;
             text-transform: uppercase;
-            @include text-shadow(0 4px 20px rgba($primary-text-color, 0.5));
+            text-shadow: 0 4px 20px rgba($shadow-text-color, 0.5);
             @include transform(translateX(-50%));
             min-width: 110px;
+            line-height: 1.4;
 
             @include min-medium {
                 font-size: 16px;

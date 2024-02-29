@@ -8,9 +8,41 @@
 
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./style-about.css">
+    <style>
+        .loader {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 9999;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            background: #020919 url("assets/images/general/site-bg-new.png");
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .loader-inner img {
+            -webkit-animation: loader infinite linear forwards;
+            animation: loader infinite linear forwards;
+        }
+    </style>
 </head>
 <body>
-
+<div class="loader">
+    <div class="loader-inner"><img src="assets/images/home-page/dominator-video.gif" alt="Hero image"/></div>
+</div>
 <header class="header-section">
     <div class="container">
         <div class="header-wrap">
@@ -98,7 +130,9 @@
             <div class="video-element-first"><img src="assets/images/about-page/video-image-about.png" alt="Video element image 1"/></div>
             <div class="video-element-second"><img src="assets/images/about-page/video-image-ellipse-about.svg" alt="Video element image 2"/></div>
             <div class="video-wrap">
-                <div class="video-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></div>
+                <div class="video-play">
+                    <button class="video-btn-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
+                </div>
                 <div class="video-image"><img src="assets/images/about-page/video-block-bg-about.png" alt="Video image"/></div>
             </div>
         </div>
@@ -113,49 +147,49 @@
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">01</span>
-                            <span class="title">Game Release</span>
+                            <span class="title">2025: Optimization and Monetization</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">02</span>
-                            <span class="title">NFT Integration</span>
+                            <span class="title">2025: Scaling and Advertising</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">03</span>
-                            <span class="title">Ecosystem Expansion</span>
+                            <span class="title">2025: Sustainability and Scalability</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">04</span>
-                            <span class="title">Multiplatform</span>
+                            <span class="title">2025: Sustainability and Scalability</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">05</span>
-                            <span class="title">Innovative Updates</span>
+                            <span class="title">2025: Scaling and Advertising</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">06</span>
-                            <span class="title">Gaming Tournaments</span>
+                            <span class="title">2025: Scaling and Advertising</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="number-wrap">
                             <div class="number-bg"></div>
                             <span class="number">07</span>
-                            <span class="title">Release on iOS and Android</span>
+                            <span class="title">2025: Sustainability and Scalability</span>
                         </div>
                     </div>
                 </div>
@@ -165,11 +199,16 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Game Release</h6>
+                            <h6 class="title">2025: Optimization and Monetization</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>Redesigning of PVP Game Economy</li>
+                                    <li>Expansion of Wallet Features</li>
+                                    <li>Implementation of NFT Renting System</li>
+                                    <li>Commencement of DOMINATOR Ad Network Public Beta Testing</li>
+                                    <li>Non-Fungible token (NFT) staking</li>
+                                    <li>Start sales of the first collection 3D NFTs</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -185,11 +224,16 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">NFT Integration</h6>
+                            <h6 class="title">2025: Scaling and Advertising</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                    <li>Alpha Launch of DOMINATOR VR version</li>
+                                    <li>Introduction of Advertisers’ Dashboard</li>
+                                    <li>Release of Ad Network</li>
+                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                    <li>Start testing of VR Ad Network</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -205,11 +249,15 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Ecosystem Expansion</h6>
+                            <h6 class="title">2025: Sustainability and Scalability</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>Enhance security measures and protocols to protect players' assets</li>
+                                    <li>The VR version of DOMINATOR Alpha Launch</li>
+                                    <li>Introduction of Advertisers’ Dashboard</li>
+                                    <li>Release of Ad Network</li>
+                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -225,11 +273,14 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Multiplatform</h6>
+                            <h6 class="title">2025: Sustainability and Scalability</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>DOMINATOR VR Beta Release</li>
+                                    <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
+                                    <li>DMNTR Test Network Release </li>
+                                    <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -245,11 +296,16 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Innovative Updates</h6>
+                            <h6 class="title">2025: Scaling and Advertising</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                    <li>Alpha Launch of DOMINATOR VR version</li>
+                                    <li>Introduction of Advertisers’ Dashboard</li>
+                                    <li>Release of Ad Network</li>
+                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                    <li>Start testing of VR Ad Network</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -265,11 +321,16 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Gaming Tournaments</h6>
+                            <h6 class="title">2025: Scaling and Advertising</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                    <li>Alpha Launch of DOMINATOR VR version</li>
+                                    <li>Introduction of Advertisers’ Dashboard</li>
+                                    <li>Release of Ad Network</li>
+                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                    <li>Start testing of VR Ad Network</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -285,11 +346,14 @@
                     <div class="swiper-slide">
                         <div class="road-map-card">
                             <div class="road-map-card-bg"></div>
-                            <h6 class="title">Release on iOS and Android</h6>
+                            <h6 class="title">2025: Sustainability and Scalability</h6>
                             <div class="text">
-                                <p>In the game "Dominator", NFTs are not just digital assets, but also a symbol of individuality and prestige. We offer players exclusive digital items that provide unique visual and gameplay benefits.</p>
-                                <p>Using blockchain technology, we guarantee the security and uniqueness of each NFT. Players can buy, sell and trade these valuable items in our Marketplace, adding even more strategy and depth to the game.</p>
-                                <p>Thanks to NFT, every Dominator player is able to go beyond just playing, but create their own, unique gaming experience that is different from others and highlights their personal style and achievements in the game.</p>
+                                <ul>
+                                    <li>DOMINATOR VR Beta Release</li>
+                                    <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
+                                    <li>DMNTR Test Network Release </li>
+                                    <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
+                                </ul>
                             </div>
                             <div class="button-wrap">
                                 <a href="#" class="button secondary-button">
@@ -385,6 +449,7 @@
                         <li><a href="#" >Marketplace</a></li>
                         <li><a href="#" >FAQ</a></li>
                         <li><a href="#" >Contact us</a></li>
+                        <li><a href="#" >White Paper</a></li>
                     </ul>
                 </nav>
                 <div class="footer-info">
@@ -410,8 +475,8 @@
                 <div class="footer-block">
                     <div class="copyright">Dominator©2023</div>
                     <div class="policy-wrap">
-                        <a href="#" class="policy-link">Terms of use</a>
-                        <a href="#" class="policy-link">Privacy Policy</a>
+                        <a href="terms-of-use.html" class="policy-link">Terms of use</a>
+                        <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
                     </div>
                 </div>
             </div>
@@ -423,9 +488,41 @@
         </div>
     </div>
 </footer>
-
-<script src="./assets/js/swiper-bundle.min.js"></script>
+<div class="modal" id="video-modal">
+    <div class="modal-bg"></div>
+    <div class="modal-window">
+        <div class="modal-close">
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+        </div>
+        <div class="modal-content">
+            <div class="video-wrap">
+                <div class="video-image"><img src="assets/images/home-page/video-bg.png" alt="Video image"/></div>
+            </div>
+            <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', (event) => {
+        let loaderWrap = document.querySelector('.loader');
+        loaderWrap.style.display = "none";
+        loaderWrap.style.zIndex = "-1000";
+    })
+</script>
 <script src="./assets/js/idangerous.swiper-2.1.min.js"></script>
+<script src="assets/js/Tween-max.min.js"></script>
 <script src="./assets/js/main.js"></script>
 </body>
 </html>

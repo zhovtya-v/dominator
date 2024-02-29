@@ -8,9 +8,41 @@
 
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <style>
+        .loader {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 9999;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
 
+            background: #020919 url("assets/images/general/site-bg-new.png");
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .loader-inner img {
+            -webkit-animation: loader infinite linear forwards;
+            animation: loader infinite linear forwards;
+        }
+    </style>
+</head>
+<body >
+<div class="loader">
+    <div class="loader-inner"><img src="assets/images/home-page/dominator-video.gif" alt="Hero image"/></div>
+</div>
 <header class="header-section">
     <div class="container">
         <div class="header-wrap">
@@ -67,58 +99,211 @@
         </div>
     </div>
 </header>
-<main class="main-section">
-    <section class="hero-section">
-        <div class="hero-section-bg">
-            <div class="hero-video-wrap"><img src="assets/images/home-page/hero-bg-new.png" alt="Hero dominator image 1"/></div>
-        </div>
-        <div class="container hero-container">
-            <div class="hero-info">
-                <h1 class="title"><span>DOMINATOR</span></h1>
-                <h2 class="subtitle">That’s my game!</h2>
-                <div class="button-wrap">
-                    <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+<div class="viewport">
+    <div class="scroll-container" id="scroll-container">
+        <main class="main-section">
+            <section class="animation-section hero-section">
+                <div class="hero-section-bg">
+                    <div class="hero-video-wrap"><img src="assets/images/home-page/hero-bg-new.png" alt="Hero dominator image 1"/></div>
                 </div>
-                <div class="dominator-info">
-                    <div class="dominators">1347K <span>Users</span></div>
-                    <div class="dominators">357K <span>Earned</span></div>
-                    <div class="dominators">150K <span>Award</span></div>
-                </div>
-            </div>
-            <div class="hero-image"><img src="assets/images/home-page/hero-image.png" alt="Hero image"/></div>
-        </div>
-        <div class="dominator-image first"><img src="assets/images/home-page/hero-image-grey.png" alt="Hero dominator image 1"/></div>
-        <div class="dominator-image second"><img src="assets/images/home-page/hero-image-red.png" alt="Hero dominator image 2"/></div>
-        <div class="dominator-image third"><img src="assets/images/home-page/hero-image-yellow.png" alt="Hero dominator image 3"/></div>
-    </section>
-    <div class="main-wrap">
-        <section class="about-section">
-            <div class="container about-container">
-                <div class="about-element-image first"><img src="assets/images/general/decorative-element-1.svg" alt="About element image 1"/></div>
-                <div class="about-element-image second"><img src="assets/images/general/decorative-element-2.svg" alt="About element image 2"/></div>
-                <div class="about-element-image third"><img src="assets/images/general/decorative-element-3.svg" alt="About element image 3"/></div>
-                <div class="about-element-image fourth"><img src="assets/images/general/decorative-element-4.svg" alt="About element image 4"/></div>
-                <div class="about-info">
-                    <h3 class="section-title"><span>About game</span></h3>
-                    <div class="text">Dominator is an online game available on iOS, Android and web platforms. Imagine unique worm robots? Yes, we have them! Control your dominator, fuel it, collect resources, grow in size and compete with other players while avoiding collisions. This is a game for real dominators!</div>
-                    <div class="button-wrap">
-                        <a href="#" class="button secondary-button"><span>learn more</span></a>
+                <div class="container hero-container">
+                    <div class="hero-info">
+                        <h1 class="title"><span>DOMINATOR</span></h1>
+                        <h2 class="subtitle"><span>That’s my game!</span></h2>
+                        <div class="button-wrap">
+                            <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+                        </div>
+                        <div class="dominator-info">
+                            <div class="dominators" id="dominators-first"><span class="out-num">0</span><span>Users</span></div>
+                            <div class="dominators" id="dominators-second"><span class="out-num">0</span><span>Earned</span></div>
+                            <div class="dominators" id="dominators-third"><span class="out-num">0</span><span>Award</span></div>
+                        </div>
+                    </div>
+                    <!--<div class="hero-image"><img src="assets/images/home-page/hero-image.png" alt="Hero image"/></div>-->
+                    <div class="hero-image">
+                        <video autoplay muted loop id="hero-video">
+                            <source src="assets/images/home-page/dominator-video.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="about-slider">
-                    <div class="swiper about-swiper">
-                        <div class="swiper-wrapper">
-                            <!--<div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/about-slide-1.png" alt="About slider image 1"/></div></div>
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/about-slide-2.png" alt="About slider image 2"/></div></div>
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/about-slide-1.png" alt="About slider image 2"/></div></div>
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/about-slide-2.png" alt="About slider image 3"/></div></div>-->
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-1.png" alt="About slider image 3"/></div></div>
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-2.png" alt="About slider image 3"/></div></div>
-                            <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-3.png" alt="About slider image 3"/></div></div>
+                <div class="dominator-image first"><img src="assets/images/home-page/hero-image-grey.png" alt="Hero dominator image 1"/></div>
+                <div class="dominator-image second"><img src="assets/images/home-page/hero-image-red.png" alt="Hero dominator image 2"/></div>
+                <div class="dominator-image third"><img src="assets/images/home-page/hero-image-yellow.png" alt="Hero dominator image 3"/></div>
+            </section>
+            <div class="main-wrap">
+                <section class="animation-section about-section">
+                    <div class="container about-container">
+                        <div class="about-element-image first"><img src="assets/images/general/decorative-element-1.svg" alt="About element image 1"/></div>
+                        <div class="about-element-image second"><img src="assets/images/general/decorative-element-2.svg" alt="About element image 2"/></div>
+                        <div class="about-element-image third"><img src="assets/images/general/decorative-element-3.svg" alt="About element image 3"/></div>
+                        <div class="about-element-image fourth"><img src="assets/images/general/decorative-element-4.svg" alt="About element image 4"/></div>
+                        <div class="about-info">
+                            <h3 class="section-title"><span>About game</span></h3>
+                            <div class="text">Dominator is an online game available on iOS, Android and web platforms. Imagine unique worm robots? Yes, we have them! Control your dominator, fuel it, collect resources, grow in size and compete with other players while avoiding collisions. This is a game for real dominators!</div>
+                            <div class="button-wrap">
+                                <a href="#" class="button secondary-button"><span>learn more</span></a>
+                            </div>
                         </div>
-                        <div class="swiper-controls-wrap">
-                            <div class="swiper-pagination"></div>
+                        <div class="about-slider">
+                            <div class="swiper about-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-1.png" alt="About slider image 3"/></div></div>
+                                    <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-2.png" alt="About slider image 3"/></div></div>
+                                    <div class="swiper-slide"><div class="swiper-slide-wrap"><img src="assets/images/home-page/slider-image-3.png" alt="About slider image 3"/></div></div>
+                                </div>
+                                <div class="swiper-controls-wrap">
+                                    <div class="swiper-pagination"></div>
 
+                                    <div class="swiper-navigation-wrap">
+                                        <div class="swiper-button-prev">
+                                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.1471 0H15L4.85294 10.5217L13.2353 22H8.30214L0 10.5217L10.1471 0Z" fill="#27405E"/>
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-button-next">
+                                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="animation-section dominator-image-section">
+                    <img src="assets/images/home-page/image-1.png" alt="Dominator image 1"/>
+                    <img src="assets/images/home-page/image-2.png" alt="Dominator image 2"/>
+                </section>
+                <section class="animation-section video-section">
+                    <div class="container video-container">
+                        <div class="video-element-first"><img src="assets/images/home-page/video-image-1.svg" alt="Video element image 1"/></div>
+                        <div class="video-element-second"><img src="assets/images/home-page/video-image-2.svg" alt="Video element image 2"/></div>
+                        <div class="video-wrap">
+                            <div class="video-play">
+                                <button class="video-btn-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
+                            </div>
+                            <div class="video-image"><img src="assets/images/home-page/video-bg.png" alt="Video image"/></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="animation-section dominators-section">
+                    <h3 class="section-title"><span>CHOOSE YOUR DOMINATOR</span></h3>
+                    <div class="swiper dominators-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="dominator-item-wrap">
+                                    <div class="dominator-info-wrap">
+                                        <div class="dominator-item-bg"></div>
+                                        <div class="title">Information</div>
+                                        <div class="name"><span>Name</span> JOKER</div>
+                                        <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
+                                        <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
+                                            the virtual world, collects resources, outwits opponents
+                                            and brings a dose of chaos to the game
+                                        </div>
+                                        <div class="dominator-image-wrap">
+                                            <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
+                                        </div>
+                                    </div>
+                                    <div class="dominator-bottom-image-wrap">
+                                        <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
+                                        <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
+                                        <span class="dominator-name">JOKER</span>
+                                        <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="dominator-item-wrap">
+                                    <div class="dominator-info-wrap">
+                                        <div class="dominator-item-bg"></div>
+                                        <div class="title">Information</div>
+                                        <div class="name"><span>Name</span> SABER</div>
+                                        <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
+                                        <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
+                                            the virtual world, collects resources, outwits opponents
+                                            and brings a dose of chaos to the game</div>
+                                        <div class="dominator-image-wrap">
+                                            <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
+                                        </div>
+                                    </div>
+                                    <div class="dominator-bottom-image-wrap">
+                                        <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
+                                        <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
+                                        <span class="dominator-name">SABER</span>
+                                        <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="dominator-item-wrap">
+                                    <div class="dominator-info-wrap">
+                                        <div class="dominator-item-bg"></div>
+                                        <div class="title">Information</div>
+                                        <div class="name"><span>Name</span> JOKER</div>
+                                        <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
+                                        <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
+                                            the virtual world, collects resources, outwits opponents
+                                            and brings a dose of chaos to the game</div>
+                                        <div class="dominator-image-wrap">
+                                            <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
+                                        </div>
+                                    </div>
+                                    <div class="dominator-bottom-image-wrap">
+                                        <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
+                                        <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
+                                        <span class="dominator-name">JOKER</span>
+                                        <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="dominator-item-wrap">
+                                    <div class="dominator-info-wrap">
+                                        <div class="dominator-item-bg"></div>
+                                        <div class="title">Information</div>
+                                        <div class="name"><span>Name</span> SANDERSHTORM</div>
+                                        <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
+                                        <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
+                                            the virtual world, collects resources, outwits opponents
+                                            and brings a dose of chaos to the game</div>
+                                        <div class="dominator-image-wrap">
+                                            <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
+                                        </div>
+                                    </div>
+                                    <div class="dominator-bottom-image-wrap">
+                                        <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
+                                        <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
+                                        <span class="dominator-name">SANDERSHTORM</span>
+                                        <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-navigation-wrap">
+                            <div class="swiper-button-prev">
+                                <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.1471 0H15L4.85294 10.5217L13.2353 22H8.30214L0 10.5217L10.1471 0Z" fill="#27405E"/>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="button-wrap">
+                        <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+                    </div>
+                </section>
+                <section class="animation-section marketplace-section">
+                    <div class="marketplace-section-bg"></div>
+                    <div class="container marketplace-container">
+                        <h3 class="section-title"><span>MARKETPLACE</span></h3>
+                        <div class="swiper marketplace-swiper">
                             <div class="swiper-navigation-wrap">
                                 <div class="swiper-button-prev">
                                     <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,494 +316,417 @@
                                     </svg>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="dominator-image-section">
-            <img src="assets/images/home-page/image-1.png" alt="Dominator image 1"/>
-            <img src="assets/images/home-page/image-2.png" alt="Dominator image 2"/>
-        </section>
-        <section class="video-section">
-            <div class="container video-container">
-                <div class="video-element-first"><img src="assets/images/home-page/video-image-1.svg" alt="Video element image 1"/></div>
-                <div class="video-element-second"><img src="assets/images/home-page/video-image-2.svg" alt="Video element image 2"/></div>
-                <div class="video-wrap">
-                    <div class="video-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></div>
-                    <div class="video-image"><img src="assets/images/home-page/video-bg.png" alt="Video image"/></div>
-                </div>
-            </div>
-        </section>
-        <section class="dominators-section">
-            <h3 class="section-title"><span>CHOOSE YOUR DOMINATOR</span></h3>
-            <div class="swiper dominators-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="dominator-item-wrap">
-                            <div class="dominator-info-wrap">
-                                <div class="dominator-item-bg"></div>
-                                <div class="title">Information</div>
-                                <div class="name"><span>Name</span> JOKER</div>
-                                <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
-                                <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
-                                    the virtual world, collects resources, outwits opponents
-                                    and brings a dose of chaos to the game
-                                </div>
-                                <div class="dominator-image-wrap">
-                                    <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
-                                </div>
-                            </div>
-                            <div class="dominator-bottom-image-wrap">
-                                <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
-                                <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
-                                <span class="dominator-name">JOKER</span>
-                                <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="dominator-item-wrap">
-                            <div class="dominator-info-wrap">
-                                <div class="dominator-item-bg"></div>
-                                <div class="title">Information</div>
-                                <div class="name"><span>Name</span> SABER</div>
-                                <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
-                                <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
-                                    the virtual world, collects resources, outwits opponents
-                                    and brings a dose of chaos to the game</div>
-                                <div class="dominator-image-wrap">
-                                    <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
-                                </div>
-                            </div>
-                            <div class="dominator-bottom-image-wrap">
-                                <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
-                                <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
-                                <span class="dominator-name">SABER</span>
-                                <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="dominator-item-wrap">
-                            <div class="dominator-info-wrap">
-                                <div class="dominator-item-bg"></div>
-                                <div class="title">Information</div>
-                                <div class="name"><span>Name</span> JOKER</div>
-                                <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
-                                <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
-                                    the virtual world, collects resources, outwits opponents
-                                    and brings a dose of chaos to the game</div>
-                                <div class="dominator-image-wrap">
-                                    <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
-                                </div>
-                            </div>
-                            <div class="dominator-bottom-image-wrap">
-                                <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
-                                <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
-                                <span class="dominator-name">JOKER</span>
-                                <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="dominator-item-wrap">
-                            <div class="dominator-info-wrap">
-                                <div class="dominator-item-bg"></div>
-                                <div class="title">Information</div>
-                                <div class="name"><span>Name</span> SANDERSHTORM</div>
-                                <div class="rating"><span>Rating</span> <img src="assets/images/home-page/rating-line.png" alt="dominator rating image"/></div>
-                                <div class="description"><span>Description</span> Meet the Joker, one of the coolest dominators in our online game. With flair and unpredictability, the Joker navigates
-                                    the virtual world, collects resources, outwits opponents
-                                    and brings a dose of chaos to the game</div>
-                                <div class="dominator-image-wrap">
-                                    <img src="assets/images/home-page/dominator-image.png" alt="dominator image"/>
-                                </div>
-                            </div>
-                            <div class="dominator-bottom-image-wrap">
-                                <span class="dominator-bottom-image-line left"><img src="assets/images/home-page/dominator-bottom-line-left.svg" alt="dominator bottom line left"/></span>
-                                <span class="dominator-bottom-image-line right"><img src="assets/images/home-page/dominator-bottom-line-right.svg" alt="dominator bottom line right"/></span>
-                                <span class="dominator-name">SANDERSHTORM</span>
-                                <div class="image-wrap"><img src="assets/images/home-page/dominator-bottom-image.png" alt="dominator bottom image"/></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-navigation-wrap">
-                    <div class="swiper-button-prev">
-                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.1471 0H15L4.85294 10.5217L13.2353 22H8.30214L0 10.5217L10.1471 0Z" fill="#27405E"/>
-                        </svg>
-                    </div>
-                    <div class="swiper-button-next">
-                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-            <div class="button-wrap">
-                <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
-            </div>
-        </section>
-        <section class="marketplace-section">
-            <div class="marketplace-section-bg"></div>
-            <div class="container marketplace-container">
-                <h3 class="section-title"><span>MARKETPLACE</span></h3>
-                <div class="swiper marketplace-swiper">
-                    <div class="swiper-navigation-wrap">
-                        <div class="swiper-button-prev">
-                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.1471 0H15L4.85294 10.5217L13.2353 22H8.30214L0 10.5217L10.1471 0Z" fill="#27405E"/>
-                            </svg>
-                        </div>
-                        <div class="swiper-button-next">
-                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-wrap water">
-                                <div class="swiper-slide-wrap-bg"></div>
-                                <div class="dominator-info">
-                                    <div class="name">NITRO SPARK</div>
-                                    <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
-                                    <div class="level"><span>Lv.2</span>/30</div>
-                                </div>
-                                <div class="dominator-image"><img src="assets/images/home-page/blue-dominator.svg" alt="marketplace item image 1"/></div>
-                                <div class="id">id#57318</div>
-                                <div class="character">Water</div>
-                                <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
-                                <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
-                                <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
-                                <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
-                                <div class="dominator-price">
-                                    <div class="price-title">Price</div>
-                                    <div class="price">
-                                        <span>100 DMD (~$100)</span>
-                                        <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
-                                    </div>
-                                </div>
-                                <a href="#" class="button buy-button">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-wrap water">
+                                        <div class="swiper-slide-wrap-bg"></div>
+                                        <div class="dominator-info">
+                                            <div class="name">NITRO SPARK</div>
+                                            <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
+                                            <div class="level"><span>Lv.2</span>/30</div>
+                                        </div>
+                                        <div class="dominator-image"><img src="assets/images/home-page/blue-dominator.svg" alt="marketplace item image 1"/></div>
+                                        <div class="id">id#57318</div>
+                                        <div class="character">Water</div>
+                                        <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
+                                        <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
+                                        <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
+                                        <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
+                                        <div class="dominator-price">
+                                            <div class="price-title">Price</div>
+                                            <div class="price">
+                                                <span>100 DMD (~$100)</span>
+                                                <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="button buy-button">
                                     <span>Buy NOW
                                         <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.39844 4.7998V8.3998L13.0361 11.9998L9.39844 15.5998V19.1998L16.6737 11.9998L9.39844 4.7998Z" fill="#1D0629"/>
                                         </svg>
                                     </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-wrap epic">
-                                <div class="swiper-slide-wrap-bg"></div>
-                                <div class="dominator-info">
-                                    <div class="name">NITRO SPARK</div>
-                                    <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
-                                    <div class="level"><span>Lv.3</span>/30</div>
-                                </div>
-                                <div class="dominator-image"><img src="assets/images/home-page/red-dominator.svg" alt="marketplace item image 1"/></div>
-                                <div class="id">id#57318</div>
-                                <div class="character">Epic</div>
-                                <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
-                                <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
-                                <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
-                                <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
-                                <div class="dominator-price">
-                                    <div class="price-title">Price</div>
-                                    <div class="price">
-                                        <span>100 DMD (~$100)</span>
-                                        <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a href="#" class="button buy-button">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-wrap epic">
+                                        <div class="swiper-slide-wrap-bg"></div>
+                                        <div class="dominator-info">
+                                            <div class="name">NITRO SPARK</div>
+                                            <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
+                                            <div class="level"><span>Lv.3</span>/30</div>
+                                        </div>
+                                        <div class="dominator-image"><img src="assets/images/home-page/red-dominator.svg" alt="marketplace item image 1"/></div>
+                                        <div class="id">id#57318</div>
+                                        <div class="character">Epic</div>
+                                        <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
+                                        <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
+                                        <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
+                                        <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
+                                        <div class="dominator-price">
+                                            <div class="price-title">Price</div>
+                                            <div class="price">
+                                                <span>100 DMD (~$100)</span>
+                                                <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="button buy-button">
                                     <span>Buy NOW
                                         <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.39844 4.7998V8.3998L13.0361 11.9998L9.39844 15.5998V19.1998L16.6737 11.9998L9.39844 4.7998Z" fill="#1D0629"/>
                                         </svg>
                                     </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-wrap gold">
-                                <div class="swiper-slide-wrap-bg"></div>
-                                <div class="dominator-info">
-                                    <div class="name">NITRO SPARK</div>
-                                    <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
-                                    <div class="level"><span>Lv.2</span>/30</div>
-                                </div>
-                                <div class="dominator-image"><img src="assets/images/home-page/yellow-dominator.svg" alt="marketplace item image 1"/></div>
-                                <div class="id">id#57318</div>
-                                <div class="character">Water</div>
-                                <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
-                                <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
-                                <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
-                                <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
-                                <div class="dominator-price">
-                                    <div class="price-title">Price</div>
-                                    <div class="price">
-                                        <span>100 DMD (~$100)</span>
-                                        <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a href="#" class="button buy-button">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-wrap gold">
+                                        <div class="swiper-slide-wrap-bg"></div>
+                                        <div class="dominator-info">
+                                            <div class="name">NITRO SPARK</div>
+                                            <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
+                                            <div class="level"><span>Lv.2</span>/30</div>
+                                        </div>
+                                        <div class="dominator-image"><img src="assets/images/home-page/yellow-dominator.svg" alt="marketplace item image 1"/></div>
+                                        <div class="id">id#57318</div>
+                                        <div class="character">Water</div>
+                                        <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
+                                        <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
+                                        <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
+                                        <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
+                                        <div class="dominator-price">
+                                            <div class="price-title">Price</div>
+                                            <div class="price">
+                                                <span>100 DMD (~$100)</span>
+                                                <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="button buy-button">
                                     <span>Buy NOW
                                         <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.39844 4.7998V8.3998L13.0361 11.9998L9.39844 15.5998V19.1998L16.6737 11.9998L9.39844 4.7998Z" fill="#1D0629"/>
                                         </svg>
                                     </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-wrap neutral">
-                                <div class="swiper-slide-wrap-bg"></div>
-                                <div class="dominator-info">
-                                    <div class="name">NITRO SPARK</div>
-                                    <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
-                                    <div class="level"><span>Lv.2</span>/30</div>
-                                </div>
-                                <div class="dominator-image"><img src="assets/images/home-page/grey-dominator.svg" alt="marketplace item image 1"/></div>
-                                <div class="id">id#57318</div>
-                                <div class="character">Neutral</div>
-                                <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
-                                <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
-                                <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
-                                <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
-                                <div class="dominator-price">
-                                    <div class="price-title">Price</div>
-                                    <div class="price">
-                                        <span>100 DMD (~$100)</span>
-                                        <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a href="#" class="button buy-button">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-wrap neutral">
+                                        <div class="swiper-slide-wrap-bg"></div>
+                                        <div class="dominator-info">
+                                            <div class="name">NITRO SPARK</div>
+                                            <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
+                                            <div class="level"><span>Lv.2</span>/30</div>
+                                        </div>
+                                        <div class="dominator-image"><img src="assets/images/home-page/grey-dominator.svg" alt="marketplace item image 1"/></div>
+                                        <div class="id">id#57318</div>
+                                        <div class="character">Neutral</div>
+                                        <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
+                                        <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
+                                        <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
+                                        <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
+                                        <div class="dominator-price">
+                                            <div class="price-title">Price</div>
+                                            <div class="price">
+                                                <span>100 DMD (~$100)</span>
+                                                <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="button buy-button">
                                     <span>Buy NOW
                                         <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.39844 4.7998V8.3998L13.0361 11.9998L9.39844 15.5998V19.1998L16.6737 11.9998L9.39844 4.7998Z" fill="#1D0629"/>
                                         </svg>
                                     </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-slide-wrap">
-                                <div class="swiper-slide-wrap-bg"></div>
-                                <div class="dominator-info">
-                                    <div class="name">NITRO SPARK</div>
-                                    <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
-                                    <div class="level"><span>Lv.2</span>/30</div>
-                                </div>
-                                <div class="dominator-image water"><img src="assets/images/home-page/blue-dominator.svg" alt="marketplace item image 1"/></div>
-                                <div class="id">id#57318</div>
-                                <div class="character water">Water</div>
-                                <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
-                                <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
-                                <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
-                                <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
-                                <div class="dominator-price">
-                                    <div class="price-title">Price</div>
-                                    <div class="price">
-                                        <span>100 DMD (~$100)</span>
-                                        <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a href="#" class="button buy-button">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-wrap">
+                                        <div class="swiper-slide-wrap-bg"></div>
+                                        <div class="dominator-info">
+                                            <div class="name">NITRO SPARK</div>
+                                            <div class="rating"><img src="assets/images/home-page/marketplace-item-rating.png" alt="marketplace dominator rating 1"/></div>
+                                            <div class="level"><span>Lv.2</span>/30</div>
+                                        </div>
+                                        <div class="dominator-image water"><img src="assets/images/home-page/blue-dominator.svg" alt="marketplace item image 1"/></div>
+                                        <div class="id">id#57318</div>
+                                        <div class="character water">Water</div>
+                                        <div class="dominator-info-line"><span>Performance</span><span>7.3</span></div>
+                                        <div class="dominator-info-line"><span>Fortune</span><span>3.9</span></div>
+                                        <div class="dominator-info-line"><span>Joy</span><span>7.2</span></div>
+                                        <div class="dominator-info-line"><span>Durability</span><span>6.7</span></div>
+                                        <div class="dominator-price">
+                                            <div class="price-title">Price</div>
+                                            <div class="price">
+                                                <span>100 DMD (~$100)</span>
+                                                <span class="icon"><img src="assets/images/home-page/marketplace-price-icon.svg" alt="marketplace dominator logo"/></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="button buy-button">
                                     <span>Buy NOW
                                         <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.39844 4.7998V8.3998L13.0361 11.9998L9.39844 15.5998V19.1998L16.6737 11.9998L9.39844 4.7998Z" fill="#1D0629"/>
                                         </svg>
                                     </span>
-                                </a>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="button-wrap">
-                    <a href="#" class="button secondary-button">
+                        <div class="button-wrap">
+                            <a href="#" class="button secondary-button">
                         <span>Visit marketplace
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                                 <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
-                    </a>
-                </div>
-                <div class="marketplace-section-element first"><img src="assets/images/home-page/marketplace-image-1.svg" alt="Marketplace section element 1"/></div>
-                <div class="marketplace-section-element second"><img src="assets/images/home-page/marketplace-image-2.svg" alt="Marketplace section element 2"/></div>
+                            </a>
+                        </div>
+                        <div class="marketplace-section-element first"><img src="assets/images/home-page/marketplace-image-1.svg" alt="Marketplace section element 1"/></div>
+                        <div class="marketplace-section-element second"><img src="assets/images/home-page/marketplace-image-2.svg" alt="Marketplace section element 2"/></div>
+                    </div>
+                </section>
+                <section class="road-map-section">
+                    <h3 class="animation-section section-title"><span>ROAD MAP</span></h3>
+                    <div class="road-map-blocks">
+                        <div class="road-map-line">
+                            <img src="assets/images/home-page/road-map-line.svg" alt="Road map element line"/>
+                            <div class="container road-map-container">
+                                <div class="animation-section road-map-item">
+                                    <div class="number">01</div>
+                                    <div class="road-map-card">
+                                        <div class="road-map-card-bg"></div>
+                                        <div class="label"><img src="assets/images/home-page/Icon_4.png" alt="Road map card image 1"/></div>
+                                        <h6 class="title">Infrastructure Development Initiation Phase</h6>
+                                        <div class="text">
+                                            <ul>
+                                                <li>Kick-off of Development Processes</li>
+                                                <li>Establishment of Smart Contracts & Cloud Infrastructure</li>
+                                                <li>Affiliate Program launch</li>
+                                                <li>Genesis NFT Collection Sell</li>
+                                                <li>Introduction of Internal Playable Alpha Version</li>
+                                                <li>Training and Testing of AI Models</li>
+                                                <li>Android & iOA Apps Alpha Launch</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="animation-section road-map-item">
+                                    <div class="number">02</div>
+                                    <div class="road-map-card">
+                                        <div class="road-map-card-bg"></div>
+                                        <div class="label"><img src="assets/images/home-page/Icon_2.png" alt="Road map card image 2"/></div>
+                                        <h6 class="title">Integration and Closed Alpha Testing</h6>
+                                        <div class="text">
+                                            <ul>
+                                                <li>Integration of Inte</li>
+                                                <li>Integration of AI & Blockchain Technologies</li>
+                                                <li>Execution of open Alpha Apps Testing</li>
+                                                <li>Completion of Smart Contracts Audit</li>
+                                                <li>Move-to-Earn mechanics implementation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="animation-section road-map-item">
+                                    <div class="number">03</div>
+                                    <div class="road-map-card">
+                                        <div class="road-map-card-bg"></div>
+                                        <div class="label"><img src="assets/images/home-page/Icon_5.png" alt="Road map card image 3"/></div>
+                                        <h6 class="title">Open Beta Testing and Beta Launch</h6>
+                                        <div class="text">
+                                            <ul>
+                                                <li>Launch of Open Public Beta Testing</li>
+                                                <li>NFT Minting</li>
+                                                <li>Introduction of Beta Android & iOS Apps</li>
+                                                <li>Listing of DMD Token on DEX Platform</li>
+                                                <li>Ad integration</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="animation-section road-map-item">
+                                    <div class="number">04</div>
+                                    <div class="road-map-card">
+                                        <div class="road-map-card-bg"></div>
+                                        <div class="label"><img src="assets/images/home-page/Icon_1.png" alt="Road map card image 4"/></div>
+                                        <h6 class="title">Expansion and Market Penetration</h6>
+                                        <div class="text">
+                                            <ul>
+                                                <li>Listing of DMD on CEX Platform</li>
+                                                <li>Hosting of DMD Token Generation Event</li>
+                                                <li>Establishment of Internal NFT Marketplace</li>
+                                                <li>Rollout of NFT Breeding Feature</li>
+                                                <li>Introduction of PVP Game Releases</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="animation-section road-map-item">
+                                    <div class="number">05</div>
+                                    <div class="road-map-card">
+                                        <div class="road-map-card-bg"></div>
+                                        <div class="label"><img src="assets/images/home-page/Icon_3.png" alt="Road map card image 5"/></div>
+                                        <h6 class="title">Innovative Updates</h6>
+                                        <div class="text">Actively interact with players with updates based on their feedback. We are constantly improving and improving the game.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="road-map-section-element first"><img src="assets/images/home-page/road-map-image-1.svg" alt="Road map section element 1"/></div>
+                            <div class="road-map-section-element second"><img src="assets/images/home-page/road-map-image-2.svg" alt="Road map section element 2"/></div>
+                        </div>
+                    </div>
+                    <div class="button-wrap"><a href="#" class="button secondary-button"><span>learn more</span></a></div>
+                </section>
+                <section class="animation-section faq-section">
+                    <div class="container faq-container">
+                        <div class="particles" id="particles"></div>
+                        <div class="faq-wrap">
+                            <div class="faq-wrap-bg"></div>
+                            <div class="faq-element-image first"><img src="assets/images/home-page/faq-image.svg" alt="Faq element image 1"/></div>
+                            <h3 class="section-title"><span>FAQ</span></h3>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-question"><span>01. How can I access the "Dominator" game?</span></h6>
+                                    <div class="accordion-content">
+                                <span>
+                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-question"><span>02. How does the NFT system work in the game?</span></h6>
+                                    <div class="accordion-content">
+                                <span>
+                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-question"><span>03. What is a Personal DAO, and how can I participate?</span></h6>
+                                    <div class="accordion-content">
+                                <span>
+                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-question"><span>04. Can I play on different devices simultaneously?</span></h6>
+                                    <div class="accordion-content">
+                                <span>
+                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-question"><span>05. How do I reach out for support if I encounter issues?</span></h6>
+                                    <div class="accordion-content">
+                                <span>
+                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="animation-section button-wrap">
+                            <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-        <section class="road-map-section">
-            <h3 class="section-title"><span>ROAD MAP</span></h3>
-            <div class="road-map-blocks">
-                <div class="road-map-line">
-                    <img src="assets/images/home-page/road-map-line.svg" alt="Road map element line"/>
-                    <div class="container road-map-container">
-                        <div class="road-map-item">
-                            <div class="number">01</div>
-                            <div class="road-map-card">
-                                <div class="road-map-card-bg"></div>
-                                <div class="label"><img src="assets/images/home-page/Icon_4.png" alt="Road map card image 1"/></div>
-                                <h6 class="title">Game Release</h6>
-                                <div class="text">Launch the game on iOS, Android, and web platforms. Conduct testing to gather feedback from our initial players.</div>
+        </main>
+        <footer class="footer-section">
+            <div class="animation-section footer-image-element"><img src="assets/images/general/footer-dominator-image.svg" alt="Footer image element"/></div>
+            <div class="footer-top">
+                <div class="footer-section-bg"></div>
+                <div class="container footer-container">
+                    <div class="footer-top-block">
+                        <div class="logo"><a href="index.html"><img src="assets/images/general/new-logo.svg" alt="dominator logo"/></a></div>
+                        <nav class="footer-menu">
+                            <ul>
+                                <li><a href="about.html" >About game</a></li>
+                                <li><a href="#" >Marketplace</a></li>
+                                <li><a href="#" >FAQ</a></li>
+                                <li><a href="#" >Contact us</a></li>
+                                <li><a href="#" >White Paper</a></li>
+                            </ul>
+                        </nav>
+                        <div class="footer-info">
+                            <div class="subscribe-form">
+                                <h5 class="title">Stay up to date with <br/> all the updates</h5>
+                                <form action="" class="form-wrap">
+                                    <div class="field-wrap">
+                                        <input type="text" placeholder="Your email here">
+                                    </div>
+                                    <button class="button button-send">
+                                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="social-wrap">
+                                <a href="#" class="social-link"><img src="assets/images/general/instagram-icon.svg" alt="social instagram link icon" /></a>
+                                <a href="#" class="social-link"><img src="assets/images/general/youtubeplay-icon.svg" alt="social youtube link icon" /></a>
+                                <a href="#" class="social-link"><img src="assets/images/general/facebook-icon.svg" alt="social facebook link icon" /></a>
                             </div>
                         </div>
-                        <div class="road-map-item">
-                            <div class="number">02</div>
-                            <div class="road-map-card">
-                                <div class="road-map-card-bg"></div>
-                                <div class="label"><img src="assets/images/home-page/Icon_2.png" alt="Road map card image 2"/></div>
-                                <h6 class="title">NFT Integration</h6>
-                                <div class="text">Introduce unique NFTs to enhance the value of gamers' assets. Form partnerships with talented artists to create exclusive and rare NFTs.</div>
-                            </div>
-                        </div>
-                        <div class="road-map-item">
-                            <div class="number">03</div>
-                            <div class="road-map-card">
-                                <div class="road-map-card-bg"></div>
-                                <div class="label"><img src="assets/images/home-page/Icon_5.png" alt="Road map card image 3"/></div>
-                                <h6 class="title">Ecosystem Expansion</h6>
-                                <div class="text">Launch a personal DAO for players. Introduce our own cryptocurrency for convenient internal and external transactions.</div>
-                            </div>
-                        </div>
-                        <div class="road-map-item">
-                            <div class="number">04</div>
-                            <div class="road-map-card">
-                                <div class="road-map-card-bg"></div>
-                                <div class="label"><img src="assets/images/home-page/Icon_1.png" alt="Road map card image 4"/></div>
-                                <h6 class="title">Multiplatform</h6>
-                                <div class="text">Support for various devices will ensure accessibility for a wide range of players. Game history support and achievement tracking.</div>
-                            </div>
-                        </div>
-                        <div class="road-map-item">
-                            <div class="number">05</div>
-                            <div class="road-map-card">
-                                <div class="road-map-card-bg"></div>
-                                <div class="label"><img src="assets/images/home-page/Icon_3.png" alt="Road map card image 5"/></div>
-                                <h6 class="title">Innovative Updates</h6>
-                                <div class="text">Actively interact with players with updates based on their feedback. We are constantly improving and improving the game.</div>
+                        <div class="footer-block">
+                            <div class="copyright">Dominator©2023</div>
+                            <div class="policy-wrap">
+                                <a href="terms-of-use.html" class="policy-link">Terms of use</a>
+                                <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
-                    <div class="road-map-section-element first"><img src="assets/images/home-page/road-map-image-1.svg" alt="Road map section element 1"/></div>
-                    <div class="road-map-section-element second"><img src="assets/images/home-page/road-map-image-2.svg" alt="Road map section element 2"/></div>
                 </div>
             </div>
-            <div class="button-wrap"><a href="#" class="button secondary-button"><span>learn more</span></a></div>
-        </section>
-        <section class="faq-section">
-            <div class="container faq-container">
-                <div class="faq-wrap">
-                    <div class="faq-wrap-bg"></div>
-                    <div class="faq-element-image first"><img src="assets/images/home-page/faq-image.svg" alt="Faq element image 1"/></div>
-                    <h3 class="section-title"><span>FAQ</span></h3>
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <h6 class="accordion-question"><span>01. How can I access the "Dominator" game?</span></h6>
-                            <div class="accordion-content">
-                                <span>
-                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-question"><span>02. How does the NFT system work in the game?</span></h6>
-                            <div class="accordion-content">
-                                <span>
-                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-question"><span>03. What is a Personal DAO, and how can I participate?</span></h6>
-                            <div class="accordion-content">
-                                <span>
-                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-question"><span>04. Can I play on different devices simultaneously?</span></h6>
-                            <div class="accordion-content">
-                                <span>
-                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-question"><span>05. How do I reach out for support if I encounter issues?</span></h6>
-                            <div class="accordion-content">
-                                <span>
-                                    The "Dominator" game is available for download and play on iOS, Android, or the web version. Simply visit the respective app store or our website to embark on your adventure.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="button-wrap">
-                    <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+            <div class="animation-section footer-bottom-block">
+                <div class="container footer-container">
+                    <h1 class="title"><span>That’s my game!</span></h1>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
-</main>
-<footer class="footer-section">
-    <div class="footer-image-element"><img src="assets/images/general/footer-dominator-image.svg" alt="Footer image element"/></div>
-    <div class="footer-top">
-        <div class="footer-section-bg"></div>
-        <div class="container footer-container">
-            <div class="footer-top-block">
-                <div class="logo"><a href="index.html"><img src="assets/images/general/new-logo.svg" alt="dominator logo"/></a></div>
-                <nav class="footer-menu">
-                    <ul>
-                        <li><a href="about.html" >About game</a></li>
-                        <li><a href="#" >Marketplace</a></li>
-                        <li><a href="#" >FAQ</a></li>
-                        <li><a href="#" >Contact us</a></li>
-                        <li><a href="error.html" >404</a></li>
-                    </ul>
-                </nav>
-                <div class="footer-info">
-                    <div class="subscribe-form">
-                        <h5 class="title">Stay up to date with <br/> all the updates</h5>
-                        <form action="" class="form-wrap">
-                            <div class="field-wrap">
-                                <input type="text" placeholder="Your email here">
-                            </div>
-                            <button class="button button-send">
-                                <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="social-wrap">
-                        <a href="#" class="social-link"><img src="assets/images/general/instagram-icon.svg" alt="social instagram link icon" /></a>
-                        <a href="#" class="social-link"><img src="assets/images/general/youtubeplay-icon.svg" alt="social youtube link icon" /></a>
-                        <a href="#" class="social-link"><img src="assets/images/general/facebook-icon.svg" alt="social facebook link icon" /></a>
-                    </div>
-                </div>
-                <div class="footer-block">
-                    <div class="copyright">Dominator©2023</div>
-                    <div class="policy-wrap">
-                        <a href="#" class="policy-link">Terms of use</a>
-                        <a href="#" class="policy-link">Privacy Policy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom-block">
-        <div class="container footer-container">
-            <h1 class="title"><span>That’s my game!</span></h1>
-        </div>
-    </div>
-</footer>
+</div>
 
+<div class="modal" id="video-modal">
+    <div class="modal-bg"></div>
+    <div class="modal-window">
+        <div class="modal-close">
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+        </div>
+        <div class="modal-content">
+            <div class="video-wrap">
+                <div class="video-image"><img src="assets/images/home-page/video-bg.png" alt="Video image"/></div>
+            </div>
+            <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', (event) => {
+        let loaderWrap = document.querySelector('.loader');
+        loaderWrap.style.display = "none";
+        loaderWrap.style.zIndex = "-1000";
+    })
+</script>
 <script src="./assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/Tween-max.min.js"></script>
 <script src="./assets/js/main.js"></script>
 </body>
 </html>

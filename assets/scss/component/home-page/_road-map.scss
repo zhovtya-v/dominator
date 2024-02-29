@@ -10,8 +10,7 @@
     }
 
     .road-map-container {
-
-        @include min-medium {
+        @include min-large {
             @include display-flex;
         }
     }
@@ -19,6 +18,7 @@
     .section-title {
         text-align: center;
         margin-bottom: 84px;
+        opacity: 0;
 
         @include min-medium {
             margin-bottom: 30px;
@@ -86,14 +86,13 @@
         position: relative;
         margin-bottom: 53px;
 
-        @include min-medium {
-            padding: 290px 0;
+        @include min-large {
+            padding: 340px 0 410px;
             margin-bottom: 86px;
         }
 
         @include min-extra-large {
-            padding: 400px 0;
-            margin-bottom: 17px;
+            padding: 380px 0 450px;
         }
 
         >img {
@@ -101,20 +100,21 @@
             height: auto;
             vertical-align: bottom;
             position: absolute;
-            top: 49%;
+            top: 50%;
             left: 0;
+            margin-top: -38px;
             @include transform(translateY(-50%));
             z-index: 1;
             display: none;
 
-            @include min-medium {
+            @include min-large {
                 display: block;
             }
         }
     }
 
     .number {
-        width: 49px;
+        width: 51px;
         height: 61px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -126,8 +126,9 @@
         font-size: 22px;
         color: #030A1A;
         position: relative;
+        z-index: 2;
 
-        @include min-medium {
+        @include min-large {
             width: 41px;
             height: 48px;
         }
@@ -153,7 +154,7 @@
             @include transform(translateX(-50%));
             display: none;
 
-            @include min-medium {
+            @include min-large {
                 display: block;
             }
         }
@@ -167,7 +168,7 @@
         padding: 0 0 0 24px;
         margin-bottom: 37px;
 
-        @include min-medium {
+        @include min-large {
             width: 19.17%;
             padding: 0;
             margin-bottom: 0;
@@ -179,13 +180,17 @@
 
         &:nth-child(odd) {
             .road-map-card {
-                @include min-medium {
-                    bottom: -288px;
+                opacity: 0;
+                @include transform(translate3d(100%, 0, 0));
+
+                @include min-large {
+                    //bottom: -288px;
+                    top: calc(100% + 50px);
                 }
 
-                @include min-extra-large {
-                    bottom: -306px;
-                }
+                /*@include min-extra-large {
+                    top: calc(100% + 50px);
+                }*/
             }
 
             .number {
@@ -200,13 +205,17 @@
 
         &:nth-child(even) {
             .road-map-card {
-                @include min-medium {
-                    top: -288px;
+                opacity: 0;
+                @include transform(translate3d(-100%, 0, 0));
+
+                @include min-large {
+                    //top: -288px;
+                    bottom: calc(100% + 50px);
                 }
 
-                @include min-extra-large {
+                /*@include min-extra-large {
                     top: -326px;
-                }
+                }*/
             }
 
             .number {
@@ -225,17 +234,29 @@
         padding: 42px 32px 33px 25px;
         position: relative;
         @include border-radius(4px);
+        cursor: pointer;
 
-        @include min-medium {
+        @include min-small {
+            width: 380px;
+        }
+
+        @include min-large {
             position: absolute;
-            left: 0;
-            width: 315px;
-            padding: 40px 32px 40px 30px;
+            left: -40px;
+            width: 380px;
+            padding: 50px 26px 30px;
+
+            &:hover {
+                .label {
+                    @include transform(rotate(25deg) scale(1.2));
+                }
+            }
         }
 
         @include min-extra-large {
-            width: 340px;
-            padding: 40px 21px 40px 30px;
+            width: 480px;
+            left: -10px;
+            padding: 60px 21px 40px 30px;
         }
 
         &:after {
@@ -256,6 +277,8 @@
             right: -7px;
             width: 78px;
             height: 78px;
+            @include transition(transform 0.3s);
+            @include transform(scale(1));
 
             @include min-extra-large {
                 top: -13px;
@@ -292,11 +315,20 @@
             font-size: 14px;
             line-height: 1.7;
 
+            @include min-large {
+                font-size: 13px;
+            }
+
             @include min-extra-large {
                 font-size: 16px;
                 line-height: 1.5;
             }
         }
+
+        /*ul {
+            list-style-type: disc;
+            margin-left: 17px;
+        }*/
     }
 
     .road-map-card-bg {
@@ -361,6 +393,8 @@
             left: 0;
             top: 107%;
 
+            @include animation(13s linear infinite normal both running element-animation-7);
+
             @include min-medium {
                 left: 115px;
                 top: -44px;
@@ -376,6 +410,8 @@
             right: -10px;
             top: 106%;
             @include transform(rotate(77deg));
+
+            @include animation(13s linear infinite normal both running element-animation-8);
 
             @include min-large {
                 right: 75px;
@@ -427,6 +463,34 @@
             @include min-extra-large {
                 top: 10px;
                 width: 220px;
+            }
+        }
+    }
+
+    .element-show {
+        &.section-title {
+            opacity: 1;
+
+            span {
+                @include animation(2s linear 1 normal forwards running text-flicker);
+            }
+        }
+    }
+
+    .element-show {
+        &.road-map-item {
+            &:nth-child(odd) {
+                .road-map-card {
+                    opacity: 1;
+                    @include animation(1s linear 1 normal both transform-left);
+                }
+            }
+
+            &:nth-child(even) {
+                .road-map-card {
+                    opacity: 1;
+                    @include animation(1s linear 1 normal both transform-right);
+                }
             }
         }
     }

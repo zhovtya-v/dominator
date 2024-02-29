@@ -317,12 +317,6 @@
   transition: $args;
 }
 
-@mixin translate3d($translateX,$translateY,$translateZ){
-  -webkit-transform: translate3d($translateX,$translateY,$translateZ);
-  -moz-transform: translate3d($translateX,$translateY,$translateZ);
-  transform: translate3d($translateX,$translateY,$translateZ);
-}
-
 @mixin transform($transforms) {
   -moz-transform: $transforms;
   -o-transform: $transforms;
@@ -344,12 +338,6 @@
   box-shadow: $value;
 }
 
-@mixin text-shadow($value) {
-  -webkit-text-shadow: $value;
-  -moz-text-shadow: $value;
-  text-shadow: $value;
-}
-
 @mixin filter($value) {
   -webkit-filter: $value;
   filter: $value;
@@ -359,6 +347,11 @@
   appearance: $value;
   -moz-appearance: $value;
   -webkit-appearance: $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  animation: $value;
 }
 
 @mixin placeholder {
@@ -475,29 +468,4 @@
   width: 100%;
   padding-bottom: ($height / $width) * 100%;
   overflow: hidden;
-}
-
-@mixin skew-background-transition($initial, $hover, $inverted: false) {
-  background: linear-gradient(
-    90deg,
-    $hover 0%,
-    $hover 50%,
-    $initial 50%,
-    $initial 100%
-  );
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-
-  background-position: right bottom;
-  @if $inverted {
-    background-position: left bottom;
-  }
-  transition: background-position 0.25s ease-out;
-
-  &:hover {
-    background-position: left bottom;
-    @if $inverted {
-      background-position: right bottom;
-    }
-  }
 }

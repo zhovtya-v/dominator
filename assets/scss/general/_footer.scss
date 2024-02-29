@@ -25,8 +25,10 @@
             width: 493px;
             height: 585px;
             opacity: 0.15;
-            filter: blur(224px);
             @include transform(translateY(-50%));
+            @include appearance(none);
+            outline: none;
+            @include filter(blur(224px));
             z-index: 2;
         }
 
@@ -42,7 +44,9 @@
                 width: 315px;
                 height: 374px;
                 opacity: 0.2;
-                filter: blur(224px);
+                @include appearance(none);
+                outline: none;
+                @include filter(blur(224px));
             }
         }
     }
@@ -96,7 +100,9 @@
             width: 315px;
             height: 374px;
             opacity: 0.15;
-            filter: blur(224px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
         }
     }
 
@@ -109,8 +115,9 @@
         text-align: right;
         z-index: 2;
 
+        opacity: 0;
+
         @include min-medium {
-            //right: 0;
             top: -300px;
             width: 42%;
             height: 62%;
@@ -220,6 +227,9 @@
         @include flex-direction-column;
         width: 100%;
 
+        ul {
+            @include list;
+        }
 
         @include min-medium {
             width: 39%;
@@ -237,7 +247,7 @@
             margin-bottom: 31px;
             display: inline-block;
             @include transition(all 0.2s);
-            @include text-shadow(0 4px 60px rgba($shadow-text-color, 0.5));
+            text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
 
             @include min-medium {
                 font-size: 22px;
@@ -255,19 +265,71 @@
                 top: 100%;
                 left: 50%;
                 width: 0;
-                height: 2px;
+                height: 11px;
                 content: '';
-                background: linear-gradient(to right, rgba(17,155,255,0) 0%,rgba(17,155,255,1) 50%,rgba(17,155,255,0) 100%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
                 @include transition(all 0.2s);
                 @include transform(translateX(-50%));
+
+                @include min-medium {
+                    height: 14px;
+                }
+
+                @include min-extra-large {
+                    height: 17px;
+                }
             }
 
             &:hover {
                 color: $primary-active-text-color;
-                @include text-shadow(0 0 0 rgba($shadow-text-color, 0));
+                text-shadow: 0 0 0 rgba($shadow-text-color, 0);
 
                 &:after {
                     width: 100%;
+
+                    @include min-medium {
+                        width: 150px;
+                    }
+
+                    @include min-extra-large {
+                        width: 194px;
+                    }
+                }
+            }
+        }
+
+        li {
+            &:nth-of-type(1) {
+                a {
+                    &:after {
+                        background-image: url("./assets/images/general/menu-hover-1.svg");
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                a {
+                    &:after {
+                        background-image: url("./assets/images/general/menu-hover-2.svg");
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+                a {
+                    &:after {
+                        background-image: url("./assets/images/general/menu-hover-3.svg");
+                    }
+                }
+            }
+
+            &:nth-of-type(4) {
+                a {
+                    &:after {
+                        background-image: url("./assets/images/general/menu-hover-4.svg");
+                    }
                 }
             }
         }
@@ -490,7 +552,7 @@
                 text-transform: uppercase;
                 color: $primary-text-color;
                 letter-spacing: 6px;
-                @include text-shadow(0 4px 60px rgba($primary-text-color, 0.5));
+                text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
 
                 @include min-medium {
                     font-size: 50px;
@@ -560,6 +622,22 @@
                     top: 53px;
                 }
             }
+        }
+    }
+
+    .element-show {
+        .title {
+            &:before, &:after {
+                @include animation(3s linear 1s 1 normal forwards decorative-line);
+            }
+
+            span {
+                @include animation(4s linear 1 normal forwards running text-flicker);
+            }
+        }
+
+        &.footer-image-element {
+            @include animation(3s linear 1 normal both transform-right);
         }
     }
 }

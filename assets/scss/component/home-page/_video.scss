@@ -25,7 +25,9 @@
             width: 303px;
             height: 303px;
             opacity: 0.2;
-            filter: blur(114px);
+            @include filter(blur(224px));
+            @include appearance(none);
+            outline: none;
             @include transform(translateY(-50%));
             z-index: 0;
 
@@ -35,7 +37,9 @@
                 width: 493px;
                 height: 585px;
                 opacity: 0.15;
-                filter: blur(224px);
+                @include filter(blur(224px));
+                @include appearance(none);
+                outline: none;
             }
         }
 
@@ -48,7 +52,9 @@
             width: 167px;
             height: 199px;
             opacity: 0.2;
-            filter: blur(154px);
+            @include filter(blur(154px));
+            @include appearance(none);
+            outline: none;
             z-index: -1;
 
             @include min-medium {
@@ -58,7 +64,9 @@
                 width: 315px;
                 height: 374px;
                 opacity: 0.15;
-                filter: blur(224px);
+                @include filter(blur(224px));
+                @include appearance(none);
+                outline: none;
             }
         }
 
@@ -70,6 +78,10 @@
             max-height: 155px;
             width: 50%;
             z-index: 4;
+            pointer-events: none;
+
+            opacity: 0;
+            @include transform(translate3d(100%, 0, 0));
 
             @include min-large {
                 top: -82px;
@@ -99,6 +111,10 @@
             max-height: 238px;
             width: 37%;
             z-index: 4;
+            pointer-events: none;
+
+            opacity: 0;
+            @include transform(translate3d(-100%, 0, 0));
 
             @include min-large {
                 bottom: -12px;
@@ -166,7 +182,10 @@
             @include align-items-center;
             @include justify-content-center;
             z-index: 5;
-            cursor: pointer;
+
+            .video-btn-play {
+                cursor: pointer;
+            }
 
             img {
                 @include max-medium {
@@ -176,5 +195,50 @@
             }
         }
     }
+
+    &.element-show {
+        .video-element-first {
+            opacity: 1;
+            @include animation(0.7s linear 1 normal both transform-right);
+        }
+
+        .video-element-second {
+            opacity: 1;
+            @include animation(0.7s linear 1 normal both transform-left);
+        }
+    }
 }
 
+.modal {
+    .button {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .video-wrap {
+        width: 100%;
+    }
+
+    .video-image {
+        @include aspect-ratio(375, 667);
+
+        @include min-medium {
+            @include aspect-ratio(1920, 945);
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+            object-fit: cover;
+            object-position: center bottom;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}
