@@ -145,9 +145,33 @@ body.menu-opened {
   }
 }
 
-/*********************************
-COMMON STYLE END
-*********************************/
+.viewport {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.viewport .scroll-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .section-title {
   font-family: "Tektur", sans-serif;
   font-weight: 700;
@@ -747,6 +771,9 @@ COMMON STYLE END
   background: transparent;
 }
 
+/*********************************
+COMMON STYLE END
+*********************************/
 .modal {
   display: none;
 }
@@ -5346,15 +5373,21 @@ COMMON STYLE END
 .faq-section .faq-element-image {
   position: absolute;
   top: -113px;
-  right: -182px;
-  max-width: 468px;
-  width: 26%;
+  right: -100px;
+  width: 50%;
   opacity: 0;
   -moz-transform: translate3d(100%, 0, 0);
   -o-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
+}
+@media only screen and (min-width: 992px) {
+  .faq-section .faq-element-image {
+    right: -182px;
+    max-width: 468px;
+    width: 26%;
+  }
 }
 @media only screen and (min-width: 1441px) {
   .faq-section .faq-element-image {
