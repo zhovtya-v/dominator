@@ -928,7 +928,7 @@ COMMON STYLE END
   left: 0;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 12;
   background: linear-gradient(to bottom, rgb(0, 7, 24) 0%, rgba(0, 7, 24, 0.3) 100%);
 }
 @media only screen and (min-width: 768px) {

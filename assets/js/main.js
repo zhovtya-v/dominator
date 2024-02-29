@@ -167,7 +167,7 @@ function about_reinit_slider() {
             //grabCursor: true,
             spaceBetween: 12,
             slidesPerView: 1,
-            //centeredSlides: true,
+            centeredSlides: true,
             //roundLengths: true,
             loop: true,
 
@@ -402,6 +402,34 @@ function buttonHoverAnimation() {
 
 buttonHoverAnimation();
 
+/*var browser=new mbrowser();*/
+
+mbrowser=function(){
+    this.spec_string=   navigator.userAgent;
+    this.name=          this.get_name();
+};
+
+mbrowser.prototype.get_name=function(){
+    var spec_string = this.spec_string;
+
+    var matches = spec_string.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if ( navigator.appName === 'safari') {
+        console.log('safari')
+
+
+
+
+    } else {
+        console.log('another site')
+
+
+
+    }
+};
+
+//var browser = new mbrowser();
+
 var html = document.documentElement;
 var body = document.body;
 
@@ -421,13 +449,36 @@ TweenLite.set(scroller.target, {
     force3D: true
 });
 
+
 window.addEventListener("load", onLoad);
 
 function onLoad() {
-    updateScroller();
-    window.focus();
-    window.addEventListener("resize", onResize);
-    document.addEventListener("scroll", onScroll);
+    /*var userAgent = navigator.userAgent.toLowerCase();
+    var name = userAgent.get_name();
+
+    console.log('name', name);*/
+
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
+            console.log('chrome');
+
+            updateScroller();
+            window.focus();
+            window.addEventListener("resize", onResize);
+            document.addEventListener("scroll", onScroll);
+
+        } else {
+            console.log('safari');
+            document.querySelector('.viewport').style.overflow = 'visible';
+            document.querySelector('.viewport').style.position = 'relative';
+            document.querySelector('.scroll-container').style.overflow = 'visible';
+            document.querySelector('.scroll-container').style.position = 'relative';
+            document.querySelector('.scroll-container').style.transform = 'none';
+        }
+    }
+
+
 }
 
 function updateScroller() {

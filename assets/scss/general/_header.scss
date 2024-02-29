@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 12;
     background: linear-gradient(to bottom, rgba(0,7,24,1) 0%,rgba(0,7,24,0.3) 100%);
 
     @include min-small {
