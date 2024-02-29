@@ -10,6 +10,7 @@
         max-height: 108px;
         width: 100%;
         z-index: 4;
+        pointer-events: none;
 
         @include min-large {
             bottom: -53px;

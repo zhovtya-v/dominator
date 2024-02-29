@@ -178,6 +178,10 @@
             }
         }
 
+        ul {
+            @include list;
+        }
+
         @include max-medium {
             position: fixed;
             top: 0;
