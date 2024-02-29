@@ -401,3 +401,23 @@ function buttonHoverAnimation() {
 }
 
 buttonHoverAnimation();
+
+
+var html = document.documentElement;
+var body = document.body;
+
+var scroller = {
+    target: body,
+    ease: 0.5, // <= scroll speed
+    endY: 0,
+    y: 0,
+    resizeRequest: 1,
+    scrollRequest: 0,
+};
+
+var requestId = null;
+
+TweenLite.set(scroller.target, {
+    rotation: 0.01,
+    force3D: true
+});

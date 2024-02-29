@@ -2569,6 +2569,7 @@ COMMON STYLE END
   color: #119BFF;
   letter-spacing: 2.3px;
   margin-bottom: 25px;
+  line-height: 1.2;
 }
 @media only screen and (min-width: 1201px) {
   .road-map-section .road-map-card .title {
@@ -2923,6 +2924,7 @@ COMMON STYLE END
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   min-width: 110px;
+  line-height: 1.4;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .number-wrap .title {
