@@ -29,6 +29,9 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
 }
+html.modal-opened {
+  overflow: hidden;
+}
 
 a,
 :before, :after {
@@ -119,7 +122,7 @@ body {
     line-height: 2;
   }
 }
-body.menu-opened {
+body.menu-opened, body.modal-opened {
   overflow: hidden;
 }
 
@@ -144,9 +147,32 @@ body.menu-opened {
   }
 }
 
-/*********************************
-COMMON STYLE END
-*********************************/
+.viewport {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.viewport .scroll-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .section-title {
   font-family: "Tektur", sans-serif;
   font-weight: 700;
@@ -746,6 +772,164 @@ COMMON STYLE END
   background: transparent;
 }
 
+.field-wrap {
+  flex-grow: 1;
+  margin-right: 20px;
+  height: 50px;
+  padding: 1px;
+  background: #27405E;
+  clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+}
+.field-wrap input, .field-wrap textarea {
+  width: 100%;
+  height: 100%;
+  background: #061D2E;
+  border: none;
+  font-size: 16px;
+  padding: 10px 25px;
+  color: #3A4D64;
+  letter-spacing: -1px;
+  clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@media only screen and (min-width: 992px) {
+  .field-wrap input, .field-wrap textarea {
+    letter-spacing: 0;
+  }
+}
+.field-wrap input:focus-visible, .field-wrap textarea:focus-visible {
+  outline: none;
+}
+.field-wrap input::-webkit-input-placeholder, .field-wrap textarea::-webkit-input-placeholder {
+  color: #3A4D64;
+  font-size: 16px;
+}
+.field-wrap input:-ms-input-placeholder, .field-wrap textarea:-ms-input-placeholder {
+  color: #3A4D64;
+  font-size: 16px;
+}
+.field-wrap input::-ms-input-placeholder, .field-wrap textarea::-ms-input-placeholder {
+  color: #3A4D64;
+  font-size: 16px;
+}
+.field-wrap input:-moz-placeholder, .field-wrap textarea:-moz-placeholder {
+  color: #3A4D64;
+  font-size: 16px;
+}
+.field-wrap input::-moz-placeholder, .field-wrap textarea::-moz-placeholder {
+  color: #3A4D64;
+  font-size: 16px;
+}
+.field-wrap textarea {
+  resize: none;
+}
+
+.video-modal .button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.video-modal .video-wrap {
+  width: 100%;
+}
+.video-modal .video-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.8666666667%;
+  overflow: hidden;
+}
+@media only screen and (min-width: 992px) {
+  .video-modal .video-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 49.21875%;
+    overflow: hidden;
+  }
+}
+.video-modal .video-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: bottom;
+  object-fit: cover;
+  object-position: center bottom;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.contact-us-modal .title {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.contact-us-modal .field-wrap {
+  margin: 0 0 15px;
+}
+.contact-us-modal .field-wrap.textarea {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+  -ms-flex: 1 0 100%;
+  flex: 1 0 100%;
+  height: 100px;
+}
+.contact-us-modal .button-send {
+  width: 100%;
+  height: 50px;
+  max-width: 270px;
+}
+.contact-us-modal .button-send span {
+  color: #1D0629;
+  text-transform: uppercase;
+  z-index: 2;
+  font-size: 18px;
+  font-family: "Tektur", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-right: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .contact-us-modal .button-send span {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .contact-us-modal .button-send span {
+    font-size: 24px;
+  }
+}
+.contact-us-modal .button-send:after {
+  width: 100%;
+  height: 50px;
+  clip-path: polygon(5% 0, 100% 0, 100% 74%, 95% 100%, 0 100%, 0 26%);
+}
+.contact-us-modal .contact-us-form-wrap {
+  width: 300px;
+}
+@media only screen and (min-width: 992px) {
+  .contact-us-modal .contact-us-form-wrap {
+    width: 700px;
+    gap: 10px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+/*********************************
+COMMON STYLE END
+*********************************/
 .modal {
   display: none;
 }
@@ -900,7 +1084,7 @@ COMMON STYLE END
   left: 0;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 12;
   background: linear-gradient(to bottom, rgb(0, 7, 24) 0%, rgba(0, 7, 24, 0.3) 100%);
 }
 @media only screen and (min-width: 768px) {
@@ -2361,46 +2545,6 @@ COMMON STYLE END
     max-width: 122px;
     max-height: 122px;
   }
-}
-
-.modal .button {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-}
-.modal .video-wrap {
-  width: 100%;
-}
-.modal .video-image {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.8666666667%;
-  overflow: hidden;
-}
-@media only screen and (min-width: 992px) {
-  .modal .video-image {
-    position: relative;
-    width: 100%;
-    padding-bottom: 49.21875%;
-    overflow: hidden;
-  }
-}
-.modal .video-image img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  vertical-align: bottom;
-  object-fit: cover;
-  object-position: center bottom;
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .road-map-section {
@@ -4249,56 +4393,6 @@ COMMON STYLE END
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-.footer-section .subscribe-form .field-wrap {
-  flex-grow: 1;
-  margin-right: 20px;
-  height: 50px;
-  padding: 1px;
-  background: #27405E;
-  clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
-}
-.footer-section .subscribe-form .field-wrap input {
-  width: 100%;
-  height: 100%;
-  background: #061D2E;
-  border: none;
-  font-size: 16px;
-  padding: 10px 25px;
-  color: #3A4D64;
-  letter-spacing: -1px;
-  clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
-  font-family: "Roboto Mono", monospace, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-@media only screen and (min-width: 992px) {
-  .footer-section .subscribe-form .field-wrap input {
-    letter-spacing: 0;
-  }
-}
-.footer-section .subscribe-form .field-wrap input:focus-visible {
-  outline: none;
-}
-.footer-section .subscribe-form .field-wrap input::-webkit-input-placeholder {
-  color: #3A4D64;
-  font-size: 16px;
-}
-.footer-section .subscribe-form .field-wrap input:-ms-input-placeholder {
-  color: #3A4D64;
-  font-size: 16px;
-}
-.footer-section .subscribe-form .field-wrap input::-ms-input-placeholder {
-  color: #3A4D64;
-  font-size: 16px;
-}
-.footer-section .subscribe-form .field-wrap input:-moz-placeholder {
-  color: #3A4D64;
-  font-size: 16px;
-}
-.footer-section .subscribe-form .field-wrap input::-moz-placeholder {
-  color: #3A4D64;
-  font-size: 16px;
 }
 @media only screen and (max-width: 991px) {
   .footer-section .button-send {

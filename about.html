@@ -62,11 +62,11 @@
             <nav class="menu">
                 <ul class="menu-left">
                     <li><a href="about.html">About game</a></li>
-                    <li><a href="#" >Marketplace</a></li>
+                    <li><a href="#marketplace" >Marketplace</a></li>
                 </ul>
                 <ul class="menu-right">
-                    <li><a href="#" >FAQ</a></li>
-                    <li><a href="#" >Contact us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="javascript:void(0);" class="contact-us open-modal-js" data-popup-id="contact-us-modal">Contact us</a></li>
                 </ul>
                 <div class="menu-block">
                     <a href="#" class="account">
@@ -99,395 +99,399 @@
         </div>
     </div>
 </header>
-<main class="main-section">
-    <section class="hero-section">
-        <div class="hero-section-bg">
-            <div class="hero-video-wrap"></div>
-        </div>
-        <div class="container hero-container">
-            <div class="decorative-element first"><img src="assets/images/general/decorative-element-3.svg" alt="Decorative element image 1"/></div>
-            <div class="decorative-element second"><img src="assets/images/general/decorative-element-1.svg" alt="Decorative element image 2"/></div>
-            <div class="hero-info">
-                <h1 class="title"><span>DOMINATOR</span></h1>
-                <div class="text">Join over 10 million players in our dynamic game and choose your Dominator to start your journey with. You will begin to make your way on the planet Cyberia…</div>
-                <div class="button-wrap">
-                    <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+<div class="viewport">
+    <div class="scroll-container" id="scroll-container">
+        <main class="main-section">
+            <section class="hero-section">
+                <div class="hero-section-bg">
+                    <div class="hero-video-wrap"></div>
                 </div>
-            </div>
-        </div>
-        <div class="hero-dominator-container">
-                <div class="ellipse-wrap">
-                    <img src="assets/images/about-page/hero-ellipses-about.png" alt="Video element image 1"/>
-                    <div class="dominator-image-wrap first"><img src="assets/images/about-page/dominator-first.png" alt="Dominator image grey"/></div>
-                    <div class="dominator-image-wrap second"><img src="assets/images/about-page/dominator-second.png" alt="Dominator image yellow"/></div>
-                    <div class="dominator-image-wrap third"><img src="assets/images/about-page/dominator-third.png" alt="Dominator image blue"/></div>
-                    <div class="dominator-image-wrap fourth"><img src="assets/images/about-page/dominator-fourth.png" alt="Dominator image green"/></div>
+                <div class="container hero-container">
+                    <div class="decorative-element first"><img src="assets/images/general/decorative-element-3.svg" alt="Decorative element image 1"/></div>
+                    <div class="decorative-element second"><img src="assets/images/general/decorative-element-1.svg" alt="Decorative element image 2"/></div>
+                    <div class="hero-info">
+                        <h1 class="title"><span>DOMINATOR</span></h1>
+                        <div class="text">Join over 10 million players in our dynamic game and choose your Dominator to start your journey with. You will begin to make your way on the planet Cyberia…</div>
+                        <div class="button-wrap">
+                            <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-dominator-container">
+                        <div class="ellipse-wrap">
+                            <img src="assets/images/about-page/hero-ellipses-about.png" alt="Video element image 1"/>
+                            <div class="dominator-image-wrap first"><img src="assets/images/about-page/dominator-first.png" alt="Dominator image grey"/></div>
+                            <div class="dominator-image-wrap second"><img src="assets/images/about-page/dominator-second.png" alt="Dominator image yellow"/></div>
+                            <div class="dominator-image-wrap third"><img src="assets/images/about-page/dominator-third.png" alt="Dominator image blue"/></div>
+                            <div class="dominator-image-wrap fourth"><img src="assets/images/about-page/dominator-fourth.png" alt="Dominator image green"/></div>
+                            <div class="decorative-element third"><img src="assets/images/general/decorative-element-2.svg" alt="Decorative element image 3"/></div>
+                            <div class="decorative-element fourth"><img src="assets/images/general/decorative-element-4.svg" alt="Decorative element image 3"/></div>
+                        </div>
+                </div>
+                <div class="container video-container">
+                    <div class="video-element-first"><img src="assets/images/about-page/video-image-about.png" alt="Video element image 1"/></div>
+                    <div class="video-element-second"><img src="assets/images/about-page/video-image-ellipse-about.svg" alt="Video element image 2"/></div>
+                    <div class="video-wrap">
+                        <div class="video-play">
+                            <button class="video-btn-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
+                        </div>
+                        <div class="video-image"><img src="assets/images/about-page/video-block-bg-about.png" alt="Video image"/></div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="road-map-section">
+                <div class="container road-map-container">
+                    <h3 class="section-title"><span>ROAD MAP</span></h3>
+                    <div thumbsSlider="" class="swiper top-road-map-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">01</span>
+                                    <span class="title">2025: Optimization and Monetization</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">02</span>
+                                    <span class="title">2025: Scaling and Advertising</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">03</span>
+                                    <span class="title">2025: Sustainability and Scalability</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">04</span>
+                                    <span class="title">2025: Sustainability and Scalability</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">05</span>
+                                    <span class="title">2025: Scaling and Advertising</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">06</span>
+                                    <span class="title">2025: Scaling and Advertising</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="number-wrap">
+                                    <div class="number-bg"></div>
+                                    <span class="number">07</span>
+                                    <span class="title">2025: Sustainability and Scalability</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper bottom-road-map-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Optimization and Monetization</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>Redesigning of PVP Game Economy</li>
+                                            <li>Expansion of Wallet Features</li>
+                                            <li>Implementation of NFT Renting System</li>
+                                            <li>Commencement of DOMINATOR Ad Network Public Beta Testing</li>
+                                            <li>Non-Fungible token (NFT) staking</li>
+                                            <li>Start sales of the first collection 3D NFTs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Scaling and Advertising</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                            <li>Alpha Launch of DOMINATOR VR version</li>
+                                            <li>Introduction of Advertisers’ Dashboard</li>
+                                            <li>Release of Ad Network</li>
+                                            <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                            <li>Start testing of VR Ad Network</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Sustainability and Scalability</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>Enhance security measures and protocols to protect players' assets</li>
+                                            <li>The VR version of DOMINATOR Alpha Launch</li>
+                                            <li>Introduction of Advertisers’ Dashboard</li>
+                                            <li>Release of Ad Network</li>
+                                            <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Sustainability and Scalability</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>DOMINATOR VR Beta Release</li>
+                                            <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
+                                            <li>DMNTR Test Network Release </li>
+                                            <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Scaling and Advertising</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                            <li>Alpha Launch of DOMINATOR VR version</li>
+                                            <li>Introduction of Advertisers’ Dashboard</li>
+                                            <li>Release of Ad Network</li>
+                                            <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                            <li>Start testing of VR Ad Network</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Scaling and Advertising</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
+                                            <li>Alpha Launch of DOMINATOR VR version</li>
+                                            <li>Introduction of Advertisers’ Dashboard</li>
+                                            <li>Release of Ad Network</li>
+                                            <li>Rollout of AI-Powered Targeting Ad futures</li>
+                                            <li>Start testing of VR Ad Network</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="road-map-card">
+                                    <div class="road-map-card-bg"></div>
+                                    <h6 class="title">2025: Sustainability and Scalability</h6>
+                                    <div class="text">
+                                        <ul>
+                                            <li>DOMINATOR VR Beta Release</li>
+                                            <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
+                                            <li>DMNTR Test Network Release </li>
+                                            <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="button secondary-button">
+                                            <span>Visit marketplace
+                                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="road-map-image-wrap"></div>
+            </section>
+            <section class="history-section">
+                <div class="info-block first">
+                    <h3 class="section-title"><span>Something strange was happening on the planet Cyberia...</span></h3>
+                    <div class="counter">/ 001 /</div>
+                    <div class="text">
+                        <p>It was covered with honeycomb-shaped plates that produced a powerful type of energy - energon. People from all corners of the Universe rushed to Cyberia to profit from this energy. But they did not know that energon was lethal to humans in its pure form.</p>
+                    </div>
+                    <div class="info-block-element first"><img src="assets/images/about-page/spaceship-first.png" alt="Decorative element image 1"/></div>
+                    <div class="info-block-element second"><img src="assets/images/about-page/spaceship-second.png" alt="Decorative element image 2"/></div>
+                </div>
+                <div class="info-block second">
+                    <div class="container">
+                        <h3 class="section-title"><span>To use energon, dominators were needed</span></h3>
+                        <div class="counter">/ 002 /</div>
+                        <div class="text">
+                            <p>Impressively sized snake-like furs, where each section of the fur is an energy accumulator. The more sections, the more energy the dominator can absorb.</p>
+                            <p>People began to look for Dominators in the deep caves of the planet, but it was very dangerous. The caves were inhabited by robot guards who did not like strangers. They were created to protect Dominators from people who could use their energy for their own purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block third">
+                    <div class="container">
+                        <h3 class="section-title"><span>But one day a group of researchers arrived on Cyberia</span></h3>
+                        <div class="counter">/ 003 /</div>
+                        <div class="text">
+                            <p>Who were ready to risk their lives to find the Dominators. They were equipped with special suits that protected them from deadly energy.</p>
+                            <p>Researchers found a dominator that was larger than they could have imagined. It was so huge that they had to use all their knowledge and technology to activate it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block fourth">
+                    <div class="container">
+                        <h3 class="section-title"><span>When the Dominator was activated</span></h3>
+                        <div class="counter">/ 004 /</div>
+                        <div class="text">
+                            <p>He began to release a huge amount of energy. People on Cyberia began to use this energy for their own needs. They created robot workers that could work without interruption and not get tired.</p>
+                            <p>But soon the people of Cyberia realized that they had made a mistake. Robot workers began to multiply and began to threaten people. They became smarter and stronger than the people on Cyberia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block fifth">
+                    <div class="container">
+                        <h3 class="section-title"><span>People realized that they needed to do something</span></h3>
+                        <div class="counter">/ 005 /</div>
+                        <div class="text">
+                            <p>They created special robot hunters that were supposed to destroy the multiplying robot workers. But they could not cope with the task.</p>
+                            <p>Then the people on Cyberia realized that they had to stop the proliferation of robot workers and created a special program that could control their number. They also created security robots that were supposed to protect people from robot workers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block sixth">
+                    <div class="counter">/ 006 /</div>
+                    <div class="text">
+                        <p>Thus, people on Cyberia have found a way to use energon energy without endangering their lives. <br/> They realized that robots can be dangerous, but if used wisely, they can help people in their daily lives...</p>
+                    </div>
+                    <div class="button-wrap">
+                        <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
+                    </div>
+                    <div class="decorative-element first"><img src="assets/images/general/decorative-element-3.svg" alt="Decorative element image 1"/></div>
+                    <div class="decorative-element second"><img src="assets/images/general/decorative-element-1.svg" alt="Decorative element image 2"/></div>
                     <div class="decorative-element third"><img src="assets/images/general/decorative-element-2.svg" alt="Decorative element image 3"/></div>
                     <div class="decorative-element fourth"><img src="assets/images/general/decorative-element-4.svg" alt="Decorative element image 3"/></div>
                 </div>
-        </div>
-        <div class="container video-container">
-            <div class="video-element-first"><img src="assets/images/about-page/video-image-about.png" alt="Video element image 1"/></div>
-            <div class="video-element-second"><img src="assets/images/about-page/video-image-ellipse-about.svg" alt="Video element image 2"/></div>
-            <div class="video-wrap">
-                <div class="video-play">
-                    <button class="video-btn-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
-                </div>
-                <div class="video-image"><img src="assets/images/about-page/video-block-bg-about.png" alt="Video image"/></div>
-            </div>
-        </div>
-
-    </section>
-    <section class="road-map-section">
-        <div class="container road-map-container">
-            <h3 class="section-title"><span>ROAD MAP</span></h3>
-            <div thumbsSlider="" class="swiper top-road-map-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">01</span>
-                            <span class="title">2025: Optimization and Monetization</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">02</span>
-                            <span class="title">2025: Scaling and Advertising</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">03</span>
-                            <span class="title">2025: Sustainability and Scalability</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">04</span>
-                            <span class="title">2025: Sustainability and Scalability</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">05</span>
-                            <span class="title">2025: Scaling and Advertising</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">06</span>
-                            <span class="title">2025: Scaling and Advertising</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="number-wrap">
-                            <div class="number-bg"></div>
-                            <span class="number">07</span>
-                            <span class="title">2025: Sustainability and Scalability</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper bottom-road-map-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Optimization and Monetization</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>Redesigning of PVP Game Economy</li>
-                                    <li>Expansion of Wallet Features</li>
-                                    <li>Implementation of NFT Renting System</li>
-                                    <li>Commencement of DOMINATOR Ad Network Public Beta Testing</li>
-                                    <li>Non-Fungible token (NFT) staking</li>
-                                    <li>Start sales of the first collection 3D NFTs</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </section>
+        </main>
+        <footer class="footer-section">
+            <div class="footer-image-element"><img src="assets/images/about-page/footer-dominator-image.png" alt="Footer image element"/></div>
+            <div class="footer-top">
+                <div class="footer-section-bg"></div>
+                <div class="container footer-container">
+                    <div class="footer-top-block">
+                        <div class="logo"><a href="index.html"><img src="assets/images/general/new-logo.svg" alt="dominator logo"/></a></div>
+                        <nav class="footer-menu">
+                            <ul>
+                                <li><a href="about.html" >About game</a></li>
+                                <li><a href="#" >Marketplace</a></li>
+                                <li><a href="#" >FAQ</a></li>
+                                <li><a href="javascript:void(0);" class="contact-us open-modal-js" data-popup-id="contact-us-modal">Contact us</a></li>
+                                <li><a href="#" >White Paper</a></li>
+                            </ul>
+                        </nav>
+                        <div class="footer-info">
+                            <div class="subscribe-form">
+                                <h5 class="title">Stay up to date with <br/> all the updates</h5>
+                                <form action="" class="form-wrap">
+                                    <div class="field-wrap">
+                                        <input type="text" placeholder="Your email here">
+                                    </div>
+                                    <button class="button button-send">
+                                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
                                         </svg>
-                                    </span>
-                                </a>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="social-wrap">
+                                <a href="#" class="social-link"><img src="assets/images/general/instagram-icon.svg" alt="social instagram link icon" /></a>
+                                <a href="#" class="social-link"><img src="assets/images/general/youtubeplay-icon.svg" alt="social youtube link icon" /></a>
+                                <a href="#" class="social-link"><img src="assets/images/general/facebook-icon.svg" alt="social facebook link icon" /></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Scaling and Advertising</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
-                                    <li>Alpha Launch of DOMINATOR VR version</li>
-                                    <li>Introduction of Advertisers’ Dashboard</li>
-                                    <li>Release of Ad Network</li>
-                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
-                                    <li>Start testing of VR Ad Network</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Sustainability and Scalability</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>Enhance security measures and protocols to protect players' assets</li>
-                                    <li>The VR version of DOMINATOR Alpha Launch</li>
-                                    <li>Introduction of Advertisers’ Dashboard</li>
-                                    <li>Release of Ad Network</li>
-                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Sustainability and Scalability</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>DOMINATOR VR Beta Release</li>
-                                    <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
-                                    <li>DMNTR Test Network Release </li>
-                                    <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Scaling and Advertising</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
-                                    <li>Alpha Launch of DOMINATOR VR version</li>
-                                    <li>Introduction of Advertisers’ Dashboard</li>
-                                    <li>Release of Ad Network</li>
-                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
-                                    <li>Start testing of VR Ad Network</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Scaling and Advertising</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>Decentralized Autonomous Organization (DAO) Governance implementation</li>
-                                    <li>Alpha Launch of DOMINATOR VR version</li>
-                                    <li>Introduction of Advertisers’ Dashboard</li>
-                                    <li>Release of Ad Network</li>
-                                    <li>Rollout of AI-Powered Targeting Ad futures</li>
-                                    <li>Start testing of VR Ad Network</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="road-map-card">
-                            <div class="road-map-card-bg"></div>
-                            <h6 class="title">2025: Sustainability and Scalability</h6>
-                            <div class="text">
-                                <ul>
-                                    <li>DOMINATOR VR Beta Release</li>
-                                    <li>Merger of DOMINATOR VR & DOMINATOR Blockchain & DOMINATOR Ad Platform</li>
-                                    <li>DMNTR Test Network Release </li>
-                                    <li>Blockchain PVP VR Game + VR Ad Platform Technology Release</li>
-                                </ul>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="button secondary-button">
-                                    <span>Visit marketplace
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M10.1352 21.3902L21.8025 9.72292M21.8025 9.72292L21.8025 20.742M21.8025 9.72292L10.7834 9.72292" stroke="#1D0629" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </a>
+                        <div class="footer-block">
+                            <div class="copyright">Dominator©2023</div>
+                            <div class="policy-wrap">
+                                <a href="terms-of-use.html" class="policy-link">Terms of use</a>
+                                <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="road-map-image-wrap"></div>
-    </section>
-    <section class="history-section">
-        <div class="info-block first">
-            <h3 class="section-title"><span>Something strange was happening on the planet Cyberia...</span></h3>
-            <div class="counter">/ 001 /</div>
-            <div class="text">
-                <p>It was covered with honeycomb-shaped plates that produced a powerful type of energy - energon. People from all corners of the Universe rushed to Cyberia to profit from this energy. But they did not know that energon was lethal to humans in its pure form.</p>
-            </div>
-            <div class="info-block-element first"><img src="assets/images/about-page/spaceship-first.png" alt="Decorative element image 1"/></div>
-            <div class="info-block-element second"><img src="assets/images/about-page/spaceship-second.png" alt="Decorative element image 2"/></div>
-        </div>
-        <div class="info-block second">
-            <div class="container">
-                <h3 class="section-title"><span>To use energon, dominators were needed</span></h3>
-                <div class="counter">/ 002 /</div>
-                <div class="text">
-                    <p>Impressively sized snake-like furs, where each section of the fur is an energy accumulator. The more sections, the more energy the dominator can absorb.</p>
-                    <p>People began to look for Dominators in the deep caves of the planet, but it was very dangerous. The caves were inhabited by robot guards who did not like strangers. They were created to protect Dominators from people who could use their energy for their own purposes.</p>
+            <div class="footer-bottom-block">
+                <div class="container footer-container">
+                    <h1 class="title"><span>That’s my game!</span></h1>
                 </div>
             </div>
-        </div>
-        <div class="info-block third">
-            <div class="container">
-                <h3 class="section-title"><span>But one day a group of researchers arrived on Cyberia</span></h3>
-                <div class="counter">/ 003 /</div>
-                <div class="text">
-                    <p>Who were ready to risk their lives to find the Dominators. They were equipped with special suits that protected them from deadly energy.</p>
-                    <p>Researchers found a dominator that was larger than they could have imagined. It was so huge that they had to use all their knowledge and technology to activate it.</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-block fourth">
-            <div class="container">
-                <h3 class="section-title"><span>When the Dominator was activated</span></h3>
-                <div class="counter">/ 004 /</div>
-                <div class="text">
-                    <p>He began to release a huge amount of energy. People on Cyberia began to use this energy for their own needs. They created robot workers that could work without interruption and not get tired.</p>
-                    <p>But soon the people of Cyberia realized that they had made a mistake. Robot workers began to multiply and began to threaten people. They became smarter and stronger than the people on Cyberia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-block fifth">
-            <div class="container">
-                <h3 class="section-title"><span>People realized that they needed to do something</span></h3>
-                <div class="counter">/ 005 /</div>
-                <div class="text">
-                    <p>They created special robot hunters that were supposed to destroy the multiplying robot workers. But they could not cope with the task.</p>
-                    <p>Then the people on Cyberia realized that they had to stop the proliferation of robot workers and created a special program that could control their number. They also created security robots that were supposed to protect people from robot workers.</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-block sixth">
-            <div class="counter">/ 006 /</div>
-            <div class="text">
-                <p>Thus, people on Cyberia have found a way to use energon energy without endangering their lives. <br/> They realized that robots can be dangerous, but if used wisely, they can help people in their daily lives...</p>
-            </div>
-            <div class="button-wrap">
-                <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
-            </div>
-            <div class="decorative-element first"><img src="assets/images/general/decorative-element-3.svg" alt="Decorative element image 1"/></div>
-            <div class="decorative-element second"><img src="assets/images/general/decorative-element-1.svg" alt="Decorative element image 2"/></div>
-            <div class="decorative-element third"><img src="assets/images/general/decorative-element-2.svg" alt="Decorative element image 3"/></div>
-            <div class="decorative-element fourth"><img src="assets/images/general/decorative-element-4.svg" alt="Decorative element image 3"/></div>
-        </div>
-    </section>
-</main>
-<footer class="footer-section">
-    <div class="footer-image-element"><img src="assets/images/about-page/footer-dominator-image.png" alt="Footer image element"/></div>
-    <div class="footer-top">
-        <div class="footer-section-bg"></div>
-        <div class="container footer-container">
-            <div class="footer-top-block">
-                <div class="logo"><a href="index.html"><img src="assets/images/general/new-logo.svg" alt="dominator logo"/></a></div>
-                <nav class="footer-menu">
-                    <ul>
-                        <li><a href="about.html" >About game</a></li>
-                        <li><a href="#" >Marketplace</a></li>
-                        <li><a href="#" >FAQ</a></li>
-                        <li><a href="#" >Contact us</a></li>
-                        <li><a href="#" >White Paper</a></li>
-                    </ul>
-                </nav>
-                <div class="footer-info">
-                    <div class="subscribe-form">
-                        <h5 class="title">Stay up to date with <br/> all the updates</h5>
-                        <form action="" class="form-wrap">
-                            <div class="field-wrap">
-                                <input type="text" placeholder="Your email here">
-                            </div>
-                            <button class="button button-send">
-                                <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="social-wrap">
-                        <a href="#" class="social-link"><img src="assets/images/general/instagram-icon.svg" alt="social instagram link icon" /></a>
-                        <a href="#" class="social-link"><img src="assets/images/general/youtubeplay-icon.svg" alt="social youtube link icon" /></a>
-                        <a href="#" class="social-link"><img src="assets/images/general/facebook-icon.svg" alt="social facebook link icon" /></a>
-                    </div>
-                </div>
-                <div class="footer-block">
-                    <div class="copyright">Dominator©2023</div>
-                    <div class="policy-wrap">
-                        <a href="terms-of-use.html" class="policy-link">Terms of use</a>
-                        <a href="privacy-policy.html" class="policy-link">Privacy Policy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </footer>
     </div>
-    <div class="footer-bottom-block">
-        <div class="container footer-container">
-            <h1 class="title"><span>That’s my game!</span></h1>
-        </div>
-    </div>
-</footer>
+</div>
 <div class="modal" id="video-modal">
     <div class="modal-bg"></div>
     <div class="modal-window">
@@ -514,6 +518,55 @@
         </div>
     </div>
 </div>
+<div class="modal contact-us-modal" id="contact-us-modal">
+    <div class="modal-bg"></div>
+    <div class="modal-window">
+        <div class="modal-close close-modal-js">
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+        </div>
+        <div class="modal-content">
+            <div class="contact-us-form">
+                <h5 class="title">Contact us</h5>
+                <form action="" class="contact-us-form-wrap">
+                    <div class="field-wrap">
+                        <input type="name" placeholder="Your name">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="text" placeholder="Your topic">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+                    <div class="field-wrap textarea">
+                        <textarea placeholder="Your message" rows="10"></textarea>
+                    </div>
+                    <button class="button button-send">
+                        <span>Send</span>
+                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     window.addEventListener('load', (event) => {
         let loaderWrap = document.querySelector('.loader');

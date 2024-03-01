@@ -442,41 +442,6 @@
             @include display-flex;
             @include align-items-center;
         }
-
-        .field-wrap {
-            flex-grow: 1;
-            margin-right: 20px;
-            height: 50px;
-            padding: 1px;
-            background: #27405E;
-            clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
-
-            input {
-                width: 100%;
-                height: 100%;
-                background: #061D2E;
-                border: none;
-                font-size: 16px;
-                padding: 10px 25px;
-                color: #3A4D64;
-                letter-spacing: -1px;
-                clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
-                @include font_robotoMono_regular;
-
-                @include min-medium {
-                    letter-spacing: 0;
-                }
-
-                &:focus-visible {
-                    outline: none;
-                }
-
-                @include placeholder {
-                    color: #3A4D64;
-                    font-size: 16px;
-                }
-            }
-        }
     }
 
     .button-send {
