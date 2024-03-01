@@ -28,7 +28,7 @@
             -ms-flex-align: center;
             align-items: center;
 
-            background: #020919 url("assets/images/general/site-bg-new.png");
+            background: #020919;
             background-size: cover;
             background-position: center top;
         }
@@ -38,6 +38,13 @@
             animation: loader infinite linear forwards;
         }
     </style>
+    <script>
+        window.addEventListener('load', (event) => {
+            let loaderWrap = document.querySelector('.loader');
+            loaderWrap.style.display = "none";
+            loaderWrap.style.zIndex = "-1000";
+        })
+    </script>
 </head>
 <body >
 <div class="loader">
@@ -62,11 +69,11 @@
             <nav class="menu">
                 <ul class="menu-left">
                     <li><a href="about.html">About game</a></li>
-                    <li><a href="#" >Marketplace</a></li>
+                    <li><a href="#marketplace" >Marketplace</a></li>
                 </ul>
                 <ul class="menu-right">
-                    <li><a href="#" >FAQ</a></li>
-                    <li><a href="#" >Contact us</a></li>
+                    <li><a href="#faq" >FAQ</a></li>
+                    <li><a href="javascript:void(0);" class="contact-us open-modal-js" data-popup-id="contact-us-modal">Contact us</a></li>
                 </ul>
                 <div class="menu-block">
                     <a href="#" class="account">
@@ -141,7 +148,7 @@
                             <h3 class="section-title"><span>About game</span></h3>
                             <div class="text">Dominator is an online game available on iOS, Android and web platforms. Imagine unique worm robots? Yes, we have them! Control your dominator, fuel it, collect resources, grow in size and compete with other players while avoiding collisions. This is a game for real dominators!</div>
                             <div class="button-wrap">
-                                <a href="#" class="button secondary-button"><span>learn more</span></a>
+                                <a href="about.html" class="button secondary-button"><span>learn more</span></a>
                             </div>
                         </div>
                         <div class="about-slider">
@@ -181,7 +188,7 @@
                         <div class="video-element-second"><img src="assets/images/home-page/video-image-2.svg" alt="Video element image 2"/></div>
                         <div class="video-wrap">
                             <div class="video-play">
-                                <button class="video-btn-play"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
+                                <button class="video-btn-play open-modal-js" data-popup-id="video-modal"><img src="assets/images/general/video-play-icon.svg" alt="Video play btn"/></button>
                             </div>
                             <div class="video-image"><img src="assets/images/home-page/video-bg.png" alt="Video image"/></div>
                         </div>
@@ -299,7 +306,7 @@
                         <a href="#" class="button primary-button"><span class="btn-bg"><span>Play FREE now!</span></span></a>
                     </div>
                 </section>
-                <section class="animation-section marketplace-section">
+                <section id="marketplace" class="animation-section marketplace-section">
                     <div class="marketplace-section-bg"></div>
                     <div class="container marketplace-container">
                         <h3 class="section-title"><span>MARKETPLACE</span></h3>
@@ -569,8 +576,17 @@
                                     <div class="road-map-card">
                                         <div class="road-map-card-bg"></div>
                                         <div class="label"><img src="assets/images/home-page/Icon_3.png" alt="Road map card image 5"/></div>
-                                        <h6 class="title">Innovative Updates</h6>
-                                        <div class="text">Actively interact with players with updates based on their feedback. We are constantly improving and improving the game.</div>
+                                        <h6 class="title">Optimization and Monetization</h6>
+                                        <div class="text">
+                                            <ul>
+                                                <li>Redesigning of PVP Game Economy</li>
+                                                <li>Expansion of Wallet Features</li>
+                                                <li>Implementation of NFT Renting System</li>
+                                                <li>Commencement of DOMINATOR Ad Network Public Beta Testing</li>
+                                                <li>Non-Fungible token (NFT) staking</li>
+                                                <li>Start sales of the first collection 3D NFTs</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -578,9 +594,9 @@
                             <div class="road-map-section-element second"><img src="assets/images/home-page/road-map-image-2.svg" alt="Road map section element 2"/></div>
                         </div>
                     </div>
-                    <div class="button-wrap"><a href="#" class="button secondary-button"><span>learn more</span></a></div>
+                    <div class="button-wrap"><a href="about.html" class="button secondary-button"><span>learn more</span></a></div>
                 </section>
-                <section class="animation-section faq-section">
+                <section id="faq" class="animation-section faq-section">
                     <div class="container faq-container">
                         <div class="particles" id="particles"></div>
                         <div class="faq-wrap">
@@ -647,9 +663,9 @@
                         <nav class="footer-menu">
                             <ul>
                                 <li><a href="about.html" >About game</a></li>
-                                <li><a href="#" >Marketplace</a></li>
-                                <li><a href="#" >FAQ</a></li>
-                                <li><a href="#" >Contact us</a></li>
+                                <li><a href="#marketplace" >Marketplace</a></li>
+                                <li><a href="#faq" >FAQ</a></li>
+                                <li><a href="javascript:void(0);" class="contact-us open-modal-js" data-popup-id="contact-us-modal">Contact us</a></li>
                                 <li><a href="#" >White Paper</a></li>
                             </ul>
                         </nav>
@@ -692,10 +708,10 @@
     </div>
 </div>
 
-<div class="modal" id="video-modal">
+<div class="modal video-modal" id="video-modal">
     <div class="modal-bg"></div>
     <div class="modal-window">
-        <div class="modal-close">
+        <div class="modal-close close-modal-js">
             <div class="modal-close-bar"></div>
             <div class="modal-close-bar"></div>
             <div class="modal-close-bar"></div>
@@ -718,13 +734,55 @@
         </div>
     </div>
 </div>
-<script>
-    window.addEventListener('load', (event) => {
-        let loaderWrap = document.querySelector('.loader');
-        loaderWrap.style.display = "none";
-        loaderWrap.style.zIndex = "-1000";
-    })
-</script>
+<div class="modal contact-us-modal" id="contact-us-modal">
+    <div class="modal-bg"></div>
+    <div class="modal-window">
+        <div class="modal-close close-modal-js">
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+            <div class="modal-close-bar"></div>
+        </div>
+        <div class="modal-content">
+            <div class="contact-us-form">
+                <h5 class="title">Contact us</h5>
+                <form action="" class="contact-us-form-wrap">
+                    <div class="field-wrap">
+                        <input type="name" placeholder="Your name">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="text" placeholder="Your topic">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div class="field-wrap">
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+                    <div class="field-wrap textarea">
+                        <textarea placeholder="Your message" rows="10"></textarea>
+                    </div>
+                    <button class="button button-send">
+                        <span>Send</span>
+                        <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.85294 0H0L10.1471 10.5217L1.76471 22H6.69786L15 10.5217L4.85294 0Z" fill="#061D2E"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="./assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/Tween-max.min.js"></script>
 <script src="./assets/js/main.js"></script>

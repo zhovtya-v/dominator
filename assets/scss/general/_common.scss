@@ -7,6 +7,10 @@
 html {
     overflow-x: hidden;
     overflow-y: auto;
+
+    &.modal-opened {
+        overflow: hidden;
+    }
 }
 
 a,
@@ -85,7 +89,7 @@ body {
         line-height: 2;
     }
 
-    &.menu-opened {
+    &.menu-opened, &.modal-opened {
         overflow: hidden;
     }
 }
@@ -586,6 +590,136 @@ body {
     background: transparent;
 }
 
+.field-wrap {
+    flex-grow: 1;
+    margin-right: 20px;
+    height: 50px;
+    padding: 1px;
+    background: #27405E;
+    clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+
+    input, textarea {
+        width: 100%;
+        height: 100%;
+        background: #061D2E;
+        border: none;
+        font-size: 16px;
+        padding: 10px 25px;
+        color: #3A4D64;
+        letter-spacing: -1px;
+        clip-path: polygon(3% 0, 100% 0, 100% 75%, 97% 100%, 0 100%, 0 24%);
+        @include font_robotoMono_regular;
+
+        @include min-medium {
+            letter-spacing: 0;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        @include placeholder {
+            color: #3A4D64;
+            font-size: 16px;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.video-modal {
+    .button {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .video-wrap {
+        width: 100%;
+    }
+
+    .video-image {
+        @include aspect-ratio(375, 667);
+
+        @include min-medium {
+            @include aspect-ratio(1920, 945);
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            vertical-align: bottom;
+            object-fit: cover;
+            object-position: center bottom;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}
+
+.contact-us-modal {
+    .title {
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .field-wrap {
+        margin: 0 0 15px;
+
+        &.textarea {
+            @include flex(1, 0, 100%);
+            height: 100px;
+        }
+    }
+
+    .button-send {
+        width: 100%;
+        height: 50px;
+        max-width: 270px;
+
+        span {
+            color: $black-text-color;
+            text-transform: uppercase;
+            z-index: 2;
+            font-size: 18px;
+            @include font_tektur_semiBold;
+            margin-right: 10px;
+
+            @include min-medium {
+                font-size: 20px;
+            }
+
+            @include min-extra-large {
+                font-size: 24px;
+            }
+        }
+
+        &:after {
+            width: 100%;
+            height: 50px;
+            clip-path: polygon(5% 0, 100% 0, 100% 74%, 95% 100%, 0 100%, 0 26%);
+        }
+    }
+
+    .contact-us-form-wrap {
+        width: 300px;
+
+        @include min-medium {
+            width: 700px;
+            gap: 10px 20px;
+            @include display-flex;
+            @include flex-wrap-wrap;
+        }
+    }
+}
 /*********************************
 COMMON STYLE END
 *********************************/
