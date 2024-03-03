@@ -483,3 +483,18 @@ function onResize() {
         requestId = requestAnimationFrame(updateScroller);
     }
 }
+
+function openGame(id, openMarketplace) {
+    var link = document.getElementById(id);
+    var url = "game.html" + window.location.search;
+    if (openMarketplace) {
+        if (window.location.search && window.location.search.length > 0)
+            url += "&";
+        else
+            url += "?";
+
+        url += "w=marketplace";
+    }
+    
+    link.setAttribute("href", url);
+}
