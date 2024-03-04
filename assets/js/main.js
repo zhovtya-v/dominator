@@ -206,56 +206,74 @@ accordionItem.forEach((accordionToggle) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', about_reinit_slider);
-window.addEventListener('resize', about_reinit_slider);
+document.addEventListener('DOMContentLoaded', function (){
+    about_reinit_slider();
+    road_map_reinit_slider();
+});
 
+window.addEventListener('resize', function (){
+    about_reinit_slider();
+    road_map_reinit_slider();
+});
+
+let oldSizeMode = null;
 let mql = window.matchMedia('(max-width: 991px)');
-let swiper = null;
+let aboutSwiper = null;
 
 function about_reinit_slider() {
-    if (mql.matches) {
-        swiper = new Swiper('.about-swiper', {
-            spaceBetween: 12,
-            slidesPerView: 1,
-            centeredSlides: true,
-            loop: true,
+    let newSizeMode = mql.matches ? 'mobile' : 'desktop';
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+    if (oldSizeMode !== newSizeMode) {
+        oldSizeMode = newSizeMode;
 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    }
-    else {
-        var swiper = new Swiper(".about-swiper", {
-            effect: "cards",
-            loop: true,
+        if (aboutSwiper !== null) {
+            aboutSwiper.destroy();
+        }
 
-            cardsEffect: {
-                perSlideOffset: 10,
-                perSlideRotate: 10,
-                rotate: false,
-                slideShadows: false,
-                stretch: 50,
-                depth: 20,
-                modifier: 1,
-            },
+        if (newSizeMode === 'mobile') {
+            aboutSwiper = new Swiper('.about-swiper', {
+                spaceBetween: 12,
+                slidesPerView: 1,
+                centeredSlides: true,
+                loop: true,
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        }
+        else {
+            aboutSwiper = new Swiper(".about-swiper", {
+                effect: "cards",
+                loop: true,
+
+                cardsEffect: {
+                    perSlideOffset: 10,
+                    perSlideRotate: 10,
+                    rotate: false,
+                    slideShadows: false,
+                    stretch: 50,
+                    depth: 20,
+                    modifier: 1,
+                },
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        }
     }
 }
 
@@ -277,10 +295,15 @@ var mySwiper = new Swiper('.bottom-road-map-slider', {
     }
 })
 
-document.addEventListener('DOMContentLoaded', road_map_reinit_slider);
-window.addEventListener('resize', road_map_reinit_slider);
+
+let myNavSwiper = null;
 
 function road_map_reinit_slider() {
+
+    if (myNavSwiper !== null) {
+        myNavSwiper.destroy();
+    }
+
     if (mql.matches) {
         myNavSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
@@ -360,9 +383,6 @@ function buttonHoverAnimation() {
 
             const animationDivider = 2;
 
-            console.log(xPosOfMouseInsideButton);
-            console.log(yPosOfMouseInsideButton);
-
             TweenMax.to(button, 1, {
                 x: xPosOfMouseInsideButton / animationDivider,
                 y: yPosOfMouseInsideButton / animationDivider,
@@ -384,7 +404,6 @@ function buttonHoverAnimation() {
 }
 
 buttonHoverAnimation();
-
 
 var html = document.documentElement;
 var body = document.body;
@@ -413,33 +432,18 @@ function onLoad() {
         return navigator.userAgent.toLowerCase().indexOf(agent.toLowerCase())>-1;
     }
 
-    switch(true){
-        case isAgent('Chrome'):
-            updateScroller();
-            window.focus();
-            window.addEventListener("resize", onResize);
-            document.addEventListener("scroll", onScroll);
-            break;
-        case isAgent('Edge'):
-            document.querySelector('.viewport').style.overflow = 'visible';
-            document.querySelector('.viewport').style.position = 'relative';
-            document.querySelector('.scroll-container').style.overflow = 'visible';
-            document.querySelector('.scroll-container').style.position = 'relative';
-            document.querySelector('.scroll-container').style.transform = 'none';
-            break;
-        case isAgent('Safari'):
-            document.querySelector('.viewport').style.overflow = 'visible';
-            document.querySelector('.viewport').style.position = 'relative';
-            document.querySelector('.scroll-container').style.overflow = 'visible';
-            document.querySelector('.scroll-container').style.position = 'relative';
-            document.querySelector('.scroll-container').style.transform = 'none';
-            break;
-        default:
-            updateScroller();
-            window.focus();
-            window.addEventListener("resize", onResize);
-            document.addEventListener("scroll", onScroll);
-            break;
+    if (!isAgent('Chrome') && isAgent('Safari')) {
+        document.querySelector('.viewport').style.overflow = 'visible';
+        document.querySelector('.viewport').style.position = 'relative';
+        document.querySelector('.scroll-container').style.overflow = 'visible';
+        document.querySelector('.scroll-container').style.position = 'relative';
+        document.querySelector('.scroll-container').style.transform = 'none';
+    }
+    else {
+        updateScroller();
+        window.focus();
+        window.addEventListener("resize", onResize);
+        document.addEventListener("scroll", onScroll);
     }
 }
 

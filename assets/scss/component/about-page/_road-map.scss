@@ -303,15 +303,15 @@
         @include min-medium {
             padding: 0 0 40px 40px;
             margin-left: -40px;
+        }
 
-            .swiper-slide {
-                @include transform(scale(0));
-                @include transition(all 0.3s);
-            }
+        .swiper-slide {
+            @include transform(scale(0));
+            @include transition(all 0.3s);
+        }
 
-            .swiper-slide-active {
-                @include transform(scale(1));
-            }
+        .swiper-slide-active {
+            @include transform(scale(1));
         }
     }
 

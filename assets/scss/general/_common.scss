@@ -442,6 +442,10 @@ body {
     right: 0;
 }
 
+.swiper-navigation-wrap {
+    pointer-events: none;
+}
+
 .button-send,
 .swiper-button-next,
 .swiper-button-prev {
