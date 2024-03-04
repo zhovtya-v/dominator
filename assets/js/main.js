@@ -212,13 +212,13 @@ window.addEventListener('resize', about_reinit_slider);
 let mql = window.matchMedia('(max-width: 991px)');
 let swiper = null;
 
-function about_reinit_slider() {
-    if (mql.matches) {
+function about_reinit_slider() {console.log('init');
+    if (mql.matches) {console.log('init - if');
         swiper = new Swiper('.about-swiper', {
             spaceBetween: 12,
             slidesPerView: 1,
-            centeredSlides: true,
-            loop: true,
+            //centeredSlides: true,
+            //loop: true,
 
             pagination: {
                 el: ".swiper-pagination",
@@ -229,9 +229,15 @@ function about_reinit_slider() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+
+            on: {
+                activeIndexChange: function(swiper) {
+                    console.log('active index change 1', swiper.activeIndex);
+                }
+            }
         });
     }
-    else {
+    else {console.log('init - else');
         var swiper = new Swiper(".about-swiper", {
             effect: "cards",
             loop: true,
@@ -255,6 +261,11 @@ function about_reinit_slider() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            on: {
+                activeIndexChange: function(swiper) {
+                    console.log('active index change 2');
+                }
+            }
         });
     }
 }
