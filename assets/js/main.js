@@ -28,7 +28,7 @@ window.addEventListener('load', (event) => {
         });
     }
 
-    let options = { threshold: [0.2] };
+    let options = { threshold: [0.4] };
     let observer = new IntersectionObserver(onEntry, options);
     let elements = document.querySelectorAll('.animation-section');
     for (let elm of elements) {
@@ -262,6 +262,7 @@ function about_reinit_slider() {
 var mySwiper = new Swiper('.bottom-road-map-slider', {
     queueStartCallbacks: true,
     loop: true,
+    effect: true,
     onSlideChangeStart: function (swiper) {
         myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
     },
@@ -413,12 +414,11 @@ function onLoad() {
     }
 
     switch(true){
-        case isAgent('MSIE'):
-            document.querySelector('.viewport').style.overflow = 'visible';
-            document.querySelector('.viewport').style.position = 'relative';
-            document.querySelector('.scroll-container').style.overflow = 'visible';
-            document.querySelector('.scroll-container').style.position = 'relative';
-            document.querySelector('.scroll-container').style.transform = 'none';
+        case isAgent('Chrome'):
+            updateScroller();
+            window.focus();
+            window.addEventListener("resize", onResize);
+            document.addEventListener("scroll", onScroll);
             break;
         case isAgent('Edge'):
             document.querySelector('.viewport').style.overflow = 'visible';

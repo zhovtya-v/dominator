@@ -220,6 +220,9 @@
                 margin: 0 auto 20px;
                 text-align: center;
 
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
+
                 @include min-medium {
                     max-width: 1090px;
                     margin: 0 auto 33px;
@@ -257,6 +260,8 @@
             .counter {
                 text-align: center;
                 margin-bottom: 24px;
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
 
                 @include min-medium {
                     margin-bottom: 33px;
@@ -273,12 +278,42 @@
                 margin: 0 auto;
                 padding: 0 16px;
 
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
+
                 @include min-medium {
                     padding: 0;
                 }
 
                 @include min-extra-large {
                     max-width: 1094px;
+                }
+            }
+
+            &.element-show {
+                .section-title {
+                    opacity: 1;
+                    @include animation(0.7s linear 1 normal both running transform-bottom);
+                }
+
+                .counter {
+                    opacity: 1;
+                    @include animation(1s linear 0.2s 1 normal both running transform-bottom);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-bottom);
+                }
+
+                .info-block-element {
+                    &.first {
+                        @include animation(5s linear 0.6s 1 normal both running transform-left);
+                    }
+
+                    &.second {
+                        @include animation(5s linear 0.6s 1 normal both running transform-right);
+                    }
                 }
             }
         }
@@ -308,8 +343,28 @@
             .section-title, .counter, .text {
                 max-width: 576px;
 
+                @include transform(translate3d(-100%,0,0));
+                opacity: 0;
+
                 @include min-extra-large {
                     max-width: 760px;
+                }
+            }
+
+            &.element-show {
+                .section-title {
+                    opacity: 1;
+                    @include animation(0.7s linear 1 normal both running transform-left);
+                }
+
+                .counter {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.2s 1 normal both running transform-left);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-left);
                 }
             }
         }
@@ -336,6 +391,8 @@
 
             .section-title, .counter {
                 max-width: 700px;
+                @include transform(translate3d(100%,0,0));
+                opacity: 0;
 
                 @include min-extra-large {
                     max-width: 880px;
@@ -344,9 +401,29 @@
 
             .text {
                 max-width: 580px;
+                @include transform(translate3d(100%,0,0));
+                opacity: 0;
 
                 @include min-extra-large {
                     max-width: 750px;
+                }
+            }
+
+
+            &.element-show {
+                .section-title {
+                    opacity: 1;
+                    @include animation(0.7s linear 1 normal both running transform-right);
+                }
+
+                .counter {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.2s 1 normal both running transform-right);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-right);
                 }
             }
         }
@@ -376,6 +453,8 @@
 
             .section-title, .counter, .text {
                 max-width: 590px;
+                @include transform(translate3d(-100%,0,0));
+                opacity: 0;
 
                 @include min-extra-large {
                     max-width: 760px;
@@ -389,6 +468,23 @@
                         right: 96%;
                         @include transform(scale(1, -1));
                     }
+                }
+            }
+
+            &.element-show {
+                .section-title {
+                    opacity: 1;
+                    @include animation(0.7s linear 1 normal both running transform-left);
+                }
+
+                .counter {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.2s 1 normal both running transform-left);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-left);
                 }
             }
         }
@@ -419,6 +515,8 @@
             .section-title, .counter, .text {
                 max-width: 670px;
                 margin: 0 0 22px auto;
+                @include transform(translate3d(100%,0,0));
+                opacity: 0;
 
                 @include min-medium {
                     margin: 0 0 28px auto;
@@ -436,6 +534,23 @@
 
                 @include min-extra-large {
                     max-width: 760px;
+                }
+            }
+
+            &.element-show {
+                .section-title {
+                    opacity: 1;
+                    @include animation(0.7s linear 1 normal both running transform-right);
+                }
+
+                .counter {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.2s 1 normal both running transform-right);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-right);
                 }
             }
         }
@@ -469,6 +584,8 @@
             .counter {
                 text-align: center;
                 margin-bottom: 26px;
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
 
                 @include min-extra-large {
                     margin-bottom: 42px;
@@ -480,6 +597,8 @@
                 max-width: 1175px;
                 margin: 0 auto 63px;
                 padding: 0 30px;
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
 
                 @include min-medium {
                     padding: 0;
@@ -488,6 +607,36 @@
 
                 @include min-extra-large {
                     margin: 0 auto 61px;
+                }
+            }
+
+            .button-wrap {
+                @include transform(translate3d(0,100%,0));
+                opacity: 0;
+            }
+
+            &.element-show {
+                .counter {
+                    opacity: 1;
+                    @include animation(1s linear 0.2s 1 normal both running transform-bottom);
+                }
+
+                .text {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.4s 1 normal both running transform-bottom);
+                }
+
+                .button-wrap {
+                    opacity: 1;
+                    @include animation(0.7s linear 0.6s 1 normal both running transform-bottom);
+
+                    &:before, &:after {
+                        @include animation(3s linear 1s 1 normal forwards running decorative-line);
+                    }
+                }
+
+                .button {
+                    @include animation(3s linear 0.8s 1 normal forwards running text-flicker);
                 }
             }
         }
@@ -508,6 +657,8 @@
             left: -64px;
             width: 246px;
             bottom: 278px;
+            @include transform(translate3d(-100%,0,0));
+            opacity: 0;
 
             @include min-small {
                 left: 6px;
@@ -525,11 +676,18 @@
                 bottom: 30%;
                 width: 525px;
             }
+
+            &.element-show {
+                @include animation(4s linear 0.6s 1 normal both running transform-left);
+            }
         }
+
         &.second {
             right: -75px;
             bottom: 335px;
             width: 235px;
+            @include transform(translate3d(100%,0,0));
+            opacity: 0;
 
             @include min-small {
                 right: 5px;
@@ -547,83 +705,9 @@
                 bottom: 38%;
                 width: 460px;
             }
-        }
-    }
 
-    .decorative-element {
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        z-index: 3;
-
-        @include min-medium {
-            width: 180px;
-            height: 180px;
-        }
-
-        @include min-extra-large {
-
-        }
-
-        &.first {
-            display: none;
-
-            @include min-medium {
-                top: 149px;
-                right: 7px;
-                display: block;
-                @include transform(rotate(-153deg));
-            }
-
-            @include min-extra-large {
-
-            }
-        }
-
-        &.second {
-            bottom: -34px;
-            right: -8px;
-            @include transform(rotate(-75deg));
-
-            @include min-medium {
-                bottom: -80px;
-                right: 44px;
-            }
-
-            @include min-extra-large {
-
-            }
-        }
-
-        &.third {
-            bottom: 13px;
-            left: 38px;
-            @include transform(rotate(94deg));
-
-            @include min-medium {
-                bottom: initial;
-                top: 66px;
-                left: 66px;
-                @include transform(rotate(164deg));
-            }
-
-            @include min-extra-large {
-
-            }
-        }
-
-        &.fourth {
-            bottom: 96px;
-            right: 27px;
-            @include transform(rotate(180deg));
-
-            @include min-medium {
-                bottom: -2px;
-                right: 181px;
-            }
-
-            @include min-extra-large {
-
+            &.element-show {
+                @include animation(4s linear 0.6s 1 normal both running transform-right);
             }
         }
     }
