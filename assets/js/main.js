@@ -13,7 +13,7 @@ window.addEventListener('load', (event) => {
         document.body.classList.toggle('menu-opened');
     })
 
-    smoothScroll();
+    smoothLinksScroll();
 
     function onEntry(entry) {
         entry.forEach(change => {
@@ -78,7 +78,7 @@ document.addEventListener('element-show', function(e) {
     }
 });
 
-function smoothScroll() {
+function smoothLinksScroll() {
     document.querySelectorAll('.header-section .menu a[href^="#"]').forEach(link => {
 
         link.addEventListener('click', function(e) {
