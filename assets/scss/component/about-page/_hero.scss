@@ -97,54 +97,6 @@
             @include appearance(none);
             outline: none;
         }
-
-        &:before {
-            content: '';
-            position: absolute;
-            right: 92.5%;
-            top: 13px;
-            width: 106px;
-            height: 20px;
-            background: url("./assets/images/hero-title-line-mob-left.svg") no-repeat;
-            background-size: cover;
-
-            @include min-medium {
-                right: 100.5%;
-                top: 63px;
-                width: 231px;
-                height: 142px;
-                background: url("./assets/images/hero-title-line.svg") no-repeat;
-                background-size: cover;
-            }
-
-            @include min-large {
-                top: 45px;
-                width: 174px;
-                height: 112px;
-            }
-
-            @include min-extra-large {
-                right: 100.5%;
-                top: 63px;
-                width: 231px;
-                height: 142px;
-            }
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            left: 89.5%;
-            top: 77px;
-            width: 97px;
-            height: 16px;
-            background: url("./assets/images/hero-title-line-mob-right.svg") no-repeat;
-            background-size: cover;
-
-            @include min-medium {
-               display: none;
-            }
-        }
     }
 
     .text {

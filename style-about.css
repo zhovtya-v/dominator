@@ -3854,56 +3854,6 @@ COMMON STYLE END
   appearance: none;
   outline: none;
 }
-.hero-section .title:before {
-  content: "";
-  position: absolute;
-  right: 92.5%;
-  top: 13px;
-  width: 106px;
-  height: 20px;
-  background: url("./assets/images/hero-title-line-mob-left.svg") no-repeat;
-  background-size: cover;
-}
-@media only screen and (min-width: 992px) {
-  .hero-section .title:before {
-    right: 100.5%;
-    top: 63px;
-    width: 231px;
-    height: 142px;
-    background: url("./assets/images/hero-title-line.svg") no-repeat;
-    background-size: cover;
-  }
-}
-@media only screen and (min-width: 1201px) {
-  .hero-section .title:before {
-    top: 45px;
-    width: 174px;
-    height: 112px;
-  }
-}
-@media only screen and (min-width: 1441px) {
-  .hero-section .title:before {
-    right: 100.5%;
-    top: 63px;
-    width: 231px;
-    height: 142px;
-  }
-}
-.hero-section .title:after {
-  content: "";
-  position: absolute;
-  left: 89.5%;
-  top: 77px;
-  width: 97px;
-  height: 16px;
-  background: url("./assets/images/hero-title-line-mob-right.svg") no-repeat;
-  background-size: cover;
-}
-@media only screen and (min-width: 992px) {
-  .hero-section .title:after {
-    display: none;
-  }
-}
 .hero-section .text {
   max-width: 670px;
   margin: 0 auto 44px;
