@@ -209,64 +209,75 @@ accordionItem.forEach((accordionToggle) => {
 document.addEventListener('DOMContentLoaded', about_reinit_slider);
 window.addEventListener('resize', about_reinit_slider);
 
+let oldSizeMode = 'desktop';
 let mql = window.matchMedia('(max-width: 991px)');
-let swiper = null;
+let aboutSwiper = null;
 
-function about_reinit_slider() {console.log('init');
-    if (mql.matches) {console.log('init - if');
-        swiper = new Swiper('.about-swiper', {
-            spaceBetween: 12,
-            slidesPerView: 1,
-            //centeredSlides: true,
-            //loop: true,
+function about_reinit_slider() {
+    let newSizeMode = mql.matches ? 'mobile' : 'desktop';
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+    if (oldSizeMode !== newSizeMode) {
+        oldSizeMode = newSizeMode;
 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+        if (aboutSwiper !== null) {
+            aboutSwiper.destroy();
+        }
 
-            on: {
-                activeIndexChange: function(swiper) {
-                    console.log('active index change 1', swiper.activeIndex);
+        if (newSizeMode === 'mobile') {console.log('changeSizeMode to mobile');
+            aboutSwiper = new Swiper('.about-swiper', {
+                spaceBetween: 12,
+                slidesPerView: 1,
+                centeredSlides: true,
+                loop: true,
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                on: {
+                    activeIndexChange: function(swiper) {
+                        console.log('active index change 1', swiper.activeIndex);
+                    }
                 }
-            }
-        });
-    }
-    else {console.log('init - else');
-        var swiper = new Swiper(".about-swiper", {
-            effect: "cards",
-            loop: true,
+            });
+        }
+        else {console.log('changeSizeMode to desktop');
+            aboutSwiper = new Swiper(".about-swiper", {
+                effect: "cards",
+                loop: true,
 
-            cardsEffect: {
-                perSlideOffset: 10,
-                perSlideRotate: 10,
-                rotate: false,
-                slideShadows: false,
-                stretch: 50,
-                depth: 20,
-                modifier: 1,
-            },
+                cardsEffect: {
+                    perSlideOffset: 10,
+                    perSlideRotate: 10,
+                    rotate: false,
+                    slideShadows: false,
+                    stretch: 50,
+                    depth: 20,
+                    modifier: 1,
+                },
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            on: {
-                activeIndexChange: function(swiper) {
-                    console.log('active index change 2');
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                on: {
+                    activeIndexChange: function(swiper) {
+                        console.log('active index change 2');
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }
 
