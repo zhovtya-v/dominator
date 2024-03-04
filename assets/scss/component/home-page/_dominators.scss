@@ -126,6 +126,7 @@
         @include transform(translate(-50%,0));
         z-index: 10;
         padding: 0 5px;
+        pointer-events: none;
 
         @include min-medium {
             top: 240px;

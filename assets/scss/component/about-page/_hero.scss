@@ -55,6 +55,8 @@
     .hero-info {
         width: 100%;
         text-align: center;
+        @include transform(translate3d(0,100%,0));
+        opacity: 0;
     }
 
     .title {
@@ -212,7 +214,7 @@
                 right: 85%;
                 top: -42px;
                 width: 346px;
-                @include transform(rotate(5deg));
+                @include transform(translate3d(-100%, 0, 0) rotate(5deg));
 
                 @include min-large {
                     right: 100%;
@@ -232,7 +234,7 @@
                 right: 59%;
                 top: 146px;
                 width: 432px;
-                @include transform(rotate(-35deg));
+                @include transform(translate3d(-100%, 100%, 0) rotate(-35deg));
 
                 @include min-large {
                     right: 72%;
@@ -244,7 +246,7 @@
                     right: 76%;
                     top: 96%;
                     width: 889px;
-                    @include transform(rotate(-32deg));
+                    @include transform(translate3d(-100%, 100%, 0) rotate(-32deg));
                 }
             }
 
@@ -272,13 +274,13 @@
                 left: 56%;
                 top: 95px;
                 width: 377px;
-                @include transform(rotate(22deg));
+                @include transform(translate3d(100%, 100%, 0) rotate(22deg));
 
                 @include min-large {
                     left: 70%;
                     top: 80%;
                     width: 654px;
-                    @include transform(rotate(26deg));
+                    @include transform(translate3d(100%, 100%, 0) rotate(26deg));
                 }
 
                 @include min-extra-large {
@@ -463,6 +465,59 @@
                 right: -11px;
                 width: 240px;
                 height: 240px;
+            }
+        }
+    }
+
+    &.element-show {
+        .hero-info {
+            opacity: 1;
+            @include animation(0.7s linear 1 normal both running transform-bottom);
+        }
+
+        .title {
+            span {
+                @include animation(3s linear 1s 1 normal forwards running text-flicker);
+            }
+        }
+        .text {
+            @include animation(3s linear 0.6s 1 normal forwards running text-flicker);
+        }
+
+        .button-wrap {
+            @include animation(3s linear 1s 1 normal forwards running text-flicker);
+
+            &:before, &:after {
+                @include animation(3s linear 1s 1 normal forwards running decorative-line);
+            }
+        }
+
+        .decorative-element {
+            @include min-medium {
+                &.first {
+                    @include animation(2s linear 1 normal both running transform-top-right);
+                }
+                &.second {
+                    @include animation(2s linear 1 normal both running transform-top-left);
+                }
+            }
+        }
+
+        .dominator-image-wrap {
+            &.first {
+                @include animation(1.5s linear 1 normal both running transform-left);
+            }
+
+            &.second {
+                @include animation(1.5s linear 1 normal both running transform-bottom-left);
+            }
+
+            &.third {
+                @include animation(1.5s linear 1 normal both running transform-right);
+            }
+
+            &.fourth {
+                @include animation(1.5s linear 1 normal both running transform-bottom-right);
             }
         }
     }
