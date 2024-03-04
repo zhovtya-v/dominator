@@ -209,7 +209,7 @@ accordionItem.forEach((accordionToggle) => {
 document.addEventListener('DOMContentLoaded', about_reinit_slider);
 window.addEventListener('resize', about_reinit_slider);
 
-let oldSizeMode = 'desktop';
+let oldSizeMode = null;
 let mql = window.matchMedia('(max-width: 991px)');
 let aboutSwiper = null;
 
@@ -382,9 +382,6 @@ function buttonHoverAnimation() {
 
             const animationDivider = 2;
 
-            console.log(xPosOfMouseInsideButton);
-            console.log(yPosOfMouseInsideButton);
-
             TweenMax.to(button, 1, {
                 x: xPosOfMouseInsideButton / animationDivider,
                 y: yPosOfMouseInsideButton / animationDivider,
@@ -406,7 +403,6 @@ function buttonHoverAnimation() {
 }
 
 buttonHoverAnimation();
-
 
 var html = document.documentElement;
 var body = document.body;
@@ -435,33 +431,18 @@ function onLoad() {
         return navigator.userAgent.toLowerCase().indexOf(agent.toLowerCase())>-1;
     }
 
-    switch(true){
-        case isAgent('Chrome'):
-            updateScroller();
-            window.focus();
-            window.addEventListener("resize", onResize);
-            document.addEventListener("scroll", onScroll);
-            break;
-        case isAgent('Edge'):
-            document.querySelector('.viewport').style.overflow = 'visible';
-            document.querySelector('.viewport').style.position = 'relative';
-            document.querySelector('.scroll-container').style.overflow = 'visible';
-            document.querySelector('.scroll-container').style.position = 'relative';
-            document.querySelector('.scroll-container').style.transform = 'none';
-            break;
-        case isAgent('Safari'):
-            document.querySelector('.viewport').style.overflow = 'visible';
-            document.querySelector('.viewport').style.position = 'relative';
-            document.querySelector('.scroll-container').style.overflow = 'visible';
-            document.querySelector('.scroll-container').style.position = 'relative';
-            document.querySelector('.scroll-container').style.transform = 'none';
-            break;
-        default:
-            updateScroller();
-            window.focus();
-            window.addEventListener("resize", onResize);
-            document.addEventListener("scroll", onScroll);
-            break;
+    if (!isAgent('Chrome') && isAgent('Safari')) {
+        document.querySelector('.viewport').style.overflow = 'visible';
+        document.querySelector('.viewport').style.position = 'relative';
+        document.querySelector('.scroll-container').style.overflow = 'visible';
+        document.querySelector('.scroll-container').style.position = 'relative';
+        document.querySelector('.scroll-container').style.transform = 'none';
+    }
+    else {
+        updateScroller();
+        window.focus();
+        window.addEventListener("resize", onResize);
+        document.addEventListener("scroll", onScroll);
     }
 }
 

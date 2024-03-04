@@ -4799,25 +4799,25 @@ COMMON STYLE END
     padding: 0 0 40px 40px;
     margin-left: -40px;
   }
-  .road-map-section .bottom-road-map-slider .swiper-slide {
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .road-map-section .bottom-road-map-slider .swiper-slide-active {
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+}
+.road-map-section .bottom-road-map-slider .swiper-slide {
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.road-map-section .bottom-road-map-slider .swiper-slide-active {
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 .road-map-section .swiper-slide:nth-child(odd) .number-bg:before {
   background: linear-gradient(to bottom, rgb(8, 22, 41) 0%, rgb(17, 155, 255) 100%);
