@@ -206,8 +206,15 @@ accordionItem.forEach((accordionToggle) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', about_reinit_slider);
-window.addEventListener('resize', about_reinit_slider);
+document.addEventListener('DOMContentLoaded', function (){
+    about_reinit_slider();
+    road_map_reinit_slider();
+});
+
+window.addEventListener('resize', function (){
+    about_reinit_slider();
+    road_map_reinit_slider();
+});
 
 let oldSizeMode = null;
 let mql = window.matchMedia('(max-width: 991px)');
@@ -223,7 +230,7 @@ function about_reinit_slider() {
             aboutSwiper.destroy();
         }
 
-        if (newSizeMode === 'mobile') {console.log('changeSizeMode to mobile');
+        if (newSizeMode === 'mobile') {
             aboutSwiper = new Swiper('.about-swiper', {
                 spaceBetween: 12,
                 slidesPerView: 1,
@@ -239,15 +246,9 @@ function about_reinit_slider() {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-
-                on: {
-                    activeIndexChange: function(swiper) {
-                        console.log('active index change 1', swiper.activeIndex);
-                    }
-                }
             });
         }
-        else {console.log('changeSizeMode to desktop');
+        else {
             aboutSwiper = new Swiper(".about-swiper", {
                 effect: "cards",
                 loop: true,
@@ -271,11 +272,6 @@ function about_reinit_slider() {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-                on: {
-                    activeIndexChange: function(swiper) {
-                        console.log('active index change 2');
-                    }
-                }
             });
         }
     }
@@ -299,10 +295,15 @@ var mySwiper = new Swiper('.bottom-road-map-slider', {
     }
 })
 
-document.addEventListener('DOMContentLoaded', road_map_reinit_slider);
-window.addEventListener('resize', road_map_reinit_slider);
+
+let myNavSwiper = null;
 
 function road_map_reinit_slider() {
+
+    if (myNavSwiper !== null) {
+        myNavSwiper.destroy();
+    }
+
     if (mql.matches) {
         myNavSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
