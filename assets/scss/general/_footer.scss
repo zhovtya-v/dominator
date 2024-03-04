@@ -516,8 +516,12 @@
                 font-size: 32px;
                 text-transform: uppercase;
                 color: $primary-text-color;
-                letter-spacing: 6px;
+                letter-spacing: 4px;
                 text-shadow: 0 4px 60px rgba($shadow-text-color, 0.5);
+
+                @include min-small {
+                    letter-spacing: 6px;
+                }
 
                 @include min-medium {
                     font-size: 50px;
