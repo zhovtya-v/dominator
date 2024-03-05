@@ -211,100 +211,99 @@ document.addEventListener('DOMContentLoaded', function (){
     road_map_reinit_slider();
 });
 
-window.addEventListener('resize', function (){
-    about_reinit_slider();
-    road_map_reinit_slider();
-});
-
-let oldSizeMode = null;
-let mql = window.matchMedia('(max-width: 991px)');
 let aboutSwiper = null;
 
-function about_reinit_slider() {
+// Size mode
+let currentSizeMode = null;
+let mql = window.matchMedia('(max-width: 991px)');
+window.addEventListener('resize', function () {
     let newSizeMode = mql.matches ? 'mobile' : 'desktop';
 
-    if (oldSizeMode !== newSizeMode) {
-        oldSizeMode = newSizeMode;
+    if (currentSizeMode !== newSizeMode) {
+        currentSizeMode = newSizeMode;
 
-        if (aboutSwiper !== null) {
-            aboutSwiper.destroy();
-        }
+        document.dispatchEvent(new CustomEvent('changeSizeMode', {
+            detail: {
+                mode: newSizeMode
+            }
+        }));
+    }
+});
 
-        if (newSizeMode === 'mobile') {
-            aboutSwiper = new Swiper('.about-swiper', {
-                spaceBetween: 12,
-                slidesPerView: 1,
-                centeredSlides: true,
-                loop: true,
+document.addEventListener('changeSizeMode', function(e) {
+    const newSizeMode = e.detail.mode;
 
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
+    about_reinit_slider(newSizeMode);
+    road_map_reinit_slider(newSizeMode);
+});
 
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        }
-        else {
-            aboutSwiper = new Swiper(".about-swiper", {
-                effect: "cards",
-                loop: true,
+function about_reinit_slider(sizeMode) {
+    const object = document.querySelector('.about-swiper');
+    if (object === null) {
+        return;
+    }
 
-                cardsEffect: {
-                    perSlideOffset: 10,
-                    perSlideRotate: 10,
-                    rotate: false,
-                    slideShadows: false,
-                    stretch: 50,
-                    depth: 20,
-                    modifier: 1,
-                },
+    if (aboutSwiper !== null) {
+        aboutSwiper.destroy();
+    }
 
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
+    if (sizeMode === 'mobile') {
+        aboutSwiper = new Swiper('.about-swiper', {
+            spaceBetween: 12,
+            slidesPerView: 1,
+            centeredSlides: true,
+            loop: true,
 
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        }
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+    else {
+        aboutSwiper = new Swiper(".about-swiper", {
+            effect: "cards",
+            loop: true,
+
+            cardsEffect: {
+                perSlideOffset: 10,
+                perSlideRotate: 10,
+                rotate: false,
+                slideShadows: false,
+                stretch: 50,
+                depth: 20,
+                modifier: 1,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     }
 }
 
-var mySwiper = new Swiper('.bottom-road-map-slider', {
-    queueStartCallbacks: true,
-    loop: true,
-    effect: true,
-    onSlideChangeStart: function (swiper) {
-        myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
-    },
-    onSlideChangeEnd: function (swiper) {
-
-        if (swiper != null && swiper != undefined &&
-            myNavSwiper != null && myNavSwiper != undefined) {
-            if (swiper.activeLoopIndex != myNavSwiper.activeLoopIndex) {
-                myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
-            }
-        }
+function road_map_reinit_slider(sizeMode) {
+    const object = document.querySelector('.top-road-map-slider');
+    if (object === null) {
+        return;
     }
-})
-
-
-let myNavSwiper = null;
-
-function road_map_reinit_slider() {
 
     if (myNavSwiper !== null) {
         myNavSwiper.destroy();
     }
 
-    if (mql.matches) {
+    if (sizeMode === 'mobile') {
         myNavSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
             loop: true,
@@ -361,6 +360,27 @@ function road_map_reinit_slider() {
         })
     }
 }
+
+var mySwiper = new Swiper('.bottom-road-map-slider', {
+    queueStartCallbacks: true,
+    loop: true,
+    effect: true,
+    onSlideChangeStart: function (swiper) {
+        myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+    },
+    onSlideChangeEnd: function (swiper) {
+
+        if (swiper != null && swiper != undefined &&
+            myNavSwiper != null && myNavSwiper != undefined) {
+            if (swiper.activeLoopIndex != myNavSwiper.activeLoopIndex) {
+                myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+            }
+        }
+    }
+})
+
+
+let myNavSwiper = null;
 
 function buttonHoverAnimation() {
     const buttonSelector = document.querySelectorAll(".video-play");
