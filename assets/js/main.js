@@ -206,16 +206,18 @@ accordionItem.forEach((accordionToggle) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function (){
-    about_reinit_slider();
-    road_map_reinit_slider();
+let currentSizeMode = null;
+let mql = window.matchMedia('(max-width: 991px)');
+document.addEventListener('DOMContentLoaded', function () {
+    currentSizeMode = mql.matches ? 'mobile' : 'desktop';
+
+    about_reinit_slider(currentSizeMode);
+    road_map_reinit_slider(currentSizeMode);
 });
 
 let aboutSwiper = null;
 
 // Size mode
-let currentSizeMode = null;
-let mql = window.matchMedia('(max-width: 991px)');
 window.addEventListener('resize', function () {
     let newSizeMode = mql.matches ? 'mobile' : 'desktop';
 
@@ -224,7 +226,7 @@ window.addEventListener('resize', function () {
 
         document.dispatchEvent(new CustomEvent('changeSizeMode', {
             detail: {
-                mode: newSizeMode
+                mode: currentSizeMode
             }
         }));
     }
@@ -298,12 +300,13 @@ function road_map_reinit_slider(sizeMode) {
         return;
     }
 
-    if (myNavSwiper !== null) {
-        myNavSwiper.destroy();
+    if (topRoadMapSwiper !== null) {
+        topRoadMapSwiper.destroy();
     }
 
+    console.log('!@#', sizeMode);
     if (sizeMode === 'mobile') {
-        myNavSwiper = new Swiper('.top-road-map-slider', {
+        topRoadMapSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
             loop: true,
             moveStartThreshold: 10,
@@ -326,12 +329,12 @@ function road_map_reinit_slider(sizeMode) {
                     slideIndex = -slideIndex;
                 }
 
-                myNavSwiper.swipeTo(slideIndex, 100, true);
+                topRoadMapSwiper.swipeTo(slideIndex, 100, true);
             },
         });
     }
     else {
-        myNavSwiper = new Swiper('.top-road-map-slider', {
+        topRoadMapSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
             loop: true,
             moveStartThreshold: 10,
@@ -354,7 +357,7 @@ function road_map_reinit_slider(sizeMode) {
                     slideIndex = -slideIndex;
                 }
 
-                myNavSwiper.swipeTo(slideIndex, 100, true);
+                topRoadMapSwiper.swipeTo(slideIndex, 100, true);
             },
         })
     }
@@ -368,14 +371,14 @@ function road_map_reinit_slider(sizeMode) {
         loop: true,
         effect: true,
         onSlideChangeStart: function (swiper) {
-            myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+            topRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
         },
         onSlideChangeEnd: function (swiper) {
 
             if (swiper != null && swiper != undefined &&
-                myNavSwiper != null && myNavSwiper != undefined) {
-                if (swiper.activeLoopIndex != myNavSwiper.activeLoopIndex) {
-                    myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+                topRoadMapSwiper != null && topRoadMapSwiper != undefined) {
+                if (swiper.activeLoopIndex != topRoadMapSwiper.activeLoopIndex) {
+                    topRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
                 }
             }
         }
@@ -383,7 +386,7 @@ function road_map_reinit_slider(sizeMode) {
 }
 
 
-let myNavSwiper = null;
+let topRoadMapSwiper = null;
 let bottomRoadMapSwiper = null;
 
 function buttonHoverAnimation() {
