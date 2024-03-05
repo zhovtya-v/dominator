@@ -304,7 +304,6 @@ function road_map_reinit_slider(sizeMode) {
         topRoadMapSwiper.destroy();
     }
 
-    console.log('!@#', sizeMode);
     if (sizeMode === 'mobile') {
         topRoadMapSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
@@ -314,7 +313,7 @@ function road_map_reinit_slider(sizeMode) {
             simulateTouch: true,
             initialSlide: 0,
             spaceBetween: 10,
-            slidesPerView: 3,
+            slidesPerView: 4,
             onSlideChangeStart: function (swiper) {
                 bottomRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 0, false);
             },
@@ -342,7 +341,7 @@ function road_map_reinit_slider(sizeMode) {
             simulateTouch: true,
             initialSlide: 0,
             spaceBetween: 10,
-            slidesPerView: 5,
+            slidesPerView: 6,
             onSlideChangeStart: function (swiper) {
                 bottomRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 0, false);
             },
@@ -362,7 +361,6 @@ function road_map_reinit_slider(sizeMode) {
         })
     }
 
-
     if (bottomRoadMapSwiper !== null) {
         bottomRoadMapSwiper.destroy();
     }
@@ -374,7 +372,6 @@ function road_map_reinit_slider(sizeMode) {
             topRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
         },
         onSlideChangeEnd: function (swiper) {
-
             if (swiper != null && swiper != undefined &&
                 topRoadMapSwiper != null && topRoadMapSwiper != undefined) {
                 if (swiper.activeLoopIndex != topRoadMapSwiper.activeLoopIndex) {
