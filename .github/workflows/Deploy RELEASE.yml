@@ -1,7 +1,7 @@
 on: 
   push:
     branches: [ "release" ]
-name: 🚀 Deploy DEV website on build
+name: 🚀 Deploy RELEASE website on build
 jobs:
   web-deploy:
     name: 🎉 Deploy
