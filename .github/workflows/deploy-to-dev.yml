@@ -1,9 +1,7 @@
 on: 
-  workflow_run:
-    workflows: ["build"]
-    types:
-      - completed
-name: 🚀 Deploy website on build
+  push:
+    branches: [ "master" ]
+name: 🚀 Deploy DEV website on build
 jobs:
   web-deploy:
     name: 🎉 Deploy
