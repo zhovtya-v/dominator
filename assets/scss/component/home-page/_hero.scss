@@ -80,16 +80,16 @@
         margin: 0 auto;
 
         @include min-medium {
-            max-width: 400px;
+            max-width: 500px;
         }
 
         @include min-large {
-            max-width: 465px;
+            //max-width: 465px;
             margin-right: -78px;
         }
 
         @include min-extra-large {
-            max-width: 568px;
+            //max-width: 568px;
             margin-right: -60px;
             text-align: right;
         }
@@ -118,6 +118,25 @@
             width: auto;
             height: auto;
             vertical-align: bottom;
+        }
+
+        .video-bg {
+            position: relative;
+            //@include aspect-ratio(1, 1);
+            overflow: hidden;
+            padding-bottom: 99%;
+            clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
+            border: 2px solid transparent;
+            background: rgb(17, 155, 255);
+            background: radial-gradient(circle, rgba(17, 155, 255, 0.8) 0%, rgba(0, 117, 255, 0.4) 100%);
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
         }
     }
 
@@ -430,7 +449,7 @@
 
         &.first {
             left: 50%;
-            bottom: -100px;
+            bottom: -110px;
             width: 153px;
             height: 156px;
             transform: translateX(-39%);
@@ -452,7 +471,7 @@
 
         &.second {
             left: -7px;
-            bottom: -66px;
+            bottom: -76px;
             width: 158px;
             height: 161px;
 
@@ -473,7 +492,7 @@
 
         &.third {
             right: -7px;
-            bottom: -28px;
+            bottom: -38px;
             width: 141px;
             height: 144px;
 

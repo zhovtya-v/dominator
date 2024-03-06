@@ -28,20 +28,50 @@
             -ms-flex-align: center;
             align-items: center;
 
-            background: #020919 url("assets/images/general/site-bg-new.png");
+            background: #020919;
             background-size: cover;
             background-position: center top;
         }
 
-        .loader-inner img {
-            -webkit-animation: loader infinite linear forwards;
-            animation: loader infinite linear forwards;
+        .loader-inner {
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
+            border: 2px solid transparent;
+            background: rgb(17, 155, 255);
+            background: radial-gradient(circle, rgba(17, 155, 255, 0.8) 0%, rgba(0, 117, 255, 0.4) 100%);
+        }
+
+        .loader-inner video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .loader-inner {
+                width: 500px;
+                height: 500px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="loader">
-    <div class="loader-inner"><img src="assets/images/general/dominator-video.gif" alt="Hero image"/></div>
+    <div class="loader-inner">
+        <video autoplay muted loop>
+            <source src="assets/images/home-page/dominator-video.mp4" type="video/mp4">
+        </video>
+    </div>
 </div>
 <header class="header-section">
     <div class="container">
