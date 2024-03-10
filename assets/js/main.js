@@ -206,134 +206,106 @@ accordionItem.forEach((accordionToggle) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function (){
-    about_reinit_slider();
-    road_map_reinit_slider();
-});
-
-window.addEventListener('resize', function (){
-    about_reinit_slider();
-    road_map_reinit_slider();
-});
-
-let oldSizeMode = null;
+let currentSizeMode = null;
 let mql = window.matchMedia('(max-width: 991px)');
+document.addEventListener('DOMContentLoaded', function () {
+    currentSizeMode = mql.matches ? 'mobile' : 'desktop';
+
+    about_reinit_slider(currentSizeMode);
+    road_map_reinit_slider(currentSizeMode);
+});
+
 let aboutSwiper = null;
 
-function about_reinit_slider() {
+// Size mode
+window.addEventListener('resize', function () {
     let newSizeMode = mql.matches ? 'mobile' : 'desktop';
 
-    if (oldSizeMode !== newSizeMode) {
-        oldSizeMode = newSizeMode;
+    if (currentSizeMode !== newSizeMode) {
+        currentSizeMode = newSizeMode;
 
-        if (aboutSwiper !== null) {
-            aboutSwiper.destroy();
-        }
-
-        if (newSizeMode === 'mobile') {
-            aboutSwiper = new Swiper('.about-swiper', {
-                spaceBetween: 12,
-                slidesPerView: 1,
-                centeredSlides: true,
-                loop: true,
-
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        }
-        else {
-            aboutSwiper = new Swiper(".about-swiper", {
-                effect: "cards",
-                loop: true,
-
-                cardsEffect: {
-                    perSlideOffset: 10,
-                    perSlideRotate: 10,
-                    rotate: false,
-                    slideShadows: false,
-                    stretch: 50,
-                    depth: 20,
-                    modifier: 1,
-                },
-
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        }
-    }
-}
-
-var mySwiper = new Swiper('.bottom-road-map-slider', {
-    queueStartCallbacks: true,
-    loop: true,
-    effect: true,
-    onSlideChangeStart: function (swiper) {
-        myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
-    },
-    onSlideChangeEnd: function (swiper) {
-
-        if (swiper != null && swiper != undefined &&
-            myNavSwiper != null && myNavSwiper != undefined) {
-            if (swiper.activeLoopIndex != myNavSwiper.activeLoopIndex) {
-                myNavSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+        document.dispatchEvent(new CustomEvent('changeSizeMode', {
+            detail: {
+                mode: currentSizeMode
             }
-        }
+        }));
     }
-})
+});
 
+document.addEventListener('changeSizeMode', function(e) {
+    const newSizeMode = e.detail.mode;
 
-let myNavSwiper = null;
+    about_reinit_slider(newSizeMode);
+    road_map_reinit_slider(newSizeMode);
+});
 
-function road_map_reinit_slider() {
-
-    if (myNavSwiper !== null) {
-        myNavSwiper.destroy();
+function about_reinit_slider(sizeMode) {
+    const object = document.querySelector('.about-swiper');
+    if (object === null) {
+        return;
     }
 
-    if (mql.matches) {
-        myNavSwiper = new Swiper('.top-road-map-slider', {
-            createPagination: false,
+    if (aboutSwiper !== null) {
+        aboutSwiper.destroy();
+    }
+
+    if (sizeMode === 'mobile') {
+        aboutSwiper = new Swiper('.about-swiper', {
+            spaceBetween: 12,
+            slidesPerView: 1,
+            centeredSlides: true,
             loop: true,
-            moveStartThreshold: 10,
-            queueStartCallbacks: true,
-            simulateTouch: true,
-            initialSlide: 0,
-            spaceBetween: 10,
-            slidesPerView: 3,
-            onSlideChangeStart: function (swiper) {
-                mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
-            },
-            onSlideClick: function (swiper) {
-                var ls = swiper.loopedSlides;
-                var slideIndex = swiper.clickedSlideIndex - ls;
 
-                if (slideIndex >= swiper.slides.length - ls*2) {
-                    slideIndex = swiper.slides.length - ls*2 - slideIndex;
-                }
-                if (slideIndex<0) {
-                    slideIndex = -slideIndex;
-                }
-
-                myNavSwiper.swipeTo(slideIndex, 100, true);
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-        })
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     }
     else {
-        myNavSwiper = new Swiper('.top-road-map-slider', {
+        aboutSwiper = new Swiper(".about-swiper", {
+            effect: "cards",
+            loop: true,
+
+            cardsEffect: {
+                perSlideOffset: 10,
+                perSlideRotate: 10,
+                rotate: false,
+                slideShadows: false,
+                stretch: 50,
+                depth: 20,
+                modifier: 1,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+}
+
+function road_map_reinit_slider(sizeMode) {
+    if (document.querySelector('.top-road-map-slider') === null || document.querySelector('.bottom-road-map-slider') === null) {
+        return;
+    }
+
+    if (topRoadMapSwiper !== null) {
+        topRoadMapSwiper.destroy();
+    }
+
+    if (sizeMode === 'mobile') {
+        topRoadMapSwiper = new Swiper('.top-road-map-slider', {
             createPagination: false,
             loop: true,
             moveStartThreshold: 10,
@@ -341,9 +313,9 @@ function road_map_reinit_slider() {
             simulateTouch: true,
             initialSlide: 0,
             spaceBetween: 10,
-            slidesPerView: 5,
+            slidesPerView: 4,
             onSlideChangeStart: function (swiper) {
-                mySwiper.swipeTo(swiper.activeLoopIndex, 0, false);
+                bottomRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 0, false);
             },
             onSlideClick: function (swiper) {
                 var ls = swiper.loopedSlides;
@@ -356,11 +328,63 @@ function road_map_reinit_slider() {
                     slideIndex = -slideIndex;
                 }
 
-                myNavSwiper.swipeTo(slideIndex, 100, true);
+                topRoadMapSwiper.swipeTo(slideIndex, 100, true);
+            },
+        });
+    }
+    else {
+        topRoadMapSwiper = new Swiper('.top-road-map-slider', {
+            createPagination: false,
+            loop: true,
+            moveStartThreshold: 10,
+            queueStartCallbacks: true,
+            simulateTouch: true,
+            initialSlide: 0,
+            spaceBetween: 10,
+            slidesPerView: 6,
+            onSlideChangeStart: function (swiper) {
+                bottomRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 0, false);
+            },
+            onSlideClick: function (swiper) {
+                var ls = swiper.loopedSlides;
+                var slideIndex = swiper.clickedSlideIndex - ls;
+
+                if (slideIndex >= swiper.slides.length - ls*2) {
+                    slideIndex = swiper.slides.length - ls*2 - slideIndex;
+                }
+                if (slideIndex<0) {
+                    slideIndex = -slideIndex;
+                }
+
+                topRoadMapSwiper.swipeTo(slideIndex, 100, true);
             },
         })
     }
+
+    if (bottomRoadMapSwiper !== null) {
+        bottomRoadMapSwiper.destroy();
+    }
+    bottomRoadMapSwiper = new Swiper('.bottom-road-map-slider', {
+        queueStartCallbacks: true,
+        loop: true,
+        effect: true,
+        onSlideChangeStart: function (swiper) {
+            topRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+        },
+        onSlideChangeEnd: function (swiper) {
+            if (swiper != null && swiper != undefined &&
+                topRoadMapSwiper != null && topRoadMapSwiper != undefined) {
+                if (swiper.activeLoopIndex != topRoadMapSwiper.activeLoopIndex) {
+                    topRoadMapSwiper.swipeTo(swiper.activeLoopIndex, 100, false);
+                }
+            }
+        }
+    });
 }
+
+
+let topRoadMapSwiper = null;
+let bottomRoadMapSwiper = null;
 
 function buttonHoverAnimation() {
     const buttonSelector = document.querySelectorAll(".video-play");
@@ -490,7 +514,7 @@ function onResize() {
 
 function openGame(id, openMarketplace) {
     var link = document.getElementById(id);
-    var url = "game.html" + window.location.search;
+    var url = "game/index.html" + window.location.search;
     if (openMarketplace) {
         if (window.location.search && window.location.search.length > 0)
             url += "&";

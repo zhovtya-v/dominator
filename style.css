@@ -1935,18 +1935,16 @@ COMMON STYLE END
 }
 @media only screen and (min-width: 992px) {
   .hero-section .hero-image {
-    max-width: 400px;
+    max-width: 500px;
   }
 }
 @media only screen and (min-width: 1201px) {
   .hero-section .hero-image {
-    max-width: 465px;
     margin-right: -78px;
   }
 }
 @media only screen and (min-width: 1441px) {
   .hero-section .hero-image {
-    max-width: 568px;
     margin-right: -60px;
     text-align: right;
   }
@@ -1979,6 +1977,26 @@ COMMON STYLE END
   width: auto;
   height: auto;
   vertical-align: bottom;
+}
+.hero-section .hero-image .video-bg {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 99%;
+  clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
+  border: 2px solid transparent;
+  background: rgb(17, 155, 255);
+  background: radial-gradient(circle, rgba(17, 155, 255, 0.8) 0%, rgba(0, 117, 255, 0.4) 100%);
+}
+.hero-section .hero-image video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0, 100% 26%, 100% 78%, 50% 100%, 0% 78%, 0% 26%);
 }
 @media only screen and (min-width: 768px) {
   .hero-section .hero-info {
@@ -2026,7 +2044,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .title {
-    font-size: calc(40px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(40px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2121,7 +2139,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .subtitle {
-    font-size: calc(24px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(24px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2281,7 +2299,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .dominator-info .dominators .out-num {
-    font-size: calc(20px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(20px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2289,11 +2307,15 @@ COMMON STYLE END
     font-size: 28px;
   }
 }
+@media only screen and (min-width: 768px) {
+  .hero-section .dominator-info .dominators .out-num {
+    text-align: left;
+  }
+}
 @media only screen and (min-width: 1201px) {
   .hero-section .dominator-info .dominators .out-num {
     font-size: 39px;
     letter-spacing: -1px;
-    text-align: left;
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -2309,18 +2331,24 @@ COMMON STYLE END
   color: #557192;
   font-size: 16px;
   text-transform: capitalize;
+  text-align: center;
 }
 .hero-section .dominator-info .dominators span {
   font-size: 14px;
 }
 @media screen and (min-width: 320px) {
   .hero-section .dominator-info .dominators span {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 40));
+    font-size: calc(14px + 2 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
   .hero-section .dominator-info .dominators span {
     font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hero-section .dominator-info .dominators span {
+    text-align: left;
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -2379,7 +2407,7 @@ COMMON STYLE END
 }
 .hero-section .dominator-image.first {
   left: 50%;
-  bottom: -100px;
+  bottom: -110px;
   width: 153px;
   height: 156px;
   transform: translateX(-39%);
@@ -2402,7 +2430,7 @@ COMMON STYLE END
 }
 .hero-section .dominator-image.second {
   left: -7px;
-  bottom: -66px;
+  bottom: -76px;
   width: 158px;
   height: 161px;
 }
@@ -2428,7 +2456,7 @@ COMMON STYLE END
 }
 .hero-section .dominator-image.third {
   right: -7px;
-  bottom: -28px;
+  bottom: -38px;
   width: 141px;
   height: 144px;
 }
