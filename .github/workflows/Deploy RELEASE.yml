@@ -1,7 +1,7 @@
 on: 
   push:
-    branches: [ "master" ]
-name: 🚀 Deploy DEV website on build
+    branches: [ "release" ]
+name: 🚀 Deploy RELEASE website on build
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -14,8 +14,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: xn513679.ftp.tools
-        username: xn513679_sitedeploy
-        password: ${{ secrets.FTP_SEC }}
+        username: xn513679_releasedep
+        password: ${{ secrets.FTP_SEC_RELEASE }}
         exclude: |
           **/.git*
           **/.git*/**
