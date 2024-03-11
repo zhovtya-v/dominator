@@ -375,10 +375,13 @@
 
                 @include fluid-type(320px, 360px, 20px, 28px);
 
+                @include min-small {
+                    text-align: left;
+                }
+
                 @include min-large {
                     font-size: 39px;
                     letter-spacing: -1px;
-                    text-align: left;
                 }
 
                 @include min-extra-large {
@@ -392,8 +395,13 @@
                 color: $secondary-text-color;
                 font-size: 16px;
                 text-transform: capitalize;
+                text-align: center;
 
                 @include fluid-type(320px, 360px, 14px, 16px);
+
+                @include min-small {
+                    text-align: left;
+                }
 
                 @include min-extra-large {
                     font-size: 18px;

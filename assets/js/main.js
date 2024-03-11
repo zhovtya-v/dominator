@@ -514,7 +514,7 @@ function onResize() {
 
 function openGame(id, openMarketplace) {
     var link = document.getElementById(id);
-    var url = "game.html" + window.location.search;
+    var url = "game/index.html" + window.location.search;
     if (openMarketplace) {
         if (window.location.search && window.location.search.length > 0)
             url += "&";
