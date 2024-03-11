@@ -9,6 +9,7 @@
 
     .marketplace-container {
         position: relative;
+        z-index: 3;
 
         &:before {
             content: '';
