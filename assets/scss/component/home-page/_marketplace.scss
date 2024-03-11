@@ -190,7 +190,7 @@
             right: 3px;
             bottom: -224px;
 
-            @include animation(13s linear infinite normal both running element-animation-5);
+            @include animation(13s linear 1 normal both running element-animation-5);
 
             @include min-large {
                 right: 14.6%;
@@ -207,7 +207,7 @@
             bottom: -192px;
             z-index: 2;
 
-            @include animation(16s linear infinite normal both running element-animation-6);
+            @include animation(16s linear 1 normal both running element-animation-6);
 
             @include min-large {
                 bottom: -112px;
@@ -657,6 +657,16 @@
     &.element-show {
         .section-title {
             @include animation(transform-left 1s linear both);
+        }
+
+        .marketplace-section-element {
+            &.first {
+                @include animation(13s linear 1 normal both running element-animation-5);
+            }
+
+            &.second {
+                @include animation(16s linear 1 normal both running element-animation-6);
+            }
         }
     }
 }
