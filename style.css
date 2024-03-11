@@ -148,32 +148,28 @@ body.menu-opened, body.modal-opened {
   }
 }
 
-.viewport {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.viewport .scroll-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 10;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
+/*.viewport {
+    //overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
+    .scroll-container {
+        position: absolute;
+        overflow: hidden;
+        z-index: 10;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        width: 100%;
+        @include display-flex;
+        @include flex-direction-column;
+    }
+}*/
 .section-title {
   font-family: "Tektur", sans-serif;
   font-weight: 700;
@@ -2044,7 +2040,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .title {
-    font-size: calc(40px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(40px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2139,7 +2135,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .subtitle {
-    font-size: calc(24px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(24px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2299,7 +2295,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .dominator-info .dominators .out-num {
-    font-size: calc(20px + 8 * ((100vw - 320px) / 40));
+    font-size: calc(20px + 8 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2333,7 +2329,7 @@ COMMON STYLE END
 }
 @media screen and (min-width: 320px) {
   .hero-section .dominator-info .dominators span {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 40));
+    font-size: calc(14px + 2 * (100vw - 320px) / 40);
   }
 }
 @media screen and (min-width: 360px) {
@@ -2568,8 +2564,8 @@ COMMON STYLE END
     top: -24px;
     z-index: 6;
     display: block;
-    -webkit-animation: 6s linear infinite normal both running element-animation-2;
-    animation: 6s linear infinite normal both running element-animation-2;
+    -webkit-animation: 6s linear 1 normal both running element-animation-2;
+    animation: 6s linear 1 normal both running element-animation-2;
   }
 }
 @media only screen and (min-width: 1441px) {
@@ -2582,8 +2578,8 @@ COMMON STYLE END
   right: initial;
   top: -140px;
   left: 34px;
-  -webkit-animation: 4s linear infinite normal both running element-animation-1;
-  animation: 4s linear infinite normal both running element-animation-1;
+  -webkit-animation: 4s linear 1 normal both running element-animation-1;
+  animation: 4s linear 1 normal both running element-animation-1;
 }
 @media only screen and (min-width: 1201px) {
   .about-section .about-element-image.second {
@@ -2602,8 +2598,8 @@ COMMON STYLE END
   right: 46px;
   top: -133px;
   z-index: 1;
-  -webkit-animation: 5s linear infinite normal both running element-animation-3;
-  animation: 5s linear infinite normal both running element-animation-3;
+  -webkit-animation: 5s linear 1 normal both running element-animation-3;
+  animation: 5s linear 1 normal both running element-animation-3;
 }
 @media only screen and (min-width: 1201px) {
   .about-section .about-element-image.third {
@@ -2620,8 +2616,8 @@ COMMON STYLE END
 .about-section .about-element-image.fourth {
   left: 32px;
   bottom: 240px;
-  -webkit-animation: 10s linear infinite normal both running element-animation-4;
-  animation: 10s linear infinite normal both running element-animation-4;
+  -webkit-animation: 10s linear 1 normal both running element-animation-4;
+  animation: 10s linear 1 normal both running element-animation-4;
 }
 @media only screen and (min-width: 1201px) {
   .about-section .about-element-image.fourth {
@@ -4174,8 +4170,8 @@ COMMON STYLE END
 .marketplace-section .marketplace-section-element.first {
   right: 3px;
   bottom: -224px;
-  -webkit-animation: 13s linear infinite normal both running element-animation-5;
-  animation: 13s linear infinite normal both running element-animation-5;
+  -webkit-animation: 13s linear 1 normal both running element-animation-5;
+  animation: 13s linear 1 normal both running element-animation-5;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .marketplace-section-element.first {
@@ -4192,8 +4188,8 @@ COMMON STYLE END
   left: -11px;
   bottom: -192px;
   z-index: 2;
-  -webkit-animation: 16s linear infinite normal both running element-animation-6;
-  animation: 16s linear infinite normal both running element-animation-6;
+  -webkit-animation: 16s linear 1 normal both running element-animation-6;
+  animation: 16s linear 1 normal both running element-animation-6;
 }
 @media only screen and (min-width: 1201px) {
   .marketplace-section .marketplace-section-element.second {
@@ -5151,8 +5147,8 @@ COMMON STYLE END
 .road-map-section .road-map-section-element.first {
   left: 0;
   top: 107%;
-  -webkit-animation: 13s linear infinite normal both running element-animation-7;
-  animation: 13s linear infinite normal both running element-animation-7;
+  -webkit-animation: 13s linear 1 normal both running element-animation-7;
+  animation: 13s linear 1 normal both running element-animation-7;
 }
 @media only screen and (min-width: 992px) {
   .road-map-section .road-map-section-element.first {
@@ -5174,8 +5170,8 @@ COMMON STYLE END
   -ms-transform: rotate(77deg);
   -webkit-transform: rotate(77deg);
   transform: rotate(77deg);
-  -webkit-animation: 13s linear infinite normal both running element-animation-8;
-  animation: 13s linear infinite normal both running element-animation-8;
+  -webkit-animation: 13s linear 1 normal both running element-animation-8;
+  animation: 13s linear 1 normal both running element-animation-8;
 }
 @media only screen and (min-width: 1201px) {
   .road-map-section .road-map-section-element.second {
