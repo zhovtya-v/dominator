@@ -235,6 +235,8 @@
     10.2% {
         opacity: 0;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     20% {
         opacity: 0;
@@ -254,10 +256,14 @@
     30.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     30.5% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     30.6% {
         opacity: 0;
@@ -270,14 +276,20 @@
     45.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     50% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     55% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     55.1% {
         opacity: 0;
@@ -290,10 +302,14 @@
     57.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     60% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     60.1% {
         opacity: 0;
@@ -306,10 +322,14 @@
     65.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     75% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     75.1% {
         opacity: 0;
@@ -322,6 +342,8 @@
     77.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     85% {
         opacity: 1;
@@ -340,6 +362,8 @@
     100% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
 }
 @keyframes text-flicker {
@@ -363,6 +387,8 @@
     10.2% {
         opacity: 0;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     20% {
         opacity: 0;
@@ -382,10 +408,14 @@
     30.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     30.5% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     30.6% {
         opacity: 0;
@@ -398,14 +428,20 @@
     45.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     50% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     55% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     55.1% {
         opacity: 0;
@@ -418,10 +454,14 @@
     57.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     60% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     60.1% {
         opacity: 0;
@@ -434,10 +474,14 @@
     65.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     75% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     75.1% {
         opacity: 0;
@@ -450,6 +494,8 @@
     77.1% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
     85% {
         opacity: 1;
@@ -468,6 +514,8 @@
     100% {
         opacity: 1;
         text-shadow: 0 4px 60px rgba($primary-text-color, 0.4);
+        @include appearance(none);
+        @include outline(none);
     }
 }
 
@@ -603,87 +651,128 @@
 
 @-webkit-keyframes element-animation-3 {
     0% {
-        @include transform(translate3d(-400px, 450px, 0));
+        @include transform(translate3d(-150%, 150%, 0));
         opacity: 1;
     }
 
-    99.9% {
-        @include transform(translate3d(280px, -300px, 0));
+    50.8% {
+        @include transform(translate3d(100%, -300%, 0));
+    }
+
+    50.9% {
+        @include transform(translate3d(100%, -300%, 0));
+        opacity: 0;
+    }
+
+    60% {
+        @include transform(translate3d(-150%, 150%, 0));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(280px, -300px, 0));
-        opacity: 0;
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
     }
 }
 @keyframes element-animation-3 {
     0% {
-        @include transform(translate3d(-400px, 450px, 0));
+        @include transform(translate3d(-150%, 150%, 0));
         opacity: 1;
     }
 
-    99.9% {
-        @include transform(translate3d(280px, -300px, 0));
+    50.8% {
+        @include transform(translate3d(100%, -300%, 0));
+    }
+
+    50.9% {
+        @include transform(translate3d(100%, -300%, 0));
+        opacity: 0;
+    }
+
+    60.1% {
+        @include transform(translate3d(-150%, 150%, 0));
+        opacity: 0;
+    }
+
+    60.2% {
+        @include transform(translate3d(-150%, 150%, 0));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(280px, -300px, 0));
-        opacity: 0;
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
     }
 }
 
 @-webkit-keyframes element-animation-4 {
     0% {
-        @include transform(translate3d(200px, -200px, 0));
+        @include transform(translate3d(200%, -200%, 0));
         opacity: 1;
     }
 
     20.8% {
-        @include transform(translate3d(-120px, 120px, 0));
+        @include transform(translate3d(0, 70%, 0));
     }
     20.9% {
-        @include transform(translate3d(-120px, 120px, 0) rotate(45deg));
+        @include transform(translate3d(0, 70%, 0) rotate(45deg));
     }
 
-    99.9% {
-        @include transform(translate3d(-1700px, 120px, 0) rotate(45deg));
+    60.8% {
+        @include transform(translate3d(-700%, 70%, 0) rotate(45deg));
+        opacity: 1;
+    }
+
+    60.9% {
+        @include transform(translate3d(-700%, 70%, 0) rotate(45deg));
+        opacity: 0;
+    }
+
+    61% {
+        @include transform(translate3d(200%, -200%, 0));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(-1700px, 120px, 0) rotate(45deg));
-        opacity: 0;
+        @include transform(translate3d(-50%, 50%, 0));
     }
 }
 @keyframes element-animation-4 {
     0% {
-        @include transform(translate3d(200px, -200px, 0));
+        @include transform(translate3d(200%, -200%, 0));
         opacity: 1;
     }
 
     20.8% {
-        @include transform(translate3d(-120px, 120px, 0));
+        @include transform(translate3d(0, 70%, 0));
     }
     20.9% {
-        @include transform(translate3d(-120px, 120px, 0) rotate(45deg));
+        @include transform(translate3d(0, 70%, 0) rotate(45deg));
     }
 
-    99.9% {
-        @include transform(translate3d(-1800px, 120px, 0) rotate(45deg));
+    60.8% {
+        @include transform(translate3d(-700%, 70%, 0) rotate(45deg));
+        opacity: 1;
+    }
+
+    60.9% {
+        @include transform(translate3d(-700%, 70%, 0) rotate(45deg));
+        opacity: 0;
+    }
+
+    61% {
+        @include transform(translate3d(200%, -200%, 0));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(-1700px, 120px, 0) rotate(45deg));
-        opacity: 0;
+        @include transform(translate3d(-50%, 50%, 0));
     }
 }
 
 @-webkit-keyframes element-animation-5 {
     0% {
-        @include transform(translate3d(510px, 0, 0) rotate(-50deg));
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
         opacity: 1;
     }
 
@@ -703,18 +792,18 @@
     }
 
     99.9% {
-        @include transform(translate3d(-1400px, -600px, 0) rotate(-50deg));
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(-1400px, -600px, 0) rotate(-50deg));
-        opacity: 0;
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
+        opacity: 1;
     }
 }
 @keyframes element-animation-5 {
     0% {
-        @include transform(translate3d(510px, 0, 0) rotate(-50deg));
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
         opacity: 1;
     }
 
@@ -734,13 +823,13 @@
     }
 
     99.9% {
-        @include transform(translate3d(-1400px, -600px, 0) rotate(-50deg));
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
         opacity: 1;
     }
 
     100% {
-        @include transform(translate3d(-1400px, -600px, 0) rotate(-50deg));
-        opacity: 0;
+        @include transform(translate3d(0, 0, 0) rotate(-50deg));
+        opacity: 1;
     }
 }
 

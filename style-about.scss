@@ -50,25 +50,17 @@
         display: block;
         @include transform(rotate(-153deg));
       }
-
-      @include min-extra-large {
-
-      }
     }
 
     &.second {
       bottom: -34px;
       right: -8px;
       @include transform(rotate(-75deg));
-      @include animation(13s linear infinite normal both running element-animation-11);
+      @include animation(13s linear 1 normal both running element-animation-11);
 
       @include min-medium {
         bottom: -80px;
         right: 44px;
-      }
-
-      @include min-extra-large {
-
       }
     }
 
@@ -77,16 +69,12 @@
       left: 38px;
       @include transform(rotate(94deg));
 
-      @include animation(13s linear infinite normal both running element-animation-9);
+      @include animation(13s linear 1 normal both running element-animation-9);
 
       @include min-medium {
         bottom: 266px;
         left: 66px;
         @include transform(rotate(164deg));
-      }
-
-      @include min-extra-large {
-
       }
     }
 
@@ -94,21 +82,15 @@
       bottom: 96px;
       right: 27px;
       @include transform(rotate(180deg));
-      @include animation(15s linear infinite normal both running element-animation-10);
+      @include animation(15s linear 1 normal both running element-animation-10);
 
       @include min-medium {
         bottom: -2px;
         right: 181px;
       }
-
-      @include min-extra-large {
-
-      }
     }
   }
-
 }
-
 
 .footer-section {
   margin-top: -95px;
@@ -143,6 +125,4 @@
       @include transform(rotate(24deg));
     }
   }
-
-
 }

@@ -394,7 +394,7 @@
             left: 0;
             top: 107%;
 
-            @include animation(13s linear infinite normal both running element-animation-7);
+            @include animation(13s linear 1 normal both running element-animation-7);
 
             @include min-medium {
                 left: 115px;
@@ -412,7 +412,7 @@
             top: 106%;
             @include transform(rotate(77deg));
 
-            @include animation(13s linear infinite normal both running element-animation-8);
+            @include animation(13s linear 1 normal both running element-animation-8);
 
             @include min-large {
                 right: 75px;
