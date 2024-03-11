@@ -53,7 +53,7 @@
                 z-index: 6;
                 display: block;
 
-                @include animation(6s linear infinite normal both running element-animation-2);
+                //@include animation(6s linear 1 normal both running element-animation-2);
             }
 
             @include min-extra-large {
@@ -67,7 +67,7 @@
             top: -140px;
             left: 34px;
 
-            @include animation(4s linear infinite normal both running element-animation-1);
+            //@include animation(4s linear 1 normal both running element-animation-1);
 
             @include min-large {
                 left: initial;
@@ -86,7 +86,7 @@
             top: -133px;
             z-index: 1;
 
-            @include animation(5s linear infinite normal both running element-animation-3);
+            //@include animation(10s linear 1 normal both running element-animation-3);
 
             @include min-large {
                 right: -2px;
@@ -103,7 +103,7 @@
             left: 32px;
             bottom: 240px;
 
-            @include animation(10s linear infinite normal both running element-animation-4);
+            //@include animation(10s linear 1 normal both running element-animation-4);
 
             @include min-large {
                 left: initial;
@@ -432,6 +432,26 @@
         .about-info {
             @include animation(transform-right 1s linear both);
             opacity: 1;
+        }
+
+        .about-element-image {
+            &.first {
+                @include min-large {
+                    @include animation(6s linear 1 normal both running element-animation-2);
+                }
+            }
+
+            &.second {
+                @include animation(4s linear 1 normal both running element-animation-1);
+            }
+
+            &.third {
+                @include animation(10s linear 1 normal both running element-animation-3);
+            }
+
+            &.fourth {
+                @include animation(10s linear 1 normal both running element-animation-4);
+            }
         }
     }
 }
