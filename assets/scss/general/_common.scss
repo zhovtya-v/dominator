@@ -112,7 +112,7 @@ body {
     }
 }
 
-.viewport {
+/*.viewport {
     //overflow: hidden;
     position: fixed;
     height: 100%;
@@ -133,7 +133,7 @@ body {
         @include display-flex;
         @include flex-direction-column;
     }
-}
+}*/
 
 
 .section-title {
