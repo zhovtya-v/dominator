@@ -3974,6 +3974,7 @@ COMMON STYLE END
 }
 .marketplace-section .marketplace-container {
   position: relative;
+  z-index: 3;
 }
 .marketplace-section .marketplace-container:before {
   content: "";
