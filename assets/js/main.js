@@ -1,8 +1,7 @@
 window.addEventListener('load', (event) => {
 
-    if(document.getElementById('hero-video') != null) {
-        document.getElementById('hero-video').play();
-    }
+    var vid = document.getElementById("hero-video");
+    vid.muted = true;
 
     let menuBtn = document.querySelector('.nav-btn-js');
     let menu = document.querySelector('.header-section');
