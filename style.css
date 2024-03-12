@@ -148,28 +148,32 @@ body.menu-opened, body.modal-opened {
   }
 }
 
-/*.viewport {
-    //overflow: hidden;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.viewport {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.viewport .scroll-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 
-    .scroll-container {
-        position: absolute;
-        overflow: hidden;
-        z-index: 10;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-        width: 100%;
-        @include display-flex;
-        @include flex-direction-column;
-    }
-}*/
 .section-title {
   font-family: "Tektur", sans-serif;
   font-weight: 700;
