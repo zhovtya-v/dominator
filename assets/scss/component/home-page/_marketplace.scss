@@ -9,6 +9,7 @@
 
     .marketplace-container {
         position: relative;
+        z-index: 3;
 
         &:before {
             content: '';
@@ -657,6 +658,16 @@
     &.element-show {
         .section-title {
             @include animation(transform-left 1s linear both);
+        }
+
+        .marketplace-section-element {
+            &.first {
+                @include animation(13s linear 1 normal both running element-animation-5);
+            }
+
+            &.second {
+                @include animation(16s linear 1 normal both running element-animation-6);
+            }
         }
     }
 }

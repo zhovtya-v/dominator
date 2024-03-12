@@ -112,7 +112,7 @@ body {
     }
 }
 
-/*.viewport {
+.viewport {
     //overflow: hidden;
     position: fixed;
     height: 100%;
@@ -133,7 +133,7 @@ body {
         @include display-flex;
         @include flex-direction-column;
     }
-}*/
+}
 
 
 .section-title {
@@ -282,7 +282,6 @@ body {
             @include box-shadow(0 0 0 rgba(#FF56F6, 0.5));
         }
     }
-
 }
 
 .secondary-button {
