@@ -208,3 +208,29 @@
         }
     }
 }
+
+.video-image {
+    video {
+        width: 100%;
+        height: auto;
+        @include full-absolute;
+
+        &.mob {
+            display: block;
+        }
+
+        &.desk {
+            display: none;
+        }
+
+        @include min-small {
+            &.mob {
+                display: none;
+            }
+
+            &.desk {
+                display: block;
+            }
+        }
+    }
+}

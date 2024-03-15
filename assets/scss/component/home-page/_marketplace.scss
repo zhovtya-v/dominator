@@ -320,7 +320,7 @@
 
         &.epic {
             .dominator-image {
-                background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+                background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #800591 0%, #e526ea 100%);
             }
 
             .character {
@@ -329,14 +329,25 @@
             }
         }
 
-        &.gold {
+        &.grey {
             .dominator-image {
-                background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #9D8102 0%, #C6C68F 100%);
+                background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
             }
 
             .character {
-                border-color: #9D8102;
-                color: #9D8102;
+                border-color: #740F00;
+                color: #740F00;
+            }
+        }
+
+        &.gold {
+            .dominator-image {
+                background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #ae7318 0%, #dc9523 100%);
+            }
+
+            .character {
+                border-color: #dc9523;
+                color: #dc9523;
             }
         }
     }

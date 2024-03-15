@@ -3294,6 +3294,30 @@ COMMON STYLE END
   animation: 0.7s linear 1 normal both transform-left;
 }
 
+.video-image video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.video-image video.mob {
+  display: block;
+}
+.video-image video.desk {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .video-image video.mob {
+    display: none;
+  }
+  .video-image video.desk {
+    display: block;
+  }
+}
+
 .dominators-section {
   background-image: url("./assets/images/home-page/dominator-bg-section-mob.png");
   background-size: auto;
@@ -4337,18 +4361,25 @@ COMMON STYLE END
   color: #595854;
 }
 .marketplace-section .swiper-slide-wrap.epic .dominator-image {
-  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #800591 0%, #e526ea 100%);
 }
 .marketplace-section .swiper-slide-wrap.epic .character {
   border-color: #884784;
   color: #884784;
 }
+.marketplace-section .swiper-slide-wrap.grey .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+}
+.marketplace-section .swiper-slide-wrap.grey .character {
+  border-color: #740F00;
+  color: #740F00;
+}
 .marketplace-section .swiper-slide-wrap.gold .dominator-image {
-  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #9D8102 0%, #C6C68F 100%);
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #ae7318 0%, #dc9523 100%);
 }
 .marketplace-section .swiper-slide-wrap.gold .character {
-  border-color: #9D8102;
-  color: #9D8102;
+  border-color: #dc9523;
+  color: #dc9523;
 }
 .marketplace-section .swiper-slide-wrap-bg {
   position: absolute;
