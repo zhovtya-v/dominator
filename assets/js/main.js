@@ -123,7 +123,7 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
     effect: "coverflow",
     centeredSlides: true,
     autoplay: {
-        delay: 3000,
+        delay: 2500,
         disableOnInteraction: false,
     },
 
