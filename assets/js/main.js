@@ -71,9 +71,9 @@ function initPopupsOpeners() {
 
 document.addEventListener('element-show', function(e) {
     if (e.detail.target.classList.contains('hero-section')) {
-        counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 1347)
-        counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 347)
-        counter(document.querySelector('.element-show #dominators-third .out-num'), 0, 150)
+        counter(document.querySelector('.element-show #dominators-first .out-num'), 0, 70)
+        counter(document.querySelector('.element-show #dominators-second .out-num'), 0, 55)
+        counter(document.querySelector('.element-show #dominators-third .out-num'), 0, 799)
     }
 });
 
@@ -121,6 +121,10 @@ var dominatorsSwiper = new Swiper(".dominators-swiper", {
     slidesPerView: 1,
     effect: "coverflow",
     centeredSlides: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
 
     coverflowEffect: {
         rotate: 0,

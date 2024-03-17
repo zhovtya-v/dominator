@@ -3294,6 +3294,30 @@ COMMON STYLE END
   animation: 0.7s linear 1 normal both transform-left;
 }
 
+.video-image video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.video-image video.mob {
+  display: block;
+}
+.video-image video.desk {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .video-image video.mob {
+    display: none;
+  }
+  .video-image video.desk {
+    display: block;
+  }
+}
+
 .dominators-section {
   background-image: url("./assets/images/home-page/dominator-bg-section-mob.png");
   background-size: auto;
@@ -3548,6 +3572,11 @@ COMMON STYLE END
   margin-bottom: 47px;
   text-align: left;
 }
+@media only screen and (min-width: 992px) {
+  .dominators-section .dominator-info-wrap {
+    padding: 37px 20px 70px 20px;
+  }
+}
 @media only screen and (min-width: 1201px) {
   .dominators-section .dominator-info-wrap {
     padding: 32px 45px 50px 47px;
@@ -3556,7 +3585,7 @@ COMMON STYLE END
 }
 @media only screen and (min-width: 1441px) {
   .dominators-section .dominator-info-wrap {
-    padding: 46px 59px 100px 66px;
+    padding: 46px 55px 100px 55px;
     margin-bottom: 74px;
   }
 }
@@ -3662,19 +3691,32 @@ COMMON STYLE END
   flex: 1 0 100%;
   line-height: 1.65;
   padding-right: 45px;
+  min-height: 250px;
 }
 @media only screen and (max-width: 1440px) {
   .dominators-section .dominator-info-wrap .description {
     font-size: 15px;
     padding-right: 10px;
     line-height: 1.45;
+    min-height: 180px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .dominators-section .dominator-info-wrap .description {
+    padding-right: 0;
+    min-height: 220px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .dominators-section .dominator-info-wrap .description {
+    min-height: 330px;
   }
 }
 @media only screen and (max-width: 767px) {
   .dominators-section .dominator-info-wrap .description {
     order: 4;
     font-size: 14px;
-    padding-right: 0;
+    min-height: 290px;
   }
 }
 .dominators-section .dominator-info-wrap .description span {
@@ -4337,18 +4379,25 @@ COMMON STYLE END
   color: #595854;
 }
 .marketplace-section .swiper-slide-wrap.epic .dominator-image {
-  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #800591 0%, #e526ea 100%);
 }
 .marketplace-section .swiper-slide-wrap.epic .character {
   border-color: #884784;
   color: #884784;
 }
+.marketplace-section .swiper-slide-wrap.grey .dominator-image {
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #740F00 0%, #C13919 100%);
+}
+.marketplace-section .swiper-slide-wrap.grey .character {
+  border-color: #740F00;
+  color: #740F00;
+}
 .marketplace-section .swiper-slide-wrap.gold .dominator-image {
-  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #9D8102 0%, #C6C68F 100%);
+  background: radial-gradient(108.62% 192.22% at 6.9% 18.81%, #ae7318 0%, #dc9523 100%);
 }
 .marketplace-section .swiper-slide-wrap.gold .character {
-  border-color: #9D8102;
-  color: #9D8102;
+  border-color: #dc9523;
+  color: #dc9523;
 }
 .marketplace-section .swiper-slide-wrap-bg {
   position: absolute;
