@@ -221,13 +221,17 @@
         margin-bottom: 47px;
         text-align: left;
 
+        @include min-medium {
+            padding: 37px 20px 70px 20px;
+        }
+
         @include min-large {
             padding: 32px 45px 50px 47px;
             margin-bottom: 87px;
         }
 
         @include min-extra-large {
-            padding: 46px 59px 100px 66px;
+            padding: 46px 55px 100px 55px;
             margin-bottom: 74px;
         }
 
@@ -332,16 +336,31 @@
             line-height: 1.65;
             padding-right: 45px;
 
+            min-height: 250px;
+
             @include max-extra-large {
                 font-size: 15px;
                 padding-right: 10px;
                 line-height: 1.45;
+
+                min-height: 180px;
+            }
+
+            @include max-large{
+                padding-right: 0;
+
+                min-height: 220px;
+            }
+
+            @include max-medium {
+                min-height: 330px;
             }
 
             @include max-small {
                 order: 4;
                 font-size: 14px;
-                padding-right: 0;
+
+                min-height: 290px;
             }
 
             span {
